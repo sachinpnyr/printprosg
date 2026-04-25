@@ -3855,11 +3855,11 @@
     padding-top: 80px !important;
   }
 
-  /* ── Chatbot bubble: hide on mobile (WhatsApp in sticky bar is enough) ── */
+  /* ── Chatbot bubble: visible on mobile ── */
   #printbot-widget,
   #printbot-toggle,
   .printbot-widget {
-    display: none !important;
+    display: block !important;
   }
 
   /* ── Brand/clients marquee: increase logo visibility ── */
