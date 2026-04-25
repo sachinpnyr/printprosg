@@ -90,6 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBtn.addEventListener('click', () => {
       bar.classList.add('hidden');
       document.documentElement.style.setProperty('--ann-h', '0px');
+      var nav = document.getElementById('navbar');
+      if (nav) nav.style.top = '0px';
+      var hero = document.getElementById('hero');
+      if (hero) hero.style.paddingTop = '';
     });
   }
   /* Rotate announcement slides every 4 seconds */

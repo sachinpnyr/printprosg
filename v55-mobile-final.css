@@ -454,3 +454,22 @@
   top: 0 !important;
   z-index: 10000 !important;
 }
+
+/* ════════════════════════════════════════════════════
+   NAVBAR — Sit below announcement bar (41px height)
+   ════════════════════════════════════════════════════ */
+
+#navbar {
+  top: 41px !important;
+}
+
+/* Hero section — add padding-top to clear navbar (41px bar + 101px navbar = 142px) */
+#hero {
+  padding-top: 142px !important;
+}
+
+/* When announcement bar is dismissed, reset navbar to top: 0 */
+#announcement-bar.hidden ~ #navbar,
+body.ann-hidden #navbar {
+  top: 0 !important;
+}
