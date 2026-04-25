@@ -4991,3 +4991,101 @@
   }
 
 }
+
+
+/* ============================================
+   v54 PATCH — Mobile navbar, hero & trust bar fixes
+   1. Add WhatsApp icon to navbar (next to hamburger)
+   2. Fix hero grid bleeding off-screen (1-column)
+   3. Fix trust bar items wrapping/truncating
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* ── 1. NAVBAR: show WhatsApp icon next to hamburger ── */
+  #navbar .nav-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    margin-left: auto !important;
+  }
+
+  /* Show WhatsApp nav icon on mobile */
+  #navbar .nav-whatsapp-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background: #25D366 !important;
+    color: #fff !important;
+    font-size: 18px !important;
+    text-decoration: none !important;
+    flex-shrink: 0 !important;
+    border: none !important;
+  }
+
+  #navbar .nav-whatsapp-btn:hover {
+    background: #1ebe5d !important;
+  }
+
+  /* ── 2. HERO: force single-column grid ── */
+  #hero .hero-inner,
+  .hero-inner {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    padding: 72px 20px 24px !important;
+    gap: 20px !important;
+    text-align: center !important;
+  }
+
+  /* Hero content full width */
+  #hero .hero-content,
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Hero product showcase: 2-col grid, full width */
+  #hero .hero-product-showcase,
+  .hero-product-showcase {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 10px !important;
+    margin-top: 0 !important;
+  }
+
+  /* ── 3. TRUST BAR: wrap items, smaller text ── */
+  .hero-trust-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-trust-row span {
+    font-size: 11px !important;
+    white-space: nowrap !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+}
+
+/* Hide WhatsApp nav button on desktop — mobile only */
+@media (min-width: 768px) {
+  .nav-whatsapp-btn {
+    display: none !important;
+  }
+}
