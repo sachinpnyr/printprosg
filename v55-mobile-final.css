@@ -1904,3 +1904,16 @@
     overflow: hidden !important;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   v55 PATCH 13 — Announcement bar: remove overflow:hidden
+   iOS Safari can swallow touch events on children when parent has
+   overflow:hidden. Setting overflow:visible fixes this.
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  html body #announcement-bar,
+  html body div#announcement-bar {
+    overflow: visible !important;
+    -webkit-overflow-scrolling: auto !important;
+  }
+}

@@ -28,12 +28,12 @@
 <link href="v50-mobile.css" rel="stylesheet"/>
 <link href="v52-apple.css" rel="stylesheet"/>
 <link href="v53-mobile-apple.css?v=64" rel="stylesheet"/>
-<link href="v55-mobile-final.css?v=21" rel="stylesheet"/>
+<link href="v55-mobile-final.css?v=22" rel="stylesheet"/>
 </head>
 <body>
 <!-- ANNOUNCEMENT BANNER (rotating) -->
 <div id="announcement-bar">
-<button aria-label="Close announcement" id="close-announcement"><i class="fas fa-times"></i></button>
+<button aria-label="Close announcement" id="close-announcement" onclick="(function(){var b=document.getElementById('announcement-bar');if(b){b.style.display='none';b.classList.add('hidden');}document.documentElement.style.setProperty('--ann-h','0px');})()"><i class="fas fa-times"></i></button>
 <div id="announcement-slides">
 <div class="ann-slide active"><i class="fas fa-tag"></i>  <strong>Free Design</strong> with every order above $150. <a href="#contact">Claim now →</a></div>
 <div class="ann-slide"><i class="fas fa-bolt"></i>  <strong>Same-Day Printing</strong> available for urgent orders. <a href="#contact">Order now →</a></div>
@@ -851,7 +851,7 @@
 </div>
 </div>
 </div>
-<script src="script.js?v=35"></script>
+<script src="script.js?v=36"></script>
 <script src="chatbot.js?v=2"></script>
 <script>
 // ── Category Filter Tabs ──────────────────────────────────────────
