@@ -86,15 +86,34 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---- ANNOUNCEMENT BANNER ---- */
   const bar = document.getElementById('announcement-bar');
   const closeBtn = document.getElementById('close-announcement');
+  function dismissAnnBar() {
+    if (!bar || bar.classList.contains('hidden')) return;
+    bar.classList.add('hidden');
+    document.documentElement.style.setProperty('--ann-h', '0px');
+    var nav = document.getElementById('navbar');
+    if (nav) nav.style.top = '0px';
+    var hero = document.getElementById('hero');
+    if (hero) hero.style.paddingTop = '';
+  }
   if (closeBtn && bar) {
-    closeBtn.addEventListener('click', () => {
-      bar.classList.add('hidden');
-      document.documentElement.style.setProperty('--ann-h', '0px');
-      var nav = document.getElementById('navbar');
-      if (nav) nav.style.top = '0px';
-      var hero = document.getElementById('hero');
-      if (hero) hero.style.paddingTop = '';
+    // click (desktop)
+    closeBtn.addEventListener('click', function(e) {
+      e.preventDefault(); e.stopPropagation();
+      dismissAnnBar();
     });
+    // touchend (iOS Safari — fires reliably even at screen edge)
+    closeBtn.addEventListener('touchend', function(e) {
+      e.preventDefault(); e.stopPropagation();
+      dismissAnnBar();
+    }, { passive: false });
+    // Swipe-up on the bar itself also dismisses (extra affordance)
+    var annTouchStartY = 0;
+    bar.addEventListener('touchstart', function(e) {
+      annTouchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    bar.addEventListener('touchend', function(e) {
+      if (e.changedTouches[0].clientY - annTouchStartY < -20) dismissAnnBar();
+    }, { passive: true });
   }
   /* Rotate announcement slides every 4 seconds */
   (function() {

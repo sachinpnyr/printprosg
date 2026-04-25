@@ -1797,3 +1797,54 @@
     margin-bottom: 20px !important;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   v55 PATCH 11 — Announcement bar close button: move LEFT of edge
+   The iOS Safari right-edge swipe-back gesture zone intercepts taps
+   at x > (screen_width - ~20px). Moving button to right:20px puts
+   it safely inside the tappable area. Also increase visual size.
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  /* Bar: ensure enough right padding for the button */
+  html body #announcement-bar,
+  html body div#announcement-bar {
+    padding-right: 60px !important;
+  }
+
+  /* Close button: position well inside the screen, not at the edge */
+  html body #close-announcement {
+    position: absolute !important;
+    right: 16px !important;          /* safely away from iOS edge zone */
+    top: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    width: 48px !important;          /* generous tap target */
+    height: auto !important;
+    min-height: 44px !important;
+    transform: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: rgba(255,255,255,0.9) !important;
+    font-size: 18px !important;      /* larger × icon */
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    z-index: 10020 !important;
+    -webkit-tap-highlight-color: rgba(255,255,255,0.4) !important;
+    touch-action: manipulation !important;
+    pointer-events: auto !important;
+    /* Extend tap area with pseudo-element */
+    outline: none !important;
+  }
+
+  /* Make the × icon itself larger and more visible */
+  html body #close-announcement i,
+  html body #close-announcement .fas {
+    font-size: 18px !important;
+    pointer-events: none !important;
+  }
+}
