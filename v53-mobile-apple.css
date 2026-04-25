@@ -5219,3 +5219,156 @@
   }
 
 }
+
+/* ============================================
+   v54 PATCH 4 — Premium Help Widget redesign
+   Clean, consistent, Apple-grade
+   ============================================ */
+
+/* ── Collapsed state: clean pill with WhatsApp icon ── */
+#help-widget.collapsed {
+  width: auto !important;
+  border-radius: 980px !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15) !important;
+  overflow: visible !important;
+}
+
+#help-widget.collapsed .help-widget-header {
+  background: #fff !important;
+  border-radius: 980px !important;
+  padding: 10px 20px 10px 10px !important;
+  gap: 10px !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+#help-widget.collapsed .help-widget-avatar {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  background: #25D366 !important;
+  border-radius: 50% !important;
+  font-size: 16px !important;
+  color: #fff !important;
+}
+
+/* Show WhatsApp icon in collapsed state */
+#help-widget.collapsed .help-widget-avatar i.fa-headset {
+  display: none !important;
+}
+
+#help-widget.collapsed .help-widget-avatar::after {
+  content: "" !important;
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z'/%3E%3Cpath d='M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.858L.057 23.5l5.787-1.516A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.49-5.18-1.348l-.371-.22-3.437.9.917-3.347-.242-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z'/%3E%3C/svg%3E") center/contain no-repeat !important;
+}
+
+#help-widget.collapsed .help-widget-title strong {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #1d1d1f !important;
+}
+
+#help-widget.collapsed .help-widget-close {
+  display: none !important;
+}
+
+#help-widget.collapsed .help-widget-body {
+  display: none !important;
+}
+
+/* ── Expanded state: clean white card ── */
+#help-widget:not(.collapsed):not(.hidden) {
+  width: 300px !important;
+  border-radius: 20px !important;
+  background: #fff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15) !important;
+  overflow: hidden !important;
+}
+
+#help-widget:not(.collapsed) .help-widget-header {
+  background: #fff !important;
+  border-radius: 0 !important;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+  padding: 16px 16px !important;
+  gap: 12px !important;
+}
+
+#help-widget:not(.collapsed) .help-widget-avatar {
+  background: #25D366 !important;
+  color: #fff !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  border-radius: 50% !important;
+  font-size: 18px !important;
+}
+
+#help-widget:not(.collapsed) .help-widget-title strong {
+  color: #1d1d1f !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+
+#help-widget:not(.collapsed) .help-widget-title span {
+  color: rgba(29, 29, 31, 0.55) !important;
+  font-size: 12px !important;
+}
+
+#help-widget:not(.collapsed) .help-widget-close {
+  color: rgba(29, 29, 31, 0.4) !important;
+  font-size: 14px !important;
+}
+
+#help-widget:not(.collapsed) .help-widget-body {
+  padding: 16px !important;
+  background: #fff !important;
+}
+
+#help-widget:not(.collapsed) .help-widget-body p {
+  font-size: 13px !important;
+  color: rgba(29, 29, 31, 0.6) !important;
+  margin-bottom: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* WhatsApp button: green */
+#help-widget .help-widget-actions a.btn-primary {
+  background: #25D366 !important;
+  color: #fff !important;
+  border-radius: 980px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 11px 16px !important;
+  border: none !important;
+}
+
+#help-widget .help-widget-actions a.btn-primary:hover {
+  background: #1ebe5d !important;
+  transform: none !important;
+}
+
+/* Call button: outlined */
+#help-widget .help-widget-actions a.btn-outline {
+  background: transparent !important;
+  color: #1d1d1f !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.18) !important;
+  border-radius: 980px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 11px 16px !important;
+}
+
+#help-widget .help-widget-actions a.btn-outline:hover {
+  background: rgba(0, 0, 0, 0.04) !important;
+  transform: none !important;
+}
+
+/* ── Hide on mobile (bottom bar handles it) ── */
+@media (max-width: 767px) {
+  #help-widget {
+    display: none !important;
+  }
+}
