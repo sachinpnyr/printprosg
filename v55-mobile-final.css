@@ -1,0 +1,343 @@
+/*
+ * v55-mobile-final.css
+ * Final mobile overrides — loads last, wins all specificity battles.
+ * Targets: iPhone/Android (max-width: 767px)
+ * Goal: Premium, clean, consistent mobile experience.
+ */
+
+/* ════════════════════════════════════════════════════
+   SECTION 1 — HERO
+   ════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  /* Remove the half-width decorative background — looks broken on mobile */
+  #hero::after {
+    display: none !important;
+  }
+
+  /* Clean white background with subtle warm gradient */
+  #hero {
+    background: linear-gradient(160deg, #ffffff 0%, #faf9f7 100%) !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    min-height: auto !important;
+  }
+
+  /* Hero inner: single column, centered */
+  #hero .hero-inner,
+  .hero-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 80px 24px 36px !important;
+    gap: 0 !important;
+    grid-template-columns: unset !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Hero content block */
+  #hero .hero-content,
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    order: 1 !important;
+    padding: 0 !important;
+    margin-bottom: 32px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Headline */
+  #hero .hero-headline,
+  .hero-headline {
+    font-size: 40px !important;
+    line-height: 1.05 !important;
+    font-weight: 800 !important;
+    letter-spacing: -1px !important;
+    margin-bottom: 14px !important;
+    color: #1d1d1f !important;
+  }
+
+  /* Subtext — show full, no clamp */
+  #hero .hero-sub,
+  #hero .hero-content p,
+  .hero-sub,
+  .hero-subtext {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    color: rgba(29, 29, 31, 0.6) !important;
+    margin-bottom: 24px !important;
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+    display: block !important;
+    white-space: normal !important;
+  }
+
+  /* CTA buttons: side by side pill buttons */
+  #hero .hero-ctas,
+  .hero-ctas {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    justify-content: center !important;
+    margin-bottom: 28px !important;
+    width: 100% !important;
+  }
+
+  #hero .hero-ctas a,
+  .hero-ctas a {
+    height: 48px !important;
+    padding: 0 28px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    border-radius: 980px !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Trust row: 3 items stacked vertically, centered */
+  #hero .hero-trust-row,
+  .hero-trust-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-bottom: 32px !important;
+    flex-wrap: nowrap !important;
+    overflow: visible !important;
+    width: 100% !important;
+  }
+
+  #hero .hero-trust-row span,
+  .hero-trust-row span {
+    font-size: 13px !important;
+    color: rgba(29, 29, 31, 0.55) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  #hero .hero-trust-row span i,
+  .hero-trust-row span i {
+    font-size: 12px !important;
+    color: rgba(29, 29, 31, 0.35) !important;
+  }
+
+  /* Product showcase: 2×2 grid */
+  #hero .hero-product-showcase,
+  .hero-product-showcase {
+    order: 2 !important;
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Show all 4 product cards */
+  #hero .hero-product-card:nth-child(3),
+  #hero .hero-product-card:nth-child(4),
+  .hero-product-card:nth-child(3),
+  .hero-product-card:nth-child(4) {
+    display: flex !important;
+  }
+
+  /* Product card styling */
+  #hero .hero-product-card,
+  .hero-product-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 12px !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+  }
+
+  #hero .hero-product-img,
+  .hero-product-img {
+    height: 90px !important;
+    overflow: hidden !important;
+    border-radius: 10px !important;
+    margin-bottom: 10px !important;
+    background: #f5f5f7 !important;
+  }
+
+  #hero .hero-product-img img,
+  .hero-product-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  #hero .hero-product-info span,
+  .hero-product-info span {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: #1d1d1f !important;
+    display: block !important;
+    margin-bottom: 2px !important;
+  }
+
+  #hero .hero-product-info strong,
+  .hero-product-info strong {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #e8192c !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════
+   SECTION 2 — NAVBAR
+   ════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  #navbar {
+    background: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════
+   SECTION 3 — STICKY CTA BAR
+   ════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  .mobile-cta-bar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+    padding: 10px 16px !important;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom)) !important;
+    gap: 8px !important;
+    box-shadow: none !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .mobile-cta-bar a,
+  .mobile-cta-call,
+  .mobile-cta-wa,
+  .mobile-cta-quote {
+    flex: 1 1 0 !important;
+    height: 44px !important;
+    border-radius: 980px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    padding: 0 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .mobile-cta-call {
+    background: transparent !important;
+    color: #1d1d1f !important;
+    border: 1.5px solid rgba(0, 0, 0, 0.18) !important;
+  }
+
+  .mobile-cta-wa {
+    background: #25D366 !important;
+    color: #ffffff !important;
+    border: none !important;
+  }
+
+  .mobile-cta-quote {
+    background: #e8192c !important;
+    color: #ffffff !important;
+    border: none !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════
+   SECTION 4 — SECTION SPACING & TYPOGRAPHY
+   ════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  section {
+    padding: 56px 0 !important;
+  }
+
+  .container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .section-header {
+    text-align: center !important;
+    margin-bottom: 32px !important;
+  }
+
+  .section-header h2,
+  section h2 {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.15 !important;
+  }
+
+  .eyebrow {
+    font-size: 11px !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════
+   SECTION 5 — HAMBURGER MENU OPEN STATE
+   ════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  .nav-links.open {
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: var(--nav-h, 60px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    padding: 20px 24px 32px !important;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+    gap: 4px !important;
+    z-index: 9999 !important;
+  }
+
+  .nav-links.open li a {
+    display: block !important;
+    padding: 12px 0 !important;
+    font-size: 17px !important;
+    font-weight: 500 !important;
+    color: #1d1d1f !important;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.06) !important;
+    text-decoration: none !important;
+  }
+}
