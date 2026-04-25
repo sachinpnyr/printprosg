@@ -5174,3 +5174,48 @@
   }
 
 }
+
+/* ============================================
+   v54 PATCH 3 — Fix hamburger menu: allow
+   .nav-links.open to override the display:none
+   ============================================ */
+@media (max-width: 767px) {
+
+  .nav-links.open {
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: var(--nav-h, 60px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    padding: 20px 24px 32px !important;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+    gap: 4px !important;
+    z-index: 9999 !important;
+  }
+
+  .nav-links.open li {
+    list-style: none !important;
+  }
+
+  .nav-links.open a {
+    display: block !important;
+    padding: 13px 16px !important;
+    border-radius: 10px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #1d1d1f !important;
+    text-decoration: none !important;
+    transition: background 0.15s ease !important;
+  }
+
+  .nav-links.open a:hover,
+  .nav-links.open a:active {
+    background: rgba(0, 0, 0, 0.05) !important;
+  }
+
+}
