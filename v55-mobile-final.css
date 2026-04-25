@@ -1635,3 +1635,44 @@
     pointer-events: auto !important;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   v55 PATCH 8 — Announcement bar close button fix
+   Problem: The bar has overflow:hidden and min-height:32px.
+   The close button is 44px tall (good tap target) but the bar is
+   only 32px, so the button overflows 6px above the bar and gets
+   clipped — making it invisible and untappable.
+   Fix: Set overflow:visible on the bar and ensure the bar is tall
+   enough to contain the button. Also add a larger tap target.
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  /* Allow the close button to extend beyond the bar's bounds */
+  html body #announcement-bar,
+  html body div#announcement-bar {
+    overflow: visible !important;
+    min-height: 36px !important;
+    padding: 8px 40px 8px 12px !important;
+  }
+
+  /* Ensure the close button is properly sized and positioned */
+  html body #close-announcement {
+    position: absolute !important;
+    right: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 32px !important;
+    height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: rgba(255,255,255,0.8) !important;
+    font-size: 14px !important;
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    z-index: 10003 !important;
+    -webkit-tap-highlight-color: rgba(255,255,255,0.2) !important;
+    touch-action: manipulation !important;
+  }
+}
