@@ -463,9 +463,9 @@
   top: 41px !important;
 }
 
-/* Hero section — add padding-top to clear navbar (41px bar + 101px navbar = 142px) */
+/* Hero section — add padding-top to clear navbar (navbar is 101px, starts at 41px = ends at 142px) */
 #hero {
-  padding-top: 142px !important;
+  padding-top: 101px !important;
 }
 
 /* When announcement bar is dismissed, reset navbar to top: 0 */
