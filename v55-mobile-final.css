@@ -1646,22 +1646,25 @@
    enough to contain the button. Also add a larger tap target.
    ════════════════════════════════════════════════════════════════ */
 @media (max-width: 767px) {
-  /* Allow the close button to extend beyond the bar's bounds */
+  /* Announcement bar: tall enough to contain the close button */
   html body #announcement-bar,
   html body div#announcement-bar {
     overflow: visible !important;
-    min-height: 36px !important;
-    padding: 8px 40px 8px 12px !important;
+    min-height: 44px !important;
+    padding: 0 44px 0 12px !important;
+    align-items: center !important;
   }
 
-  /* Ensure the close button is properly sized and positioned */
+  /* Close button: full-height tap target, positioned at right edge */
   html body #close-announcement {
     position: absolute !important;
-    right: 8px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    width: 32px !important;
-    height: 32px !important;
+    right: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    transform: none !important;
+    width: 44px !important;
+    height: 100% !important;
+    min-height: 44px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
