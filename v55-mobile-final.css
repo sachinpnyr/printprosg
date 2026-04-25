@@ -30,7 +30,7 @@
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    padding: 80px 24px 36px !important;
+    padding: 32px 24px 36px !important;
     gap: 0 !important;
     grid-template-columns: unset !important;
     width: 100% !important;
@@ -210,12 +210,21 @@
    ════════════════════════════════════════════════════ */
 @media (max-width: 767px) {
 
+  /* KEY FIX: override position:fixed from apple-premium.css.
+     On mobile the navbar must scroll with the page (sticky),
+     not float over content. */
   #navbar {
+    position: sticky !important;
+    top: 0 !important;
+    left: unset !important;
+    right: unset !important;
+    width: 100% !important;
     background: rgba(255, 255, 255, 0.92) !important;
     backdrop-filter: saturate(180%) blur(20px) !important;
     -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.1) !important;
     box-shadow: none !important;
+    z-index: 9999 !important;
   }
 }
 
@@ -455,23 +464,18 @@
   z-index: 10000 !important;
 }
 
-/* ════════════════════════════════════════════════════
-   NAVBAR — Sit below announcement bar (41px height)
-   ════════════════════════════════════════════════════ */
-
-#navbar {
-  top: 41px !important;
-}
-
-/* Hero section — add padding-top to clear navbar (navbar is 101px, starts at 41px = ends at 142px) */
-#hero {
-  padding-top: 101px !important;
-}
-
-/* When announcement bar is dismissed, reset navbar to top: 0 */
-#announcement-bar.hidden ~ #navbar,
-body.ann-hidden #navbar {
-  top: 0 !important;
+/* NAVBAR — desktop: sit below 41px announcement bar */
+@media (min-width: 768px) {
+  #navbar {
+    top: 41px !important;
+  }
+  #hero {
+    padding-top: 101px !important;
+  }
+  #announcement-bar.hidden ~ #navbar,
+  body.ann-hidden #navbar {
+    top: 0 !important;
+  }
 }
 
 /* ════════════════════════════════════════════════════
@@ -500,9 +504,11 @@ body.ann-hidden #navbar {
   .nav-trust-bar { display: none !important; }
 }
 
-/* Recalculate navbar top offset (now: 41px ann bar + 52px logo row + ~30px cat tabs = ~83px) */
-#navbar { top: 41px !important; }
-#hero { padding-top: 83px !important; }
+/* Recalculate navbar top offset for desktop (41px ann bar + 52px logo row + ~30px cat tabs = ~83px) */
+@media (min-width: 768px) {
+  #navbar { top: 41px !important; }
+  #hero { padding-top: 83px !important; }
+}
 
 /* ════════════════════════════════════════════════════
    FAQ — 2-column grid layout (desktop)
@@ -583,16 +589,11 @@ body.ann-hidden #navbar {
     justify-content: center !important;
     text-align: center !important;
   }
-  #navbar {
-    top: 36px !important;
-  }
+  /* navbar is now sticky (not fixed), so no top offset needed.
+     The announcement bar sits naturally above it in the DOM flow. */
   #hero .hero-inner,
   .hero-inner {
-    padding-top: 84px !important;
-  }
-  #announcement-bar.hidden ~ #navbar,
-  body.ann-hidden #navbar {
-    top: 0 !important;
+    padding-top: 20px !important;
   }
 }
 
