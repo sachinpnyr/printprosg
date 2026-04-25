@@ -1,0 +1,16 @@
+
+/* ============================================================
+   PATCH 35 — Footer link font-size fix (specificity battle)
+   Line 1368 sets .footer-col li a { font-size: 13px !important }
+   Need higher specificity: footer .footer-col li a
+   ============================================================ */
+@media (max-width: 767px) {
+
+  footer .footer-col li a,
+  footer .footer-col a,
+  footer .footer-col li,
+  footer .footer-grid .footer-col a {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+}

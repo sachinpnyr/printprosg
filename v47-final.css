@@ -1,0 +1,482 @@
+/* ═══════════════════════════════════════════════════════════════
+   v47-final.css — Comprehensive UI improvements
+   Fixes: hero background, client logos, promotions, navbar,
+          hero product cards, about section image, and more
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════
+   1. HERO — Split background with image on right side
+   ═══════════════════════════════════════════════════════════════ */
+#hero {
+  background: linear-gradient(
+    to right,
+    #f8f8fa 0%,
+    #f8f8fa 55%,
+    #f0ece8 55%,
+    #f0ece8 100%
+  ) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Remove the dot grid — too subtle, adds noise */
+#hero::before {
+  display: none !important;
+}
+
+/* Add a warm photo background on the right half */
+#hero::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 50% !important;
+  height: 100% !important;
+  background-image: url('img/hero/vistaprint-style.jpg') !important;
+  background-size: cover !important;
+  background-position: center right !important;
+  opacity: 0.18 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Ensure hero inner is above the pseudo-elements */
+#hero .hero-inner {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Make hero product cards larger and more impactful */
+.hero-product-showcase {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 14px !important;
+}
+
+.hero-product-card {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+  background: #ffffff !important;
+  transition: transform 250ms ease, box-shadow 250ms ease !important;
+  text-decoration: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.hero-product-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.14) !important;
+  border-color: rgba(232,25,44,0.25) !important;
+}
+
+.hero-product-img {
+  aspect-ratio: 4/3 !important;
+  overflow: hidden !important;
+  background: #f5f5f7 !important;
+  padding: 0 !important;
+}
+
+.hero-product-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 300ms ease !important;
+}
+
+.hero-product-card:hover .hero-product-img img {
+  transform: scale(1.06) !important;
+}
+
+.hero-product-info {
+  padding: 10px 14px 12px !important;
+  background: #ffffff !important;
+  border-top: 1px solid rgba(0,0,0,0.06) !important;
+}
+
+.hero-product-info span {
+  display: block !important;
+  font-size: 11px !important;
+  color: #6e6e73 !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  margin-bottom: 2px !important;
+}
+
+.hero-product-info strong {
+  display: block !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #e8192c !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   2. CLIENT LOGOS — Full colour, proper contrast
+   ═══════════════════════════════════════════════════════════════ */
+.clients-track img {
+  height: 52px !important;
+  filter: none !important;  /* Remove grayscale + opacity — show full colour */
+  opacity: 1 !important;
+  transition: transform 300ms ease, box-shadow 300ms ease !important;
+}
+
+.clients-track img:hover {
+  filter: none !important;
+  transform: scale(1.08) !important;
+  opacity: 1 !important;
+}
+
+/* Clients section — use light grey background so white-background SVG logos are visible */
+#clients {
+  background: #f5f5f7 !important;
+  padding: 56px 0 !important;
+  border-top: 1px solid rgba(0,0,0,0.06) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+}
+
+/* Fix the fade gradient to match the new background */
+.clients-marquee::before {
+  background: linear-gradient(to right, #f5f5f7, transparent) !important;
+}
+.clients-marquee::after {
+  background: linear-gradient(to left, #f5f5f7, transparent) !important;
+}
+
+.clients-headline {
+  font-size: 13px !important;
+  color: #86868b !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 600 !important;
+  margin-bottom: 32px !important;
+}
+
+.clients-headline strong {
+  color: #1d1d1f !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   3. PROMOTIONS — Redesign to consistent, premium style
+   ═══════════════════════════════════════════════════════════════ */
+#promotions {
+  background: #0a0a0f !important;
+  padding: 80px 0 !important;
+}
+
+#promotions .section-header,
+#promotions .promo-header {
+  text-align: center !important;
+  margin-bottom: 48px !important;
+}
+
+#promotions .promo-header .eyebrow {
+  color: rgba(255,255,255,0.6) !important;
+}
+
+/* Fix the ALL CAPS heading */
+#promotions h2,
+.promo-header h2 {
+  font-size: clamp(26px, 3vw, 38px) !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  text-transform: none !important;
+  letter-spacing: -0.02em !important;
+}
+
+.promo-highlight {
+  color: #e8192c !important;
+  background: none !important;
+  -webkit-text-fill-color: #e8192c !important;
+}
+
+/* Make all 3 promo banners use consistent dark style */
+.promo-banner {
+  background: #16161e !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.promo-banner.promo-dark {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+  border-color: rgba(232,25,44,0.3) !important;
+}
+
+.promo-banner.promo-blue {
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+.promo-banner.promo-pink {
+  background: linear-gradient(135deg, #1a0a0f 0%, #2d0d18 100%) !important;
+  border-color: rgba(232,25,44,0.25) !important;
+}
+
+/* Promo card text — all white */
+.promo-banner h3 {
+  color: #ffffff !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  margin-bottom: 8px !important;
+}
+
+.promo-banner p {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+.promo-banner .btn-primary,
+.promo-banner .btn {
+  background: #e8192c !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+/* Fix the "83% Cheaper!" badge to be consistent */
+.promo-cheaper-badge {
+  background: rgba(232,25,44,0.15) !important;
+  color: #ff6b7a !important;
+  border: 1px solid rgba(232,25,44,0.3) !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  padding: 4px 12px !important;
+  border-radius: 100px !important;
+  display: inline-block !important;
+  margin: 8px 0 !important;
+}
+
+.promo-amount, .promo-amount-lg {
+  color: #ffffff !important;
+}
+
+.promo-from, .promo-subtext {
+  color: rgba(255,255,255,0.6) !important;
+}
+
+.promo-discount-big span {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+.promo-pct {
+  color: #e8192c !important;
+  font-size: 52px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  display: block !important;
+}
+
+.promo-banner-badge {
+  background: #e8192c !important;
+  color: #ffffff !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.1em !important;
+  padding: 5px 12px !important;
+  border-radius: 0 0 0 12px !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+}
+
+.promo-products span {
+  background: rgba(255,255,255,0.1) !important;
+  color: rgba(255,255,255,0.8) !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  padding: 3px 10px !important;
+  border-radius: 100px !important;
+  font-size: 11px !important;
+}
+
+/* Nav buttons */
+.promo-nav {
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  color: #ffffff !important;
+}
+
+.promo-nav:hover {
+  background: #e8192c !important;
+  border-color: #e8192c !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   4. NAVBAR — Reduce visual weight from 4 rows to 3 rows
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Hide the redundant nav-links row on desktop — the category row
+   already provides product navigation. This removes row 4. */
+@media (min-width: 769px) {
+  .nav-links {
+    display: none !important;
+  }
+}
+
+/* Reduce the trust bar height and font size */
+.nav-trust-bar {
+  padding: 5px 0 !important;
+}
+
+.nav-trust-item {
+  font-size: 11px !important;
+}
+
+.nav-rating span {
+  font-size: 11px !important;
+}
+
+/* Reduce category nav row height */
+.nav-cat {
+  font-size: 12px !important;
+  padding: 8px 12px !important;
+}
+
+/* Tighten the logo row */
+:root {
+  --nav-h: 58px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   5. ABOUT SECTION — Add visual interest
+   ═══════════════════════════════════════════════════════════════ */
+#about {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f8fa 100%) !important;
+}
+
+/* Make the about stats more prominent */
+.about-stats {
+  display: flex !important;
+  gap: 40px !important;
+  margin: 32px 0 !important;
+  padding: 24px 0 !important;
+  border-top: 1px solid rgba(0,0,0,0.08) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+.about-stat-num {
+  font-size: 40px !important;
+  font-weight: 900 !important;
+  color: #e8192c !important;
+  line-height: 1 !important;
+  display: block !important;
+}
+
+.about-stat-lbl {
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #86868b !important;
+  font-weight: 600 !important;
+  margin-top: 4px !important;
+  display: block !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   6. REVIEWS — Fix card height inconsistency
+   ═══════════════════════════════════════════════════════════════ */
+.review-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.review-text {
+  flex: 1 !important;
+  overflow: hidden !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 5 !important;
+  -webkit-box-orient: vertical !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   7. BCS CARDS — Fix "COMPANY LOGO" placeholder look
+   ═══════════════════════════════════════════════════════════════ */
+.bcs-card-img {
+  background: #1a1a2e !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   8. STATS BAR — More visual impact
+   ═══════════════════════════════════════════════════════════════ */
+#stats-bar {
+  background: linear-gradient(135deg, #0f0f14 0%, #1a1a2e 100%) !important;
+}
+
+.stat-number {
+  font-size: 36px !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+}
+
+.stat-label {
+  font-size: 11px !important;
+  color: rgba(255,255,255,0.6) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   9. SECTION HEADINGS — Consistent sizing
+   ═══════════════════════════════════════════════════════════════ */
+.section-header h2 {
+  font-size: clamp(28px, 3.5vw, 42px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.15 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   10. FOOTER — Ensure no dark gap
+   ═══════════════════════════════════════════════════════════════ */
+footer {
+  background: #1a1a2e !important;
+}
+
+.footer-bottom {
+  background: #0f0f18 !important;
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+
+/* === 11. FOOTER LOGO — Use coloured logo-white.png (no filter) === */
+.footer-brand .footer-logo {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* === 12. FAQ — All items collapsed by default === */
+.faq-answer {
+  max-height: 0 !important;
+  overflow: hidden !important;
+  transition: max-height 0.4s ease !important;
+}
+/* Support both .open (used by script.js) and .active (legacy) */
+.faq-item.open .faq-answer,
+.faq-item.active .faq-answer {
+  max-height: 600px !important;
+}
+.faq-item .faq-icon i { transition: transform 0.3s ease; }
+.faq-item.open .faq-icon i,
+.faq-item.active .faq-icon i { transform: rotate(45deg); }
+
+/* === 13. PAYMENT METHODS — PayNow + Bank Transfer styling === */
+.payment-icons .pay-icon {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 16px; border: 1.5px solid #e5e7eb; border-radius: 8px;
+  font-size: 13px; font-weight: 600; background: #f9fafb; color: #374151; margin: 4px;
+}
+.payment-icons .pay-icon.paynow {
+  background: #e8192c !important;
+  color: #fff !important;
+  border-color: #e8192c !important;
+}
+.payment-icons .pay-icon i { font-size: 15px; }
+
+/* === 14. MAP IFRAME === */
+.map-iframe-wrap { border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
+.map-iframe-wrap iframe { display: block; }
+
+/* === 15. PRODUCT PAGE NAVBAR === */
+#navbar { height: auto !important; display: block !important; }

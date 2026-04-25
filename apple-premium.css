@@ -1,0 +1,2782 @@
+/* ============================================================
+   PRINT PRO SG — APPLE-LEVEL PREMIUM DESIGN SYSTEM
+   Applied on top of existing style.css
+   ============================================================ */
+
+/* ── 1. FONT SYSTEM ─────────────────────────────────────── */
+:root {
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "Helvetica Neue", Arial, sans-serif;
+  --font-text: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Helvetica Neue", Arial, sans-serif;
+
+  /* Apple colour tokens */
+  --apple-bg:        #ffffff;
+  --apple-bg-alt:    #f5f5f7;
+  --apple-bg-card:   #f5f5f7;
+  --apple-ink-1:     #1d1d1f;
+  --apple-ink-2:     #6e6e73;
+  --apple-ink-3:     #86868b;
+  --apple-border:    #d2d2d7;
+  --apple-blue:      #0071e3;
+  --apple-blue-h:    #0077ed;
+
+  /* Brand accent — keep red but refined */
+  --brand:           #e63946;
+  --brand-h:         #c1121f;
+
+  /* Spacing scale */
+  --sp-xs:  8px;
+  --sp-sm:  16px;
+  --sp-md:  24px;
+  --sp-lg:  48px;
+  --sp-xl:  80px;
+  --sp-2xl: 120px;
+
+  /* Radius */
+  --r-sm:   8px;
+  --r-md:   18px;
+  --r-lg:   28px;
+  --r-pill: 980px;
+
+  /* Shadow */
+  --shadow-sm:  0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md:  0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg:  0 8px 40px rgba(0,0,0,0.12);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── 2. GLOBAL RESETS ───────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 17px;
+  line-height: 1.47059;
+  color: var(--apple-ink-1);
+  background: var(--apple-bg);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--apple-ink-1);
+  letter-spacing: -0.015em;
+  line-height: 1.08;
+  margin: 0 0 var(--sp-md);
+}
+
+p { color: var(--apple-ink-2); margin: 0 0 var(--sp-md); }
+
+a { color: var(--brand); text-decoration: none; }
+a:hover { color: var(--brand-h); }
+
+img { display: block; max-width: 100%; }
+
+/* ── 3. NAVBAR — APPLE FROSTED GLASS ────────────────────── */
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9000;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  transition: background 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+#navbar.scrolled {
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+}
+
+/* Collapse announcement bar to minimal */
+.announcement-bar {
+  background: var(--apple-ink-1) !important;
+  padding: 8px 0 !important;
+  font-size: 12px !important;
+  font-family: var(--font-text) !important;
+  letter-spacing: 0 !important;
+}
+
+.announcement-bar a {
+  color: #fff !important;
+  font-weight: 400 !important;
+}
+
+/* Main nav row */
+.nav-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+  height: 52px;
+}
+
+/* Logo */
+.nav-logo img {
+  height: 44px !important;
+  width: auto !important;
+  max-width: 200px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: var(--apple-ink-1) !important;
+  letter-spacing: 0 !important;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--brand) !important; }
+
+/* Nav right icons */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+}
+
+.nav-right a, .nav-right button {
+  font-size: 14px;
+  color: var(--apple-ink-1);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--r-sm);
+  transition: background 0.2s;
+}
+
+.nav-right a:hover, .nav-right button:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* CTA button in nav */
+.nav-cta {
+  background: var(--brand) !important;
+  color: #fff !important;
+  border-radius: var(--r-pill) !important;
+  padding: 8px 18px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  transition: background 0.2s !important;
+}
+
+.nav-cta:hover {
+  background: var(--brand-h) !important;
+}
+
+/* Category bar — slim it down */
+.cat-bar {
+  background: var(--apple-bg) !important;
+  border-bottom: 1px solid var(--apple-border) !important;
+  padding: 0 !important;
+}
+
+.cat-bar .container {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+}
+
+.cat-bar a {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: var(--apple-ink-2) !important;
+  padding: 10px 14px !important;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.cat-bar a:hover, .cat-bar a.active {
+  color: var(--apple-ink-1) !important;
+  border-bottom-color: var(--brand) !important;
+}
+
+/* Trust bar — remove entirely on desktop */
+.trust-bar {
+  display: none !important;
+}
+
+/* ── 4. HERO — FULL BLEED, PRODUCT-FIRST ────────────────── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--apple-bg);
+  padding: 120px var(--sp-md) var(--sp-xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Remove slider dots and arrows — single clean hero */
+.hero-dots, #hero-prev, #hero-next {
+  display: none !important;
+}
+
+/* Hero content */
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: var(--sp-sm);
+  display: block;
+}
+
+.hero-headline {
+  font-size: clamp(48px, 8vw, 96px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.0 !important;
+  color: var(--apple-ink-1) !important;
+  margin-bottom: var(--sp-md) !important;
+}
+
+.hero-headline em {
+  font-style: normal;
+  color: var(--brand);
+}
+
+.hero-sub {
+  font-size: 19px !important;
+  font-weight: 400 !important;
+  color: var(--apple-ink-2) !important;
+  line-height: 1.4 !important;
+  margin-bottom: var(--sp-lg) !important;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero CTAs */
+.hero-ctas {
+  display: flex;
+  gap: var(--sp-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--brand) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: var(--r-pill) !important;
+  padding: 14px 28px !important;
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+  transition: background 0.2s var(--ease-out), transform 0.2s var(--ease-out) !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: none !important;
+}
+
+.btn-primary:hover {
+  background: var(--brand-h) !important;
+  transform: scale(1.02) !important;
+  color: #fff !important;
+}
+
+.btn-secondary {
+  background: transparent !important;
+  color: var(--brand) !important;
+  border: 1.5px solid var(--brand) !important;
+  border-radius: var(--r-pill) !important;
+  padding: 14px 28px !important;
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+  transition: background 0.2s var(--ease-out), transform 0.2s var(--ease-out) !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: rgba(230,57,70,0.06) !important;
+  transform: scale(1.02) !important;
+}
+
+/* Hero product image */
+.hero-image-wrap {
+  margin-top: var(--sp-xl);
+  position: relative;
+}
+
+.hero-image-wrap img {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── 5. SECTION SYSTEM ──────────────────────────────────── */
+section {
+  padding: var(--sp-2xl) 0;
+}
+
+section:nth-child(even) {
+  background: var(--apple-bg-alt);
+}
+
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+}
+
+.section-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.section-headline {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--apple-ink-1);
+  line-height: 1.08;
+  margin-bottom: var(--sp-md);
+}
+
+.section-sub {
+  font-size: 19px;
+  color: var(--apple-ink-2);
+  line-height: 1.47;
+  max-width: 560px;
+}
+
+/* ── 6. STATS BAR — APPLE STYLE ─────────────────────────── */
+#stats {
+  background: var(--apple-ink-1) !important;
+  padding: var(--sp-xl) 0 !important;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-md);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+}
+
+.stat-item {
+  text-align: center;
+  padding: var(--sp-md);
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 56px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  display: block;
+}
+
+.stat-label {
+  font-size: 14px !important;
+  color: rgba(255,255,255,0.6) !important;
+  margin-top: 8px;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+/* ── 7. PRODUCT GRID — APPLE CARD STYLE ─────────────────── */
+#products {
+  background: var(--apple-bg) !important;
+  padding: var(--sp-2xl) 0 !important;
+}
+
+#products .section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--sp-xl);
+}
+
+/* Products layout — sidebar + grid */
+.products-layout {
+  display: flex !important;
+}
+.prod-sidebar {
+  display: none !important;
+}
+
+.prod-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+}
+
+.prod-card {
+  background: var(--apple-bg-card) !important;
+  border: none !important;
+  border-radius: var(--r-md) !important;
+  box-shadow: none !important;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out) !important;
+  cursor: pointer;
+}
+
+.prod-card:hover {
+  transform: translateY(-4px) scale(1.01) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.prod-img-wrap {
+  background: #fff;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-md);
+}
+
+.prod-img-wrap img {
+  max-height: 180px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.prod-card:hover .prod-img-wrap img {
+  transform: scale(1.05);
+}
+
+.prod-info {
+  padding: var(--sp-md) !important;
+}
+
+.prod-name {
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  color: var(--apple-ink-1) !important;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px !important;
+}
+
+.prod-price {
+  font-size: 15px !important;
+  color: var(--apple-ink-2) !important;
+  font-weight: 400 !important;
+  margin-bottom: var(--sp-sm) !important;
+}
+
+.prod-price strong {
+  font-size: 22px !important;
+  color: var(--apple-ink-1) !important;
+  font-weight: 600 !important;
+}
+
+/* Remove PRICE DROP badge clutter */
+.prod-badge {
+  display: none !important;
+}
+
+/* Discount shown as subtle text */
+.prod-discount {
+  font-size: 13px !important;
+  color: var(--brand) !important;
+  font-weight: 500 !important;
+}
+
+.prod-orig {
+  font-size: 13px !important;
+  color: var(--apple-ink-3) !important;
+  text-decoration: line-through;
+}
+
+.prod-orig-note {
+  text-decoration: none !important;
+  font-style: italic;
+  color: var(--apple-ink-3) !important;
+}
+
+/* Get Quote button — Apple pill style */
+.prod-cta {
+  display: block !important;
+  width: 100% !important;
+  background: var(--apple-ink-1) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: var(--r-pill) !important;
+  padding: 12px 20px !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+  cursor: pointer;
+  transition: background 0.2s var(--ease-out) !important;
+  text-decoration: none;
+  box-shadow: none !important;
+}
+
+.prod-cta:hover {
+  background: var(--brand) !important;
+  color: #fff !important;
+}
+
+/* Price strip — make it minimal */
+.price-strip {
+  background: var(--apple-bg-alt) !important;
+  border-bottom: 1px solid var(--apple-border) !important;
+  padding: var(--sp-md) 0 !important;
+}
+
+.price-strip-item {
+  border-right: 1px solid var(--apple-border) !important;
+}
+
+.price-strip-item:last-child { border-right: none !important; }
+
+.price-strip-name {
+  font-size: 13px !important;
+  color: var(--apple-ink-2) !important;
+  font-weight: 400 !important;
+}
+
+.price-strip-price {
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  color: var(--apple-ink-1) !important;
+}
+
+.price-strip-discount {
+  font-size: 12px !important;
+  color: var(--brand) !important;
+  font-weight: 500 !important;
+}
+
+/* ── 8. PROMOTIONS — CLEAN CARDS ────────────────────────── */
+#promotions {
+  background: var(--apple-bg-alt) !important;
+  padding: var(--sp-2xl) 0 !important;
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+}
+
+.promo-card {
+  background: var(--apple-bg) !important;
+  border-radius: var(--r-md) !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm) !important;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.promo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md) !important;
+}
+
+.promo-card-img {
+  aspect-ratio: 16/9;
+  background: var(--apple-bg-alt);
+  overflow: hidden;
+}
+
+.promo-card-body {
+  padding: var(--sp-md) !important;
+}
+
+.promo-card-title {
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  color: var(--apple-ink-1) !important;
+  margin-bottom: 8px !important;
+}
+
+.promo-card-sub {
+  font-size: 15px !important;
+  color: var(--apple-ink-2) !important;
+}
+
+/* ── 9. COMMITMENT / FEATURE ROWS ───────────────────────── */
+#commitment {
+  background: var(--apple-bg) !important;
+  padding: var(--sp-2xl) 0 !important;
+}
+
+.commitment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+}
+
+.commitment-item {
+  text-align: center;
+  padding: var(--sp-lg) var(--sp-md);
+  background: var(--apple-bg-alt) !important;
+  border-radius: var(--r-md);
+  transition: transform 0.3s var(--ease-out);
+}
+
+.commitment-item:hover { transform: translateY(-4px); }
+
+.commitment-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--brand) !important;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--sp-md);
+  font-size: 24px;
+  color: #fff;
+}
+
+.commitment-title {
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  color: var(--apple-ink-1) !important;
+  margin-bottom: 8px !important;
+}
+
+.commitment-text {
+  font-size: 15px !important;
+  color: var(--apple-ink-2) !important;
+  line-height: 1.5 !important;
+}
+
+/* ── 10. REVIEWS — LARGE QUOTE STYLE ───────────────────── */
+#reviews {
+  background: var(--apple-bg-alt) !important;
+  padding: var(--sp-2xl) 0 !important;
+}
+
+.review-card {
+  background: var(--apple-bg) !important;
+  border-radius: var(--r-md) !important;
+  padding: var(--sp-lg) !important;
+  box-shadow: var(--shadow-sm) !important;
+  border: none !important;
+}
+
+.review-text {
+  font-size: 17px !important;
+  color: var(--apple-ink-1) !important;
+  line-height: 1.6 !important;
+  font-style: italic;
+  margin-bottom: var(--sp-md) !important;
+}
+
+.review-text::before {
+  content: '\201C';
+  font-size: 48px;
+  color: var(--brand);
+  line-height: 0;
+  vertical-align: -0.4em;
+  margin-right: 4px;
+  font-style: normal;
+}
+
+.review-author {
+  font-weight: 600 !important;
+  color: var(--apple-ink-1) !important;
+  font-size: 15px !important;
+}
+
+.review-source {
+  font-size: 13px !important;
+  color: var(--apple-ink-3) !important;
+}
+
+/* ── 11. ABOUT / FEATURES ───────────────────────────────── */
+#about {
+  background: var(--apple-bg) !important;
+  padding: var(--sp-2xl) 0 !important;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-lg);
+  margin-top: var(--sp-xl);
+}
+
+.about-feature {
+  display: flex;
+  gap: var(--sp-md);
+  align-items: flex-start;
+}
+
+.about-feature-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  background: var(--apple-bg-alt);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--brand);
+}
+
+.about-feature-title {
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  color: var(--apple-ink-1) !important;
+  margin-bottom: 4px !important;
+}
+
+.about-feature-text {
+  font-size: 15px !important;
+  color: var(--apple-ink-2) !important;
+  line-height: 1.5 !important;
+}
+
+/* ── 12. HOW IT WORKS ───────────────────────────────────── */
+#how-it-works {
+  background: var(--apple-bg-alt) !important;
+  padding: var(--sp-2xl) 0 !important;
+}
+
+.hiw-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-md);
+  max-width: 1100px;
+  margin: var(--sp-xl) auto 0;
+  padding: 0 var(--sp-md);
+  position: relative;
+}
+
+.hiw-item {
+  text-align: center;
+  padding: var(--sp-md);
+}
+
+.hiw-num {
+  width: 52px;
+  height: 52px;
+  background: var(--brand) !important;
+  color: #fff !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  margin: 0 auto var(--sp-md);
+  box-shadow: none !important;
+}
+
+.hiw-title {
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  color: var(--apple-ink-1) !important;
+  margin-bottom: 8px !important;
+}
+
+.hiw-text {
+  font-size: 15px !important;
+  color: var(--apple-ink-2) !important;
+}
+
+/* ── 13. BLOG ───────────────────────────────────────────── */
+#blog {
+  background: var(--apple-bg) !important;
+  padding: var(--sp-2xl) 0 !important;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: var(--sp-xl) auto 0;
+  padding: 0 var(--sp-md);
+}
+
+.blog-card {
+  background: var(--apple-bg-alt) !important;
+  border-radius: var(--r-md) !important;
+  overflow: hidden;
+  border: none !important;
+  box-shadow: none !important;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md) !important;
+}
+
+.blog-img {
+  aspect-ratio: 16/9;
+  background: var(--apple-border);
+  overflow: hidden;
+}
+
+.blog-body {
+  padding: var(--sp-md) !important;
+}
+
+.blog-date {
+  font-size: 12px !important;
+  color: var(--apple-ink-3) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px !important;
+}
+
+.blog-title {
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  color: var(--apple-ink-1) !important;
+  margin-bottom: 8px !important;
+  line-height: 1.3 !important;
+}
+
+.blog-excerpt {
+  font-size: 15px !important;
+  color: var(--apple-ink-2) !important;
+  line-height: 1.5 !important;
+}
+
+.blog-read-more {
+  font-size: 15px !important;
+  color: var(--brand) !important;
+  font-weight: 500 !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: var(--sp-sm) !important;
+}
+
+/* ── 14. FOOTER ─────────────────────────────────────────── */
+#footer {
+  background: var(--apple-ink-1) !important;
+  color: rgba(255,255,255,0.7) !important;
+  padding: var(--sp-2xl) 0 var(--sp-lg) !important;
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: var(--sp-lg);
+}
+
+.footer-brand-col .footer-logo img {
+  height: 32px;
+  filter: brightness(0) invert(1);
+  margin-bottom: var(--sp-md);
+}
+
+.footer-col-title {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  margin-bottom: var(--sp-sm) !important;
+}
+
+.footer-col a {
+  font-size: 13px !important;
+  color: rgba(255,255,255,0.6) !important;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover { color: #fff !important; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1) !important;
+  margin-top: var(--sp-lg) !important;
+  padding-top: var(--sp-md) !important;
+}
+
+.footer-bottom-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-sm);
+}
+
+.footer-copy {
+  font-size: 12px !important;
+  color: rgba(255,255,255,0.4) !important;
+}
+
+/* ── 15. SCROLL REVEAL ANIMATIONS ───────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── 16. CONTACT SECTION ────────────────────────────────── */
+#contact {
+  background: var(--apple-bg-alt) !important;
+  padding: var(--sp-2xl) 0 !important;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background: var(--apple-bg) !important;
+  border: 1px solid var(--apple-border) !important;
+  border-radius: var(--r-sm) !important;
+  padding: 12px 16px !important;
+  font-size: 15px !important;
+  color: var(--apple-ink-1) !important;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none !important;
+  border-color: var(--brand) !important;
+  box-shadow: 0 0 0 3px rgba(230,57,70,0.1) !important;
+}
+
+/* ── 17. CLIENTS / LOGOS ────────────────────────────────── */
+#clients {
+  background: var(--apple-bg) !important;
+  padding: var(--sp-xl) 0 !important;
+  border-top: 1px solid var(--apple-border);
+  border-bottom: 1px solid var(--apple-border);
+}
+
+/* ── 18. CUSTOM QUOTE CTA ───────────────────────────────── */
+#custom-quote {
+  background: var(--apple-ink-1) !important;
+  padding: var(--sp-2xl) 0 !important;
+}
+
+#custom-quote h2 {
+  color: #fff !important;
+  font-size: clamp(28px, 4vw, 48px) !important;
+}
+
+#custom-quote p {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+/* ── 19. PRODUCT PAGE — CONFIGURATOR ────────────────────── */
+.product-page {
+  background: var(--apple-bg);
+  padding-top: 100px;
+}
+
+.product-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--sp-xl) var(--sp-md);
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--sp-xl);
+  align-items: start;
+}
+
+.product-image-col img {
+  width: 100%;
+  border-radius: var(--r-md);
+  background: var(--apple-bg-alt);
+}
+
+.product-config-col {
+  position: sticky;
+  top: 80px;
+}
+
+.product-name-h1 {
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--apple-ink-1) !important;
+  margin-bottom: var(--sp-sm) !important;
+}
+
+.product-from-price {
+  font-size: 28px !important;
+  font-weight: 600 !important;
+  color: var(--apple-ink-1) !important;
+}
+
+.product-from-price .orig {
+  font-size: 17px !important;
+  color: var(--apple-ink-3) !important;
+  text-decoration: line-through;
+  font-weight: 400 !important;
+}
+
+.product-from-price .save {
+  font-size: 15px !important;
+  color: var(--brand) !important;
+  font-weight: 500 !important;
+}
+
+/* Option dropdowns */
+.config-option select {
+  background: var(--apple-bg-alt) !important;
+  border: 1px solid var(--apple-border) !important;
+  border-radius: var(--r-sm) !important;
+  padding: 10px 14px !important;
+  font-size: 15px !important;
+  color: var(--apple-ink-1) !important;
+  width: 100%;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236e6e73' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 14px center !important;
+  cursor: pointer;
+}
+
+/* Pricing table */
+.pricing-table {
+  border-radius: var(--r-md) !important;
+  overflow: hidden;
+  border: 1px solid var(--apple-border) !important;
+  box-shadow: none !important;
+}
+
+.pricing-table th {
+  background: var(--apple-bg-alt) !important;
+  color: var(--apple-ink-2) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 12px 16px !important;
+  border-bottom: 1px solid var(--apple-border) !important;
+}
+
+.pricing-table td {
+  padding: 12px 16px !important;
+  font-size: 15px !important;
+  color: var(--apple-ink-1) !important;
+  border-bottom: 1px solid var(--apple-border) !important;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.pricing-table tr:last-child td { border-bottom: none !important; }
+
+.pricing-table td:hover {
+  background: rgba(230,57,70,0.05) !important;
+}
+
+.pricing-table td.selected {
+  background: rgba(230,57,70,0.08) !important;
+  color: var(--brand) !important;
+  font-weight: 600 !important;
+}
+
+/* Order summary */
+.order-summary {
+  background: var(--apple-bg-alt) !important;
+  border-radius: var(--r-md) !important;
+  padding: var(--sp-md) !important;
+  border: 1px solid var(--apple-border) !important;
+  box-shadow: none !important;
+}
+
+.order-summary-title {
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  color: var(--apple-ink-1) !important;
+  margin-bottom: var(--sp-md) !important;
+}
+
+.order-total {
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  color: var(--apple-ink-1) !important;
+}
+
+/* ── 20. DEEP PAGES — PAGE HERO ─────────────────────────── */
+.page-hero {
+  background: var(--apple-ink-1) !important;
+  padding: 120px var(--sp-md) var(--sp-xl) !important;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: clamp(36px, 5vw, 64px) !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: var(--sp-md) !important;
+}
+
+.page-hero p {
+  font-size: 19px !important;
+  color: rgba(255,255,255,0.7) !important;
+  max-width: 520px;
+  margin: 0 auto !important;
+}
+
+.breadcrumb {
+  font-size: 13px !important;
+  color: rgba(255,255,255,0.5) !important;
+  margin-bottom: var(--sp-md) !important;
+}
+
+.breadcrumb a { color: rgba(255,255,255,0.5) !important; }
+.breadcrumb a:hover { color: #fff !important; }
+
+/* ── 21. HELP WIDGET ────────────────────────────────────── */
+#help-widget {
+  width: 320px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.18) !important;
+  border: none !important;
+  overflow: hidden !important;
+  bottom: 28px !important;
+  left: 28px !important;
+}
+
+/* Header — full red pill */
+#help-widget .help-widget-header {
+  background: var(--brand) !important;
+  border-radius: 20px !important;
+  padding: 16px 18px !important;
+  gap: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+#help-widget .help-widget-avatar {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  background: rgba(255,255,255,0.2) !important;
+  border-radius: 50% !important;
+  font-size: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+#help-widget .help-widget-title {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+#help-widget .help-widget-title strong {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  display: block !important;
+  line-height: 1.3 !important;
+}
+
+#help-widget .help-widget-title span {
+  font-size: 12px !important;
+  color: rgba(255,255,255,0.85) !important;
+  display: block !important;
+}
+
+#help-widget .help-widget-close {
+  color: rgba(255,255,255,0.85) !important;
+  font-size: 15px !important;
+  flex-shrink: 0 !important;
+  padding: 4px !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+/* Body — white card below header */
+#help-widget .help-widget-body {
+  background: #fff !important;
+  padding: 20px 18px 18px !important;
+}
+
+#help-widget .help-widget-body p {
+  font-size: 14px !important;
+  color: #555 !important;
+  line-height: 1.6 !important;
+  margin-bottom: 16px !important;
+}
+
+/* Action buttons — both fit side by side */
+#help-widget .help-widget-actions {
+  display: flex !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
+
+#help-widget .help-widget-actions a {
+  flex: 1 1 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  padding: 12px 10px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border-radius: 980px !important;
+  white-space: nowrap !important;
+  min-width: 0 !important;
+  text-decoration: none !important;
+  transition: transform 0.15s ease, background 0.15s ease !important;
+}
+
+#help-widget .help-widget-actions a.btn-primary {
+  background: var(--brand) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#help-widget .help-widget-actions a.btn-primary:hover {
+  background: var(--brand-h) !important;
+  transform: scale(1.02) !important;
+}
+
+#help-widget .help-widget-actions a.btn-outline {
+  background: #f5f5f7 !important;
+  color: #1d1d1f !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#help-widget .help-widget-actions a.btn-outline:hover {
+  background: #e8e8ed !important;
+  transform: scale(1.02) !important;
+}
+
+#help-widget-toggle {
+  background: var(--brand) !important;
+  border-radius: var(--r-pill) !important;
+  box-shadow: var(--shadow-md) !important;
+  border: none !important;
+}
+
+/* ── 22. CHAT BOT ───────────────────────────────────────── */
+#printbot-toggle {
+  background: var(--apple-ink-1) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+#printbot-window {
+  border-radius: var(--r-md) !important;
+  box-shadow: var(--shadow-lg) !important;
+  border: none !important;
+}
+
+/* ── 23. NEWSLETTER ─────────────────────────────────────── */
+.newsletter-section {
+  background: var(--apple-bg-alt) !important;
+  padding: var(--sp-xl) 0 !important;
+  border-top: 1px solid var(--apple-border) !important;
+}
+
+.newsletter-form input[type="email"] {
+  background: var(--apple-bg) !important;
+  border: 1px solid var(--apple-border) !important;
+  border-radius: var(--r-pill) !important;
+  padding: 12px 20px !important;
+  font-size: 15px !important;
+}
+
+.newsletter-form button {
+  background: var(--brand) !important;
+  border-radius: var(--r-pill) !important;
+  padding: 12px 24px !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  border: none !important;
+  color: #fff !important;
+}
+
+/* ── 24. RESPONSIVE ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .prod-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .promo-grid { grid-template-columns: 1fr !important; }
+  .commitment-grid { grid-template-columns: 1fr !important; }
+  .hiw-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .blog-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .footer-grid { grid-template-columns: 1fr 1fr !important; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .about-features { grid-template-columns: 1fr !important; }
+  .product-layout { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 600px) {
+  .prod-grid { grid-template-columns: 1fr !important; }
+  .blog-grid { grid-template-columns: 1fr !important; }
+  .hiw-grid { grid-template-columns: 1fr !important; }
+  .footer-grid { grid-template-columns: 1fr !important; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .hero-headline { font-size: 42px !important; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+}
+
+/* ── 25. REMOVE GOOGLE FONTS DEPENDENCY ─────────────────── */
+/* Override any Poppins/Google Font references */
+body, h1, h2, h3, h4, h5, h6, p, a, button, input, select, textarea {
+  font-family: var(--font-text) !important;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display) !important;
+}
+
+/* ── 26. NEW HERO SECTION ───────────────────────────────── */
+#hero {
+  min-height: 100vh !important;
+  background: var(--apple-bg) !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px var(--sp-md) var(--sp-xl);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-xl);
+  align-items: center;
+  width: 100%;
+}
+
+.hero-content {
+  max-width: 560px;
+}
+
+.hero-eyebrow {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: var(--brand) !important;
+  margin-bottom: var(--sp-sm) !important;
+  display: block !important;
+}
+
+.hero-headline {
+  font-size: clamp(40px, 5vw, 72px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.05 !important;
+  color: var(--apple-ink-1) !important;
+  margin-bottom: var(--sp-md) !important;
+}
+
+.hero-headline em {
+  font-style: normal !important;
+  color: var(--brand) !important;
+}
+
+.hero-sub {
+  font-size: 19px !important;
+  font-weight: 400 !important;
+  color: var(--apple-ink-2) !important;
+  line-height: 1.47 !important;
+  margin-bottom: var(--sp-lg) !important;
+}
+
+.hero-ctas {
+  display: flex !important;
+  gap: var(--sp-sm) !important;
+  flex-wrap: wrap !important;
+  margin-bottom: var(--sp-lg) !important;
+}
+
+.hero-trust-row {
+  display: flex;
+  gap: var(--sp-md);
+  flex-wrap: wrap;
+}
+
+.hero-trust-row span {
+  font-size: 13px !important;
+  color: var(--apple-ink-2) !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-trust-row i {
+  color: var(--brand) !important;
+  font-size: 12px !important;
+}
+
+/* Hero product showcase grid */
+.hero-product-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.hero-product-card {
+  background: var(--apple-bg-alt) !important;
+  border-radius: var(--r-md) !important;
+  overflow: hidden;
+  text-decoration: none !important;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  display: block;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.hero-product-card:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.hero-product-img {
+  aspect-ratio: 4/3;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-md);
+}
+
+.hero-product-img img {
+  max-height: 120px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.hero-product-card:hover .hero-product-img img {
+  transform: scale(1.08);
+}
+
+.hero-product-info {
+  padding: 12px var(--sp-md) !important;
+  background: var(--apple-bg-alt) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.hero-product-info span {
+  font-size: 14px !important;
+  color: var(--apple-ink-2) !important;
+  font-weight: 400 !important;
+}
+
+.hero-product-info strong {
+  font-size: 15px !important;
+  color: var(--apple-ink-1) !important;
+  font-weight: 600 !important;
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    padding-top: 100px !important;
+    text-align: center !important;
+  }
+  .hero-ctas { justify-content: center !important; }
+  .hero-trust-row { justify-content: center !important; }
+  .hero-product-showcase { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 480px) {
+  .hero-product-showcase { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+}
+
+/* ── 27. NAVBAR SCROLLED STATE ──────────────────────────── */
+/* Override the old multi-row navbar to be cleaner */
+#navbar .nav-top-bar {
+  background: var(--apple-ink-1) !important;
+  padding: 6px 0 !important;
+  font-size: 12px !important;
+}
+
+#navbar .nav-top-bar .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Main navbar row */
+#navbar .nav-main-row {
+  background: rgba(255,255,255,0.92) !important;
+  backdrop-filter: saturate(180%) blur(20px) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+  border-bottom: 1px solid var(--apple-border) !important;
+  padding: 0 !important;
+}
+
+#navbar .nav-main-row .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo size */
+.nav-logo img, .navbar-brand img {
+  height: 36px !important;
+  width: auto !important;
+}
+
+/* Nav links */
+.nav-links li a, .navbar-nav .nav-link {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: var(--apple-ink-1) !important;
+  letter-spacing: 0 !important;
+  padding: 6px 12px !important;
+  border-radius: var(--r-sm) !important;
+  transition: background 0.2s, color 0.2s !important;
+}
+
+.nav-links li a:hover, .navbar-nav .nav-link:hover {
+  background: rgba(0,0,0,0.05) !important;
+  color: var(--brand) !important;
+}
+
+/* Get a Quote button in nav */
+.btn-get-quote, .nav-quote-btn {
+  background: var(--brand) !important;
+  color: #fff !important;
+  border-radius: var(--r-pill) !important;
+  padding: 8px 18px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border: none !important;
+  transition: background 0.2s !important;
+}
+
+.btn-get-quote:hover, .nav-quote-btn:hover {
+  background: var(--brand-h) !important;
+  color: #fff !important;
+}
+
+/* ── 28. SECTION HEADERS UNIFIED ───────────────────────── */
+.section-header, .section-title-block {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--sp-xl);
+}
+
+.section-header h2, .section-title-block h2 {
+  font-size: clamp(28px, 4vw, 48px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.015em !important;
+  color: var(--apple-ink-1) !important;
+  margin-bottom: var(--sp-sm) !important;
+}
+
+.section-header p, .section-title-block p {
+  font-size: 19px !important;
+  color: var(--apple-ink-2) !important;
+  line-height: 1.47 !important;
+}
+
+/* ── 29. SERVICES SECTION ───────────────────────────────── */
+#services {
+  background: var(--apple-bg-alt) !important;
+  padding: var(--sp-2xl) 0 !important;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: var(--sp-xl) auto 0;
+  padding: 0 var(--sp-md);
+}
+
+.service-card {
+  background: var(--apple-bg) !important;
+  border-radius: var(--r-md) !important;
+  overflow: hidden;
+  border: none !important;
+  box-shadow: none !important;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  text-decoration: none !important;
+  display: block;
+  color: inherit !important;
+}
+
+.service-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.service-card-img {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--apple-bg-alt);
+}
+
+.service-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.service-card:hover .service-card-img img {
+  transform: scale(1.05);
+}
+
+.service-card-body {
+  padding: var(--sp-md) !important;
+}
+
+.service-card-title {
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  color: var(--apple-ink-1) !important;
+  margin-bottom: 8px !important;
+}
+
+.service-card-desc {
+  font-size: 15px !important;
+  color: var(--apple-ink-2) !important;
+  line-height: 1.5 !important;
+  margin-bottom: var(--sp-md) !important;
+}
+
+.service-card-footer {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.service-from-price {
+  background: rgba(230,57,70,0.08) !important;
+  color: var(--brand) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  padding: 4px 12px !important;
+  border-radius: var(--r-pill) !important;
+}
+
+.service-cta {
+  font-size: 15px !important;
+  color: var(--brand) !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── 30. HERO LAYOUT FIXES ──────────────────────────────── */
+/* Ensure the hero fills the viewport and product grid shows all 4 cards */
+#hero {
+  min-height: calc(100vh - 160px) !important;
+  padding-top: 0 !important;
+}
+
+.hero-inner {
+  min-height: calc(100vh - 160px) !important;
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+.hero-product-showcase {
+  grid-template-columns: 1fr 1fr !important;
+  grid-template-rows: 1fr 1fr !important;
+  gap: 12px !important;
+  align-self: center !important;
+}
+
+.hero-product-img {
+  aspect-ratio: 3/2 !important;
+  padding: 16px !important;
+}
+
+.hero-product-img img {
+  max-height: 90px !important;
+}
+
+.hero-product-info {
+  padding: 10px 14px !important;
+}
+
+.hero-product-info span {
+  font-size: 13px !important;
+}
+
+.hero-product-info strong {
+  font-size: 14px !important;
+}
+
+/* Trust row inline on desktop */
+.hero-trust-row {
+  gap: 20px !important;
+}
+
+.hero-trust-row span {
+  font-size: 13px !important;
+  white-space: nowrap !important;
+}
+
+/* ── 31. NAVBAR STREAMLINE ──────────────────────────────── */
+/* Reduce the navbar to feel less cluttered */
+#navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+}
+
+/* Shrink the top announcement bar */
+.nav-top-bar {
+  font-size: 12px !important;
+  padding: 5px 0 !important;
+}
+
+/* Tighten the category bar */
+.nav-cat-bar {
+  padding: 0 !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+}
+
+.nav-cat-bar .container {
+  padding: 0 var(--sp-md) !important;
+}
+
+.nav-cat-bar a {
+  font-size: 12px !important;
+  padding: 8px 10px !important;
+  white-space: nowrap !important;
+}
+
+/* Tighten the trust bar */
+.nav-trust-bar {
+  padding: 4px 0 !important;
+  font-size: 11px !important;
+}
+
+/* Main nav row height */
+.nav-main-row {
+  height: auto !important;
+}
+
+.nav-main-row .container {
+  height: 56px !important;
+  padding: 0 var(--sp-md) !important;
+}
+
+/* Logo */
+.nav-logo img {
+  height: 32px !important;
+}
+
+/* Reduce hero top padding to account for tall navbar */
+.hero-inner {
+  padding-top: 20px !important;
+}
+
+/* ── 32. PRODUCT GRID APPLE STYLE ───────────────────────── */
+#products {
+  background: var(--apple-bg-alt) !important;
+  padding: var(--sp-2xl) 0 !important;
+}
+
+.prod-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+}
+
+.prod-card {
+  background: var(--apple-bg) !important;
+  border-radius: var(--r-md) !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out) !important;
+  cursor: pointer !important;
+}
+
+.prod-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.prod-img {
+  aspect-ratio: 4/3 !important;
+  background: var(--apple-bg-alt) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 20px !important;
+  overflow: hidden !important;
+}
+
+.prod-img img {
+  max-height: 120px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  transition: transform 0.4s var(--ease-out) !important;
+}
+
+.prod-card:hover .prod-img img {
+  transform: scale(1.06) !important;
+}
+
+.prod-body {
+  padding: 16px !important;
+}
+
+.prod-name {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--apple-ink-1) !important;
+  margin-bottom: 6px !important;
+}
+
+.prod-price {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: var(--brand) !important;
+  letter-spacing: -0.01em !important;
+}
+
+.prod-orig {
+  font-size: 13px !important;
+  color: var(--apple-ink-3) !important;
+  text-decoration: line-through !important;
+}
+
+.prod-orig-note {
+  text-decoration: none !important;
+  font-style: italic !important;
+  color: var(--apple-ink-3) !important;
+}
+
+.prod-discount {
+  background: rgba(230,57,70,0.1) !important;
+  color: var(--brand) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  padding: 2px 8px !important;
+  border-radius: var(--r-pill) !important;
+  margin-left: 6px !important;
+}
+
+.btn-get-quote-card {
+  display: block !important;
+  width: 100% !important;
+  background: var(--brand) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: var(--r-pill) !important;
+  padding: 10px 0 !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+  margin-top: 12px !important;
+  text-decoration: none !important;
+  transition: background 0.2s !important;
+}
+
+.btn-get-quote-card:hover {
+  background: var(--brand-h) !important;
+  color: #fff !important;
+}
+
+@media (max-width: 900px) {
+  .prod-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 480px) {
+  .prod-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── REAL LOGO OVERRIDE ─────────────────────────────────── */
+/* The real Print Pro logo is landscape — set appropriate height */
+.logo-img,
+.nav-logo img,
+.nav-logo .logo-img,
+.navbar-brand img {
+  height: 44px !important;
+  width: auto !important;
+  max-width: 220px !important;
+  object-fit: contain !important;
+  filter: none !important;
+  display: block !important;
+}
+
+/* Footer logo slightly larger */
+.footer-logo {
+  height: 48px !important;
+  width: auto !important;
+  max-width: 200px !important;
+  object-fit: contain !important;
+  filter: brightness(0) invert(1) !important; /* white version for dark footer */
+}
+
+/* ── HERO PRODUCT CARDS VISIBILITY FIX ─────────────────── */
+/* Cards in the hero are above the fold — force them visible immediately */
+.hero-product-showcase .reveal,
+.hero-product-showcase .reveal-delay-1,
+.hero-product-showcase .reveal-delay-2,
+.hero-product-showcase .reveal-delay-3 {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+/* Ensure hero product showcase is a 2x2 grid */
+.hero-product-showcase {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  grid-template-rows: auto auto !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 420px !important;
+}
+
+.hero-product-card {
+  display: flex !important;
+  flex-direction: column !important;
+  background: #fff !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.hero-product-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+
+.hero-product-img {
+  background: #f5f5f7 !important;
+  padding: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 90px !important;
+}
+
+.hero-product-img img {
+  max-height: 70px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+.hero-product-info {
+  padding: 10px 12px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+.hero-product-info span {
+  font-size: 12px !important;
+  color: #6e6e73 !important;
+  font-weight: 400 !important;
+}
+
+.hero-product-info strong {
+  font-size: 15px !important;
+  color: #1d1d1f !important;
+  font-weight: 600 !important;
+}
+
+/* ── LOGO VISIBILITY FIX ────────────────────────────────── */
+/* Ensure the nav-logo link has proper dimensions */
+.nav-logo {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  text-decoration: none !important;
+  min-width: 120px !important;
+}
+
+.nav-logo img,
+.nav-logo .logo-img {
+  height: 44px !important;
+  width: auto !important;
+  max-width: 220px !important;
+  object-fit: contain !important;
+  display: block !important;
+  filter: none !important;
+}
+
+/* Hero layout: left content + right showcase side by side */
+.hero-inner {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 48px !important;
+  align-items: center !important;
+  min-height: calc(100vh - 200px) !important;
+  padding: 60px var(--sp-md) !important;
+}
+
+@media (max-width: 768px) {
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding: 40px var(--sp-md) !important;
+  }
+  .hero-product-showcase {
+    max-width: 100% !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   QUALITY POLISH v40 — Elevate to 9.5+/10
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── 1. STATS BAR — Clean dark background, no brownish tint ── */
+#stats-bar {
+  background: #1d1d1f !important;
+  padding: 0 !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+#stats-bar .stats-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+}
+#stats-bar .stat-item {
+  padding: 48px 24px !important;
+  border-right: 1px solid rgba(255,255,255,0.08) !important;
+}
+#stats-bar .stat-item:last-child {
+  border-right: none !important;
+}
+#stats-bar .stat-number {
+  font-size: clamp(40px, 4.5vw, 60px) !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1 !important;
+}
+#stats-bar .stat-label {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.55) !important;
+  margin-top: 8px !important;
+}
+
+/* ── 2. CATEGORY FILTER — Prominent active state ─────────── */
+.prod-cat-btn {
+  padding: 12px 20px !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #374151 !important;
+  border-left: 3px solid transparent !important;
+  transition: all 160ms ease !important;
+}
+.prod-cat-btn:hover {
+  color: #e8192c !important;
+  background: #fff5f5 !important;
+  border-left-color: rgba(232,25,44,0.3) !important;
+}
+.prod-cat-btn.active {
+  color: #e8192c !important;
+  background: #fff0f0 !important;
+  font-weight: 700 !important;
+  border-left-color: #e8192c !important;
+}
+.prod-cat-btn.active::after {
+  content: '' !important;
+}
+
+/* ── 3. PRODUCT CARD — Better pricing hierarchy ───────────── */
+.prod-price {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: #1d1d1f !important;
+  letter-spacing: -0.02em !important;
+}
+.prod-price strong {
+  color: #e8192c !important;
+}
+.prod-discount {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #15803d !important;
+  background: #dcfce7 !important;
+  padding: 2px 8px !important;
+  border-radius: 20px !important;
+}
+.prod-orig {
+  font-size: 12px !important;
+  color: #9ca3af !important;
+  text-decoration: line-through !important;
+}
+.prod-orig-note {
+  font-size: 11px !important;
+  color: #6b7280 !important;
+  text-decoration: none !important;
+  font-style: italic !important;
+}
+.prod-cta {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 9px 18px !important;
+  border-radius: 20px !important;
+  background: #e8192c !important;
+  color: #fff !important;
+  display: inline-block !important;
+  margin-top: 12px !important;
+  transition: background 0.2s, transform 0.15s !important;
+}
+.prod-cta:hover {
+  background: #c0121e !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ── 4. REVIEW STARS — Golden yellow, visible ─────────────── */
+.review-stars {
+  color: #f5a623 !important;
+  font-size: 14px !important;
+  gap: 2px !important;
+  margin-bottom: 12px !important;
+}
+.review-stars i {
+  color: #f5a623 !important;
+}
+.rrh-stars i {
+  color: #f5a623 !important;
+}
+
+/* ── 5. HOW IT WORKS — Icon circle visible ────────────────── */
+.hiw-icon {
+  width: 64px !important;
+  height: 64px !important;
+  background: #e8192c !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 16px !important;
+  font-size: 24px !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(232,25,44,0.25) !important;
+}
+.hiw-num {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #e8192c !important;
+  letter-spacing: 0.1em !important;
+  margin-bottom: 8px !important;
+  text-transform: uppercase !important;
+}
+
+/* ── 6. PAGE HERO — Premium gradient, not flat black ─────── */
+.page-hero {
+  background: linear-gradient(135deg, #1d1d1f 0%, #2d2d2f 50%, #1a1a2e 100%) !important;
+  padding: 100px var(--sp-md) 72px !important;
+  text-align: left !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.page-hero::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: radial-gradient(ellipse at 70% 50%, rgba(232,25,44,0.08) 0%, transparent 60%) !important;
+  pointer-events: none !important;
+}
+.page-hero .container {
+  position: relative !important;
+  z-index: 1 !important;
+}
+.page-hero h1 {
+  font-size: clamp(32px, 5vw, 56px) !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 16px !important;
+  line-height: 1.1 !important;
+}
+.page-hero p {
+  font-size: 18px !important;
+  color: rgba(255,255,255,0.72) !important;
+  max-width: 560px !important;
+  margin: 0 0 28px !important;
+  line-height: 1.6 !important;
+}
+.page-breadcrumb {
+  font-size: 13px !important;
+  color: rgba(255,255,255,0.45) !important;
+  margin-bottom: 20px !important;
+}
+.page-breadcrumb a {
+  color: rgba(255,255,255,0.45) !important;
+}
+.page-breadcrumb a:hover {
+  color: #fff !important;
+}
+
+/* ── 7. PRODUCT PAGE FOOTER — Consistent branding ────────── */
+.prod-footer {
+  background: #1d1d1f !important;
+  color: rgba(255,255,255,0.5) !important;
+  font-size: 13px !important;
+  text-align: center !important;
+  padding: 24px !important;
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+}
+.prod-footer a {
+  color: rgba(255,255,255,0.7) !important;
+}
+.prod-footer a:hover {
+  color: #fff !important;
+}
+
+/* ── 8. SEARCH BAR — Cleaner focus state ─────────────────── */
+#nav-search-input:focus {
+  outline: none !important;
+  border-color: #e8192c !important;
+  box-shadow: 0 0 0 3px rgba(232,25,44,0.12) !important;
+}
+
+/* ── 9. PRODUCT CARD HOVER — Subtle lift ─────────────────── */
+.prod-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.prod-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12) !important;
+}
+
+/* ── 10. ANNOUNCEMENT BAR — Consistent red ───────────────── */
+#announcement-bar {
+  background: #e8192c !important;
+}
+
+/* ── 11. SECTION HEADERS — Tighter, more premium ─────────── */
+.section-header h2 {
+  letter-spacing: -0.03em !important;
+}
+.eyebrow {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #e8192c !important;
+}
+
+/* ── 12. PRODUCTS SIDEBAR — Show it properly ─────────────── */
+.products-sidebar {
+  display: block !important;
+  width: 210px !important;
+  flex-shrink: 0 !important;
+  background: #f9f9f9 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  align-self: start !important;
+  border: 1px solid #e5e7eb !important;
+}
+.products-layout {
+  display: flex !important;
+  gap: 24px !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 0 var(--sp-md) !important;
+  align-items: start !important;
+}
+/* Target the actual HTML class used in index.html */
+.products-grid {
+  flex: 1 !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+}
+@media (max-width: 900px) {
+  .products-layout { flex-direction: column !important; }
+  .products-sidebar { width: 100% !important; display: flex !important; flex-wrap: wrap !important; gap: 6px !important; padding: 12px !important; }
+  .prod-cat-btn { width: auto !important; border-left: none !important; border-radius: 20px !important; padding: 7px 14px !important; font-size: 12px !important; border: 1.5px solid #e5e7eb !important; }
+  .prod-cat-btn.active { border-color: #e8192c !important; background: #fff0f0 !important; }
+  .products-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ── DARK SECTION TEXT VISIBILITY FIXES ─────────────────────
+   Sections with navy/dark backgrounds need white text.
+   The global .section-header h2 { color: var(--apple-ink-1) !important }
+   rule was overriding the dark-section white text in style.css.
+──────────────────────────────────────────────────────────── */
+
+/* #concept-delivery — navy (#0a0f1e) background */
+#concept-delivery .section-header h2,
+#concept-delivery .section-title-block h2 {
+  color: #ffffff !important;
+}
+#concept-delivery .section-header p,
+#concept-delivery .section-title-block p {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+#concept-delivery .eyebrow {
+  color: #ff6b6b !important;
+}
+
+/* CTD cards — text inside dark cards */
+.ctd-card h3 {
+  color: #ffffff !important;
+}
+.ctd-card p {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.ctd-cta {
+  color: #ff6b6b !important;
+}
+
+/* Any other section that has a dark/navy background — generic fix */
+section[style*="background: var(--navy)"] .section-header h2,
+section[style*="background:#0a0f1e"] .section-header h2,
+.section-dark .section-header h2,
+.section-dark .section-title-block h2 {
+  color: #ffffff !important;
+}
+.section-dark .section-header p,
+.section-dark .section-title-block p {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   v42 — PRODUCT CARD IMAGE & LAYOUT FIXES
+═══════════════════════════════════════════════════════════ */
+
+/* Product image container — fill card properly, no padding */
+.prod-img {
+  aspect-ratio: 4 / 3 !important;
+  background: #f5f5f7 !important;
+  display: block !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+/* Product image — cover fill, no overflow */
+.prod-img img {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block !important;
+  transition: transform 0.4s ease !important;
+  position: absolute !important;
+  top: 0; left: 0 !important;
+}
+
+/* Card body — title never clips */
+.prod-body,
+.prod-info {
+  padding: 14px 16px 16px !important;
+  overflow: visible !important;
+}
+
+.prod-name {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #1d1d1f !important;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 4px !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  line-height: 1.3 !important;
+  padding-left: 0 !important;
+}
+
+/* ── v42 DARK SECTION TEXT — MAXIMUM SPECIFICITY FIX ────── */
+/* The section-header h2 global rule uses !important so we
+   need even higher specificity by chaining the section ID */
+
+body #concept-delivery .section-header h2,
+body #concept-delivery .section-title-block h2,
+body #concept-delivery h2 {
+  color: #ffffff !important;
+}
+
+body #concept-delivery .section-header p,
+body #concept-delivery .section-title-block p,
+body #concept-delivery p {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+body #concept-delivery .eyebrow,
+body #concept-delivery [class*="eyebrow"] {
+  color: #ff8080 !important;
+}
+
+body .ctd-card h3 { color: #ffffff !important; }
+body .ctd-card p  { color: rgba(255,255,255,0.72) !important; }
+body .ctd-cta     { color: #ff8080 !important; }
+
+/* ── v42 HERO PRODUCT CARD — IMAGE FILL FIX ─────────────── */
+/* Remove padding and make image fill the card properly */
+.hero-product-img {
+  aspect-ratio: 4 / 3 !important;
+  background: #f5f5f7 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  display: block !important;
+  position: relative !important;
+}
+
+.hero-product-img img {
+  position: absolute !important;
+  top: 0 !important; left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  transition: transform 0.4s ease !important;
+}
+
+.hero-product-card:hover .hero-product-img img {
+  transform: scale(1.05) !important;
+}
+
+/* Product grid cards — same fix */
+.prod-img {
+  position: relative !important;
+}
+
+/* ── v43 HELP WIDGET — COLLAPSED STATE AS COMPACT PILL ──────── */
+/* When collapsed, show only the header as a compact pill button */
+#help-widget.collapsed {
+  width: auto !important;
+  border-radius: 50px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18) !important;
+}
+
+#help-widget.collapsed .help-widget-header {
+  border-radius: 50px !important;
+  padding: 10px 18px 10px 12px !important;
+  gap: 10px !important;
+}
+
+#help-widget.collapsed .help-widget-avatar {
+  width: 32px !important;
+  height: 32px !important;
+  font-size: 14px !important;
+}
+
+#help-widget.collapsed .help-widget-title strong {
+  font-size: 12px !important;
+}
+
+#help-widget.collapsed .help-widget-title span {
+  display: none !important;
+}
+
+#help-widget.collapsed .help-widget-close {
+  display: none !important;
+}
+
+#help-widget.collapsed .help-widget-body {
+  display: none !important;
+}
+
+/* When expanded, restore full card look */
+#help-widget:not(.collapsed) {
+  width: 320px !important;
+  border-radius: 20px !important;
+}
+
+#help-widget:not(.collapsed) .help-widget-header {
+  border-radius: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   v44 COMPREHENSIVE UI FIX
+   ═══════════════════════════════════════════════════════════ */
+
+/* 1. DOUBLE SEARCH ICON FIX */
+#nav-search-input::-webkit-search-decoration,
+#nav-search-input::-webkit-search-cancel-button,
+#nav-search-input::-webkit-search-results-button,
+#nav-search-input::-webkit-search-results-decoration {
+  -webkit-appearance: none !important;
+  display: none !important;
+}
+.nav-search > i:not(.nav-search-icon) { display: none !important; }
+
+/* 2. HERO — REMOVE EXCESS GAP */
+#hero { min-height: auto !important; background: #ffffff !important; }
+.hero-inner {
+  min-height: auto !important;
+  padding-top: 100px !important;
+  padding-bottom: 80px !important;
+}
+
+/* 3. HERO PRODUCT CARDS — PROPER IMAGE FILL */
+.hero-product-img {
+  aspect-ratio: 4 / 3 !important;
+  background: #f5f5f7 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  display: block !important;
+  position: relative !important;
+}
+.hero-product-img img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  transition: transform 0.4s ease !important;
+}
+.hero-product-card:hover .hero-product-img img { transform: scale(1.06) !important; }
+
+/* 4. PRODUCT GRID CARDS — PROPER IMAGE FILL */
+.prod-img {
+  aspect-ratio: 4 / 3 !important;
+  background: #f5f5f7 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  display: block !important;
+  position: relative !important;
+}
+.prod-img img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  transition: transform 0.4s ease !important;
+}
+.prod-card:hover .prod-img img { transform: scale(1.06) !important; }
+
+/* 5. PRODUCT CARD TITLE — NO CLIPPING */
+.prod-name {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  padding-left: 0 !important;
+}
+
+/* 6. NAVBAR — PREVENT PINK TINT FROM ANNOUNCEMENT BAR */
+#navbar {
+  background: rgba(255,255,255,0.95) !important;
+  backdrop-filter: saturate(120%) blur(16px) !important;
+  -webkit-backdrop-filter: saturate(120%) blur(16px) !important;
+}
+#navbar.scrolled { background: rgba(255,255,255,0.98) !important; }
+
+/* 7. CONCEPT-DELIVERY SECTION — FORCE WHITE TEXT */
+html body #concept-delivery h2,
+html body #concept-delivery .section-header h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+html body #concept-delivery p,
+html body #concept-delivery .section-header p {
+  color: rgba(255,255,255,0.80) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.80) !important;
+}
+html body #concept-delivery .eyebrow {
+  color: #ff8080 !important;
+  -webkit-text-fill-color: #ff8080 !important;
+}
+html body .ctd-card h3 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+html body .ctd-card p {
+  color: rgba(255,255,255,0.72) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.72) !important;
+}
+html body .ctd-cta { color: #ff8080 !important; }
+
+/* 8. STATS BAR — DARK BG, WHITE TEXT */
+#stats-bar { background: #1d1d1f !important; }
+.stat-item { color: #ffffff !important; }
+.stat-number {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.stat-label {
+  color: rgba(255,255,255,0.65) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.65) !important;
+}
+
+/* 9. TESTIMONIAL STARS — GOLD */
+.review-stars i,
+.review-stars .fa-star,
+.review-stars .fa-star-half-alt,
+.review-stars .fas {
+  color: #f5a623 !important;
+}
+
+/* 10. HOW IT WORKS — ICON CIRCLES VISIBLE */
+.hiw-icon, .step-icon, .hiw-step-icon {
+  background: var(--brand) !important;
+  color: #ffffff !important;
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 22px !important;
+  margin: 0 auto 16px !important;
+  box-shadow: 0 4px 16px rgba(232,25,44,0.25) !important;
+}
+
+/* 11. CATEGORY FILTER ACTIVE STATE */
+.prod-cat-btn {
+  border: 1.5px solid transparent !important;
+  transition: all 0.2s ease !important;
+}
+.prod-cat-btn.active {
+  border-left: 3px solid #e8192c !important;
+  background: #fff0f0 !important;
+  color: #e8192c !important;
+  font-weight: 700 !important;
+}
+
+/* 12. MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-trust-bar { display: none !important; }
+  .nav-cat-bar { display: none !important; }
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    padding-top: 80px !important;
+    padding-bottom: 60px !important;
+    gap: 32px !important;
+  }
+  .hero-product-showcase {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+}
+
+/* v44 FIX: Hide duplicate search button that appears below the input */
+
+
+/* v44 FIX: Hide duplicate search button that appears below the search input */
+.nav-search-btn { display: none !important; }
+
+/* v44 FIX: Navbar pink tint — announcement bar is red, bleeds through frosted glass.
+   Make navbar fully opaque white so backdrop-filter does not pick up the red. */
+#navbar {
+  background: rgba(255,255,255,1.0) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+}
+#navbar.scrolled {
+  background: rgba(255,255,255,1.0) !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.1) !important;
+}
+/* Keep announcement bar dark so it doesn't create a pink halo */
+#announcement-bar {
+  background: #1d1d1f !important;
+}
+#announcement-bar a,
+#announcement-bar .ann-slide {
+  color: rgba(255,255,255,0.9) !important;
+}
+#announcement-bar a:hover {
+  color: #ffffff !important;
+}

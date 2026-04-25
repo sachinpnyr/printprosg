@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" width="200" height="70">
+  <defs>
+    <style>
+      .logo-name { font-family: 'Arial', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 2px; fill: #1b5e20; }
+      .logo-tag { font-family: 'Arial', sans-serif; font-weight: 400; font-size: 10px; letter-spacing: 3px; fill: #4caf50; }
+    </style>
+  </defs>
+  <!-- Background -->
+  <rect width="200" height="70" fill="white" rx="0"/>
+  <!-- Accent bar -->
+  <rect x="0" y="0" width="4" height="70" fill="#4caf50" rx="2"/>
+  <!-- Icon circle -->
+  <circle cx="42" cy="35" r="20" fill="#1b5e20" opacity="0.08"/>
+  <!-- Icon -->
+  <g transform="translate(30, 23)" stroke="#1b5e20" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 12m-3 0a3 3 0 106 0 3 3 0 10-6 0 M12 2v3 M12 19v3 M2 12h3 M19 12h3 M4.93 4.93l2.12 2.12 M16.95 16.95l2.12 2.12 M4.93 19.07l2.12-2.12 M16.95 7.05l2.12-2.12" transform="scale(1)"/>
+  </g>
+  <!-- Company name -->
+  <text x="70" y="32" class="logo-name">ORBIT</text>
+  <!-- Tagline -->
+  <text x="71" y="48" class="logo-tag">TECH</text>
+  <!-- Accent dot -->
+  <circle cx="182" cy="35" r="4" fill="#4caf50" opacity="0.6"/>
+</svg>

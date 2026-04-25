@@ -1,0 +1,59 @@
+# Netlify configuration for Print Pro SG
+
+[build]
+  publish = "."
+
+# HTML files — no cache so updates are always picked up immediately
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# CSS and JS — short cache (5 min) so updates show quickly after deploy
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+# Images — longer cache is fine since they rarely change
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/img/**"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Security and performance headers for all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Redirect www to non-www (update when custom domain is connected)
+# [[redirects]]
+#   from = "https://www.printprosg.com/*"
+#   to = "https://printprosg.com/:splat"
+#   status = 301
+#   force = true

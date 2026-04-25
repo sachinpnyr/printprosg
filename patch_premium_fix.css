@@ -1,0 +1,69 @@
+/* ================================================================
+   PATCH PREMIUM-FIX — Override high-specificity rules
+   ================================================================ */
+
+@media (max-width: 767px) {
+
+  /* Stat numbers: use #about prefix to beat earlier rule */
+  #about .about-stat-num,
+  #about .about-stat span.about-stat-num {
+    font-size: 44px !important;
+    font-weight: 700 !important;
+    letter-spacing: -1.5px !important;
+    line-height: 1 !important;
+    color: #1d1d1f !important;
+  }
+
+  #about .about-stat-lbl {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: rgba(29, 29, 31, 0.6) !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    margin-top: 4px !important;
+  }
+
+  /* Hero H1 letter-spacing: use highest specificity */
+  #hero .hero-headline,
+  #hero h1.hero-headline,
+  .hero-section .hero-headline {
+    letter-spacing: -0.8px !important;
+    line-height: 1.12 !important;
+  }
+
+  /* Eyebrow labels: use higher specificity */
+  section .eyebrow,
+  #about .eyebrow,
+  #services .eyebrow,
+  #how-it-works .eyebrow,
+  #reviews .eyebrow,
+  #portfolio .eyebrow,
+  #faq .eyebrow,
+  #contact .eyebrow,
+  #locations .eyebrow,
+  #clients .eyebrow {
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+  }
+
+  /* Section H2: use section-specific selectors for higher specificity */
+  #about h2,
+  #services h2,
+  #how-it-works h2,
+  #reviews h2,
+  #portfolio h2,
+  #faq h2,
+  #contact h2,
+  #locations h2,
+  #clients h2 {
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.6px !important;
+    line-height: 1.15 !important;
+  }
+
+}

@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Print Pro Singapore | Premium Printing Services Since 1991</title>
+  <meta name="description" content="Print Pro Singapore — premium printing services for name cards, booklets, banners, packaging, t-shirts and more. Serving Singapore, UAE and India since 1991." />
+  <meta name="keywords" content="printing singapore, name card printing, banner printing, booklet printing, packaging printing, t-shirt printing, corporate gifts singapore" />
+  <meta name="author" content="Print Pro Singapore" />
+  <link rel="canonical" href="https://printprosg.netlify.app/" />
+  <meta property="og:title" content="Print Pro Singapore | Premium Printing Services Since 1991" />
+  <meta property="og:description" content="From business cards to billboards — premium quality printing under one roof. 34+ years of expertise. Singapore, UAE &amp; India." />
+  <meta property="og:url" content="https://printprosg.netlify.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://printprosg.netlify.app/img/hero/slider2.webp" />
+  <meta name="theme-color" content="#d62b2b" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css?v=24" />
+  <link rel="stylesheet" href="apple-premium.css">
+  <link rel="stylesheet" href="v45-fixes.css">
+  <link rel="stylesheet" href="v46-upgrades.css">
+  <link rel="stylesheet" href="v47-final.css">
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BANNER (rotating) -->
+<div id="announcement-bar">
+  <div id="announcement-slides">
+    <div class="ann-slide active"><i class="fas fa-tag"></i>&nbsp; <strong>Free Design</strong> with every order above $150. <a href="#contact">Claim now &rarr;</a></div>
+    <div class="ann-slide"><i class="fas fa-bolt"></i>&nbsp; <strong>Same-Day Printing</strong> available for urgent orders. <a href="#contact">Order now &rarr;</a></div>
+    <div class="ann-slide"><i class="fas fa-percent"></i>&nbsp; <strong>Name Cards from $30</strong> — 50 pcs, full colour, premium stock. <a href="#contact">Get Quote &rarr;</a></div>
+  </div>
+  <button id="close-announcement" aria-label="Close announcement"><i class="fas fa-times"></i></button>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-top">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="img/logo.png" alt="Print Pro Singapore" class="logo-img" />
+      </a>
+      <!-- Search Bar -->
+      <div class="nav-search">
+        <i class="fas fa-search nav-search-icon"></i>
+        <input type="search" id="nav-search-input" placeholder="Search services, products..." autocomplete="off" />
+        <div id="search-dropdown" class="search-dropdown"></div>
+      </div>
+      <div class="nav-right">
+        <a href="tel:+6598751606" class="nav-phone"><i class="fas fa-phone"></i> <span>+65 9875 1606</span></a>
+        <!-- Account & Cart icons -->
+        <a href="#contact" class="nav-icon-btn" aria-label="My Account"><i class="fas fa-user"></i></a>
+        <a href="#contact" class="nav-icon-btn nav-cart-btn" aria-label="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </a>
+        <a href="#contact" class="btn btn-primary btn-sm">Get a Quote</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Category Mega Nav -->
+  <div class="nav-categories" id="nav-categories">
+    <div class="nav-cat-container">
+      <a href="#products" class="nav-cat active">Most Popular</a>
+      <a href="#products" class="nav-cat">Name Cards</a>
+      <a href="#products" class="nav-cat">Flyers &amp; Leaflets</a>
+      <a href="#products" class="nav-cat">Stickers</a>
+      <a href="#products" class="nav-cat">Booklets</a>
+      <a href="#products" class="nav-cat">Stationery &amp; Cards</a>
+      <a href="#products" class="nav-cat">Marketing &amp; Advertising</a>
+      <a href="#products" class="nav-cat">Signages</a>
+      <a href="#products" class="nav-cat">Promo &amp; Giveaways</a>
+      <a href="#products" class="nav-cat">Displays &amp; Banners</a>
+    </div>
+  </div>
+  <!-- Trust Badges Bar -->
+  <div class="nav-trust-bar">
+    <div class="nav-trust-container">
+      <a href="about.html" class="nav-trust-item"><i class="fas fa-shield-alt"></i> Best Price Guarantee</a>
+      <a href="design-services.html" class="nav-trust-item"><i class="fas fa-pencil-ruler"></i> Design Services</a>
+      <a href="about.html" class="nav-trust-item"><i class="fas fa-truck"></i> Fast &amp; On-Time Delivery</a>
+      <a href="faq.html" class="nav-trust-item"><i class="fas fa-credit-card"></i> Credit Terms Available</a>
+      <div class="nav-rating">
+        <div class="nav-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <span>4.8/5 &nbsp;·&nbsp; 200+ reviews</span>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile nav links -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="design-services.html">Design Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="delivery.html">Delivery</a></li>
+    <li><a href="artwork-guidelines.html">Artwork Guide</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO CAROUSEL -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Trusted Since 1991 &bull; Singapore &bull; UAE &bull; India</span>
+      <h1 class="hero-headline">Premium Printing,<br><em>Delivered Fast.</em></h1>
+      <p class="hero-sub">The winning combination for Singapore businesses — premium quality printing under one roof, backed by 34+ years of expertise.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Get a Free Quote <i class="fas fa-arrow-right"></i></a>
+        <a href="#products" class="btn-secondary">Explore Products</a>
+      </div>
+      <div class="hero-trust-row">
+        <span><i class="fas fa-bolt"></i> Same-day turnaround</span>
+        <span><i class="fas fa-paint-brush"></i> Free design consultation</span>
+        <span><i class="fas fa-star"></i> 500+ happy clients</span>
+      </div>
+    </div>
+    <div class="hero-product-showcase">
+      <a href="product.html?id=name-cards" class="hero-product-card reveal">
+        <div class="hero-product-img"><img src="img/products/name_cards.webp" alt="Name Cards" /></div>
+        <div class="hero-product-info"><span>Name Cards</span><strong>From $30</strong></div>
+      </a>
+      <a href="product.html?id=flyers" class="hero-product-card reveal reveal-delay-1">
+        <div class="hero-product-img"><img src="img/products/flyers.webp" alt="Flyers" /></div>
+        <div class="hero-product-info"><span>Flyers</span><strong>From $25</strong></div>
+      </a>
+      <a href="product.html?id=booklets" class="hero-product-card reveal reveal-delay-2">
+        <div class="hero-product-img"><img src="img/products/booklets.webp" alt="Booklets" /></div>
+        <div class="hero-product-info"><span>Booklets</span><strong>From $80</strong></div>
+      </a>
+      <a href="product.html?id=roll-up-banners" class="hero-product-card reveal reveal-delay-3">
+        <div class="hero-product-img"><img src="img/products/rollup_banner.webp" alt="Roll-up Banners" /></div>
+        <div class="hero-product-info"><span>Roll-up Banners</span><strong>From $65</strong></div>
+      </a>
+    </div>
+  </div>
+</section>
+  <!-- STATS BAR -->
+<section id="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number" data-target="34" data-suffix="+">34+</span>
+        <span class="stat-label">Years of Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="500" data-suffix="+">500+</span>
+        <span class="stat-label">Happy Clients</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="50" data-suffix="+">50+</span>
+        <span class="stat-label">Products Available</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="3">3</span>
+        <span class="stat-label">Countries Served</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCT CATALOGUE WITH CATEGORY FILTER ===== -->
+<section id="products">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Our Products</span>
+      <h2>Affordable Printing Services in Singapore for All Your Needs</h2>
+      <p>Find economical online printing services catering to all your requirements, from basic documents to complex projects, at competitive prices.</p>
+    </div>
+
+    <!-- Hero price strip (like GoGoPrint's "best sellers" strip) -->
+    <div class="price-strip reveal">
+      <div class="price-strip-item">
+        <img src="img/products/name_cards.webp" alt="Name Cards" />
+        <div class="price-strip-info">
+          <span class="ps-name">Name Cards</span>
+          <span class="ps-price">From <strong>$30</strong></span>
+          <span class="ps-orig ps-strike">$52</span>
+          <span class="ps-badge">-42% off</span>
+        </div>
+      </div>
+      <div class="price-strip-item">
+        <img src="img/products/flyers.webp" alt="Flyers" />
+        <div class="price-strip-info">
+          <span class="ps-name">Flyers</span>
+          <span class="ps-price">From <strong>$25</strong></span>
+          <span class="ps-orig ps-strike">$65</span>
+          <span class="ps-badge">-62% off</span>
+        </div>
+      </div>
+      <div class="price-strip-item">
+        <img src="img/products/stickers.webp" alt="Stickers" />
+        <div class="price-strip-info">
+          <span class="ps-name">Stickers</span>
+          <span class="ps-price">From <strong>$18</strong></span>
+          <span class="ps-orig ps-strike">$35</span>
+          <span class="ps-badge">-49% off</span>
+        </div>
+      </div>
+      <div class="price-strip-item">
+        <img src="img/products/rollup_banner.webp" alt="Roll-up Banners" />
+        <div class="price-strip-info">
+          <span class="ps-name">Roll-up Banners</span>
+          <span class="ps-price">From <strong>$65</strong></span>
+          <span class="ps-orig ps-strike">$70</span>
+          <span class="ps-badge">-8% off</span>
+        </div>
+      </div>
+      <a href="#products" class="price-strip-cta btn btn-primary">Explore All Products</a>
+    </div>
+
+    <!-- Product Grid with Category Filter -->
+    <div class="products-layout">
+      <!-- Left sidebar categories -->
+      <aside class="products-sidebar">
+        <button class="prod-cat-btn active" data-cat="popular">Most Popular</button>
+        <button class="prod-cat-btn" data-cat="name-cards">Name Cards</button>
+        <button class="prod-cat-btn" data-cat="flyers">Flyers &amp; Leaflets</button>
+        <button class="prod-cat-btn" data-cat="stickers">Stickers</button>
+        <button class="prod-cat-btn" data-cat="booklets">Booklets</button>
+        <button class="prod-cat-btn" data-cat="stationery">Stationery, Cards &amp; Invites</button>
+        <button class="prod-cat-btn" data-cat="marketing">Marketing &amp; Print Advertising</button>
+        <button class="prod-cat-btn" data-cat="signage">Signages</button>
+        <button class="prod-cat-btn" data-cat="promo">Promo &amp; Giveaways</button>
+        <button class="prod-cat-btn" data-cat="displays">Displays &amp; Banners</button>
+      </aside>
+
+      <!-- Product grid -->
+      <div class="products-grid" id="products-grid">
+
+        <!-- Name Cards -->
+        <div class="prod-card" data-cat="popular name-cards">
+          <div class="prod-badge">PRICE DROP <i class="fas fa-fire"></i></div>
+          <div class="prod-img"><img src="img/products/name_cards.webp" alt="Name Cards" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Name Cards</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>30.00</strong></span>
+              <span class="prod-discount">- 42% off</span>
+            </div>
+            <div class="prod-orig">SGD 52.00</div>
+            <a href="product.html?id=name-cards" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- Stickers -->
+        <div class="prod-card" data-cat="popular stickers">
+          <div class="prod-badge">PRICE DROP <i class="fas fa-fire"></i></div>
+          <div class="prod-img"><img src="img/products/stickers.webp" alt="Stickers" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Stickers &amp; Labels</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>18.00</strong></span>
+              <span class="prod-discount">- 49% off</span>
+            </div>
+            <div class="prod-orig">SGD 35.00</div>
+            <a href="product.html?id=stickers" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- Flyers -->
+        <div class="prod-card" data-cat="popular flyers">
+          <div class="prod-badge">PRICE DROP <i class="fas fa-fire"></i></div>
+          <div class="prod-img"><img src="img/products/flyers.webp" alt="Flyers" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Flyers &amp; Leaflets</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>25.00</strong></span>
+              <span class="prod-discount">- 62% off</span>
+            </div>
+            <div class="prod-orig">SGD 65.00</div>
+            <a href="product.html?id=flyers" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- Booklets -->
+        <div class="prod-card" data-cat="popular booklets">
+          <div class="prod-img"><img src="img/products/booklets.webp" alt="Booklets" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Booklets</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>80.00</strong></span>
+            </div>
+            <div class="prod-orig prod-orig-note">Per 5 pcs</div>
+            <a href="product.html?id=booklets" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- Roll-up Banners -->
+        <div class="prod-card" data-cat="popular displays">
+          <div class="prod-badge">PRICE DROP <i class="fas fa-fire"></i></div>
+          <div class="prod-img"><img src="img/products/rollup_banner.webp" alt="Roll-up Banners" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Roll-up Banners</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>65.00</strong></span>
+              <span class="prod-discount">- 8% off</span>
+            </div>
+            <div class="prod-orig">SGD 70.00</div>
+            <a href="product.html?id=roll-up-banners" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- Fabric Displays -->
+        <div class="prod-card" data-cat="displays">
+          <div class="prod-badge">PRICE DROP <i class="fas fa-fire"></i></div>
+          <div class="prod-img"><img src="img/products/fabric_display.webp" alt="Fabric Displays" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Fabric Displays</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>239.80</strong></span>
+              <span class="prod-discount">- 5% off</span>
+            </div>
+            <div class="prod-orig">SGD 252.50</div>
+            <a href="product.html?id=fabric-displays" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- Vinyl Banners -->
+        <div class="prod-card" data-cat="displays signage">
+          <div class="prod-img"><img src="img/products/vinyl_banner.webp" alt="Vinyl Banners" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Vinyl Banners</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>45.00</strong></span>
+            </div>
+            <div class="prod-orig prod-orig-note">Per piece</div>
+            <a href="product.html?id=vinyl-banners" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- Pop-Up Display -->
+        <div class="prod-card" data-cat="displays">
+          <div class="prod-img"><img src="img/products/popup_display.jpg" alt="Pop-Up Display" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Pop-Up Display</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>440.00</strong></span>
+            </div>
+            <div class="prod-orig prod-orig-note">Per piece</div>
+            <a href="product.html?id=popup-display" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- Postcards -->
+        <div class="prod-card" data-cat="stationery">
+          <div class="prod-img"><img src="img/products/postcards.webp" alt="Postcards" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Postcards</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>35.00</strong></span>
+            </div>
+            <div class="prod-orig prod-orig-note">Per 25 pcs</div>
+            <a href="product.html?id=postcards" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- Greeting &amp; Invitation Cards -->
+        <div class="prod-card" data-cat="stationery">
+          <div class="prod-badge">PRICE DROP <i class="fas fa-fire"></i></div>
+          <div class="prod-img"><img src="img/products/greeting_cards.webp" alt="Greeting Cards" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Greeting &amp; Invitation Cards</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>28.00</strong></span>
+              <span class="prod-discount">- 66% off</span>
+            </div>
+            <div class="prod-orig">SGD 82.00</div>
+            <a href="product.html?id=greeting-cards" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- Gift Vouchers -->
+        <div class="prod-card" data-cat="stationery promo">
+          <div class="prod-img"><img src="img/products/gift_vouchers.webp" alt="Gift Vouchers" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Gift Vouchers &amp; Coupons</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>55.00</strong></span>
+            </div>
+            <div class="prod-orig prod-orig-note">Per 100 pcs</div>
+            <a href="product.html?id=gift-vouchers" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- T-shirts -->
+        <div class="prod-card" data-cat="promo marketing">
+          <div class="prod-badge">PRICE DROP <i class="fas fa-fire"></i></div>
+          <div class="prod-img"><img src="img/products/tshirt.webp" alt="T-shirt Printing" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>T-shirt Printing</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>12.00</strong></span>
+              <span class="prod-discount">- 25% off</span>
+            </div>
+            <div class="prod-orig">SGD 16.00 / pc</div>
+            <a href="product.html?id=tshirts" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- Corporate Gifts -->
+        <div class="prod-card" data-cat="promo">
+          <div class="prod-img"><img src="img/products/corporate_gifts.webp" alt="Corporate Gifts" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Corporate Gifts</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">Custom Pricing</span>
+            </div>
+            <div class="prod-orig prod-orig-note">Bulk discounts available</div>
+            <a href="product.html?id=corporate-gifts" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- Envelopes -->
+        <div class="prod-card" data-cat="stationery marketing">
+          <div class="prod-img"><img src="img/products/envelope.webp" alt="Envelopes" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Envelopes</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>40.00</strong></span>
+            </div>
+            <div class="prod-orig prod-orig-note">Per 100 pcs</div>
+            <a href="product.html?id=envelopes" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- Foam Board Signage -->
+        <div class="prod-card" data-cat="signage displays">
+          <div class="prod-img"><img src="img/products/foam_board.webp" alt="Foam Board Signage" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Foam Board Signage</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>28.00</strong></span>
+            </div>
+            <div class="prod-orig prod-orig-note">Per piece</div>
+            <a href="product.html?id=foam-board" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- Brochures -->
+        <div class="prod-card" data-cat="marketing flyers">
+          <div class="prod-badge">PRICE DROP <i class="fas fa-fire"></i></div>
+          <div class="prod-img"><img src="img/products/brochures.webp" alt="Brochures" loading="lazy" /></div>
+          <div class="prod-body">
+            <h4>Brochures &amp; Catalogues</h4>
+            <div class="prod-price-row">
+              <span class="prod-price">SGD <strong>55.00</strong></span>
+              <span class="prod-discount">- 30% off</span>
+            </div>
+            <div class="prod-orig">SGD 78.00</div>
+            <a href="product.html?id=brochures" class="prod-cta">Get Quote</a>
+          </div>
+        </div>
+
+      </div><!-- /products-grid -->
+    </div><!-- /products-layout -->
+  </div>
+</section>
+
+<!-- ===== PROMOTIONS & CAMPAIGNS ===== -->
+<section id="promotions">
+  <div class="container">
+    <div class="promo-header reveal">
+      <span class="eyebrow">Special Offers</span>
+      <h2>Our Best <span class="promo-highlight">Deals &amp; Promotions</span></h2>
+    </div>
+    <div class="promo-carousel-wrap">
+      <div class="promo-carousel" id="promo-carousel">
+        <!-- Promo Banner 1 -->
+        <div class="promo-banner promo-dark">
+          <div class="promo-banner-content">
+            <h3>Best Prices,<br>Fast Delivery.</h3>
+            <p>The Winning Combo.</p>
+            <div class="promo-products">
+              <span>Business Cards</span>
+              <span>Flyers</span>
+              <span>Stickers</span>
+            </div>
+            <a href="#contact" class="btn btn-primary btn-sm">Order Now</a>
+          </div>
+          <div class="promo-banner-price">
+            <div class="promo-price-tag">
+              <span class="promo-from">Name Cards from</span>
+              <span class="promo-amount">$30</span>
+            </div>
+          </div>
+        </div>
+        <!-- Promo Banner 2 -->
+        <div class="promo-banner promo-blue">
+          <div class="promo-banner-content">
+            <h3>Stickers &amp;<br>Labels</h3>
+            <p>Prices as low as</p>
+            <div class="promo-price-tag-inline">
+              <span class="promo-amount-lg">$18</span>
+              <span class="promo-subtext">For 50 pcs</span>
+            </div>
+            <span class="promo-cheaper-badge">49% Cheaper!</span>
+            <a href="product.html?id=stickers" class="btn btn-primary btn-sm">Order Now</a>
+          </div>
+          <div class="promo-banner-badge">PRICE DROP</div>
+        </div>
+        <!-- Promo Banner 3 -->
+        <div class="promo-banner promo-pink">
+          <div class="promo-banner-content">
+            <h3>Economy<br>Leaflets</h3>
+            <div class="promo-discount-big">
+              <span>NOW UP TO</span>
+              <span class="promo-pct">62%</span>
+              <span>Cheaper!</span>
+            </div>
+            <a href="#contact" class="btn btn-primary btn-sm">Order Now</a>
+          </div>
+          <div class="promo-banner-badge">PRICE DROP</div>
+        </div>
+      </div>
+      <button class="promo-nav promo-prev" id="promo-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+      <button class="promo-nav promo-next" id="promo-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FROM CONCEPT TO DELIVERY ===== -->
+<section id="concept-delivery">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Our Commitment</span>
+      <h2>From Concept to Delivery</h2>
+      <p>Fuel your business with flexible credit, design services, and lightning-quick delivery!</p>
+    </div>
+    <div class="ctd-grid">
+      <div class="ctd-card reveal">
+        <div class="ctd-icon"><i class="fas fa-credit-card"></i></div>
+        <h3>Credit Terms</h3>
+        <p>Approved corporate accounts enjoy 30-day credit terms. Keep your cash flow healthy while getting the print materials you need.</p>
+        <a href="faq.html" class="ctd-cta">Check Credit <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="ctd-card reveal reveal-delay-1">
+        <div class="ctd-icon"><i class="fas fa-pencil-ruler"></i></div>
+        <h3>Design Services</h3>
+        <p>Our in-house design team brings your vision to life. From concept to print-ready artwork — fast, professional, and affordable.</p>
+        <a href="design-services.html" class="ctd-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="ctd-card reveal reveal-delay-2">
+        <div class="ctd-icon"><i class="fas fa-shipping-fast"></i></div>
+        <h3>Express Delivery</h3>
+        <p>Need it urgently? Same-day and next-day printing options available. We deliver across Singapore with speed and reliability.</p>
+        <a href="#products" class="ctd-cta">See Products <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BANNERS & DISPLAYS SHOWCASE ===== -->
+<section id="banners-showcase">
+  <div class="container">
+    <div class="banners-showcase-inner reveal">
+      <div class="banners-showcase-content">
+        <span class="eyebrow">Large Format Printing</span>
+        <h2>Explore Our Custom Banners, Displays &amp; Stands For Singapore Businesses</h2>
+        <p>Low prices and fast delivery. Whether you're preparing for a Singaporean exhibition, conference, or trade fair, we provide tailored printing services that meet the unique demands of Singapore's market.</p>
+        <a href="#contact" class="btn btn-primary btn-lg">Explore <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="banners-showcase-images">
+        <img src="img/products/rollup_banner.webp" alt="Roll-up Banner" loading="lazy" />
+        <img src="img/products/vinyl_banner.webp" alt="Vinyl Banner" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAN'T FIND WHAT YOU NEED ===== -->
+<section id="custom-quote">
+  <div class="container">
+    <div class="custom-quote-inner reveal">
+      <div class="custom-quote-content">
+        <h2>Can't Find What You Need?</h2>
+        <p>We specialise in custom printing solutions tailored to your exact requirements. Whether you need a unique size, special finishes, or a fully personalised design, we're here to make it happen. Let us know your needs, and we'll create a printing solution just for you.</p>
+        <a href="#contact" class="btn btn-primary btn-lg">Get A Quote <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CUSTOMER REVIEWS ===== -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">What Our Customers Say</span>
+      <h2>Trusted by Businesses Across Asia</h2>
+      <div class="reviews-rating-header">
+        <div class="rrh-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+        <span class="rrh-score">4.8 / 5</span>
+        <span class="rrh-count">from 200+ reviews</span>
+      </div>
+    </div>
+
+    <div class="reviews-carousel-wrap">
+      <div class="reviews-track" id="reviews-track">
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar" style="background:#e63329;">A</div>
+            <div class="review-meta">
+              <div class="review-name">Aimi Azmi</div>
+              <div class="review-time">6 months ago</div>
+            </div>
+            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          </div>
+          <p class="review-text">"Very affordable, high quality and fast delivery. Website easily to access and has very convenient system. Customer service also great and very responsive. 100% satisfied, will order again next time. Thank you so much!"</p>
+          <div class="review-source"><i class="fab fa-google"></i> Google</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar" style="background:#0a7ea4;">V</div>
+            <div class="review-meta">
+              <div class="review-name">Vikram Pillai</div>
+              <div class="review-time">3 days ago</div>
+            </div>
+            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          </div>
+          <p class="review-text">"I was a bit skeptical about ordering name cards online since I could not see or feel the quality before placing my order but Print Pro did a great job in terms of quality and the efficiency of shipping out the cards."</p>
+          <div class="review-source"><i class="fab fa-google"></i> Google</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar" style="background:#2d9c5e;">A</div>
+            <div class="review-meta">
+              <div class="review-name">Amirah Tahir</div>
+              <div class="review-time">5 months ago</div>
+            </div>
+            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          </div>
+          <p class="review-text">"Makes printing very easy and hassle free. You don't have to wait for quotation, all will be calculated as you select through the product. The quality exceeded my expectations!"</p>
+          <div class="review-source"><i class="fab fa-google"></i> Google</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar" style="background:#7c3aed;">K</div>
+            <div class="review-meta">
+              <div class="review-name">Kim Saad</div>
+              <div class="review-time">8 months ago</div>
+            </div>
+            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          </div>
+          <p class="review-text">"I have used their service quite a few times and was happy with the results every time. Friendly service, fast turnaround, excellent quality and always deliver within the promised time frame, sometimes even earlier!"</p>
+          <div class="review-source"><i class="fab fa-google"></i> Google</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar" style="background:#c9a84c;">M</div>
+            <div class="review-meta">
+              <div class="review-name">Matias Milinchuk</div>
+              <div class="review-time">2 days ago</div>
+            </div>
+            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          </div>
+          <p class="review-text">"Great experience, customer service and email response was quick and effective. Design according to the request and some great suggestions from the team made the best Business Cards I've ever had!"</p>
+          <div class="review-source"><i class="fab fa-facebook-f"></i> Facebook</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar" style="background:#e63329;">S</div>
+            <div class="review-meta">
+              <div class="review-name">Sarah Lim</div>
+              <div class="review-time">1 week ago</div>
+            </div>
+            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          </div>
+          <p class="review-text">"We ordered 2,000 booklets for our annual conference and the quality was outstanding. The team was professional, responsive, and delivered ahead of schedule. Will definitely use again for all our corporate printing needs."</p>
+          <div class="review-source"><i class="fab fa-google"></i> Google</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar" style="background:#0a7ea4;">R</div>
+            <div class="review-meta">
+              <div class="review-name">Ravi Menon</div>
+              <div class="review-time">2 weeks ago</div>
+            </div>
+            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          </div>
+          <p class="review-text">"Best printing company in Singapore. We've tried many others but Print Pro's quality and service is unmatched. Their design team helped us create stunning packaging for our product launch. Highly recommended!"</p>
+          <div class="review-source"><i class="fab fa-google"></i> Google</div>
+        </div>
+
+      </div><!-- /reviews-track -->
+    </div><!-- /reviews-carousel-wrap -->
+
+    <div class="reviews-controls">
+      <button class="reviews-btn" id="reviews-prev" data-dir="prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+      <div class="reviews-dots" id="reviews-dots"><button class="reviews-dot active"></button><button class="reviews-dot"></button><button class="reviews-dot"></button><button class="reviews-dot"></button><button class="reviews-dot"></button></div>
+      <button class="reviews-btn" id="reviews-next" data-dir="next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DESIGN SERVICES SECTION ===== -->
+<section id="design-services">
+  <div class="container">
+    <div class="design-services-inner">
+      <div class="ds-content reveal">
+        <span class="eyebrow">Creative Support</span>
+        <h2>Need Help? Explore Our Design Services</h2>
+        <p>Customise every detail of your print projects using our expert design team and vast collection of design elements. Personalise with your brand's colours and logos, then get print-ready designs fast.</p>
+        <div class="ds-features">
+          <div class="ds-feature"><i class="fas fa-clock"></i><span>Industry-Leading Turnaround Times</span></div>
+          <div class="ds-feature"><i class="fas fa-medal"></i><span>Uncompromising Quality Standards</span></div>
+          <div class="ds-feature"><i class="fas fa-sliders-h"></i><span>Customisation and Versatility</span></div>
+          <div class="ds-feature"><i class="fas fa-user-tie"></i><span>Dedicated Print Experts</span></div>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-lg">Design Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="ds-showcase reveal">
+        <div class="ds-tabs">
+          <button class="ds-tab active" data-tab="ds-tab-name-cards">Name Cards</button>
+          <button class="ds-tab" data-tab="ds-tab-brochures">Brochures</button>
+          <button class="ds-tab" data-tab="ds-tab-banners">Banners</button>
+        </div>
+        <div class="ds-tab-content active" id="ds-tab-name-cards">
+          <img src="img/products/name_cards.webp" alt="Name Card Design" loading="lazy" />
+          <p>Standard · Premium · Spot UV · Embossed</p>
+        </div>
+        <div class="ds-tab-content" id="ds-tab-brochures">
+          <img src="img/products/brochures.webp" alt="Brochure Design" loading="lazy" />
+          <p>A4 · A5 · DL · Tri-fold · Z-fold</p>
+        </div>
+        <div class="ds-tab-content" id="ds-tab-banners">
+          <img src="img/products/vinyl_banner.webp" alt="Banner Design" loading="lazy" />
+          <p>Vinyl · Fabric · Foam Board · Outdoor</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT SETS US APART ===== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content reveal">
+        <span class="eyebrow">About Print Pro</span>
+        <h2>What Sets Us Apart</h2>
+        <p>Our expertise spans the entire printing process, from seamless digital file management and state-of-the-art prepress capabilities to advanced printing techniques and meticulous quality control measures. We pride ourselves on our ability to tackle even the most complex projects with ease.</p>
+        <p>Print Pro stands out with industry-leading turnaround times, uncompromising quality standards, extensive customisation capabilities, sustainable eco-friendly practices, dedicated print expertise, and a unique combination of global reach with localised service across Singapore, UAE, and India.</p>
+        <div class="about-stats">
+          <div class="about-stat"><span class="about-stat-num" data-target="34" data-suffix="+">34+</span><span class="about-stat-lbl">Years Experience</span></div>
+          <div class="about-stat"><span class="about-stat-num" data-target="500" data-suffix="+">500+</span><span class="about-stat-lbl">Happy Clients</span></div>
+          <div class="about-stat"><span class="about-stat-num" data-target="50" data-suffix="+">50+</span><span class="about-stat-lbl">Products</span></div>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-lg">Get a Free Quote</a>
+      </div>
+      <div class="about-features reveal">
+        <div class="about-feature">
+          <div class="about-feature-icon"><i class="fas fa-bolt"></i></div>
+          <div><h4>Industry-Leading Turnaround Times</h4><p>Same-day and next-day options available for urgent orders across Singapore.</p></div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon"><i class="fas fa-medal"></i></div>
+          <div><h4>Uncompromising Quality Standards</h4><p>Every print job undergoes rigorous quality checks before leaving our facility.</p></div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon"><i class="fas fa-sliders-h"></i></div>
+          <div><h4>Customisation and Versatility</h4><p>Unique sizes, special finishes, and fully personalised designs — we do it all.</p></div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon"><i class="fas fa-user-tie"></i></div>
+          <div><h4>Dedicated Print Experts</h4><p>Our team of specialists guides you from brief to beautiful finished product.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Simple Process</span>
+      <h2>How It Works</h2>
+      <p>From order to delivery in 4 simple steps.</p>
+    </div>
+    <div class="hiw-grid">
+      <div class="hiw-step reveal">
+        <div class="hiw-num">01</div>
+        <div class="hiw-icon"><i class="fas fa-file-upload"></i></div>
+        <h3>Upload Your Design</h3>
+        <p>Send us your print-ready file or let our design team create one for you.</p>
+      </div>
+      <div class="hiw-step reveal reveal-delay-1">
+        <div class="hiw-num">02</div>
+        <div class="hiw-icon"><i class="fas fa-check-circle"></i></div>
+        <h3>Approve Your Proof</h3>
+        <p>We send a digital proof for your approval before going to print.</p>
+      </div>
+      <div class="hiw-step reveal reveal-delay-2">
+        <div class="hiw-num">03</div>
+        <div class="hiw-icon"><i class="fas fa-print"></i></div>
+        <h3>We Print with Care</h3>
+        <p>Your job is printed on premium stock with industry-leading equipment.</p>
+      </div>
+      <div class="hiw-step reveal reveal-delay-3">
+        <div class="hiw-num">04</div>
+        <div class="hiw-icon"><i class="fas fa-truck"></i></div>
+        <h3>Fast Delivery</h3>
+        <p>Delivered to your door across Singapore, or collect from our office.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUSINESS CARDS SHOWCASE ===== -->
+<section id="biz-cards-showcase">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Name Cards</span>
+      <h2>Make a Lasting Impression with Our Business Cards</h2>
+      <p>Stand out with custom-designed business cards that leave a mark. Choose from a variety of styles, finishes, and templates to showcase your brand.</p>
+    </div>
+    <div class="bcs-grid">
+      <div class="bcs-card reveal">
+        <div class="bcs-img"><img src="img/products/name_cards.webp" alt="Standard Business Cards" loading="lazy" /></div>
+        <div class="bcs-body">
+          <h3>Standard Business Cards</h3>
+          <p>Classic matte or gloss finish on premium 350gsm stock. Perfect for everyday networking.</p>
+          <div class="bcs-price">From <strong>$30</strong> / 50 pcs</div>
+          <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+        </div>
+      </div>
+      <div class="bcs-card reveal reveal-delay-1">
+        <div class="bcs-img"><img src="img/services/name_card.webp" alt="Translucent Business Cards" loading="lazy" /></div>
+        <div class="bcs-body">
+          <h3>Translucent Business Cards</h3>
+          <p>Unique frosted PVC cards that let your brand shine through. Truly unforgettable.</p>
+          <div class="bcs-price">From <strong>$65</strong> / 50 pcs</div>
+          <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+        </div>
+      </div>
+      <div class="bcs-card reveal reveal-delay-2">
+        <div class="bcs-img"><img src="img/services/folded_card.jpg" alt="Folded Business Cards" loading="lazy" /></div>
+        <div class="bcs-body">
+          <h3>Folded Business Cards</h3>
+          <p>Double the space for your information. Ideal for professionals with a lot to say.</p>
+          <div class="bcs-price">From <strong>$55</strong> / 50 pcs</div>
+          <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES (detailed cards) -->
+<section id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Our Services</span>
+      <h2>Our Printing Services</h2>
+      <p>Comprehensive printing solutions for every business need — delivered with precision and care.</p>
+    </div>
+    <div class="services-grid">
+      <a class="service-card reveal" href="product.html?id=name-cards">
+        <div class="service-img"><img src="img/products/name_cards.webp" alt="Name Card Printing" loading="lazy" /></div>
+        <div class="service-body">
+          <h3>Name Cards</h3>
+          <p>Premium business cards in various finishes — matte, gloss, spot UV, embossed, and more.</p>
+          <div class="service-footer"><span class="service-price">From $30</span><span class="service-cta">Get Quote <i class="fas fa-arrow-right"></i></span></div>
+        </div>
+      </a>
+      <a class="service-card reveal reveal-delay-1" href="product.html?id=booklets">
+        <div class="service-img"><img src="img/products/booklets.webp" alt="Booklet Printing" loading="lazy" /></div>
+        <div class="service-body">
+          <h3>Booklets &amp; Catalogues</h3>
+          <p>Saddle-stitched or perfect-bound booklets, brochures, and catalogues in full colour.</p>
+          <div class="service-footer"><span class="service-price">From $80</span><span class="service-cta">Get Quote <i class="fas fa-arrow-right"></i></span></div>
+        </div>
+      </a>
+      <a class="service-card reveal reveal-delay-2" href="product.html?id=flyers">
+        <div class="service-img"><img src="img/products/flyers.webp" alt="Flyers" loading="lazy" /></div>
+        <div class="service-body">
+          <h3>Flyers &amp; Brochures</h3>
+          <p>Eye-catching flyers and brochures in A4, A5, DL, and custom sizes.</p>
+          <div class="service-footer"><span class="service-price">From $25</span><span class="service-cta">Get Quote <i class="fas fa-arrow-right"></i></span></div>
+        </div>
+      </a>
+      <a class="service-card reveal" href="product.html?id=roll-up-banners">
+        <div class="service-img"><img src="img/products/rollup_banner.webp" alt="Roll-up Banner Printing" loading="lazy" /></div>
+        <div class="service-body">
+          <h3>Roll-up Banners</h3>
+          <p>Portable, professional pull-up banners for events, exhibitions, and retail displays.</p>
+          <div class="service-footer"><span class="service-price">From $65</span><span class="service-cta">Get Quote <i class="fas fa-arrow-right"></i></span></div>
+        </div>
+      </a>
+      <a class="service-card reveal reveal-delay-1" href="product.html?id=vinyl-banners">
+        <div class="service-img"><img src="img/products/vinyl_banner.webp" alt="Banner Printing" loading="lazy" /></div>
+        <div class="service-body">
+          <h3>Banners &amp; Signage</h3>
+          <p>Large format vinyl banners, foam boards, and outdoor signage for maximum visibility.</p>
+          <div class="service-footer"><span class="service-price">From $45</span><span class="service-cta">Get Quote <i class="fas fa-arrow-right"></i></span></div>
+        </div>
+      </a>
+      <a class="service-card reveal reveal-delay-2" href="product.html?id=envelopes">
+        <div class="service-img"><img src="img/products/envelope.webp" alt="Envelope Printing" loading="lazy" /></div>
+        <div class="service-body">
+          <h3>Envelopes</h3>
+          <p>Custom-printed envelopes in DL, C4, C5, and other sizes for a professional brand image.</p>
+          <div class="service-footer"><span class="service-price">From $40</span><span class="service-cta">Get Quote <i class="fas fa-arrow-right"></i></span></div>
+        </div>
+      </a>
+      <a class="service-card reveal" href="product.html?id=postcards">
+        <div class="service-img"><img src="img/products/postcards.webp" alt="Postcard Printing" loading="lazy" /></div>
+        <div class="service-body">
+          <h3>Postcards &amp; Invitations</h3>
+          <p>Vibrant postcards, greeting cards, and event invitations in premium paper stocks.</p>
+          <div class="service-footer"><span class="service-price">From $35</span><span class="service-cta">Get Quote <i class="fas fa-arrow-right"></i></span></div>
+        </div>
+      </a>
+      <a class="service-card reveal reveal-delay-1" href="product.html?id=tshirts">
+        <div class="service-img"><img src="img/products/tshirt.webp" alt="T-shirt Printing" loading="lazy" /></div>
+        <div class="service-body">
+          <h3>T-shirt Printing</h3>
+          <p>Custom t-shirt printing for events, uniforms, and merchandise using screen or digital print.</p>
+          <div class="service-footer"><span class="service-price">From $12/pc</span><span class="service-cta">Get Quote <i class="fas fa-arrow-right"></i></span></div>
+        </div>
+      </a>
+      <a class="service-card reveal reveal-delay-2" href="product.html?id=corporate-gifts">
+        <div class="service-img"><img src="img/products/corporate_gifts.webp" alt="Corporate Gifts" loading="lazy" /></div>
+        <div class="service-body">
+          <h3>Corporate Gifts</h3>
+          <p>Branded merchandise, notebooks, pens, bags, and custom gifts for your business.</p>
+          <div class="service-footer"><span class="service-price">Custom pricing</span><span class="service-cta">Get Quote <i class="fas fa-arrow-right"></i></span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MID-PAGE CTA BANNER -->
+<section id="cta-banner">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div class="cta-text">
+        <h2>Ready to bring your brand to life?</h2>
+        <p>Get a free custom quote in under 2 hours. No commitment, no hassle.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="#contact" class="btn btn-primary btn-lg">Get a Free Quote</a>
+        <a href="https://wa.me/6598751606" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE STRIP -->
+<section id="showcase">
+  <div class="showcase-inner">
+    <div class="showcase-img reveal"><img src="img/hero/slider2.webp" alt="Print Pro printing press" loading="lazy" /></div>
+    <div class="showcase-img reveal reveal-delay-1"><img src="img/products/name_cards.webp" alt="Name cards" loading="lazy" /></div>
+    <div class="showcase-img reveal reveal-delay-2"><img src="img/products/booklets.webp" alt="Booklets" loading="lazy" /></div>
+    <div class="showcase-img reveal reveal-delay-3"><img src="img/products/rollup_banner.webp" alt="Roll-up banners" loading="lazy" /></div>
+    <div class="showcase-img reveal reveal-delay-4"><img src="img/products/tshirt.webp" alt="T-shirt printing" loading="lazy" /></div>
+  </div>
+  <div class="showcase-caption container">
+    <span class="eyebrow">Singapore's Most Trusted Printer</span>
+    <p>Premium quality across every product — from business cards to billboards, delivered with precision since 1991.</p>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Our Work</span>
+      <h2>Portfolio</h2>
+      <p>A selection of our recent work — quality you can see and feel.</p>
+    </div>
+    <div class="portfolio-filters reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="cards">Cards &amp; Stationery</button>
+      <button class="filter-btn" data-filter="print">Print Materials</button>
+      <button class="filter-btn" data-filter="display">Display &amp; Signage</button>
+      <button class="filter-btn" data-filter="apparel">Apparel &amp; Gifts</button>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item reveal" data-category="cards">
+        <img src="img/products/name_cards.webp" alt="Name Card" loading="lazy" />
+        <div class="portfolio-overlay"><div class="portfolio-overlay-content"><h4>Name Cards</h4><span>Cards &amp; Stationery</span></div></div>
+        <div class="portfolio-zoom"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="portfolio-item reveal reveal-delay-1" data-category="print">
+        <img src="img/products/booklets.webp" alt="Booklet" loading="lazy" />
+        <div class="portfolio-overlay"><div class="portfolio-overlay-content"><h4>Booklets</h4><span>Print Materials</span></div></div>
+        <div class="portfolio-zoom"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="portfolio-item reveal reveal-delay-2" data-category="print">
+        <img src="img/products/flyers.webp" alt="Flyer" loading="lazy" />
+        <div class="portfolio-overlay"><div class="portfolio-overlay-content"><h4>Flyers</h4><span>Print Materials</span></div></div>
+        <div class="portfolio-zoom"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="portfolio-item reveal" data-category="display">
+        <img src="img/products/rollup_banner.webp" alt="Roll-up Banner" loading="lazy" />
+        <div class="portfolio-overlay"><div class="portfolio-overlay-content"><h4>Roll-up Banners</h4><span>Display &amp; Signage</span></div></div>
+        <div class="portfolio-zoom"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="portfolio-item reveal reveal-delay-1" data-category="display">
+        <img src="img/products/vinyl_banner.webp" alt="Banner" loading="lazy" />
+        <div class="portfolio-overlay"><div class="portfolio-overlay-content"><h4>Banners</h4><span>Display &amp; Signage</span></div></div>
+        <div class="portfolio-zoom"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="portfolio-item reveal reveal-delay-2" data-category="cards">
+        <img src="img/products/envelope.webp" alt="Envelope" loading="lazy" />
+        <div class="portfolio-overlay"><div class="portfolio-overlay-content"><h4>Envelopes</h4><span>Cards &amp; Stationery</span></div></div>
+        <div class="portfolio-zoom"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="portfolio-item reveal" data-category="cards">
+        <img src="img/products/postcards.webp" alt="Post Card" loading="lazy" />
+        <div class="portfolio-overlay"><div class="portfolio-overlay-content"><h4>Postcards</h4><span>Cards &amp; Stationery</span></div></div>
+        <div class="portfolio-zoom"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="portfolio-item reveal reveal-delay-1" data-category="apparel">
+        <img src="img/products/tshirt.webp" alt="T-shirt" loading="lazy" />
+        <div class="portfolio-overlay"><div class="portfolio-overlay-content"><h4>T-shirt Printing</h4><span>Apparel &amp; Gifts</span></div></div>
+        <div class="portfolio-zoom"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="portfolio-item reveal reveal-delay-2" data-category="apparel">
+        <img src="img/products/corporate_gifts.webp" alt="Corporate Gifts" loading="lazy" />
+        <div class="portfolio-overlay"><div class="portfolio-overlay-content"><h4>Corporate Gifts</h4><span>Apparel &amp; Gifts</span></div></div>
+        <div class="portfolio-zoom"><i class="fas fa-expand"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button id="lightbox-close" aria-label="Close"><i class="fas fa-times"></i></button>
+  <button class="lightbox-nav" id="lightbox-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+  <button class="lightbox-nav" id="lightbox-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+  <img id="lightbox-img" src="" alt="" />
+  <div id="lightbox-caption" style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-size:14px;text-align:center;max-width:80%;padding:0 16px;"></div>
+</div>
+
+<!-- CLIENT LOGOS -->
+<section id="clients">
+  <div class="container">
+    <p class="clients-headline reveal">Print Pro is trusted by <strong>500+ large and small businesses</strong> across Singapore, UAE &amp; India</p>
+    <div class="clients-marquee">
+      <div class="clients-track">
+        <img src="img/clients/marina-bay-hotels-logo.png" alt="Marina Bay Hotels" loading="lazy" />
+        <img src="img/clients/greentech-asia-logo.png" alt="GreenTech Asia" loading="lazy" />
+        <img src="img/clients/nexus-media-logo.png" alt="Nexus Media" loading="lazy" />
+        <img src="img/clients/orbit-tech-logo.png" alt="Orbit Tech" loading="lazy" />
+        <img src="img/clients/pearl-events-logo.png" alt="Pearl Events" loading="lazy" />
+        <img src="img/clients/skyline-properties-logo.png" alt="Skyline Properties" loading="lazy" />
+        <img src="img/clients/titan-logistics-logo.png" alt="Titan Logistics" loading="lazy" />
+        <img src="img/clients/vantage-capital-logo.png" alt="Vantage Capital" loading="lazy" />
+        <img src="img/clients/apex-solutions-logo.png" alt="Apex Solutions" loading="lazy" />
+        <!-- Duplicate for seamless loop -->
+        <img src="img/clients/marina-bay-hotels-logo.png" alt="Marina Bay Hotels" loading="lazy" />
+        <img src="img/clients/greentech-asia-logo.png" alt="GreenTech Asia" loading="lazy" />
+        <img src="img/clients/nexus-media-logo.png" alt="Nexus Media" loading="lazy" />
+        <img src="img/clients/orbit-tech-logo.png" alt="Orbit Tech" loading="lazy" />
+        <img src="img/clients/pearl-events-logo.png" alt="Pearl Events" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BLOG / LATEST INSIGHTS ===== -->
+<section id="blog">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Knowledge Hub</span>
+      <h2>Latest Insights</h2>
+      <p>Discover expert tips, creative ideas, and the latest innovations shaping the future of printing.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <div class="blog-img"><img src="img/hero/slider1.webp" alt="5 Tips for Better Business Card Design" loading="lazy" /></div>
+        <div class="blog-body">
+          <span class="blog-date">15th April, 2026</span>
+          <h3>5 Print Materials Every Singapore Business Needs in 2026</h3>
+          <p>From name cards to roll-up banners — the essential print toolkit for growing businesses in Singapore.</p>
+          <a href="blog/print-materials-singapore-2026.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-1">
+        <div class="blog-img"><img src="img/hero/slider2.webp" alt="How to Choose the Right Paper Stock for Your Print" loading="lazy" /></div>
+        <div class="blog-body">
+          <span class="blog-date">2nd April, 2026</span>
+          <h3>How to Prepare Print-Ready Files: A Complete Guide</h3>
+          <p>Everything you need to know about bleed, resolution, colour modes, and file formats for perfect prints.</p>
+          <a href="blog/spot-uv-vs-matte-lamination.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-2">
+        <div class="blog-img"><img src="img/hero/slider3.webp" alt="Large Format Printing for Trade Shows" loading="lazy" /></div>
+        <div class="blog-body">
+          <span class="blog-date">20th March, 2026</span>
+          <h3>Exhibition Printing in Singapore: What to Order and When</h3>
+          <p>Planning for a trade show or conference? Here's the complete checklist of print materials you'll need.</p>
+          <a href="blog/same-day-printing-guide.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-3">
+        <div class="blog-img"><img src="img/hero/printing-hero.jpg" alt="Same-Day Printing in Singapore: What You Need to Know" loading="lazy" /></div>
+        <div class="blog-body">
+          <span class="blog-date">10th March, 2026</span>
+          <h3>T-shirt Printing Methods Compared: Screen vs Digital vs Heat Transfer</h3>
+          <p>Which method is right for your order? We break down the pros and cons of each printing technique.</p>
+          <a href="blog/corporate-gifts-singapore.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-3">
+        <div class="blog-img"><img src="img/hero/vistaprint-style.jpg" alt="Eco-Friendly Printing Options for Singapore Businesses" loading="lazy" /></div>
+        <div class="blog-body">
+          <span class="blog-date">1st March, 2026</span>
+          <h3>Banner Printing in Singapore: Stand Out at Trade Shows &amp; Events</h3>
+          <p>Print eye-catching custom banners for trade shows and corporate events. Choose your size, material and finish.</p>
+          <a href="blog/eco-friendly-printing.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-3">
+        <div class="blog-img"><img src="img/hero/print-shop.jpg" alt="Corporate Printing Solutions for Singapore SMEs" loading="lazy" /></div>
+        <div class="blog-body">
+          <span class="blog-date">15th February, 2026</span>
+          <h3>Eco-Friendly Printing: Sustainable Choices for Your Business</h3>
+          <p>Discover how to reduce your environmental footprint with recycled paper, soy-based inks, and responsible packaging.</p>
+          <a href="blog/eco-friendly-printing.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section id="locations">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Find Us</span>
+      <h2>Our Locations</h2>
+      <p>Serving clients across three countries with the same commitment to quality.</p>
+    </div>
+    <div class="locations-grid">
+      <div class="location-card hq reveal">
+        <span class="hq-badge">Headquarters</span>
+        <div class="location-flag">🇸🇬</div>
+        <h3>Singapore</h3>
+        <p class="location-company">Print Pro</p>
+        <div class="location-details">
+          <div class="location-detail"><i class="fas fa-map-marker-alt"></i><span>21 Woodlands Close, #08-44<br>Singapore 737854</span></div>
+          <div class="location-detail"><i class="fas fa-phone"></i><span><a href="tel:+6598751606">+65 9875 1606</a></span></div>
+          <div class="location-detail"><i class="fas fa-clock"></i><span>Mon–Sat: 9:00 AM – 6:00 PM</span></div>
+        </div>
+        <div class="location-actions">
+          <a href="https://wa.me/6598751606?text=Hi%20Print%20Pro%2C%20I%20would%20like%20to%20get%20a%20quote." target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="https://maps.google.com/?q=21+Woodlands+Close+Singapore+737854" target="_blank" class="btn btn-outline-dark btn-sm"><i class="fas fa-directions"></i> Directions</a>
+        </div>
+      </div>
+      <div class="location-card reveal reveal-delay-1">
+        <div class="location-flag">🇦🇪</div>
+        <h3>United Arab Emirates</h3>
+        <p class="location-company">Fanan Advertising LLC</p>
+        <div class="location-details">
+          <div class="location-detail"><i class="fas fa-map-marker-alt"></i><span>78GW+H3C - D91 - Hor Al Anz<br>Dubai, United Arab Emirates</span></div>
+          <div class="location-detail"><i class="fas fa-phone"></i><span><a href="tel:+971509845920">+971 50 984 5920</a></span></div>
+          <div class="location-detail"><i class="fas fa-clock"></i><span>Sun–Thu: 9:00 AM – 6:00 PM</span></div>
+        </div>
+        <div class="location-actions">
+          <a href="https://wa.me/971509845920?text=Hi%20Fanan%20Advertising%2C%20I%20would%20like%20to%20get%20a%20quote." target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="https://maps.google.com/?q=Hor+Al+Anz+Dubai+UAE" target="_blank" class="btn btn-outline-dark btn-sm"><i class="fas fa-directions"></i> Directions</a>
+        </div>
+      </div>
+      <div class="location-card reveal reveal-delay-2">
+        <div class="location-flag">🇮🇳</div>
+        <h3>India</h3>
+        <p class="location-company">Priya Printers</p>
+        <div class="location-details">
+          <div class="location-detail"><i class="fas fa-map-marker-alt"></i><span>Nirmala College Rd, South Chalakudy<br>Thrissur, Kerala 680307</span></div>
+          <div class="location-detail"><i class="fas fa-phone"></i><span><a href="tel:+919747551606">+91 97475 51606</a></span></div>
+          <div class="location-detail"><i class="fas fa-clock"></i><span>Mon–Sat: 9:00 AM – 6:00 PM</span></div>
+        </div>
+        <div class="location-actions">
+          <a href="https://wa.me/919747551606?text=Hi%20Priya%20Printers%2C%20I%20would%20like%20to%20get%20a%20quote." target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="https://maps.google.com/?q=Chalakudy+Thrissur+Kerala" target="_blank" class="btn btn-outline-dark btn-sm"><i class="fas fa-directions"></i> Directions</a>
+        </div>
+      </div>
+    </div>
+    <div class="map-embed reveal">
+      <div class="map-iframe-wrap" style="position:relative;width:100%;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.12);">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.5893!2d103.7868!3d1.4415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da13a0b1234567%3A0x0!2s21+Woodlands+Close+%2308-44+Singapore+737854!5e0!3m2!1sen!2ssg!4v1714000000000!5m2!1sen!2ssg"
+          width="100%"
+          height="400"
+          style="border:0;display:block;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Print Pro Singapore Location — 21 Woodlands Close, #08-44, Singapore 737854">
+        </iframe>
+        <div style="position:absolute;bottom:16px;right:16px;z-index:10;">
+          <a href="https://maps.google.com/?q=21+Woodlands+Close+%2308-44+Singapore+737854" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:6px;background:#e8192c;color:#fff;font-size:13px;font-weight:600;padding:8px 16px;border-radius:8px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+            <i class="fas fa-external-link-alt"></i> Open in Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">Common Questions</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about our printing services.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <div class="faq-question"><h3>What is your turnaround time?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Standard turnaround is 3–5 working days. We also offer express same-day or next-day printing for urgent orders at an additional charge. Contact us to discuss your timeline.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><h3>What file formats do you accept?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">We accept PDF, AI, PSD, EPS, and high-resolution JPG/PNG files. For best results, submit print-ready PDFs with 3mm bleed and CMYK colour mode. Our team can also help you prepare files.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><h3>Do you offer design services?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes! We have an in-house design team that can create or refine your artwork. Design fees vary by complexity. Orders above $150 include a free basic design service.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><h3>What is the minimum order quantity?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Minimum quantities vary by product. Name cards start from 50 pieces, flyers from 100 pieces, and t-shirts from 10 pieces. Contact us for specific product minimums.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><h3>Do you deliver to my location?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes, we offer delivery across Singapore. We also ship internationally to Malaysia, UAE, India, and other countries. Delivery charges apply based on order size and destination.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><h3>How do I get a quote?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Simply fill in the contact form below, WhatsApp us at +65 9875 1606, or call us directly. Tell us the product, quantity, size, and any special requirements and we'll get back to you within 2 hours.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><h3>Do you offer credit terms?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes, we offer credit terms for approved corporate accounts. Regular clients with a good payment history can apply for 30-day credit terms. Contact us to discuss eligibility.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><h3>What payment methods do you accept?</h3><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">We currently accept PayNow and Bank Transfer. For walk-in orders, cash payment is also accepted. Corporate invoicing is available for approved accounts.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="eyebrow">Get In Touch</span>
+        <h2>Let's Print Something Great Together</h2>
+        <p>Have a project in mind? Tell us about it and we'll get back to you within 2 hours with a custom quote.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div><div class="contact-item-label">Call Us</div><div class="contact-item-value"><a href="tel:+6598751606">+65 9875 1606</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div><div class="contact-item-label">WhatsApp</div><div class="contact-item-value"><a href="https://wa.me/6598751606" target="_blank">+65 9875 1606</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><div class="contact-item-label">Visit Us</div><div class="contact-item-value">21 Woodlands Close, #08-44, Singapore 737854</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <div><div class="contact-item-label">Hours</div><div class="contact-item-value">Mon–Sat: 9:00 AM – 6:00 PM</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div><div class="contact-item-label">Email</div><div class="contact-item-value"><a href="mailto:hello@printprosg.com">hello@printprosg.com</a></div></div>
+          </div>
+        </div>
+        <!-- Payment methods -->
+        <div class="payment-methods">
+          <span>We Accept:</span>
+          <div class="payment-icons">
+            <span class="pay-icon paynow"><i class="fas fa-qrcode"></i> PayNow</span>
+            <span class="pay-icon"><i class="fas fa-university"></i> Bank Transfer</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap reveal">
+        <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp</label>
+              <input type="tel" id="phone" name="phone" placeholder="+65 XXXX XXXX" />
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service">
+                <option value="">Select a service</option>
+                <option>Name Cards</option>
+                <option>Booklets / Catalogues</option>
+                <option>Flyers / Brochures</option>
+                <option>Banners / Signage</option>
+                <option>Roll-up Banners</option>
+                <option>T-shirt Printing</option>
+                <option>Corporate Gifts</option>
+                <option>Packaging</option>
+                <option>Stickers / Labels</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message *</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project — quantity, size, deadline, any special requirements..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fas fa-paper-plane"></i> Send Enquiry
+          </button>
+          <div id="form-success" style="display:none; margin-top:16px; padding:16px; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; color:#166534; font-size:14px; font-weight:600;">
+            <i class="fas fa-check-circle"></i> Thank you! We'll get back to you within 2 hours.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENHANCED FOOTER ===== -->
+<footer id="footer">
+  <div class="footer-newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-text">
+          <h3>Stay Updated with Print Pro</h3>
+          <p>Get exclusive deals, printing tips, and industry news delivered to your inbox.</p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="Enter your email address" required />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="img/logo-white.png" alt="Print Pro Singapore" class="footer-logo" />
+          <p>Singapore's trusted printing partner since 1991. Premium quality, fast turnaround, and exceptional service — every time.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/6598751606?text=Hi%20Print%20Pro%2C%20I%20would%20like%20to%20get%20a%20quote." target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#products">Name Cards</a></li>
+            <li><a href="#products">Flyers &amp; Leaflets</a></li>
+            <li><a href="#products">Stickers &amp; Labels</a></li>
+            <li><a href="#products">Booklets</a></li>
+            <li><a href="#products">Roll-up Banners</a></li>
+            <li><a href="#products">T-shirt Printing</a></li>
+            <li><a href="#products">Corporate Gifts</a></li>
+            <li><a href="#products">Packaging</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="faq.html">Help &amp; FAQs</a></li>
+            <li><a href="#contact">Request Credit</a></li>
+            <li><a href="design-services.html">Design Services</a></li>
+            <li><a href="#contact">Get Samples</a></li>
+            <li><a href="#contact">Artwork Guidelines</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>21 Woodlands Close, #08-44, Singapore 737854</span></div>
+            <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:+6598751606">+65 9875 1606</a></span></div>
+            <div class="footer-contact-item"><i class="fab fa-whatsapp"></i><span><a href="https://wa.me/6598751606">WhatsApp Us</a></span></div>
+            <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat: 9AM – 6PM</span></div>
+            <div class="footer-contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:hello@printprosg.com">hello@printprosg.com</a></span></div>
+          </div>
+          <div class="footer-payment">
+            <span class="footer-pay-label">We Accept:</span>
+            <div class="footer-pay-icons">
+              <span class="footer-pay-text"><i class="fas fa-qrcode"></i> PayNow</span>
+              <span class="footer-pay-text"><i class="fas fa-university"></i> Bank Transfer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Print Pro Singapore. All rights reserved. | GST Reg No: 123456789G</p>
+      <p>Designed with <span style="color:#d62b2b;">&#10084;</span> for quality printing | <a href="faq.html">Terms &amp; Conditions</a> | <a href="faq.html">Privacy Policy</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="whatsapp-float">
+  <a href="https://wa.me/6598751606?text=Hi%20Print%20Pro%2C%20I%20would%20like%20to%20get%20a%20quote." target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+<button id="scroll-top" aria-label="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- LIVE CHAT / HELP WIDGET (bottom-left popup) -->
+<div id="help-widget" class="help-widget hidden collapsed">
+  <div class="help-widget-header" id="help-widget-toggle">
+    <div class="help-widget-avatar">
+      <i class="fas fa-headset"></i>
+    </div>
+    <div class="help-widget-title">
+      <strong>Need Help with Your Order?</strong>
+      <span>Reach out now for quick support!</span>
+    </div>
+    <button class="help-widget-close" aria-label="Close"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="help-widget-body" id="help-widget-body">
+    <p>Our team is ready to help you with any questions about your print order.</p>
+    <div class="help-widget-actions">
+      <a href="https://wa.me/6598751606" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+      <a href="tel:+6598751606" class="btn btn-outline btn-sm"><i class="fas fa-phone"></i> Call Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE STICKY CTA BAR -->
+<div class="mobile-cta-bar">
+  <a href="tel:+6598751606" class="mobile-cta-call"><i class="fas fa-phone"></i> Call</a>
+  <a href="https://wa.me/6598751606" target="_blank" class="mobile-cta-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <a href="#contact" class="mobile-cta-quote"><i class="fas fa-file-alt"></i> Get Quote</a>
+</div>
+
+<!-- COOKIE CONSENT -->
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-inner">
+    <p><i class="fas fa-cookie-bite"></i> We use cookies to improve your experience. By continuing to use this site, you agree to our <a href="faq.html">Privacy Policy</a>.</p>
+    <div class="cookie-actions">
+      <button id="cookie-accept" class="btn btn-primary btn-sm">Accept All</button>
+      <button id="cookie-decline" class="btn btn-outline btn-sm">Decline</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js?v=35"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,1184 @@
+/*
+ * v46-upgrades.css — Comprehensive UI upgrades to push PrintProSG to 9+/10
+ * Loaded AFTER v45-fixes.css
+ */
+
+/* ═══════════════════════════════════════════════════════════════
+   1. SCROLL MARGIN — Fix anchor navigation cutting off headings
+   ═══════════════════════════════════════════════════════════════ */
+section[id] {
+  scroll-margin-top: 180px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   2. HERO — Subtle gradient background + improved product cards
+   ═══════════════════════════════════════════════════════════════ */
+#hero {
+  background: linear-gradient(135deg, #fafafa 0%, #f0f4ff 40%, #fff5f5 100%) !important;
+  position: relative !important;
+}
+
+/* Subtle dot grid pattern overlay */
+#hero::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px) !important;
+  background-size: 28px 28px !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+#hero .hero-inner {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Hero headline — make "Delivered Fast." even more impactful */
+.hero-headline em {
+  background: linear-gradient(135deg, #e8192c 0%, #c0000f 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-style: normal !important;
+}
+
+/* Hero product cards — larger images, better visual separation */
+.hero-product-img {
+  aspect-ratio: 1/1 !important;
+  padding: 16px !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+}
+
+.hero-product-img img {
+  max-height: 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.hero-product-card {
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+  background: #ffffff !important;
+}
+
+.hero-product-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+  border-color: rgba(232,25,44,0.2) !important;
+}
+
+.hero-product-info {
+  background: #ffffff !important;
+  padding: 10px 14px 12px !important;
+}
+
+.hero-product-info span {
+  font-size: 12px !important;
+  color: #6e6e73 !important;
+  font-weight: 500 !important;
+}
+
+.hero-product-info strong {
+  font-size: 14px !important;
+  color: #1d1d1f !important;
+  font-weight: 700 !important;
+  display: block !important;
+  margin-top: 2px !important;
+}
+
+/* Hero trust row — improve icon visibility */
+.hero-trust-row {
+  padding: 12px 0 0 !important;
+  border-top: 1px solid rgba(0,0,0,0.07) !important;
+  margin-top: 4px !important;
+}
+
+.hero-trust-row span {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #3a3a3c !important;
+}
+
+.hero-trust-row i {
+  color: #e8192c !important;
+  font-size: 13px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   3. STATS BAR — Divider lines and tighter padding
+   ═══════════════════════════════════════════════════════════════ */
+#stats-bar {
+  padding: 0 !important;
+}
+
+#stats-bar .stat-item {
+  padding: 40px 24px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   4. PRODUCTS SECTION — Tighter heading, better card hover
+   ═══════════════════════════════════════════════════════════════ */
+#products .section-header h2 {
+  font-size: clamp(24px, 3vw, 38px) !important;
+}
+
+/* Improve product card image area */
+.prod-img-wrap {
+  padding: 20px !important;
+  background: #f8f8fa !important;
+}
+
+.prod-img-wrap img {
+  max-height: 160px !important;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.prod-card {
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+.prod-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1) !important;
+  border-color: rgba(232,25,44,0.15) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   5. PROMOTIONS SECTION — Center the heading, add eyebrow style
+   ═══════════════════════════════════════════════════════════════ */
+.promo-header {
+  text-align: center !important;
+  margin-bottom: 36px !important;
+}
+
+.promo-header .eyebrow {
+  display: block !important;
+  margin-bottom: 8px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   6. REVIEWS — Fix card bottom cutoff, improve spacing
+   ═══════════════════════════════════════════════════════════════ */
+.review-card {
+  padding-bottom: 28px !important;
+}
+
+.reviews-track {
+  padding-bottom: 8px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   7. DESIGN SERVICES — Improve tab image quality
+   ═══════════════════════════════════════════════════════════════ */
+.ds-tab-content img {
+  width: 100% !important;
+  height: 280px !important;
+  object-fit: cover !important;
+  border-radius: 12px !important;
+}
+
+.ds-showcase {
+  background: #f5f5f7 !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   8. HOW IT WORKS — Improve step card styling
+   ═══════════════════════════════════════════════════════════════ */
+.hiw-step {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  padding: 32px 24px !important;
+  border: 1px solid rgba(0,0,0,0.06) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.hiw-step:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   9. NAME CARDS SHOWCASE — Improve card styling
+   ═══════════════════════════════════════════════════════════════ */
+.bcs-card {
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05) !important;
+}
+
+.bcs-card:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1) !important;
+  border-color: rgba(232,25,44,0.15) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   10. SERVICES SECTION — Improve service card styling
+   ═══════════════════════════════════════════════════════════════ */
+.service-card {
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.service-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   11. CTA BANNER — Improve visual impact
+   ═══════════════════════════════════════════════════════════════ */
+#cta-banner {
+  background: linear-gradient(135deg, #1d1d1f 0%, #2d1a1a 50%, #1d1d1f 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+#cta-banner::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: radial-gradient(ellipse at 30% 50%, rgba(232,25,44,0.15) 0%, transparent 60%) !important;
+  pointer-events: none !important;
+}
+
+#cta-banner .cta-inner {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   12. PORTFOLIO — Improve filter button styling
+   ═══════════════════════════════════════════════════════════════ */
+/* Desktop only: wrap filters. Mobile uses v53-mobile-apple.css nowrap+scroll */
+@media (min-width: 768px) {
+.portfolio-filters {
+  display: flex !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  margin-bottom: 32px !important;
+}
+}
+
+.portfolio-filter-btn {
+  padding: 8px 20px !important;
+  border-radius: 50px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+  background: transparent !important;
+  color: #3a3a3c !important;
+}
+
+.portfolio-filter-btn.active,
+.portfolio-filter-btn:hover {
+  background: #e8192c !important;
+  color: #fff !important;
+  border-color: #e8192c !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   13. BLOG SECTION — Improve card hover and image height
+   ═══════════════════════════════════════════════════════════════ */
+.blog-img {
+  height: 200px !important;
+  overflow: hidden !important;
+}
+
+.blog-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.5s ease !important;
+}
+
+.blog-card:hover .blog-img img {
+  transform: scale(1.05) !important;
+}
+
+.blog-card {
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  overflow: hidden !important;
+  border-radius: 16px !important;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   14. CLIENTS SECTION — Better visual weight and logo sizing
+   ═══════════════════════════════════════════════════════════════ */
+#clients {
+  padding: 48px 0 !important;
+  background: #f5f5f7 !important;
+}
+
+.clients-headline {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: #6e6e73 !important;
+  margin-bottom: 28px !important;
+}
+
+.clients-track img {
+  height: 48px !important;
+  filter: grayscale(0.3) opacity(0.7) !important;
+  transition: filter 300ms ease, transform 300ms ease !important;
+}
+
+.clients-track img:hover {
+  filter: grayscale(0) opacity(1) !important;
+  transform: scale(1.05) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   15. FAQ SECTION — Improve accordion styling
+   ═══════════════════════════════════════════════════════════════ */
+.faq-item {
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  border-radius: 12px !important;
+  margin-bottom: 8px !important;
+  overflow: hidden !important;
+  transition: box-shadow 0.2s ease !important;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06) !important;
+}
+
+.faq-question {
+  padding: 18px 24px !important;
+}
+
+.faq-question h3 {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   16. CONTACT SECTION — Improve form styling
+   ═══════════════════════════════════════════════════════════════ */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+  border-radius: 10px !important;
+  padding: 12px 16px !important;
+  font-size: 14px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  background: #ffffff !important;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #e8192c !important;
+  box-shadow: 0 0 0 3px rgba(232,25,44,0.08) !important;
+  outline: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   17. FOOTER — Improve newsletter section
+   ═══════════════════════════════════════════════════════════════ */
+.footer-newsletter {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+.footer-newsletter input[type="email"] {
+  border-radius: 50px 0 0 50px !important;
+  padding: 12px 20px !important;
+  border: none !important;
+  background: rgba(255,255,255,0.08) !important;
+  color: #fff !important;
+}
+
+.footer-newsletter input[type="email"]::placeholder {
+  color: rgba(255,255,255,0.4) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   18. COOKIE BANNER — Make it less intrusive
+   ═══════════════════════════════════════════════════════════════ */
+.cookie-banner {
+  padding: 10px 0 !important;
+  background: rgba(29, 29, 31, 0.97) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.cookie-inner p {
+  font-size: 12px !important;
+}
+
+.cookie-actions .btn {
+  padding: 7px 16px !important;
+  font-size: 12px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   19. GLOBAL — Improve button styles
+   ═══════════════════════════════════════════════════════════════ */
+.btn-primary {
+  background: linear-gradient(135deg, #e8192c 0%, #c0000f 100%) !important;
+  box-shadow: 0 4px 16px rgba(232,25,44,0.3) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(232,25,44,0.4) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   20. SECTION ALTERNATING BACKGROUNDS — Better visual rhythm
+   ═══════════════════════════════════════════════════════════════ */
+#concept-delivery {
+  background: #0a0f1e !important;
+}
+/* Ensure all text in concept-delivery is white on dark bg */
+#concept-delivery .section-header h2,
+#concept-delivery h2 {
+  color: #ffffff !important;
+}
+#concept-delivery .section-header p,
+#concept-delivery p {
+  color: rgba(255,255,255,0.78) !important;
+}
+#concept-delivery .eyebrow {
+  color: #ff8080 !important;
+}
+.ctd-card {
+  background: rgba(255,255,255,0.07) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+}
+.ctd-card h3 {
+  color: #ffffff !important;
+}
+.ctd-card p {
+  color: rgba(255,255,255,0.72) !important;
+}
+.ctd-cta {
+  color: #ff8080 !important;
+}
+
+#how-it-works {
+  background: #ffffff !important;
+}
+
+#biz-cards-showcase {
+  background: #f5f5f7 !important;
+}
+
+#blog {
+  background: #ffffff !important;
+}
+
+#faq {
+  background: #f5f5f7 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   21. SECTION HEADERS — Consistent max-width and spacing
+   ═══════════════════════════════════════════════════════════════ */
+.section-header {
+  max-width: 680px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.section-header h2 {
+  font-size: clamp(28px, 3.5vw, 44px) !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.1 !important;
+}
+
+.section-header p {
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+  color: #6e6e73 !important;
+  margin-top: 12px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   22. EYEBROW LABELS — Consistent styling
+   ═══════════════════════════════════════════════════════════════ */
+.eyebrow,
+span.eyebrow {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #e8192c !important;
+  display: block !important;
+  margin-bottom: 10px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   23. ABOUT SECTION — Improve feature icon styling
+   ═══════════════════════════════════════════════════════════════ */
+.about-feature-icon {
+  background: linear-gradient(135deg, #fff0f0 0%, #ffe0e0 100%) !important;
+  color: #e8192c !important;
+  border-radius: 12px !important;
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  font-size: 18px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   24. LOCATIONS SECTION — Improve location card styling
+   ═══════════════════════════════════════════════════════════════ */
+.location-card {
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.location-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   25. ANNOUNCEMENT BAR — Better contrast
+   ═══════════════════════════════════════════════════════════════ */
+#announcement-bar {
+  background: linear-gradient(90deg, #1a1a2e 0%, #e8192c 50%, #1a1a2e 100%) !important;
+  background-size: 200% 100% !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   26. SHOWCASE STRIP — Improve image brightness
+   ═══════════════════════════════════════════════════════════════ */
+.showcase-img img {
+  filter: brightness(0.9) !important;
+}
+
+.showcase-img:hover img {
+  filter: brightness(1.05) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   27. CONCEPT-DELIVERY CARDS — Improve icon styling
+   ═══════════════════════════════════════════════════════════════ */
+.ctd-icon {
+  background: linear-gradient(135deg, #fff0f0 0%, #ffe0e0 100%) !important;
+  color: #e8192c !important;
+  border-radius: 16px !important;
+  width: 56px !important;
+  height: 56px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 22px !important;
+  margin-bottom: 20px !important;
+}
+
+.ctd-card {
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important;
+  border-radius: 20px !important;
+  padding: 32px !important;
+  background: rgba(255,255,255,0.07) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.ctd-card:hover {
+  transform: translateY(-6px) !important;
+  background: rgba(255,255,255,0.11) !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.4) !important;
+}
+/* ctd-card text must be white (dark bg section) */
+.ctd-card h3 {
+  color: #ffffff !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+}
+.ctd-card p {
+  color: rgba(255,255,255,0.72) !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   28. BANNERS SHOWCASE — Improve visual presentation
+   ═══════════════════════════════════════════════════════════════ */
+#banners-showcase {
+  background: linear-gradient(135deg, #1d1d1f 0%, #2a1a1a 100%) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   29. NAVBAR — Improve active state and hover effects
+   ═══════════════════════════════════════════════════════════════ */
+.nav-links a:hover {
+  color: #e8192c !important;
+}
+
+.nav-cat-link:hover {
+  color: #e8192c !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   30. GLOBAL TRANSITIONS — Smoother animations
+   ═══════════════════════════════════════════════════════════════ */
+* {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   31. PROD-GRID — Ensure 4-column layout is maintained
+   ═══════════════════════════════════════════════════════════════ */
+.prod-grid {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+
+@media (max-width: 1024px) {
+  .prod-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .prod-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   32. BLOG GRID — Ensure 3-column layout is maintained
+   ═══════════════════════════════════════════════════════════════ */
+.blog-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+@media (max-width: 1024px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .blog-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   33. SERVICES GRID — Ensure 3-column layout
+   ═══════════════════════════════════════════════════════════════ */
+.services-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   34. PROMO BANNER — Ensure 3-column layout
+   ═══════════════════════════════════════════════════════════════ */
+.promo-carousel {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+@media (max-width: 900px) {
+  .promo-carousel {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   35. FOOTER — Improve bottom bar
+   ═══════════════════════════════════════════════════════════════ */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+  padding: 20px 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   36. HERO PRODUCT SHOWCASE — 2x2 grid with better proportions
+   ═══════════════════════════════════════════════════════════════ */
+.hero-product-showcase {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  align-self: center !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   37. REVIEW CARDS — Fix bottom padding
+   ═══════════════════════════════════════════════════════════════ */
+.reviews-carousel-wrap {
+  padding-bottom: 16px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   38. ABOUT STATS — Improve number styling
+   ═══════════════════════════════════════════════════════════════ */
+.about-stat-num {
+  font-size: clamp(32px, 4vw, 48px) !important;
+  font-weight: 800 !important;
+  color: #e8192c !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1 !important;
+}
+
+.about-stat-lbl {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #6e6e73 !important;
+  margin-top: 4px !important;
+}
+/* ═══════════════════════════════════════════════════════════════
+   39. HERO EYEBROW — Ensure it's always visible below navbar
+   ═══════════════════════════════════════════════════════════════ */
+.hero-eyebrow {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #6e6e73 !important;
+  margin-bottom: 20px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   40. PRODUCTS SECTION — Improve card image quality
+   ═══════════════════════════════════════════════════════════════ */
+.prod-img-wrap {
+  background: #f5f5f7 !important;
+  overflow: hidden !important;
+}
+.prod-img-wrap img {
+  transition: transform 0.4s ease !important;
+}
+.prod-card:hover .prod-img-wrap img {
+  transform: scale(1.06) !important;
+}
+.prod-card {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+.prod-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1) !important;
+  border-color: rgba(232,25,44,0.15) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   41. PROMOTIONS SECTION — Add eyebrow label and center heading
+   ═══════════════════════════════════════════════════════════════ */
+#promotions .section-header {
+  text-align: center !important;
+}
+#promotions .promo-header {
+  text-align: center !important;
+}
+.promo-banner-card {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.promo-banner-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   42. REVIEWS SECTION — Improve carousel card styling
+   ═══════════════════════════════════════════════════════════════ */
+.review-card {
+  border-radius: 20px !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.review-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1) !important;
+}
+.review-stars i {
+  color: #f5a623 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   43. SERVICES SECTION — Improve service card hover
+   ═══════════════════════════════════════════════════════════════ */
+.service-card {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.service-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12) !important;
+}
+.service-img {
+  overflow: hidden !important;
+}
+.service-img img {
+  transition: transform 0.4s ease !important;
+}
+.service-card:hover .service-img img {
+  transform: scale(1.06) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   44. PORTFOLIO SECTION — Improve filter buttons and card hover
+   ═══════════════════════════════════════════════════════════════ */
+.portfolio-filter-btn {
+  border-radius: 50px !important;
+  padding: 8px 20px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+}
+.portfolio-filter-btn.active {
+  background: #e8192c !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(232,25,44,0.3) !important;
+}
+.portfolio-item {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.portfolio-item:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15) !important;
+}
+.portfolio-img img {
+  transition: transform 0.4s ease !important;
+}
+.portfolio-item:hover .portfolio-img img {
+  transform: scale(1.06) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   45. BLOG SECTION — Improve card image aspect ratio
+   ═══════════════════════════════════════════════════════════════ */
+.blog-img {
+  aspect-ratio: 16/9 !important;
+  overflow: hidden !important;
+}
+.blog-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.4s ease !important;
+}
+.blog-card:hover .blog-img img {
+  transform: scale(1.06) !important;
+}
+.blog-body {
+  padding: 20px 24px 24px !important;
+}
+.blog-date {
+  font-size: 12px !important;
+  color: #6e6e73 !important;
+  font-weight: 500 !important;
+}
+.blog-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #1d1d1f !important;
+  line-height: 1.4 !important;
+  margin: 8px 0 10px !important;
+}
+.blog-excerpt {
+  font-size: 13px !important;
+  color: #6e6e73 !important;
+  line-height: 1.6 !important;
+}
+.blog-read-more {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #e8192c !important;
+  margin-top: 12px !important;
+  display: inline-block !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   46. LOCATIONS SECTION — Improve location card styling
+   ═══════════════════════════════════════════════════════════════ */
+.location-card {
+  border-radius: 20px !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  overflow: hidden !important;
+}
+.location-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   47. NAME CARDS SHOWCASE — Improve card image display
+   ═══════════════════════════════════════════════════════════════ */
+.bcs-img {
+  overflow: hidden !important;
+}
+.bcs-img img {
+  transition: transform 0.4s ease !important;
+}
+.bcs-card:hover .bcs-img img {
+  transform: scale(1.06) !important;
+}
+.bcs-card {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.bcs-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.14) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   48. HELP WIDGET — Delay appearance and improve styling
+   ═══════════════════════════════════════════════════════════════ */
+#help-widget {
+  border-radius: 16px 16px 0 0 !important;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.12) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   49. ANNOUNCEMENT BAR — Improve styling
+   ═══════════════════════════════════════════════════════════════ */
+#announcement-bar {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   50. GLOBAL — Improve focus states for accessibility
+   ═══════════════════════════════════════════════════════════════ */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #e8192c !important;
+  outline-offset: 2px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   51. SECTION HEADERS — Consistent eyebrow + heading spacing
+   ═══════════════════════════════════════════════════════════════ */
+.eyebrow {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: #e8192c !important;
+  margin-bottom: 10px !important;
+  display: block !important;
+}
+.section-header h2 {
+  font-size: clamp(26px, 3.5vw, 40px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.15 !important;
+  color: #1d1d1f !important;
+}
+.section-header p {
+  font-size: 16px !important;
+  color: #6e6e73 !important;
+  line-height: 1.6 !important;
+  margin-top: 10px !important;
+  max-width: 560px !important;
+}
+.section-header.text-center p {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   52. HOW IT WORKS — Fix blank gap below step grid
+   ═══════════════════════════════════════════════════════════════ */
+#how-it-works {
+  padding-bottom: 56px !important;
+}
+.hiw-grid {
+  margin-bottom: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   53. CONTACT SECTION — Improve info column
+   ═══════════════════════════════════════════════════════════════ */
+.contact-info-item {
+  padding: 16px 0 !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+}
+.contact-info-item:last-child {
+  border-bottom: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   54. FOOTER — Improve social icons
+   ═══════════════════════════════════════════════════════════════ */
+.footer-social a {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,0.08) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background 0.2s ease, transform 0.2s ease !important;
+}
+.footer-social a:hover {
+  background: #e8192c !important;
+  transform: translateY(-3px) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   55. PAYMENT METHODS — Improve payment icon display
+   ═══════════════════════════════════════════════════════════════ */
+.payment-methods {
+  margin-top: 20px !important;
+  padding-top: 16px !important;
+  border-top: 1px solid rgba(0,0,0,0.07) !important;
+}
+.pay-icon {
+  border-radius: 6px !important;
+  border: 1px solid rgba(0,0,0,0.1) !important;
+  padding: 4px 8px !important;
+  background: #ffffff !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #1d1d1f !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   56. STATS BAR — Ensure proper display
+   ═══════════════════════════════════════════════════════════════ */
+#stats-bar {
+  position: relative !important;
+  z-index: 1 !important;
+}
+.stat-num {
+  font-size: clamp(36px, 5vw, 56px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1 !important;
+}
+.stat-lbl {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  opacity: 0.75 !important;
+  margin-top: 4px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   57. ABOUT SECTION — Improve image display
+   ═══════════════════════════════════════════════════════════════ */
+.about-img-wrap {
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.12) !important;
+}
+.about-img-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   58. DESIGN SERVICES SECTION — Improve tab styling
+   ═══════════════════════════════════════════════════════════════ */
+.ds-tab-btn.active {
+  background: #e8192c !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(232,25,44,0.3) !important;
+}
+.ds-tab-btn {
+  border-radius: 50px !important;
+  padding: 8px 20px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   59. LARGE FORMAT / BANNERS SHOWCASE — Improve card display
+   ═══════════════════════════════════════════════════════════════ */
+.banner-card,
+.lf-card {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.banner-card:hover,
+.lf-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   60. CTA BANNER — Improve visual impact
+   ═══════════════════════════════════════════════════════════════ */
+#cta-banner {
+  background: linear-gradient(135deg, #e8192c 0%, #a00015 100%) !important;
+}
+#cta-banner h2 {
+  color: #ffffff !important;
+  font-size: clamp(28px, 4vw, 44px) !important;
+  font-weight: 800 !important;
+}
+#cta-banner p {
+  color: rgba(255,255,255,0.85) !important;
+}
+.cta-inner .btn-outline {
+  border-color: rgba(255,255,255,0.6) !important;
+  color: #ffffff !important;
+}
+.cta-inner .btn-outline:hover {
+  background: rgba(255,255,255,0.15) !important;
+  border-color: #ffffff !important;
+}

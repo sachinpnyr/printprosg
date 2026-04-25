@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Product — Print Pro Singapore</title>
+  <meta name="description" content="Configure and order custom printing products from Print Pro Singapore." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red:     #e8192c;
+      --red-dk:  #c0121e;
+      --ink1:    #111827;
+      --ink2:    #374151;
+      --ink3:    #6b7280;
+      --ink4:    #9ca3af;
+      --border:  #e5e7eb;
+      --bg:      #f9fafb;
+      --white:   #ffffff;
+      --green:   #16a34a;
+      --wa:      #25d366;
+      --radius:  8px;
+      --shadow:  0 1px 4px rgba(0,0,0,.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,.10);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink1); font-size: 14px; line-height: 1.5; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    select { font-family: inherit; }
+
+    /* Navbar styles handled by style.css */
+
+    /* ── Breadcrumb ───────────────────────────────────────────── */
+    .breadcrumb {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--ink3);
+    }
+    .breadcrumb a { color: var(--red); }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb .sep { color: var(--ink4); }
+
+    /* ── Main Layout ──────────────────────────────────────────── */
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 24px 24px 60px; }
+
+    /* ── Product Hero ─────────────────────────────────────────── */
+    .product-hero {
+      display: grid; grid-template-columns: 380px 1fr; gap: 32px;
+      background: var(--white); border-radius: 12px;
+      border: 1px solid var(--border); padding: 28px;
+      box-shadow: var(--shadow); margin-bottom: 32px;
+    }
+    .hero-img-wrap { position: relative; }
+    .hero-img-wrap img {
+      width: 100%; height: 300px; object-fit: cover;
+      border-radius: 8px; border: 1px solid var(--border);
+    }
+    .hero-badge-drop {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--red); color: white;
+      font-size: 11px; font-weight: 700; letter-spacing: .5px;
+      padding: 4px 10px; border-radius: 4px;
+      display: flex; align-items: center; gap: 4px;
+    }
+    .hero-info { display: flex; flex-direction: column; justify-content: space-between; }
+    .hero-title { font-size: 24px; font-weight: 800; color: var(--ink1); margin-bottom: 8px; }
+    .hero-delivery-badges { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .delivery-badge {
+      display: flex; align-items: center; gap: 5px;
+      background: #fff7ed; border: 1px solid #fed7aa;
+      color: #c2410c; font-size: 11px; font-weight: 600;
+      padding: 4px 10px; border-radius: 20px;
+    }
+    .delivery-badge.green { background: #f0fdf4; border-color: #bbf7d0; color: #15803d; }
+    .hero-price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+    .hero-price-label { font-size: 13px; color: var(--ink3); }
+    .hero-price-sgd { font-size: 13px; font-weight: 600; color: var(--ink2); }
+    .hero-price-amount { font-size: 32px; font-weight: 800; color: var(--red); }
+    .hero-price-unit { font-size: 13px; color: var(--ink3); }
+    .hero-price-orig { font-size: 13px; color: var(--ink4); text-decoration: line-through; }
+    .hero-price-off {
+      font-size: 11px; font-weight: 700; color: var(--red);
+      background: #fff0f1; border: 1px solid #fecdd3;
+      padding: 2px 8px; border-radius: 4px;
+    }
+    .hero-tabs { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: 20px; }
+    .prod-hero-tab {
+      flex: 1; padding: 10px; font-size: 13px; font-weight: 600;
+      color: var(--ink3); background: var(--bg); border: none; cursor: pointer;
+      transition: all .2s;
+    }
+    .prod-hero-tab.active { background: var(--red); color: white; }
+    .hero-trust { display: flex; gap: 16px; margin-top: 16px; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink3); }
+    .trust-item i { color: var(--green); font-size: 14px; }
+
+    /* ── Configurator Layout ──────────────────────────────────── */
+    #section-configurator {
+      display: grid; grid-template-columns: 1fr 320px; gap: 24px;
+      align-items: start;
+    }
+    .config-left { display: flex; flex-direction: column; gap: 24px; }
+
+    /* ── Step Cards ───────────────────────────────────────────── */
+    .step-card {
+      background: var(--white); border-radius: 12px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .step-header {
+      display: flex; align-items: center; gap: 12px;
+      padding: 16px 20px; border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .step-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--red); color: white;
+      font-size: 13px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-title { font-size: 15px; font-weight: 700; color: var(--ink1); }
+    .step-body { padding: 20px; }
+
+    /* ── Step 1: Design Choice ────────────────────────────────── */
+    .design-opts { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .design-opt {
+      border: 2px solid var(--border); border-radius: 10px;
+      padding: 16px 12px; cursor: pointer; text-align: center;
+      transition: all .2s; background: var(--white);
+    }
+    .design-opt:hover { border-color: var(--red); background: #fff5f5; }
+    .design-opt.active { border-color: var(--red); background: #fff5f5; }
+    .design-opt-icon { font-size: 28px; margin-bottom: 8px; }
+    .design-opt-title { font-size: 13px; font-weight: 700; color: var(--ink1); margin-bottom: 4px; }
+    .design-opt-sub { font-size: 11px; color: var(--ink3); }
+    .design-opt-badge {
+      display: inline-block; margin-top: 6px;
+      font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px;
+    }
+    .badge-free { background: #dcfce7; color: #15803d; }
+    .badge-paid { background: #fff7ed; color: #c2410c; }
+
+    /* ── Step 2: Options ──────────────────────────────────────── */
+    .opt-group { margin-bottom: 16px; }
+    .opt-group:last-child { margin-bottom: 0; }
+    .opt-group-label {
+      font-size: 11px; font-weight: 700; color: var(--ink3);
+      letter-spacing: .8px; text-transform: uppercase; margin-bottom: 6px;
+    }
+    .opt-select-wrap { position: relative; }
+    .opt-select-wrap::after {
+      content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+      position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+      font-size: 11px; color: var(--ink3); pointer-events: none;
+    }
+    .opt-select {
+      width: 100%; padding: 10px 36px 10px 12px;
+      border: 1.5px solid var(--border); border-radius: 8px;
+      font-size: 13px; color: var(--ink1); background: var(--white);
+      appearance: none; -webkit-appearance: none;
+      cursor: pointer; transition: border-color .2s;
+    }
+    .opt-select:focus { outline: none; border-color: var(--red); }
+    .opt-select:hover { border-color: var(--ink3); }
+
+    /* ── Step 3: Pricing Table ────────────────────────────────── */
+    .pricing-table-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 12px; flex-wrap: wrap; gap: 8px;
+    }
+    .pricing-table-hint { font-size: 12px; color: var(--ink3); }
+    .gst-toggle-wrap { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink2); }
+    .gst-toggle-wrap input[type=checkbox] { accent-color: var(--red); width: 14px; height: 14px; cursor: pointer; }
+
+    .pricing-table-wrap { overflow-x: auto; }
+    .pricing-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 13px;
+    }
+    .pricing-table thead tr th {
+      padding: 10px 12px; text-align: center;
+      background: var(--bg); border: 1px solid var(--border);
+      font-weight: 700; color: var(--ink2); font-size: 12px;
+    }
+    .pricing-table thead tr th:first-child { text-align: left; }
+    .th-date { font-size: 13px; font-weight: 700; color: var(--ink1); display: block; }
+    .th-badge {
+      display: inline-block; margin-top: 3px;
+      font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px;
+    }
+    .th-badge.fastest { background: #fff7ed; color: #c2410c; }
+    .th-badge.cheapest { background: #dcfce7; color: #15803d; }
+    .td-qty {
+      padding: 0 12px; font-weight: 600; color: var(--ink2);
+      border: 1px solid var(--border); white-space: nowrap;
+      background: var(--bg);
+    }
+    .price-cell {
+      border: 1px solid var(--border); padding: 0;
+      cursor: pointer; transition: background .15s;
+    }
+    .price-cell:hover .price-cell-inner { background: #fff5f5; }
+    .price-cell-inner {
+      padding: 10px 12px; text-align: center;
+      transition: all .15s; min-width: 130px;
+    }
+    .price-cell-inner.selected {
+      background: var(--red) !important; color: white;
+      border-radius: 0;
+    }
+    .price-cell-inner.selected .pc-orig,
+    .price-cell-inner.selected .pc-per { color: rgba(255,255,255,.75) !important; }
+    .price-cell-inner.selected .pc-price { color: white !important; }
+    .pc-orig { display: block; font-size: 11px; color: var(--ink4); text-decoration: line-through; }
+    .pc-price { display: block; font-size: 16px; font-weight: 800; color: var(--ink1); }
+    .pc-price.has-discount { color: var(--red); }
+    .pc-per { display: block; font-size: 10px; color: var(--ink3); margin-top: 2px; }
+
+    .custom-qty-btn {
+      margin-top: 12px; width: 100%;
+      padding: 9px; border: 1.5px dashed var(--border); border-radius: 8px;
+      font-size: 13px; color: var(--ink3); background: var(--white);
+      cursor: pointer; transition: all .2s;
+    }
+    .custom-qty-btn:hover { border-color: var(--red); color: var(--red); background: #fff5f5; }
+
+    /* ── Order Summary (Right Column) ─────────────────────────── */
+    .order-summary {
+      position: sticky; top: 80px;
+      background: var(--white); border-radius: 12px;
+      border: 1px solid var(--border); box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    .os-header {
+      background: var(--red); color: white;
+      padding: 14px 18px; font-size: 14px; font-weight: 700;
+    }
+    .os-body { padding: 18px; }
+    .os-empty { text-align: center; padding: 24px 0; color: var(--ink3); font-size: 13px; }
+    .os-empty i { font-size: 32px; color: var(--ink4); display: block; margin-bottom: 8px; }
+    #os-details { display: none; }
+    .os-product-name { font-size: 15px; font-weight: 700; color: var(--ink1); margin-bottom: 12px; }
+    .os-row {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      font-size: 12px; margin-bottom: 8px; gap: 8px;
+    }
+    .os-row-label { color: var(--ink3); flex-shrink: 0; }
+    .os-row-value { color: var(--ink1); font-weight: 500; text-align: right; }
+    .os-divider { border: none; border-top: 1px solid var(--border); margin: 12px 0; }
+    .os-total-row {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 4px;
+    }
+    .os-total-label { font-size: 14px; font-weight: 700; color: var(--ink1); }
+    .os-total-amount { font-size: 22px; font-weight: 800; color: var(--red); }
+    .os-per-piece { font-size: 11px; color: var(--ink3); text-align: right; margin-bottom: 12px; }
+    .os-saving {
+      background: #dcfce7; border: 1px solid #bbf7d0;
+      border-radius: 6px; padding: 8px 12px;
+      font-size: 12px; font-weight: 600; color: #15803d;
+      display: flex; align-items: center; gap: 6px;
+      margin-bottom: 16px;
+    }
+    .os-saving i { font-size: 14px; }
+    .btn-add-cart {
+      width: 100%; padding: 13px; border-radius: 8px;
+      background: var(--red); color: white;
+      font-size: 14px; font-weight: 700; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: background .2s; margin-bottom: 10px;
+    }
+    .btn-add-cart:hover:not(:disabled) { background: var(--red-dk); }
+    .btn-add-cart:disabled { opacity: .5; cursor: not-allowed; }
+    .btn-whatsapp {
+      width: 100%; padding: 11px; border-radius: 8px;
+      background: var(--wa); color: white;
+      font-size: 13px; font-weight: 600; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: background .2s;
+    }
+    .btn-whatsapp:hover { background: #1ebe5d; }
+    .os-note { font-size: 11px; color: var(--ink3); text-align: center; margin-top: 10px; line-height: 1.5; }
+
+    /* ── Product Details Tabs ─────────────────────────────────── */
+    #section-details {
+      background: var(--white); border-radius: 12px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      margin-top: 32px; overflow: hidden;
+    }
+    .prod-details-tabs {
+      display: flex; border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .prod-details-tab {
+      padding: 14px 24px; font-size: 13px; font-weight: 600;
+      color: var(--ink3); cursor: pointer; border: none; background: none;
+      border-bottom: 2px solid transparent; margin-bottom: -1px;
+      transition: all .2s;
+    }
+    .prod-details-tab.active { color: var(--red); border-bottom-color: var(--red); }
+    .prod-details-tab:hover { color: var(--ink1); }
+    .prod-details-content { display: none; padding: 24px; }
+    .prod-details-content.active { display: block; }
+    .prod-details-content p { font-size: 14px; color: var(--ink2); line-height: 1.7; margin-bottom: 12px; }
+    .specs-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .specs-table tr { border-bottom: 1px solid var(--border); }
+    .specs-table tr:last-child { border-bottom: none; }
+    .specs-table td { padding: 10px 12px; }
+    .specs-table td:first-child { font-weight: 600; color: var(--ink2); width: 40%; background: var(--bg); }
+    .specs-table td:last-child { color: var(--ink2); }
+
+    /* ── Related Products ─────────────────────────────────────── */
+    .related-section { margin-top: 40px; }
+    .related-title { font-size: 18px; font-weight: 800; color: var(--ink1); margin-bottom: 16px; }
+    .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .related-card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); overflow: hidden;
+      cursor: pointer; transition: all .2s;
+      display: flex; flex-direction: column;
+    }
+    .related-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--red); }
+    .related-card-img { width: 100%; height: 140px; object-fit: cover; }
+    .related-card-body { padding: 12px; flex: 1; }
+    .related-card-name { font-size: 13px; font-weight: 700; color: var(--ink1); margin-bottom: 6px; }
+    .related-card-price { font-size: 14px; font-weight: 800; color: var(--red); }
+    .related-card-orig { font-size: 11px; color: var(--ink4); text-decoration: line-through; }
+    .related-card-cta {
+      display: block; padding: 9px 12px;
+      background: var(--red); color: white;
+      font-size: 12px; font-weight: 600; text-align: center;
+      transition: background .2s;
+    }
+    .related-card-cta:hover { background: var(--red-dk); }
+
+    /* ── Custom Qty Modal ─────────────────────────────────────── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,.5); backdrop-filter: blur(2px);
+      display: none; align-items: center; justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: var(--white); border-radius: 12px;
+      padding: 28px; width: 360px; max-width: 90vw;
+      box-shadow: 0 20px 60px rgba(0,0,0,.2);
+    }
+    .modal-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .modal-sub { font-size: 13px; color: var(--ink3); margin-bottom: 16px; }
+    .modal-input {
+      width: 100%; padding: 10px 14px; border: 1.5px solid var(--border);
+      border-radius: 8px; font-size: 14px; margin-bottom: 16px;
+    }
+    .modal-input:focus { outline: none; border-color: var(--red); }
+    .modal-btns { display: flex; gap: 10px; }
+    .modal-btn-cancel {
+      flex: 1; padding: 10px; border-radius: 8px;
+      border: 1.5px solid var(--border); font-size: 13px; font-weight: 600;
+      color: var(--ink2); background: var(--white); cursor: pointer;
+    }
+    .modal-btn-ok {
+      flex: 1; padding: 10px; border-radius: 8px;
+      background: var(--red); color: white;
+      font-size: 13px; font-weight: 700; border: none; cursor: pointer;
+    }
+
+    /* ── Footer ───────────────────────────────────────────────── */
+    .prod-footer {
+      background: var(--ink1); color: #9ca3af;
+      text-align: center; padding: 20px 24px;
+      font-size: 12px; margin-top: 60px;
+    }
+    .prod-footer a { color: var(--red); }
+
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .product-hero { grid-template-columns: 1fr; }
+      .hero-img-wrap img { height: 220px; }
+      #section-configurator { grid-template-columns: 1fr; }
+      .order-summary { position: static; }
+      .design-opts { grid-template-columns: 1fr 1fr 1fr; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .page-wrap { padding: 16px 16px 48px; }
+      .navbar { padding: 0 16px; }
+      .product-hero { padding: 16px; }
+      .hero-title { font-size: 20px; }
+      .design-opts { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+      .step-body { padding: 14px; }
+    }
+  </style>
+  <link rel="stylesheet" href="style.css?v=24" />
+  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="apple-premium.css">
+  <link rel="stylesheet" href="v50-mobile.css" />
+  <link rel="stylesheet" href="v53-mobile-apple.css" />
+  <link rel="stylesheet" href="v45-fixes.css">
+  <link rel="stylesheet" href="v46-upgrades.css">
+  <link rel="stylesheet" href="v47-final.css">
+</head>
+<body>
+<!-- ANNOUNCEMENT BANNER (rotating) -->
+<div id="announcement-bar">
+  <div id="announcement-slides">
+    <div class="ann-slide active"><i class="fas fa-tag"></i>&nbsp; <strong>Free Design</strong> with every order above $150. <a href="index.html#contact">Claim now &rarr;</a></div>
+    <div class="ann-slide"><i class="fas fa-bolt"></i>&nbsp; <strong>Same-Day Printing</strong> available for urgent orders. <a href="index.html#contact">Order now &rarr;</a></div>
+    <div class="ann-slide"><i class="fas fa-percent"></i>&nbsp; <strong>Name Cards from $30</strong> &mdash; 50 pcs, full colour, premium stock. </div>
+  </div>
+  <button id="close-announcement" aria-label="Close announcement"><i class="fas fa-times"></i></button>
+</div>
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-top">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img alt="Print Pro Singapore" class="logo-img" src="img/logo-transparent.png" style="height:40px;width:auto;"/>
+      </a>
+      <div class="nav-search">
+        <i class="fas fa-search nav-search-icon"></i>
+        <input type="search" id="nav-search-input" placeholder="Search products, categories..." autocomplete="off" />
+        <button class="nav-search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <div id="search-dropdown" class="search-dropdown"></div>
+      </div>
+      <div class="nav-right">
+        <a href="tel:+6598751606" class="nav-phone"><i class="fas fa-phone"></i> <span>+65 9875 1606</span></a>
+        <button class="nav-icon-btn" aria-label="Account"><i class="fas fa-user"></i></button>
+        <button class="nav-icon-btn nav-cart-btn" id="nav-hamburger" aria-label="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+        <a href="index.html#contact" class="btn btn-primary btn-sm">Order Now</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="nav-categories" id="nav-categories">
+    <div class="nav-cat-container">
+      <a href="index.html#products" class="nav-cat">Most Popular</a>
+      <a href="index.html#products" class="nav-cat">Name Cards</a>
+      <a href="index.html#products" class="nav-cat">Flyers &amp; Leaflets</a>
+      <a href="index.html#products" class="nav-cat">Stickers</a>
+      <a href="index.html#products" class="nav-cat">Booklets</a>
+      <a href="index.html#products" class="nav-cat">Stationery &amp; Cards</a>
+      <a href="index.html#products" class="nav-cat">Marketing &amp; Advertising</a>
+      <a href="index.html#products" class="nav-cat">Signages</a>
+      <a href="index.html#products" class="nav-cat">Promo &amp; Giveaways</a>
+      <a href="index.html#products" class="nav-cat">Displays &amp; Banners</a>
+    </div>
+  </div>
+  <div class="nav-trust-bar">
+    <div class="nav-trust-container">
+      <a href="about.html" class="nav-trust-item"><i class="fas fa-shield-alt"></i> Best Price Guarantee</a>
+      <a href="design-services.html" class="nav-trust-item"><i class="fas fa-pencil-ruler"></i> Design Services</a>
+      <a href="delivery.html" class="nav-trust-item"><i class="fas fa-truck"></i> Fast &amp; On-Time Delivery</a>
+      <a href="faq.html" class="nav-trust-item"><i class="fas fa-credit-card"></i> Credit Terms Available</a>
+      <div class="nav-rating">
+        <div class="nav-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <span>4.8/5 &nbsp;&middot;&nbsp; 200+ reviews</span>
+      </div>
+    </div>
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#products">Products</a></li>
+    <li><a href="design-services.html">Design Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="delivery.html">Delivery</a></li>
+    <li><a href="artwork-guidelines.html">Artwork Guide</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── Breadcrumb ──────────────────────────────────────────────── -->
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="sep"><i class="fas fa-chevron-right" style="font-size:9px"></i></span>
+  <a href="index.html#products">Products</a>
+  <span class="sep"><i class="fas fa-chevron-right" style="font-size:9px"></i></span>
+  <span id="bc-cat">Category</span>
+  <span class="sep"><i class="fas fa-chevron-right" style="font-size:9px"></i></span>
+  <span id="bc-name">Product</span>
+</div>
+
+<!-- ── Page Wrap ───────────────────────────────────────────────── -->
+<div class="page-wrap">
+
+  <!-- Product Hero -->
+  <div class="product-hero">
+    <div class="hero-img-wrap">
+      <img id="hero-img" src="" alt="Product" />
+      <div class="hero-badge-drop" id="hero-pricedrop" style="display:none">
+        <i class="fas fa-tag"></i> PRICE DROP
+      </div>
+    </div>
+    <div class="hero-info">
+      <div>
+        <h1 class="hero-title" id="hero-title">Product Name</h1>
+        <div class="hero-delivery-badges">
+          <div class="delivery-badge"><i class="fas fa-bolt"></i> Same Day Delivery Available</div>
+          <div class="delivery-badge green"><i class="fas fa-truck"></i> Free Delivery in Singapore</div>
+        </div>
+        <div class="hero-price-row">
+          <span class="hero-price-label">From</span>
+          <span class="hero-price-sgd">SGD</span>
+          <span class="hero-price-amount" id="hero-price">—</span>
+          <span class="hero-price-unit" id="hero-unit"></span>
+          <span class="hero-price-orig" id="hero-orig" style="display:none"></span>
+          <span class="hero-price-off" id="hero-off" style="display:none"></span>
+        </div>
+      </div>
+      <div>
+        <div class="hero-tabs">
+          <button class="prod-hero-tab active" data-section="configurator">Configure &amp; Get Price</button>
+          <button class="prod-hero-tab" data-section="details">Product Details</button>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item"><i class="fas fa-shield-alt"></i> Quality Guaranteed</div>
+          <div class="trust-item"><i class="fas fa-undo"></i> Free Reprints if Faulty</div>
+          <div class="trust-item"><i class="fas fa-headset"></i> Expert Support</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Configurator + Order Summary -->
+  <div id="section-configurator">
+
+    <!-- Left: Config Steps -->
+    <div class="config-left">
+
+      <!-- STEP 1: Design -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div class="step-title">Do you have a design ready?</div>
+        </div>
+        <div class="step-body">
+          <div class="design-opts">
+            <div class="design-opt active" id="opt-upload" onclick="selectDesign('upload')">
+              <div class="design-opt-icon">📤</div>
+              <div class="design-opt-title">Upload Your Design</div>
+              <div class="design-opt-sub">I have a ready-to-print file</div>
+              <span class="design-opt-badge badge-free">FREE</span>
+            </div>
+            <div class="design-opt" id="opt-design" onclick="selectDesign('design')">
+              <div class="design-opt-icon">🎨</div>
+              <div class="design-opt-title">Let Us Design for You</div>
+              <div class="design-opt-sub">Professional design service</div>
+              <span class="design-opt-badge badge-paid">From $45</span>
+            </div>
+            <div class="design-opt" id="opt-template" onclick="selectDesign('template')">
+              <div class="design-opt-icon">🖼️</div>
+              <div class="design-opt-title">Use a Template</div>
+              <div class="design-opt-sub">Browse our free templates</div>
+              <span class="design-opt-badge badge-free">FREE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: Options -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">2</div>
+          <div class="step-title">Choose Your Options</div>
+        </div>
+        <div class="step-body">
+          <p style="font-size:12px;color:var(--ink3);margin-bottom:16px" id="options-product-title"></p>
+          <div id="options-container"></div>
+        </div>
+      </div>
+
+      <!-- STEP 3: Pricing Table -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div class="step-title">Choose a Quantity &amp; Delivery Date</div>
+        </div>
+        <div class="step-body">
+          <div class="pricing-table-header">
+            <span class="pricing-table-hint"><i class="fas fa-info-circle"></i> Click any price to select quantity &amp; delivery date</span>
+            <div class="gst-toggle-wrap">
+              <input type="checkbox" id="gst-toggle" onchange="toggleGST()" />
+              <label for="gst-toggle">Show price include GST (9%)?</label>
+            </div>
+          </div>
+          <div class="pricing-table-wrap">
+            <table class="pricing-table">
+              <thead>
+                <tr>
+                  <th style="text-align:left;min-width:100px">Quantity</th>
+                  <th>
+                    <span class="th-date" id="col-date-0">—</span>
+                    <span class="th-badge fastest">Fastest</span>
+                  </th>
+                  <th>
+                    <span class="th-date" id="col-date-1">—</span>
+                  </th>
+                  <th>
+                    <span class="th-date" id="col-date-2">—</span>
+                    <span class="th-badge cheapest">Cheapest</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="pricing-tbody">
+                <!-- Rows injected by JS -->
+              </tbody>
+            </table>
+          </div>
+          <button class="custom-qty-btn" onclick="openCustomQty()">
+            <i class="fas fa-plus-circle"></i> Enter a custom quantity
+          </button>
+        </div>
+      </div>
+
+    </div><!-- /config-left -->
+
+    <!-- Right: Order Summary -->
+    <div class="order-summary">
+      <div class="os-header"><i class="fas fa-receipt"></i> Your Order Summary</div>
+      <div class="os-body">
+
+        <div id="os-empty" class="os-empty">
+          <i class="fas fa-hand-pointer"></i>
+          Select a quantity &amp; delivery date from the table to see your price
+        </div>
+
+        <div id="os-details">
+          <div class="os-product-name" id="os-product-name"></div>
+          <div class="os-row">
+            <span class="os-row-label">Options</span>
+            <span class="os-row-value" id="os-options" style="font-size:11px;max-width:180px"></span>
+          </div>
+          <div class="os-row">
+            <span class="os-row-label">Quantity</span>
+            <span class="os-row-value" id="os-qty"></span>
+          </div>
+          <div class="os-row">
+            <span class="os-row-label">Delivery by</span>
+            <span class="os-row-value" id="os-delivery"></span>
+          </div>
+          <div class="os-row" id="os-design-row" style="display:none">
+            <span class="os-row-label">Design Service</span>
+            <span class="os-row-value" style="color:var(--red)">+ SGD 45.00</span>
+          </div>
+          <hr class="os-divider" />
+          <div class="os-total-row">
+            <span class="os-total-label">Total</span>
+            <span class="os-total-amount" id="os-total">—</span>
+          </div>
+          <div class="os-per-piece" id="os-per"></div>
+          <div class="os-saving" id="os-saving" style="display:none">
+            <i class="fas fa-tag"></i>
+            <span id="os-saving-text"></span>
+          </div>
+          <button class="btn-add-cart" id="btn-add-cart" disabled>
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+          <button class="btn-whatsapp" id="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+          </button>
+          <p class="os-note">
+            <i class="fas fa-lock" style="color:var(--green)"></i>
+            Secure checkout &nbsp;|&nbsp; Free delivery in SG &nbsp;|&nbsp; Quality guaranteed
+          </p>
+        </div>
+
+      </div>
+    </div><!-- /order-summary -->
+
+  </div><!-- /section-configurator -->
+
+  <!-- Product Details Tabs -->
+  <div id="section-details">
+    <div class="prod-details-tabs">
+      <button class="prod-details-tab active" data-dtab="desc">Description &amp; Specs</button>
+      <button class="prod-details-tab" data-dtab="faq">FAQ</button>
+      <button class="prod-details-tab" data-dtab="reviews">Reviews</button>
+    </div>
+    <div class="prod-details-content active" id="dtab-desc">
+      <div id="prod-description"></div>
+    </div>
+    <div class="prod-details-content" id="dtab-faq">
+      <div id="prod-faq"></div>
+    </div>
+    <div class="prod-details-content" id="dtab-reviews">
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <div style="background:var(--bg);border-radius:8px;padding:16px;flex:1;min-width:240px">
+          <div style="display:flex;gap:2px;color:#f59e0b;margin-bottom:6px">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p style="font-size:13px;color:var(--ink2);margin-bottom:8px">"Very affordable, high quality and fast delivery. Will order again!"</p>
+          <div style="font-size:12px;font-weight:600;color:var(--ink1)">Aimi Azmi</div>
+          <div style="font-size:11px;color:var(--ink3)">6 months ago · Google Review</div>
+        </div>
+        <div style="background:var(--bg);border-radius:8px;padding:16px;flex:1;min-width:240px">
+          <div style="display:flex;gap:2px;color:#f59e0b;margin-bottom:6px">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p style="font-size:13px;color:var(--ink2);margin-bottom:8px">"Great quality and very responsive customer service. Highly recommended!"</p>
+          <div style="font-size:12px;font-weight:600;color:var(--ink1)">Vikram Pillai</div>
+          <div style="font-size:11px;color:var(--ink3)">3 days ago · Google Review</div>
+        </div>
+        <div style="background:var(--bg);border-radius:8px;padding:16px;flex:1;min-width:240px">
+          <div style="display:flex;gap:2px;color:#f59e0b;margin-bottom:6px">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p style="font-size:13px;color:var(--ink2);margin-bottom:8px">"Fast turnaround, excellent print quality. Will definitely use again for our next event."</p>
+          <div style="font-size:12px;font-weight:600;color:var(--ink1)">Sarah Lim</div>
+          <div style="font-size:11px;color:var(--ink3)">2 weeks ago · Facebook Review</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Products -->
+  <div class="related-section">
+    <div class="related-title">You May Also Like</div>
+    <div class="related-grid" id="related-grid"></div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- Custom Qty Modal -->
+<div class="modal-overlay" id="custom-qty-modal">
+  <div class="modal-box">
+    <div class="modal-title">Enter Custom Quantity</div>
+    <div class="modal-sub">We'll calculate the best price for your quantity.</div>
+    <input type="number" class="modal-input" id="custom-qty-input" placeholder="e.g. 750" min="1" />
+    <div class="modal-btns">
+      <button class="modal-btn-cancel" onclick="closeCustomQty()">Cancel</button>
+      <button class="modal-btn-ok" onclick="confirmCustomQty()">Get Price</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="prod-footer">
+  &copy; <span id="footer-year-product"></span> Print Pro Singapore. All rights reserved. &nbsp;|&nbsp;
+  <a href="index.html">Back to Home</a> &nbsp;|&nbsp;
+  <a href="index.html#contact">Contact Us</a>
+</div>
+
+<script>document.getElementById('footer-year-product').textContent = new Date().getFullYear();</script>
+<script src="script.js"></script>
+<script src="product.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="70" viewBox="0 0 180 70">
+  <rect width="180" height="70" fill="white" rx="4"/>
+  <!-- Left accent bar -->
+  <rect x="12" y="15" width="4" height="40" fill="#f2e9e4" rx="2"/>
+  <!-- Company name -->
+  <text x="24" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="900" letter-spacing="2" fill="#4a4e69">PEARL</text>
+  <!-- Tagline -->
+  <text x="24" y="48" font-family="Arial, sans-serif" font-size="9" font-weight="400" letter-spacing="3" fill="#f2e9e4">EVENTS</text>
+  <!-- Decorative dot -->
+  <circle cx="164" cy="35" r="5" fill="#f2e9e4" opacity="0.7"/>
+  <circle cx="164" cy="35" r="3" fill="#4a4e69"/>
+</svg>

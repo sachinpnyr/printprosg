@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artwork Guidelines | Print Pro SG — File Preparation Guide</title>
+  <meta name="description" content="How to prepare your artwork files for printing. PDF, bleed, CMYK, resolution, fonts — everything you need to know." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="apple-premium.css">
+  <link rel="stylesheet" href="v50-mobile.css" />
+  <link rel="stylesheet" href="v53-mobile-apple.css" />
+</head>
+<body>
+<!-- ANNOUNCEMENT BANNER (rotating) -->
+<div id="announcement-bar">
+  <div id="announcement-slides">
+    <div class="ann-slide active"><i class="fas fa-tag"></i>&nbsp; <strong>Free Design</strong> with every order above $150. <a href="index.html#contact">Claim now &rarr;</a></div>
+    <div class="ann-slide"><i class="fas fa-bolt"></i>&nbsp; <strong>Same-Day Printing</strong> available for urgent orders. <a href="index.html#contact">Order now &rarr;</a></div>
+    <div class="ann-slide"><i class="fas fa-percent"></i>&nbsp; <strong>Name Cards from $30</strong> &mdash; 50 pcs, full colour, premium stock. </div>
+  </div>
+  <button id="close-announcement" aria-label="Close announcement"><i class="fas fa-times"></i></button>
+</div>
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-top">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img alt="Print Pro Singapore" class="logo-img" src="img/logo-transparent.png" style="height:40px;width:auto;"/>
+      </a>
+      <!-- Search Bar -->
+      <div class="nav-search">
+        <i class="fas fa-search nav-search-icon"></i>
+        <input type="search" id="nav-search-input" placeholder="Search products, categories..." autocomplete="off" />
+        <button class="nav-search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <div id="search-dropdown" class="search-dropdown"></div>
+      </div>
+      <div class="nav-right">
+        <a href="tel:+6598751606" class="nav-phone"><i class="fas fa-phone"></i> <span>+65 9875 1606</span></a>
+        <button class="nav-icon-btn" aria-label="Account"><i class="fas fa-user"></i></button>
+        <button class="nav-icon-btn nav-cart-btn" id="nav-hamburger" aria-label="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+        <a href="index.html#contact" class="btn btn-primary btn-sm">Order Now</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Category Mega Nav -->
+  <div class="nav-categories" id="nav-categories">
+    <div class="nav-cat-container">
+      <a href="index.html#products" class="nav-cat">Most Popular</a>
+      <a href="index.html#products" class="nav-cat">Name Cards</a>
+      <a href="index.html#products" class="nav-cat">Flyers &amp; Leaflets</a>
+      <a href="index.html#products" class="nav-cat">Stickers</a>
+      <a href="index.html#products" class="nav-cat">Booklets</a>
+      <a href="index.html#products" class="nav-cat">Stationery &amp; Cards</a>
+      <a href="index.html#products" class="nav-cat">Marketing &amp; Advertising</a>
+      <a href="index.html#products" class="nav-cat">Signages</a>
+      <a href="index.html#products" class="nav-cat">Promo &amp; Giveaways</a>
+      <a href="index.html#products" class="nav-cat">Displays &amp; Banners</a>
+    </div>
+  </div>
+  <!-- Trust Badges Bar -->
+  <div class="nav-trust-bar">
+    <div class="nav-trust-container">
+      <a href="about.html" class="nav-trust-item"><i class="fas fa-shield-alt"></i> Best Price Guarantee</a>
+      <a href="design-services.html" class="nav-trust-item"><i class="fas fa-pencil-ruler"></i> Design Services</a>
+      <a href="delivery.html" class="nav-trust-item"><i class="fas fa-truck"></i> Fast &amp; On-Time Delivery</a>
+      <a href="faq.html" class="nav-trust-item"><i class="fas fa-credit-card"></i> Credit Terms Available</a>
+      <div class="nav-rating">
+        <div class="nav-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <span>4.8/5 &nbsp;&middot;&nbsp; 200+ reviews</span>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile nav links -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#products">Products</a></li>
+    <li><a href="design-services.html">Design Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="delivery.html">Delivery</a></li>
+    <li><a href="artwork-guidelines.html">Artwork Guide</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+<section class="page-hero ag-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="page-breadcrumb"><a href="index.html">Home</a> <i class="fa fa-chevron-right"></i> Artwork Guidelines</div>
+      <h1>Artwork Guidelines</h1>
+      <p>Follow these guidelines to ensure your print files produce the best possible results. Not sure? Our design team can prepare your file for you.</p>
+      <a href="design-services.html" class="btn btn-red">Get Design Help</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK CHECKLIST -->
+<section class="ag-checklist section-pad bg-amber">
+  <div class="container">
+    <h2 class="text-center">Quick Checklist</h2>
+    <div class="ag-checklist-grid">
+      <div class="ag-check-item"><i class="fa fa-check-circle"></i> File format: PDF (preferred), AI, EPS</div>
+      <div class="ag-check-item"><i class="fa fa-check-circle"></i> Colour mode: CMYK</div>
+      <div class="ag-check-item"><i class="fa fa-check-circle"></i> Resolution: minimum 300 DPI</div>
+      <div class="ag-check-item"><i class="fa fa-check-circle"></i> Bleed: 3mm on all sides</div>
+      <div class="ag-check-item"><i class="fa fa-check-circle"></i> Safe zone: 3mm inside trim edge</div>
+      <div class="ag-check-item"><i class="fa fa-check-circle"></i> Fonts: embedded or outlined</div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILED GUIDELINES -->
+<section class="ag-details section-pad">
+  <div class="container ag-details-grid">
+
+    <div class="ag-detail-card">
+      <div class="ag-detail-icon"><i class="fa fa-file-pdf"></i></div>
+      <h3>File Format</h3>
+      <p><strong>Preferred:</strong> PDF with embedded fonts and CMYK colour mode.</p>
+      <p><strong>Also accepted:</strong> AI (Adobe Illustrator), EPS (Encapsulated PostScript), high-resolution JPG or PNG (300 DPI minimum).</p>
+      <p><strong>Not accepted:</strong> Word documents, PowerPoint files, or web-resolution images (72 DPI).</p>
+    </div>
+
+    <div class="ag-detail-card">
+      <div class="ag-detail-icon"><i class="fa fa-palette"></i></div>
+      <h3>Colour Mode</h3>
+      <p>All files must be in <strong>CMYK colour mode</strong>. RGB files will be converted to CMYK automatically, which may cause noticeable colour shifts — especially for vibrant reds, blues, and oranges.</p>
+      <p>For Pantone/spot colours, please specify the CMYK equivalent. We do not support spot colour printing on standard digital products.</p>
+    </div>
+
+    <div class="ag-detail-card">
+      <div class="ag-detail-icon"><i class="fa fa-expand-arrows-alt"></i></div>
+      <h3>Bleed &amp; Safe Zone</h3>
+      <p><strong>Bleed:</strong> Add 3mm of extra artwork beyond the trim edge on all sides. Background colours and images that touch the edge must extend into the bleed area.</p>
+      <p><strong>Safe Zone:</strong> Keep all important content (text, logos, key graphics) at least 3mm inside the trim edge to avoid being cut off.</p>
+      <p><strong>Trim line:</strong> The actual finished size of your product.</p>
+    </div>
+
+    <div class="ag-detail-card">
+      <div class="ag-detail-icon"><i class="fa fa-search-plus"></i></div>
+      <h3>Resolution</h3>
+      <p>Minimum <strong>300 DPI</strong> at actual print size for all standard products. Images that look sharp on screen at 72 DPI will appear blurry when printed.</p>
+      <p>For large format products (banners, foam board, signage), 150 DPI at actual print size is acceptable.</p>
+    </div>
+
+    <div class="ag-detail-card">
+      <div class="ag-detail-icon"><i class="fa fa-font"></i></div>
+      <h3>Fonts</h3>
+      <p>All fonts must be <strong>embedded</strong> in the PDF or <strong>converted to outlines/curves</strong> in AI/EPS files. Missing fonts will be substituted with a default font, which may change your layout.</p>
+      <p>Minimum recommended font size: 6pt for body text, 8pt for important information.</p>
+    </div>
+
+    <div class="ag-detail-card">
+      <div class="ag-detail-icon"><i class="fa fa-layer-group"></i></div>
+      <h3>Black &amp; Dark Colours</h3>
+      <p>For large solid black areas, use <strong>Rich Black</strong>: C:60 M:40 Y:40 K:100 for a deeper, richer black.</p>
+      <p>For small text (under 12pt), use <strong>Pure Black</strong>: C:0 M:0 Y:0 K:100 to avoid colour registration issues causing blurry text.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIAGRAM -->
+<section class="ag-diagram section-pad bg-light">
+  <div class="container text-center">
+    <h2>Bleed, Trim &amp; Safe Zone Diagram</h2>
+    <p>Use this diagram as a reference when setting up your artwork file.</p>
+    <div class="ag-diagram-box">
+      <div class="ag-diagram-bleed">
+        <span class="ag-diagram-label ag-label-bleed">Bleed (+3mm)</span>
+        <div class="ag-diagram-trim">
+          <span class="ag-diagram-label ag-label-trim">Trim Line</span>
+          <div class="ag-diagram-safe">
+            <span class="ag-diagram-label ag-label-safe">Safe Zone (−3mm)</span>
+            <div class="ag-diagram-content">
+              <i class="fa fa-image"></i>
+              <p>Your Design Content Here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ag-diagram-legend">
+      <span class="ag-legend-item ag-legend-bleed"><span></span> Bleed Area (extend backgrounds here)</span>
+      <span class="ag-legend-item ag-legend-trim"><span></span> Trim Line (finished size)</span>
+      <span class="ag-legend-item ag-legend-safe"><span></span> Safe Zone (keep text &amp; logos here)</span>
+    </div>
+  </div>
+</section>
+
+<!-- NEED HELP -->
+<section class="ag-help section-pad bg-red-gradient">
+  <div class="container text-center">
+    <h2>Don't Want to Deal with File Prep?</h2>
+    <p>Let our design team prepare your artwork file for print — starting from just SGD 5.</p>
+    <a href="design-services.html" class="btn btn-white-red">View Design Services</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-newsletter">
+    <div class="container footer-newsletter-inner">
+      <div class="fn-text"><h3>Stay Updated</h3><p>Get exclusive deals and printing tips in your inbox.</p></div>
+      <form class="fn-form" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit" class="btn btn-red">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <img alt="Print Pro Singapore" class="footer-logo-img" src="img/logo-white.png" style="height:36px;width:auto;margin-bottom:12px;"/>
+        <p>Singapore's trusted online printing partner. Quality prints, fast delivery, best prices guaranteed.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="product.html?id=name-cards">Name Cards</a></li>
+          <li><a href="product.html?id=flyers">Flyers &amp; Leaflets</a></li>
+          <li><a href="product.html?id=stickers">Stickers &amp; Labels</a></li>
+          <li><a href="product.html?id=booklets">Booklets</a></li>
+          <li><a href="product.html?id=roll-up-banners">Roll-up Banners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="design-services.html">Design Services</a></li>
+          <li><a href="artwork-guidelines.html">Artwork Guidelines</a></li>
+          <li><a href="delivery.html">Delivery Info</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fa fa-phone"></i> +65 9875 1606</li>
+          <li><i class="fa fa-envelope"></i> hello@printprosg.com</li>
+          <li><i class="fa fa-map-marker-alt"></i> 123 Print Street, #05-01, Singapore 123456</li>
+          <li><i class="fa fa-clock"></i> Mon–Fri 9am–6pm, Sat 10am–3pm</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>&copy; <span id="footer-year-ag"></span> Print Pro SG. All rights reserved. GST Reg No: 202312345A</p>
+      <div class="footer-pay-icons">
+        <span class="pay-icon">VISA</span>
+        <span class="pay-icon">MC</span>
+        <span class="pay-icon">PayNow</span>
+        <span class="pay-icon">Bank</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year-ag').textContent = new Date().getFullYear();</script>
+<script src="script.js?v=35"></script>
+
+
+<script src="chatbot.js"></script>
+</body>
+</html>

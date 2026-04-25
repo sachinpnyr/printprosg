@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 215 52" width="215" height="52">
+  <defs>
+    <radialGradient id="wcg" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#29c6e0"/>
+      <stop offset="100%" stop-color="#0096b7"/>
+    </radialGradient>
+    <radialGradient id="wmg" cx="60%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#f7358a"/>
+      <stop offset="100%" stop-color="#c4004e"/>
+    </radialGradient>
+    <radialGradient id="wyg" cx="50%" cy="70%" r="60%">
+      <stop offset="0%" stop-color="#ffe033"/>
+      <stop offset="100%" stop-color="#f5a800"/>
+    </radialGradient>
+  </defs>
+  <!-- TEXT: "Print Pro" — ends at x≈143, solid white -->
+  <text
+    x="4"
+    y="40"
+    font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif"
+    font-size="34"
+    font-weight="900"
+    letter-spacing="-0.5"
+    fill="#ffffff"
+  >Print Pro</text>
+  <!-- INK SPLASH ICON — center at x=190, y=26, radius=14 -->
+  <!-- Leftmost point at x=176, well clear of text end at x=143 -->
+  <!-- CYAN arc: top-right -->
+  <path
+    d="M 180 12 A 14 14 0 0 1 204 26"
+    stroke="url(#wcg)" stroke-width="5" stroke-linecap="round" fill="none"
+  />
+  <circle cx="204" cy="26" r="3.2" fill="url(#wcg)"/>
+  <!-- MAGENTA arc: left -->
+  <path
+    d="M 176 36 A 14 14 0 0 1 180 12"
+    stroke="url(#wmg)" stroke-width="5" stroke-linecap="round" fill="none"
+  />
+  <circle cx="180" cy="12" r="3.2" fill="url(#wmg)"/>
+  <!-- YELLOW arc: bottom -->
+  <path
+    d="M 204 26 A 14 14 0 0 1 176 36"
+    stroke="url(#wyg)" stroke-width="5" stroke-linecap="round" fill="none"
+  />
+  <circle cx="176" cy="36" r="3.2" fill="url(#wyg)"/>
+</svg>

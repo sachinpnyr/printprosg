@@ -1,0 +1,614 @@
+/* ================================================================
+   PRINT PRO SG — v45 COMPREHENSIVE UI FIXES
+   Fixes all layout, spacing, and visual issues identified in audit
+   ================================================================ */
+
+/* ── 0. REVEAL ANIMATION — Fix invisible content (critical) ─── */
+/* Make reveal elements visible by default — animation is progressive enhancement */
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+.reveal.visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+/* Keep the animation only for elements already in viewport on load */
+@media (prefers-reduced-motion: no-preference) {
+  .js-reveal-ready .reveal:not(.visible) {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .js-reveal-ready .reveal.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+/* ── 1. SECTION PADDING — Reduce from 120px to 72px ─────────── */
+section {
+  padding: 56px 0 !important;
+}
+#hero {
+  padding: 0 !important;
+  min-height: auto !important;
+  background: #ffffff !important;
+}
+#stats-bar {
+  padding: 32px 0 !important;
+}
+
+/* ── 2. HERO SECTION — Fix inner padding ────────────────────── */
+.hero-inner {
+  min-height: auto !important;
+  padding-top: 170px !important; /* Full navbar height - ensures eyebrow always below navbar */
+  padding-bottom: 80px !important;
+}
+
+/* ── 3. NAVBAR — Remove backdrop-filter pink halo ───────────── */
+#navbar {
+  background: rgba(255,255,255,1.0) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+}
+#navbar.scrolled {
+  background: rgba(255,255,255,1.0) !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.1) !important;
+}
+
+/* ── 4. ANNOUNCEMENT BAR — Dark background ──────────────────── */
+#announcement-bar {
+  background: #1d1d1f !important;
+}
+#announcement-bar a,
+#announcement-bar .ann-slide {
+  color: rgba(255,255,255,0.9) !important;
+}
+#announcement-bar a:hover {
+  color: #ffffff !important;
+}
+
+/* ── 5. PRODUCTS LAYOUT — Keep flex, hide sidebar ───────────── */
+.products-layout {
+  display: flex !important;
+  gap: 32px !important;
+  align-items: flex-start !important;
+}
+.products-sidebar {
+  display: none !important;
+}
+.products-grid {
+  flex: 1 !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+/* ── 6. PRODUCT CARDS — Proper styling ──────────────────────── */
+.prod-card {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(0,0,0,0.06) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  position: relative !important;
+}
+.prod-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+.prod-img {
+  aspect-ratio: 4/3 !important;
+  overflow: hidden !important;
+  background: #f5f5f7 !important;
+}
+.prod-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+.prod-body {
+  padding: 16px !important;
+}
+.prod-body h4 {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #1d1d1f !important;
+  margin-bottom: 8px !important;
+}
+.prod-price-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 4px !important;
+}
+.prod-price {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #1d1d1f !important;
+}
+.prod-price strong {
+  font-size: 18px !important;
+}
+.prod-discount {
+  background: rgba(232,25,44,0.1) !important;
+  color: #e8192c !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 2px 8px !important;
+  border-radius: 20px !important;
+}
+.prod-orig {
+  font-size: 12px !important;
+  color: #86868b !important;
+  text-decoration: line-through !important;
+  margin-bottom: 12px !important;
+}
+.prod-orig-note {
+  text-decoration: none !important;
+  font-style: italic !important;
+}
+.prod-cta {
+  display: block !important;
+  background: #e8192c !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  padding: 10px 16px !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: background 0.2s ease !important;
+}
+.prod-cta:hover {
+  background: #c41020 !important;
+  color: #ffffff !important;
+}
+.prod-badge {
+  position: absolute !important;
+  top: 10px !important;
+  left: 10px !important;
+  background: #e8192c !important;
+  color: #fff !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+  padding: 4px 8px !important;
+  border-radius: 20px !important;
+  z-index: 2 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+/* ── 7. HOW IT WORKS — 4-column grid with connecting line ───── */
+.hiw-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 24px !important;
+  max-width: 1100px !important;
+  margin: 48px auto 0 !important;
+  padding: 0 24px !important;
+  position: relative !important;
+}
+.hiw-grid::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 52px !important;
+  left: calc(12.5% + 24px) !important;
+  right: calc(12.5% + 24px) !important;
+  height: 2px !important;
+  background: rgba(232,25,44,0.15) !important;
+  z-index: 0 !important;
+}
+.hiw-step {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.hiw-num {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #e8192c !important;
+  letter-spacing: 0.1em !important;
+  margin-bottom: 12px !important;
+  text-transform: uppercase !important;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  display: block !important;
+}
+.hiw-icon {
+  width: 64px !important;
+  height: 64px !important;
+  background: #e8192c !important;
+  color: #fff !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 22px !important;
+  margin: 0 auto 20px !important;
+  box-shadow: 0 4px 16px rgba(232,25,44,0.25) !important;
+  flex-shrink: 0 !important;
+}
+.hiw-step h3 {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #1d1d1f !important;
+  margin-bottom: 8px !important;
+}
+.hiw-step p {
+  font-size: 14px !important;
+  color: #6e6e73 !important;
+  line-height: 1.6 !important;
+}
+
+/* ── 8. SERVICES GRID — 3-column with proper card styles ────── */
+.services-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+  max-width: 1100px !important;
+  margin: 48px auto 0 !important;
+  padding: 0 24px !important;
+}
+.service-card {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(0,0,0,0.06) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  text-decoration: none !important;
+  display: block !important;
+  color: inherit !important;
+}
+.service-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+.service-img {
+  aspect-ratio: 4/3 !important;
+  overflow: hidden !important;
+  background: #f5f5f7 !important;
+}
+.service-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.4s ease !important;
+}
+.service-card:hover .service-img img {
+  transform: scale(1.05) !important;
+}
+.service-body {
+  padding: 20px !important;
+}
+.service-body h3 {
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  color: #1d1d1f !important;
+  margin-bottom: 8px !important;
+}
+.service-body p {
+  font-size: 14px !important;
+  color: #6e6e73 !important;
+  line-height: 1.5 !important;
+  margin-bottom: 16px !important;
+}
+.service-footer {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 20px 20px !important;
+}
+.service-price {
+  background: rgba(232,25,44,0.08) !important;
+  color: #e8192c !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 4px 10px !important;
+  border-radius: 20px !important;
+}
+.service-cta {
+  font-size: 14px !important;
+  color: #e8192c !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  text-decoration: none !important;
+}
+
+/* ── 9. LOCATIONS GRID — 3-column layout ────────────────────── */
+.locations-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+
+/* ── 10. BLOG GRID — 3-column layout ────────────────────────── */
+.blog-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+
+/* ── 11. BIZ-CARDS SHOWCASE — 3-column layout ───────────────── */
+.bcs-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+
+/* ── 12. COMMITMENT (CTD) GRID — 3-column layout ────────────── */
+.ctd-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+
+/* ── 13. SECTION HEADER — Consistent spacing ────────────────── */
+.section-header {
+  text-align: center !important;
+  max-width: 720px !important;
+  margin: 0 auto 36px !important;
+}
+
+/* ── 14. HERO PRODUCT IMAGE — Proper fill ───────────────────── */
+.hero-product-img {
+  aspect-ratio: 4 / 3 !important;
+  background: #f5f5f7 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  display: block !important;
+  position: relative !important;
+}
+.hero-product-img img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  transition: transform 0.4s ease !important;
+}
+
+/* ── 15. RESPONSIVE FIXES ────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hiw-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .hiw-grid::before { display: none !important; }
+  .products-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 900px) {
+  section { padding: 56px 0 !important; }
+  .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .bcs-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .blog-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .ctd-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .locations-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .products-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 600px) {
+  section { padding: 48px 0 !important; }
+  .services-grid { grid-template-columns: 1fr !important; }
+  .bcs-grid { grid-template-columns: 1fr !important; }
+  .blog-grid { grid-template-columns: 1fr !important; }
+  .ctd-grid { grid-template-columns: 1fr !important; }
+  .hiw-grid { grid-template-columns: 1fr !important; }
+  .locations-grid { grid-template-columns: 1fr !important; }
+  .products-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── 16. CLIENTS SECTION — Fix SVG logo display ─────────────── */
+.clients-track img {
+  height: 44px !important;
+  width: auto !important;
+  max-width: 160px !important;
+  object-fit: contain !important;
+  filter: grayscale(0.3) opacity(0.8) !important;
+  transition: filter 280ms ease !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+}
+.clients-track img:hover {
+  filter: grayscale(0) opacity(1) !important;
+}
+.clients-track {
+  gap: 40px !important;
+  align-items: center !important;
+  padding: 12px 0 !important;
+}
+/* ── 17. BLOG SECTION — Fix card image display ───────────────── */
+.blog-img {
+  aspect-ratio: 16/9 !important;
+  overflow: hidden !important;
+  background: #f5f5f7 !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+.blog-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+/* ── 18. CONTACT SECTION — Reduce bottom gap ────────────────── */
+#contact {
+  padding-top: 60px !important;
+  padding-bottom: 48px !important;
+}
+/* ── Fix footer dark gap at top ──────────────────────────────── */
+#footer {
+  padding-top: 0 !important;
+}
+/* ── 19. FOOTER NEWSLETTER — Remove excess top padding ──────── */
+.footer-newsletter {
+  padding: 40px 0 !important;
+}
+/* ── 20. SECTION SPACING — Override apple-premium 120px padding */
+#promotions,
+#commitment,
+#large-format,
+#custom-quote,
+#reviews,
+#design-services,
+#about,
+#how-it-works,
+#biz-cards-showcase,
+#services,
+#portfolio,
+#blog,
+#locations,
+#clients,
+#faq {
+  padding: 56px 0 !important;
+}
+/* ── 21. PRODUCTS SECTION — Reduce bottom padding ───────────── */
+#products {
+  padding-bottom: 48px !important;
+}
+/* ── 22. BIZ-CARDS SHOWCASE — Fix card image display ────────── */
+.bcs-img {
+  aspect-ratio: 4/3 !important;
+  overflow: hidden !important;
+  background: #f5f5f7 !important;
+}
+.bcs-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+/* ── 23. LOCATION CARDS — Fix card styling ──────────────────── */
+.location-card {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(0,0,0,0.06) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+/* ── 24. PORTFOLIO ITEMS — Fix card image display ───────────── */
+.portfolio-item {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+.portfolio-img {
+  aspect-ratio: 4/3 !important;
+  overflow: hidden !important;
+  background: #f5f5f7 !important;
+}
+.portfolio-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.4s ease !important;
+}
+.portfolio-item:hover .portfolio-img img {
+  transform: scale(1.05) !important;
+}
+/* ── 25. STATS BAR — Fix padding ────────────────────────────── */
+#stats-bar {
+  padding: 28px 0 !important;
+}
+
+/* ── 26. LOCATIONS MAP — Add background for blank iframe ─────── */
+.map-embed {
+  margin-top: 40px !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  background: #e8eaf0 !important;
+  min-height: 320px !important;
+}
+.map-embed iframe {
+  display: block !important;
+  width: 100% !important;
+  height: 320px !important;
+  border: none !important;
+  border-radius: 16px !important;
+}
+/* ── 27. HERO SECTION — Fix bottom spacing ───────────────────── */
+#hero {
+  padding-bottom: 0 !important;
+}
+/* ── 28. STATS BAR — Ensure proper display ──────────────────── */
+#stats-bar {
+  padding: 32px 0 !important;
+}
+/* ── 29. PRODUCTS SECTION — Reduce top padding ──────────────── */
+#products {
+  padding-top: 48px !important;
+}
+/* ── 30. HERO INNER — Fix bottom gap ────────────────────────── */
+.hero-inner {
+  padding-bottom: 48px !important;
+}
+
+/* ── MAP PLACEHOLDER — Styled clickable map replacement ──────── */
+.map-placeholder {
+  display: block !important;
+  text-decoration: none !important;
+  width: 100% !important;
+  min-height: 320px !important;
+  background: linear-gradient(135deg, #e8edf5 0%, #d0d8e8 100%) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  position: relative !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.map-placeholder:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
+}
+.map-placeholder-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 320px !important;
+  padding: 40px !important;
+  text-align: center !important;
+  gap: 16px !important;
+}
+.map-pin-icon {
+  font-size: 48px !important;
+  color: #d62b2b !important;
+  filter: drop-shadow(0 4px 8px rgba(214,43,43,0.3)) !important;
+}
+.map-address-text {
+  font-size: 16px !important;
+  color: #333 !important;
+  line-height: 1.6 !important;
+}
+.map-address-text strong {
+  font-size: 18px !important;
+  color: #1a1a1a !important;
+  display: block !important;
+  margin-bottom: 4px !important;
+}
+.map-cta-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: #d62b2b !important;
+  color: #fff !important;
+  padding: 10px 24px !important;
+  border-radius: 50px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  margin-top: 8px !important;
+  transition: background 0.2s !important;
+}
+.map-placeholder:hover .map-cta-btn {
+  background: #b82020 !important;
+}

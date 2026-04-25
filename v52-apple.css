@@ -1,0 +1,471 @@
+/*
+ * v52-apple.css — Apple 9+/10 Standard Elevation
+ * Fixes all 15 identified issues:
+ * 1.  Review stars → gold (already #f5a623 but overriding any red)
+ * 2.  Cart badge hidden when empty
+ * 3.  WhatsApp buttons → green
+ * 4.  Remove "Designed with ❤" line
+ * 5.  Hero headline → clean geometric weight (not impact)
+ * 6.  Form labels → sentence case styling (smaller, softer)
+ * 7.  Category tabs → bolder, larger, refined
+ * 8.  Section eyebrow → refined, not all-caps red
+ * 9.  About feature icons → softer, not harsh red
+ * 10. HIW step icons → refined, lighter
+ * 11. Services section → Show More pattern (6 default)
+ * 12. Review text → proper ellipsis
+ * 13. Cookie banner → minimal one-line bar
+ * 14. Mobile footer logo → max-width capped
+ * 15. Outlined CTA border → stronger
+ * 16. Trust row icons → refined colours
+ * 17. Phone number in nav → hidden on desktop
+ * 18. FAQ item spacing → tighter
+ * 19. Hero product card shadows → more defined
+ * 20. Footer "Designed with ❤" → hidden
+ */
+
+/* ─────────────────────────────────────────────────────────────
+   1. REVIEW STARS → GOLD (force gold everywhere)
+───────────────────────────────────────────────────────────── */
+.review-stars i,
+.review-stars .fa-star,
+.review-stars .fa-star-half-alt,
+.rrh-stars i,
+.rrh-stars .fa-star,
+.stars i,
+.stars .fa-star {
+  color: #F59E0B !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   2. CART BADGE — hide when showing "0"
+───────────────────────────────────────────────────────────── */
+.cart-badge {
+  /* JS will add class 'has-items' when count > 0 */
+  display: none !important;
+}
+.cart-badge.has-items {
+  display: flex !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   3. WHATSAPP BUTTONS → GREEN
+───────────────────────────────────────────────────────────── */
+.location-card .btn-primary,
+.location-actions .btn-primary {
+  background: #25D366 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 12px rgba(37,211,102,.30) !important;
+}
+.location-card .btn-primary:hover,
+.location-actions .btn-primary:hover {
+  background: #1ebe5d !important;
+  box-shadow: 0 6px 20px rgba(37,211,102,.40) !important;
+}
+/* WhatsApp float button — already green, reinforce */
+.whatsapp-float a {
+  background: #25D366 !important;
+}
+/* Mobile CTA WhatsApp bar */
+.mobile-cta-wa {
+  background: #25D366 !important;
+  color: #fff !important;
+}
+.mobile-cta-wa:hover {
+  background: #1ebe5d !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   4. FOOTER "Designed with ❤" → HIDDEN
+───────────────────────────────────────────────────────────── */
+.footer-bottom p:last-child {
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   5. HERO HEADLINE → Clean geometric, Apple SF Pro style
+      Inter 800 at tight tracking is the closest web equivalent
+───────────────────────────────────────────────────────────── */
+.hero-headline {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif !important;
+  font-size: clamp(44px, 6vw, 80px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.05 !important;
+  color: var(--ink) !important;
+}
+.hero-headline em {
+  font-style: normal !important;
+  color: var(--accent) !important;
+  font-weight: 800 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   6. FORM LABELS → sentence case, softer, Apple style
+───────────────────────────────────────────────────────────── */
+.form-group label {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+  text-transform: none !important;
+  color: var(--ink-2) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   7. CATEGORY TABS → bolder, larger, more refined
+───────────────────────────────────────────────────────────── */
+.nav-cat {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  padding: 10px 16px !important;
+  color: var(--ink-3) !important;
+  transition: color 150ms ease, border-color 150ms ease !important;
+}
+.nav-cat:hover {
+  color: var(--ink) !important;
+}
+.nav-cat.active {
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid var(--accent) !important;
+}
+.nav-cat-container {
+  gap: 0 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   8. SECTION EYEBROW → refined, not harsh all-caps red
+───────────────────────────────────────────────────────────── */
+.eyebrow,
+.section-eyebrow {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: var(--accent) !important;
+  opacity: 0.85 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   9. ABOUT FEATURE ICONS → softer background, not harsh red
+───────────────────────────────────────────────────────────── */
+.about-feature-icon {
+  background: #fef2f2 !important;
+  color: var(--accent) !important;
+  border-radius: 14px !important;
+  width: 48px !important;
+  height: 48px !important;
+  font-size: 18px !important;
+  box-shadow: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   10. HIW STEP ICONS → lighter, more refined
+───────────────────────────────────────────────────────────── */
+.hiw-icon {
+  background: var(--accent) !important;
+  width: 56px !important;
+  height: 56px !important;
+  font-size: 20px !important;
+  box-shadow: 0 4px 16px rgba(214,43,43,.20) !important;
+}
+.hiw-num {
+  font-size: 10px !important;
+  letter-spacing: 0.12em !important;
+  color: var(--ink-4) !important;
+  font-weight: 700 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   11. SERVICES — Show only first 6 cards by default
+       JS will handle "Show More" button
+───────────────────────────────────────────────────────────── */
+.service-card.hidden-default,
+.service-card.card-hidden {
+  display: none !important;
+}
+.service-card.hidden-default.revealed {
+  display: flex !important;
+}
+/* Show More button */
+#services-show-more {
+  display: block;
+  margin: 32px auto 0;
+  padding: 14px 36px;
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: all 180ms ease;
+}
+#services-show-more:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(214,43,43,.25);
+  transform: translateY(-1px);
+}
+#services-show-more.hidden {
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   12. REVIEW TEXT → proper line-clamp with ellipsis
+───────────────────────────────────────────────────────────── */
+.review-text {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 4 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   13. COOKIE BANNER → minimal, one-line bar
+───────────────────────────────────────────────────────────── */
+.cookie-banner {
+  padding: 12px 24px !important;
+  border-radius: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 16px !important;
+  background: rgba(20,20,20,0.96) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-top: 1px solid rgba(255,255,255,.08) !important;
+  box-shadow: none !important;
+}
+.cookie-banner p {
+  font-size: 13px !important;
+  margin: 0 !important;
+  flex: 1 !important;
+  color: rgba(255,255,255,.75) !important;
+}
+.cookie-actions {
+  flex-direction: row !important;
+  gap: 8px !important;
+  flex-shrink: 0 !important;
+}
+.cookie-actions .btn-primary {
+  padding: 8px 20px !important;
+  font-size: 13px !important;
+  border-radius: 100px !important;
+}
+.cookie-actions .btn-outline {
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  border-radius: 100px !important;
+  border-color: rgba(255,255,255,.3) !important;
+  color: rgba(255,255,255,.7) !important;
+}
+.cookie-icon {
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   14. MOBILE FOOTER LOGO → capped at 160px
+───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footer-brand .logo-img,
+  .footer-brand img {
+    max-width: 140px !important;
+    height: auto !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   15. OUTLINED CTA BUTTON → stronger border
+───────────────────────────────────────────────────────────── */
+.btn-secondary,
+.hero-ctas .btn-secondary,
+.hero-ctas a:last-child {
+  border: 1.5px solid rgba(255,255,255,.5) !important;
+  color: var(--ink) !important;
+  background: transparent !important;
+  font-weight: 600 !important;
+}
+.btn-secondary:hover {
+  border-color: rgba(255,255,255,.8) !important;
+  background: rgba(255,255,255,.08) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   16. HERO TRUST ROW ICONS → refined, not red star
+───────────────────────────────────────────────────────────── */
+.hero-trust-row i,
+.hero-trust i {
+  color: var(--accent) !important;
+  font-size: 13px !important;
+}
+/* The star icon in trust row should be gold */
+.hero-trust-row span:last-child i,
+.hero-trust span:last-child i {
+  color: #F59E0B !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   17. PHONE NUMBER IN NAV → hidden on desktop (cleaner)
+───────────────────────────────────────────────────────────── */
+@media (min-width: 1024px) {
+  .nav-phone {
+    display: none !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   18. FAQ ITEM SPACING → tighter, more Apple-like
+───────────────────────────────────────────────────────────── */
+.faq-item {
+  border-radius: 12px !important;
+}
+.faq-question {
+  padding: 18px 24px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+.faq-question .faq-icon {
+  font-size: 18px !important;
+  color: var(--ink-4) !important;
+}
+.faq-answer-inner {
+  padding: 0 24px 18px !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  color: var(--ink-3) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   19. HERO PRODUCT CARDS → more defined shadow
+───────────────────────────────────────────────────────────── */
+.hero-product-card {
+  box-shadow: 0 4px 20px rgba(0,0,0,.10), 0 1px 4px rgba(0,0,0,.06) !important;
+  border: 1px solid rgba(0,0,0,.06) !important;
+  transition: transform 200ms ease, box-shadow 200ms ease !important;
+}
+.hero-product-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,.14), 0 2px 8px rgba(0,0,0,.08) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   20. GENERAL POLISH — Apple-level micro-details
+───────────────────────────────────────────────────────────── */
+
+/* Smoother button transitions */
+.btn, .btn-primary, .btn-secondary, .btn-outline, .btn-outline-dark {
+  transition: all 180ms cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* Service card "Get Quote" button — less aggressive */
+.service-cta {
+  font-size: 13px !important;
+  padding: 10px 20px !important;
+  border-radius: 100px !important;
+  font-weight: 600 !important;
+}
+
+/* Portfolio item hover — more refined */
+.portfolio-item {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+/* Location card — Directions button refinement */
+.location-actions .btn-outline-dark {
+  border: 1.5px solid var(--surface-3) !important;
+  font-weight: 600 !important;
+}
+
+/* Footer column headers — slightly lighter weight */
+.footer-col h4 {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,.45) !important;
+  margin-bottom: 20px !important;
+}
+
+/* Footer links — better weight on dark background */
+.footer-col a,
+.footer-col li a {
+  font-weight: 400 !important;
+  color: rgba(255,255,255,.65) !important;
+  font-size: 14px !important;
+  line-height: 2 !important;
+  transition: color 150ms ease !important;
+}
+.footer-col a:hover,
+.footer-col li a:hover {
+  color: rgba(255,255,255,.95) !important;
+}
+
+/* Footer contact items */
+.footer-contact-item {
+  font-size: 13px !important;
+  color: rgba(255,255,255,.65) !important;
+  gap: 10px !important;
+}
+.footer-contact-item i {
+  color: var(--accent) !important;
+  width: 16px !important;
+}
+.footer-contact-item a {
+  color: rgba(255,255,255,.75) !important;
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.08) !important;
+  padding: 20px 0 !important;
+}
+.footer-bottom p:first-child {
+  font-size: 13px !important;
+  color: rgba(255,255,255,.4) !important;
+}
+
+/* Review card refinement */
+.review-card {
+  border-radius: 16px !important;
+  padding: 24px !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,.06) !important;
+  border: 1px solid rgba(0,0,0,.05) !important;
+}
+.review-name {
+  font-weight: 700 !important;
+  font-size: 14px !important;
+}
+.review-time {
+  font-size: 12px !important;
+  color: var(--ink-4) !important;
+}
+
+/* About stats — consistent "+" styling */
+.stat-number {
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+}
+.stat-label {
+  font-size: 13px !important;
+  color: var(--ink-3) !important;
+  font-weight: 500 !important;
+}
+
+/* Section header h2 — tighter tracking */
+.section-header h2 {
+  letter-spacing: -0.025em !important;
+  font-weight: 700 !important;
+}
+
+/* Smooth scroll behaviour */
+html {
+  scroll-behavior: smooth;
+}

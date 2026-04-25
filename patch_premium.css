@@ -1,0 +1,437 @@
+/* ================================================================
+   PATCH PREMIUM — World-class mobile design upgrade
+   Benchmarked against: Apple, Stripe, Linear, Vercel, Framer
+   Applied: April 2026
+   ================================================================ */
+
+@media (max-width: 767px) {
+
+  /* ── 1. NAVBAR: Glassmorphism (Apple/Stripe style) ─────────── */
+  nav,
+  .navbar,
+  #navbar,
+  header nav {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: none !important;
+  }
+
+  /* ── 2. HERO: More generous breathing room ─────────────────── */
+  #hero,
+  .hero-section {
+    padding-top: 80px !important;
+    padding-bottom: 56px !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  /* Hero H1: tighter letter-spacing for premium feel */
+  .hero-headline,
+  #hero h1 {
+    letter-spacing: -0.8px !important;
+    line-height: 1.12 !important;
+    font-weight: 700 !important;
+  }
+
+  /* Hero subtext: Apple's muted grey */
+  .hero-sub,
+  .hero-subtext,
+  #hero p {
+    color: rgba(29, 29, 31, 0.65) !important;
+    font-size: 17px !important;
+    line-height: 1.55 !important;
+    margin-top: 14px !important;
+  }
+
+  /* Hero CTA buttons: proper height + spacing */
+  .hero-ctas {
+    margin-top: 32px !important;
+    gap: 12px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  #hero .btn-primary,
+  .hero-ctas .btn-primary {
+    height: 50px !important;
+    min-width: 220px !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.2px !important;
+    border-radius: 100px !important;
+    padding: 0 28px !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    white-space: nowrap !important;
+    max-width: none !important;
+  }
+
+  #hero .btn-outline,
+  .hero-ctas .btn-outline,
+  .hero-ctas a:not(.btn-primary) {
+    height: 50px !important;
+    min-width: 180px !important;
+    font-size: 17px !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.2px !important;
+    border-radius: 100px !important;
+    padding: 0 28px !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    white-space: nowrap !important;
+    max-width: none !important;
+  }
+
+  /* ── 3. EYEBROW LABELS: Apple-style refined ────────────────── */
+  .eyebrow,
+  span.eyebrow {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+  }
+
+  /* ── 4. SECTION HEADINGS: Tighter letter-spacing ───────────── */
+  section h2,
+  .section-heading,
+  #services h2,
+  #how-it-works h2,
+  #about h2,
+  #reviews h2,
+  #portfolio h2,
+  #faq h2,
+  #contact h2,
+  #locations h2,
+  #clients h2 {
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.6px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* ── 5. SECTION PADDING: Premium breathing room ────────────── */
+  #about,
+  #services,
+  #how-it-works,
+  #reviews,
+  #portfolio,
+  #clients,
+  #locations,
+  #faq,
+  #contact {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  /* ── 6. SECTION BACKGROUNDS: Subtle alternation ────────────── */
+  #about {
+    background-color: #ffffff !important;
+  }
+  #how-it-works {
+    background-color: #f5f5f7 !important;
+  }
+  #services {
+    background-color: #ffffff !important;
+  }
+  #reviews {
+    background-color: #f5f5f7 !important;
+  }
+  #portfolio {
+    background-color: #ffffff !important;
+  }
+  #clients {
+    background-color: #f5f5f7 !important;
+  }
+  #locations {
+    background-color: #ffffff !important;
+  }
+  #faq {
+    background-color: #f5f5f7 !important;
+  }
+  #contact {
+    background-color: #ffffff !important;
+  }
+
+  /* ── 7. STAT NUMBERS: Larger, more impactful ───────────────── */
+  .about-stat-num {
+    font-size: 44px !important;
+    font-weight: 700 !important;
+    letter-spacing: -1.5px !important;
+    line-height: 1 !important;
+    color: #1d1d1f !important;
+  }
+
+  .about-stat-lbl {
+    font-size: 13px !important;
+    color: rgba(29, 29, 31, 0.6) !important;
+    font-weight: 400 !important;
+    margin-top: 4px !important;
+    letter-spacing: 0 !important;
+  }
+
+  .about-stats,
+  .stats-row {
+    gap: 0 !important;
+    margin-top: 32px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .about-stat {
+    padding: 20px 0 !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .about-stat:last-child {
+    border-right: none !important;
+  }
+
+  /* ── 8. SERVICE CARDS: Premium card treatment ──────────────── */
+  .service-card {
+    border-radius: 16px !important;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.04) !important;
+    overflow: hidden !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    background: #ffffff !important;
+  }
+
+  .service-card:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  .service-body {
+    padding: 14px 16px 18px !important;
+  }
+
+  .service-body h3 {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.2px !important;
+    color: #1d1d1f !important;
+    margin-bottom: 6px !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+  }
+
+  .service-body p {
+    font-size: 14px !important;
+    color: rgba(29, 29, 31, 0.6) !important;
+    line-height: 1.45 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    webkit-line-clamp: unset !important;
+  }
+
+  /* ── 9. HIW CARDS: Refined ─────────────────────────────────── */
+  .hiw-step {
+    border-radius: 16px !important;
+    padding: 20px !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.04) !important;
+    background: #ffffff !important;
+  }
+
+  .hiw-step h3 {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.3px !important;
+    color: #1d1d1f !important;
+    margin-bottom: 8px !important;
+  }
+
+  .hiw-step p {
+    font-size: 14px !important;
+    color: rgba(29, 29, 31, 0.6) !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    -webkit-line-clamp: unset !important;
+  }
+
+  /* ── 10. FAQ ITEMS: Apple-style accordion ──────────────────── */
+  .faq-item {
+    border-radius: 14px !important;
+    padding: 18px 20px !important;
+    margin-bottom: 10px !important;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
+    background: #ffffff !important;
+  }
+
+  .faq-question h3,
+  .faq-question {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.2px !important;
+    color: #1d1d1f !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    line-height: 1.35 !important;
+  }
+
+  .faq-answer,
+  .faq-body {
+    font-size: 15px !important;
+    color: rgba(29, 29, 31, 0.65) !important;
+    line-height: 1.55 !important;
+  }
+
+  /* ── 11. REVIEWS SECTION: Premium card ─────────────────────── */
+  .review-card,
+  .reviews-card {
+    border-radius: 16px !important;
+    padding: 20px !important;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.04) !important;
+    background: #ffffff !important;
+  }
+
+  /* ── 12. CONTACT FORM: Premium inputs ──────────────────────── */
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea,
+  #contact input,
+  #contact select,
+  #contact textarea {
+    border-radius: 12px !important;
+    border: 1.5px solid rgba(0, 0, 0, 0.12) !important;
+    padding: 14px 16px !important;
+    font-size: 16px !important;
+    background: #fafafa !important;
+    color: #1d1d1f !important;
+    transition: border-color 0.2s ease !important;
+    -webkit-appearance: none !important;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus,
+  #contact input:focus,
+  #contact textarea:focus {
+    border-color: #e8192c !important;
+    background: #ffffff !important;
+    outline: none !important;
+  }
+
+  .contact-form textarea,
+  #contact textarea {
+    min-height: 130px !important;
+    resize: none !important;
+  }
+
+  /* ── 13. LOCATION CARDS: Premium ───────────────────────────── */
+  .location-card {
+    border-radius: 16px !important;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.04) !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+  }
+
+  /* ── 14. FOOTER: Refined ───────────────────────────────────── */
+  footer {
+    padding-top: 48px !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  .footer-brand p {
+    font-size: 14px !important;
+    color: rgba(255, 255, 255, 0.65) !important;
+    line-height: 1.55 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    -webkit-line-clamp: unset !important;
+  }
+
+  .footer-col-title,
+  .footer-col h4,
+  .footer-col h3 {
+    font-size: 11px !important;
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    color: rgba(255, 255, 255, 0.45) !important;
+    margin-bottom: 14px !important;
+  }
+
+  footer .footer-col li a,
+  footer .footer-col a,
+  footer .footer-grid .footer-col a {
+    font-size: 15px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    line-height: 1.4 !important;
+  }
+
+  /* ── 15. PORTFOLIO FILTERS: Premium pill tabs ───────────────── */
+  .portfolio-filters {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 8px !important;
+    padding-bottom: 4px !important;
+  }
+
+  .portfolio-filters::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .filter-btn,
+  .portfolio-filter-btn {
+    border-radius: 100px !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* ── 16. SECTION INTRO TEXT: Muted color ───────────────────── */
+  .section-intro,
+  .section-subtitle,
+  .section-desc {
+    font-size: 16px !important;
+    color: rgba(29, 29, 31, 0.6) !important;
+    line-height: 1.5 !important;
+    margin-top: 10px !important;
+    margin-bottom: 32px !important;
+  }
+
+  /* ── 17. CLIENTS HEADLINE: Refined ─────────────────────────── */
+  .clients-headline {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: rgba(29, 29, 31, 0.75) !important;
+    line-height: 1.5 !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  /* ── 18. GENERAL BODY TEXT: Apple's refined grey ───────────── */
+  p, li {
+    color: rgba(29, 29, 31, 0.85) !important;
+  }
+
+  /* ── 19. TRUST BAR / HERO BADGES ───────────────────────────── */
+  .hero-badges,
+  .trust-bar,
+  .hero-trust {
+    margin-top: 20px !important;
+    gap: 16px !important;
+    font-size: 13px !important;
+    color: rgba(29, 29, 31, 0.55) !important;
+  }
+
+  /* ── 20. SECTION CONTAINER: Consistent horizontal padding ──── */
+  section .container,
+  section > .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+}

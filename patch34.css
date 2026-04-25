@@ -1,0 +1,38 @@
+
+/* ============================================================
+   PATCH 34 — Fix specificity battles for hero H1 weight,
+   button font-size, and footer link font-size
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* Hero H1: use high-specificity selectors to beat #hero .hero-headline */
+  #hero .hero-headline,
+  #hero h1.hero-headline,
+  .hero-section .hero-headline,
+  #hero h1 {
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  /* Button: use #hero prefix to beat #hero .btn-primary */
+  #hero .btn-primary,
+  #hero .hero-ctas a,
+  #hero .hero-ctas .btn,
+  #hero a.btn-primary,
+  .hero-ctas a.btn-primary {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  /* Footer links: use footer element prefix for higher specificity */
+  footer .footer-col a,
+  footer .footer-links a,
+  .footer .footer-col a,
+  .footer-col li a,
+  .footer-col > a {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" width="220" height="70">
+  <defs>
+    <style>
+      .logo-name { font-family: 'Arial', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 2px; fill: #4a148c; }
+      .logo-tag { font-family: 'Arial', sans-serif; font-weight: 400; font-size: 10px; letter-spacing: 3px; fill: #9c27b0; }
+    </style>
+  </defs>
+  <!-- Background -->
+  <rect width="220" height="70" fill="white" rx="0"/>
+  <!-- Accent bar -->
+  <rect x="0" y="0" width="4" height="70" fill="#9c27b0" rx="2"/>
+  <!-- Icon circle -->
+  <circle cx="42" cy="35" r="20" fill="#4a148c" opacity="0.08"/>
+  <!-- Icon -->
+  <g transform="translate(30, 23)" stroke="#4a148c" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 21h18 M5 21V7l7-4 7 4v14 M9 21v-4h6v4 M9 9h1 M14 9h1 M9 13h1 M14 13h1" transform="scale(1)"/>
+  </g>
+  <!-- Company name -->
+  <text x="70" y="32" class="logo-name">MARINA BAY</text>
+  <!-- Tagline -->
+  <text x="71" y="48" class="logo-tag">HOTELS</text>
+  <!-- Accent dot -->
+  <circle cx="202" cy="35" r="4" fill="#9c27b0" opacity="0.6"/>
+</svg>

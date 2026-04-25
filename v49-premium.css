@@ -1,0 +1,502 @@
+/* ============================================================
+   v49-premium.css — Apple-level premium redesign
+   PrintProSG · Apr 2026
+   ============================================================ */
+
+/* ── GLOBAL SECTION SPACING ─────────────────────────────────── */
+/* Tighter, more intentional padding — Apple uses ~80–100px */
+section {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+/* ── TYPOGRAPHY UPGRADES ─────────────────────────────────────── */
+/* Larger, bolder section headings with tighter letter-spacing */
+.section-title,
+.section-heading,
+h2.section-title {
+  font-size: clamp(2rem, 4vw, 3rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.1 !important;
+  color: #111 !important;
+}
+
+.section-label,
+.section-eyebrow {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--accent) !important;
+  margin-bottom: 12px !important;
+}
+
+.section-subtitle,
+.section-desc {
+  font-size: 17px !important;
+  color: #666 !important;
+  line-height: 1.7 !important;
+  max-width: 560px !important;
+  margin: 0 auto !important;
+}
+
+/* ── HERO SECTION ────────────────────────────────────────────── */
+#hero {
+  min-height: 88vh !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 5vw, 4rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.05 !important;
+}
+
+.hero-subtitle {
+  font-size: 18px !important;
+  color: #555 !important;
+  line-height: 1.7 !important;
+  max-width: 480px !important;
+}
+
+/* ── PRODUCTS SECTION ────────────────────────────────────────── */
+#products {
+  background: #f9f9f9 !important;
+}
+
+.prod-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+}
+
+.prod-card {
+  border-radius: 16px !important;
+  border: 1px solid #eee !important;
+  background: #fff !important;
+  overflow: hidden !important;
+  transition: transform 220ms ease, box-shadow 220ms ease !important;
+  cursor: pointer !important;
+}
+
+.prod-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.10) !important;
+}
+
+.prod-img {
+  aspect-ratio: 4/3 !important;
+  overflow: hidden !important;
+}
+
+.prod-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 400ms ease !important;
+}
+
+.prod-card:hover .prod-img img {
+  transform: scale(1.04) !important;
+}
+
+.prod-body {
+  padding: 16px 20px 20px !important;
+}
+
+.prod-name {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #111 !important;
+  margin-bottom: 4px !important;
+}
+
+.prod-price-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 12px !important;
+}
+
+.prod-price {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  color: var(--accent) !important;
+}
+
+.prod-cta {
+  display: block !important;
+  width: 100% !important;
+  padding: 10px !important;
+  background: #111 !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  transition: background 200ms ease !important;
+  letter-spacing: 0.01em !important;
+}
+
+.prod-cta:hover {
+  background: var(--accent) !important;
+}
+
+/* ── REVIEWS SECTION ─────────────────────────────────────────── */
+#reviews {
+  background: #fff !important;
+}
+
+.reviews-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+}
+
+.review-card {
+  background: #f7f7f7 !important;
+  border: none !important;
+  border-radius: 16px !important;
+  padding: 28px !important;
+}
+
+/* ── DESIGN SERVICES SECTION ─────────────────────────────────── */
+#design-services {
+  background: #111 !important;
+}
+/* Ensure all text in the dark Design Services section is white/light */
+#design-services .section-eyebrow,
+#design-services .eyebrow {
+  color: rgba(255,255,255,0.5) !important;
+}
+#design-services h2,
+#design-services .ds-content h2 {
+  color: #ffffff !important;
+}
+#design-services p,
+#design-services .ds-content p {
+  color: rgba(255,255,255,0.72) !important;
+}
+#design-services .ds-feature {
+  color: rgba(255,255,255,0.85) !important;
+}
+#design-services .ds-feature i {
+  color: #e8192c !important;
+}
+
+/* ── ABOUT SECTION ───────────────────────────────────────────── */
+#about {
+  background: #fff !important;
+}
+
+.about-stats-row {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 40px !important;
+  margin-top: 48px !important;
+}
+
+.about-stat-num {
+  font-size: clamp(2.5rem, 5vw, 4rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.04em !important;
+  color: #111 !important;
+}
+
+/* ── HOW IT WORKS SECTION ────────────────────────────────────── */
+#how-it-works {
+  background: #f5f5f7 !important;
+}
+
+/* ── SERVICES SECTION ────────────────────────────────────────── */
+#services {
+  background: #fff !important;
+}
+
+.services-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+
+.service-card {
+  border-radius: 16px !important;
+  border: 1px solid #eee !important;
+  overflow: hidden !important;
+  transition: transform 220ms ease, box-shadow 220ms ease !important;
+}
+
+.service-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.10) !important;
+}
+
+/* ── PORTFOLIO SECTION ───────────────────────────────────────── */
+#portfolio {
+  background: #f5f5f7 !important;
+}
+
+/* ── CLIENTS SECTION ─────────────────────────────────────────── */
+#clients {
+  background: #fff !important;
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+
+/* ── BLOG SECTION ────────────────────────────────────────────── */
+#blog {
+  background: #f5f5f7 !important;
+}
+
+.blog-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+
+.blog-card {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  background: #fff !important;
+  border: none !important;
+  transition: transform 220ms ease, box-shadow 220ms ease !important;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.10) !important;
+}
+
+/* ── LOCATIONS SECTION ───────────────────────────────────────── */
+#locations {
+  background: #fff !important;
+}
+
+/* ── FAQ SECTION ─────────────────────────────────────────────── */
+#faq {
+  background: #f5f5f7 !important;
+}
+
+.faq-list {
+  max-width: 760px !important;
+  margin: 0 auto !important;
+}
+
+.faq-item {
+  background: #fff !important;
+  border: none !important;
+  border-radius: 14px !important;
+  margin-bottom: 10px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06) !important;
+}
+
+.faq-question {
+  padding: 20px 24px !important;
+}
+
+.faq-question h3 {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+
+/* ── CONTACT SECTION ─────────────────────────────────────────── */
+#contact {
+  background: #fff !important;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+#footer {
+  padding-top: 60px !important;
+  padding-bottom: 40px !important;
+}
+
+/* ── ALTERNATING SECTION BACKGROUNDS ────────────────────────── */
+/* Clean alternating rhythm: white → light grey → white */
+#hero        { background: #fff !important; }
+#products    { background: #f5f5f7 !important; }
+#reviews     { background: #fff !important; }
+#design-services { background: #111 !important; }
+#about       { background: #fff !important; }
+#how-it-works { background: #f5f5f7 !important; }
+#services    { background: #fff !important; }
+#portfolio   { background: #f5f5f7 !important; }
+#clients     { background: #fff !important; }
+#blog        { background: #f5f5f7 !important; }
+#locations   { background: #fff !important; }
+#faq         { background: #f5f5f7 !important; }
+#contact     { background: #fff !important; }
+
+/* ── REMOVE ANNOUNCEMENT BAR (too cluttered) ─────────────────── */
+.announcement-bar {
+  display: none !important;
+}
+
+/* ── NAVBAR: tighten to 2 rows ───────────────────────────────── */
+/* Keep: logo+search+actions row + categories row. Hide trust bar on desktop */
+@media (min-width: 1024px) {
+  .nav-trust-bar {
+    display: none !important;
+  }
+  .nav-links {
+    display: none !important;
+  }
+  #navbar {
+    height: auto !important;
+  }
+}
+
+/* ── SECTION HEADER SPACING ──────────────────────────────────── */
+.section-header {
+  margin-bottom: 48px !important;
+  text-align: center !important;
+}
+
+/* ── CONTAINER MAX-WIDTH ─────────────────────────────────────── */
+.container {
+  max-width: 1200px !important;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+
+/* ── SMOOTH SCROLL ───────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth !important;
+}
+
+/* ── REMOVE BADGE CLUTTER FROM PROD CARDS ────────────────────── */
+/* Keep PRICE DROP badge but make it smaller/cleaner */
+.prod-badge {
+  font-size: 10px !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* ── DISCOUNT BADGE: subtler ─────────────────────────────────── */
+.prod-discount {
+  font-size: 11px !important;
+  padding: 2px 7px !important;
+  background: #fff0f0 !important;
+  color: var(--accent) !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+}
+
+/* ── STRIKETHROUGH PRICE: smaller ────────────────────────────── */
+.prod-old-price {
+  font-size: 12px !important;
+  color: #aaa !important;
+}
+
+/* ── REVIEW STARS ────────────────────────────────────────────── */
+.review-stars {
+  color: #f5a623 !important;
+  font-size: 14px !important;
+  margin-bottom: 12px !important;
+}
+
+/* ── ABOUT SECTION: horizontal layout ───────────────────────── */
+.about-inner {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 80px !important;
+  align-items: center !important;
+}
+
+/* ── HOW IT WORKS: 4 steps horizontal ───────────────────────── */
+.steps-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 32px !important;
+}
+
+/* ── PORTFOLIO: 3-column grid ────────────────────────────────── */
+.portfolio-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 16px !important;
+}
+
+.portfolio-item {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+/* ── LOCATION CARDS ──────────────────────────────────────────── */
+.locations-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+  margin-bottom: 40px !important;
+}
+
+.location-card {
+  border-radius: 16px !important;
+  border: 1px solid #eee !important;
+  padding: 32px !important;
+}
+
+/* ── MAP EMBED ───────────────────────────────────────────────── */
+.map-embed {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  /* Remove fixed height — let the iframe-wrap define the height */
+}
+.map-iframe-wrap {
+  height: 400px !important;
+  overflow: hidden !important;
+  border-radius: 16px !important;
+}
+.map-embed iframe {
+  width: 100% !important;
+  height: 400px !important;
+  border: none !important;
+  display: block !important;
+}
+
+/* ── CONTACT FORM ────────────────────────────────────────────── */
+.contact-grid {
+  grid-template-columns: 1fr 1.2fr !important;
+  gap: 60px !important;
+}
+
+/* ── FOOTER: tighter ─────────────────────────────────────────── */
+/* Footer has 5 columns: brand + products + company + support + contact */
+.footer-grid {
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1.4fr !important;
+  gap: 36px !important;
+}
+
+/* ── NEWSLETTER BAR: remove (redundant with contact) ─────────── */
+.newsletter-bar,
+#newsletter,
+.footer-newsletter {
+  display: none !important;
+}
+
+/* ── FOOTER LOGO: text-only "Print Pro" ──────────────────────── */
+.footer-logo-text {
+  display: block;
+  font-family: 'Arial Black', 'Arial', sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+/* ── HIDE REMOVED SECTIONS (price-strip, products-layout remnants) */
+.price-strip,
+.products-layout,
+.products-sidebar,
+#products,
+#design-services,
+#blog {
+  display: none !important;
+}

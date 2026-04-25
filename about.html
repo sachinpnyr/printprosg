@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Print Pro SG — Singapore Online Printing</title>
+  <meta name="description" content="Learn about Print Pro SG — Singapore's trusted online printing partner since 1991. Quality prints, fast delivery, best prices guaranteed." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="apple-premium.css">
+  <link rel="stylesheet" href="v50-mobile.css" />
+  <link rel="stylesheet" href="v53-mobile-apple.css" />
+</head>
+<body>
+<!-- ANNOUNCEMENT BANNER (rotating) -->
+<div id="announcement-bar">
+  <div id="announcement-slides">
+    <div class="ann-slide active"><i class="fas fa-tag"></i>&nbsp; <strong>Free Design</strong> with every order above $150. <a href="index.html#contact">Claim now &rarr;</a></div>
+    <div class="ann-slide"><i class="fas fa-bolt"></i>&nbsp; <strong>Same-Day Printing</strong> available for urgent orders. <a href="index.html#contact">Order now &rarr;</a></div>
+    <div class="ann-slide"><i class="fas fa-percent"></i>&nbsp; <strong>Name Cards from $30</strong> &mdash; 50 pcs, full colour, premium stock. </div>
+  </div>
+  <button id="close-announcement" aria-label="Close announcement"><i class="fas fa-times"></i></button>
+</div>
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-top">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img alt="Print Pro Singapore" class="logo-img" src="img/logo-transparent.png" style="height:40px;width:auto;"/>
+      </a>
+      <!-- Search Bar -->
+      <div class="nav-search">
+        <i class="fas fa-search nav-search-icon"></i>
+        <input type="search" id="nav-search-input" placeholder="Search products, categories..." autocomplete="off" />
+        <button class="nav-search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <div id="search-dropdown" class="search-dropdown"></div>
+      </div>
+      <div class="nav-right">
+        <a href="tel:+6598751606" class="nav-phone"><i class="fas fa-phone"></i> <span>+65 9875 1606</span></a>
+        <button class="nav-icon-btn" aria-label="Account"><i class="fas fa-user"></i></button>
+        <button class="nav-icon-btn nav-cart-btn" id="nav-hamburger" aria-label="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+        <a href="index.html#contact" class="btn btn-primary btn-sm">Order Now</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Category Mega Nav -->
+  <div class="nav-categories" id="nav-categories">
+    <div class="nav-cat-container">
+      <a href="index.html#products" class="nav-cat">Most Popular</a>
+      <a href="index.html#products" class="nav-cat">Name Cards</a>
+      <a href="index.html#products" class="nav-cat">Flyers &amp; Leaflets</a>
+      <a href="index.html#products" class="nav-cat">Stickers</a>
+      <a href="index.html#products" class="nav-cat">Booklets</a>
+      <a href="index.html#products" class="nav-cat">Stationery &amp; Cards</a>
+      <a href="index.html#products" class="nav-cat">Marketing &amp; Advertising</a>
+      <a href="index.html#products" class="nav-cat">Signages</a>
+      <a href="index.html#products" class="nav-cat">Promo &amp; Giveaways</a>
+      <a href="index.html#products" class="nav-cat">Displays &amp; Banners</a>
+    </div>
+  </div>
+  <!-- Trust Badges Bar -->
+  <div class="nav-trust-bar">
+    <div class="nav-trust-container">
+      <a href="about.html" class="nav-trust-item"><i class="fas fa-shield-alt"></i> Best Price Guarantee</a>
+      <a href="design-services.html" class="nav-trust-item"><i class="fas fa-pencil-ruler"></i> Design Services</a>
+      <a href="delivery.html" class="nav-trust-item"><i class="fas fa-truck"></i> Fast &amp; On-Time Delivery</a>
+      <a href="faq.html" class="nav-trust-item"><i class="fas fa-credit-card"></i> Credit Terms Available</a>
+      <div class="nav-rating">
+        <div class="nav-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <span>4.8/5 &nbsp;&middot;&nbsp; 200+ reviews</span>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile nav links -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#products">Products</a></li>
+    <li><a href="design-services.html">Design Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="delivery.html">Delivery</a></li>
+    <li><a href="artwork-guidelines.html">Artwork Guide</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+<section class="page-hero about-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="page-breadcrumb"><a href="index.html">Home</a> <i class="fa fa-chevron-right"></i> About Us</div>
+      <h1>#1 Online Printing Company in Singapore</h1>
+      <p>Delivering quality prints, fast turnaround, and unbeatable prices to businesses and individuals across Singapore since 1991.</p>
+      <a href="index.html#products" class="btn btn-red">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="about-who section-pad">
+  <div class="container about-who-grid">
+    <div class="about-who-text">
+      <h2>Who Are We</h2>
+      <p>Print Pro SG is Singapore's leading online printing company, proud to offer top quality digital and offset printing products, best-in-class customer support, and affordable prices. Using our services means easily configuring and printing business cards, brochures, flyers, leaflets, and many other products — purchasing them online and getting fast &amp; free delivery across Singapore.</p>
+      <p>We believe that great print products are the foundation of a strong brand. From classy business cards to high-quality business stationery and fancy promotional print products, we offer a broad range of products to promote your business or project.</p>
+      <p>Our team of printing experts and dedicated customer service representatives are here to ensure you get exactly what you need — on time, every time.</p>
+    </div>
+    <div class="about-who-stats">
+      <div class="about-stat-box">
+        <div class="about-stat-num" data-target="40" data-suffix="+">40+</div>
+        <div class="about-stat-label">Products Available</div>
+      </div>
+      <div class="about-stat-box">
+        <div class="about-stat-num" data-target="500" data-suffix="+">500+</div>
+        <div class="about-stat-label">Happy Customers</div>
+      </div>
+      <div class="about-stat-box">
+        <div class="about-stat-num" data-target="24" data-suffix="hr">24hr</div>
+        <div class="about-stat-label">Printing Available</div>
+      </div>
+      <div class="about-stat-box">
+        <div class="about-stat-num" data-target="5" data-suffix="★">5★</div>
+        <div class="about-stat-label">Average Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR OFFERS -->
+<section class="about-offers section-pad bg-light">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Our Offers</h2>
+    </div>
+    <div class="about-offers-grid">
+      <div class="about-offer-card">
+        <div class="about-offer-icon"><i class="fa fa-boxes"></i></div>
+        <h3>40+ Products</h3>
+        <p>Choose your product and pick from thousands of configuration possibilities — sizes, papers, finishes, and more.</p>
+      </div>
+      <div class="about-offer-card">
+        <div class="about-offer-icon"><i class="fa fa-clock"></i></div>
+        <h3>24 Hour Printing</h3>
+        <p>Order today before 10 AM, get your product within 2 working days. Same-day delivery available for select products.</p>
+      </div>
+      <div class="about-offer-card">
+        <div class="about-offer-icon"><i class="fa fa-headset"></i></div>
+        <h3>Best Customer Support</h3>
+        <p>Talk to our excellent Customer Service team. They are here to help with anything — from file preparation to delivery.</p>
+      </div>
+      <div class="about-offer-card">
+        <div class="about-offer-icon"><i class="fa fa-truck"></i></div>
+        <h3>Free Delivery</h3>
+        <p>Free island-wide delivery on all orders above SGD 50. Express and same-day delivery options available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="about-compare section-pad">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Print Pro SG vs Traditional Printing</h2>
+      <p>See why thousands of Singapore businesses choose us over traditional print shops.</p>
+    </div>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Advantage</th>
+            <th class="compare-us">Print Pro SG</th>
+            <th>Traditional Printing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>High quality at low, transparent prices</td>
+            <td class="compare-us"><i class="fa fa-check text-green"></i></td>
+            <td><i class="fa fa-times text-red"></i></td>
+          </tr>
+          <tr>
+            <td>Instant online quotation</td>
+            <td class="compare-us"><i class="fa fa-check text-green"></i></td>
+            <td><i class="fa fa-times text-red"></i></td>
+          </tr>
+          <tr>
+            <td>Free and fast island-wide delivery</td>
+            <td class="compare-us"><i class="fa fa-check text-green"></i></td>
+            <td><i class="fa fa-times text-red"></i></td>
+          </tr>
+          <tr>
+            <td>Convenient online ordering process</td>
+            <td class="compare-us"><i class="fa fa-check text-green"></i></td>
+            <td><i class="fa fa-times text-red"></i></td>
+          </tr>
+          <tr>
+            <td>24-hour availability</td>
+            <td class="compare-us"><i class="fa fa-check text-green"></i></td>
+            <td><i class="fa fa-times text-red"></i></td>
+          </tr>
+          <tr>
+            <td>Credit terms available</td>
+            <td class="compare-us"><i class="fa fa-check text-green"></i></td>
+            <td><i class="fa fa-times text-red"></i></td>
+          </tr>
+          <tr>
+            <td>AI-powered chat support</td>
+            <td class="compare-us"><i class="fa fa-check text-green"></i></td>
+            <td><i class="fa fa-times text-red"></i></td>
+          </tr>
+          <tr>
+            <td>Professional design services</td>
+            <td class="compare-us"><i class="fa fa-check text-green"></i></td>
+            <td>Limited</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="about-reviews section-pad bg-light">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>What Our Corporate Customers Say</h2>
+    </div>
+    <div class="about-reviews-grid">
+      <div class="about-review-card">
+        <div class="about-review-stars">★★★★★</div>
+        <p>"I was very happy with my Print Pro SG order. The coordination was fast, the communication clear, the delivery on time, and the after sales service good."</p>
+        <div class="about-review-author"><strong>Thipawan K.</strong> — Booking.com</div>
+      </div>
+      <div class="about-review-card">
+        <div class="about-review-stars">★★★★★</div>
+        <p>"Really enjoyed the whole process — sending in the design, refining it, answering questions, and updates about delivery. Smooth, clear, affordable, and fast."</p>
+        <div class="about-review-author"><strong>David L.</strong> — Marketing Director</div>
+      </div>
+      <div class="about-review-card">
+        <div class="about-review-stars">★★★★★</div>
+        <p>"Exceptional quality and turnaround. Ordered 2,000 name cards on Monday, received them Wednesday. The matte lamination finish was perfect."</p>
+        <div class="about-review-author"><strong>Priya S.</strong> — HR Manager</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="about-cta section-pad bg-red-gradient">
+  <div class="container text-center">
+    <h2>Ready to Print with Singapore's Best?</h2>
+    <p>Join thousands of satisfied customers who trust Print Pro SG for all their printing needs.</p>
+    <div class="about-cta-btns">
+      <a href="index.html#products" class="btn btn-white-red">Browse Products</a>
+      <a href="index.html#contact" class="btn btn-white-outline">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-newsletter">
+    <div class="container footer-newsletter-inner">
+      <div class="fn-text"><h3>Stay Updated</h3><p>Get exclusive deals and printing tips in your inbox.</p></div>
+      <form class="fn-form" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit" class="btn btn-red">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <img alt="Print Pro Singapore" class="footer-logo-img" src="img/logo-white.png" style="height:36px;width:auto;margin-bottom:12px;"/>
+        <p>Singapore's trusted online printing partner. Quality prints, fast delivery, best prices guaranteed.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="product.html?id=name-cards">Name Cards</a></li>
+          <li><a href="product.html?id=flyers">Flyers &amp; Leaflets</a></li>
+          <li><a href="product.html?id=stickers">Stickers &amp; Labels</a></li>
+          <li><a href="product.html?id=booklets">Booklets</a></li>
+          <li><a href="product.html?id=roll-up-banners">Roll-up Banners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="design-services.html">Design Services</a></li>
+          <li><a href="artwork-guidelines.html">Artwork Guidelines</a></li>
+          <li><a href="delivery.html">Delivery Info</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fa fa-phone"></i> +65 9875 1606</li>
+          <li><i class="fa fa-envelope"></i> hello@printprosg.com</li>
+          <li><i class="fa fa-map-marker-alt"></i> 123 Print Street, #05-01, Singapore 123456</li>
+          <li><i class="fa fa-clock"></i> Mon–Fri 9am–6pm, Sat 10am–3pm</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>&copy; <span id="footer-year-about"></span> Print Pro SG. All rights reserved. GST Reg No: 202312345A</p>
+      <div class="footer-pay-icons">
+        <span class="pay-icon">VISA</span>
+        <span class="pay-icon">MC</span>
+        <span class="pay-icon">PayNow</span>
+        <span class="pay-icon">Bank</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('footer-year-about').textContent = new Date().getFullYear();</script>
+<script src="script.js?v=35"></script>
+
+
+<script src="chatbot.js"></script>
+</body>
+</html>

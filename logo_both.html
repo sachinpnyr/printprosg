@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { margin: 0; padding: 30px; display: flex; flex-direction: column; gap: 20px; font-family: sans-serif; }
+.row { display: flex; align-items: center; gap: 20px; padding: 16px 24px; }
+.on-white { background: white; border: 1px solid #eee; }
+.on-dark { background: #1a1a1a; }
+.on-footer { background: #111111; }
+label { font-size: 12px; color: #999; min-width: 80px; }
+img { display: block; height: 40px; width: auto; }
+</style>
+</head>
+<body>
+  <div class="row on-white">
+    <label>Navbar (white bg):</label>
+    <img src="img/logo-transparent.png">
+  </div>
+  <div class="row on-dark">
+    <label style="color:#666">Footer (dark bg):</label>
+    <img src="img/logo-white.png">
+  </div>
+  <div class="row on-footer">
+    <label style="color:#555">Footer alt:</label>
+    <img src="img/logo-white.png">
+  </div>
+</body>
+</html>

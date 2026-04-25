@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" width="200" height="70">
+  <defs>
+    <style>
+      .logo-name { font-family: 'Arial', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 2px; fill: #263238; }
+      .logo-tag { font-family: 'Arial', sans-serif; font-weight: 400; font-size: 10px; letter-spacing: 3px; fill: #607d8b; }
+    </style>
+  </defs>
+  <!-- Background -->
+  <rect width="200" height="70" fill="white" rx="0"/>
+  <!-- Accent bar -->
+  <rect x="0" y="0" width="4" height="70" fill="#607d8b" rx="2"/>
+  <!-- Icon circle -->
+  <circle cx="42" cy="35" r="20" fill="#263238" opacity="0.08"/>
+  <!-- Icon -->
+  <g transform="translate(30, 23)" stroke="#263238" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1 21h22 M3 21V9l5-6 M8 21V9 M8 3h8 M16 21V9l5 6 M16 9h-8 M12 3v6 M10 12h4 M10 16h4" transform="scale(1)"/>
+  </g>
+  <!-- Company name -->
+  <text x="70" y="32" class="logo-name">SKYLINE</text>
+  <!-- Tagline -->
+  <text x="71" y="48" class="logo-tag">PROPERTIES</text>
+  <!-- Accent dot -->
+  <circle cx="182" cy="35" r="4" fill="#607d8b" opacity="0.6"/>
+</svg>

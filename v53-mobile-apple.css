@@ -1,0 +1,4993 @@
+/*
+ * v53-mobile-apple.css
+ * Comprehensive Apple-standard mobile overhaul for PrintProSG
+ * Reference: Apple.com mobile (390px)
+ * - Navbar: 48px
+ * - Buttons: 36px height, 14px, pill shape, NOT full-width
+ * - Font: -apple-system / SF Pro, 17px body, weight 400-600
+ * - No secondary nav row on mobile
+ * - Clean section spacing: 64px vertical, 20px horizontal padding
+ */
+
+@media (max-width: 767px) {
+
+  /* ============================================
+     1. GLOBAL RESET — Apple-grade base
+     ============================================ */
+
+  *, *::before, *::after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 17px !important;
+    line-height: 1.47059 !important;
+    color: #1d1d1f !important;
+    background: #fff !important;
+  }
+
+  /* ============================================
+     2. NAVBAR — 48px, no secondary row
+     ============================================ */
+
+  .navbar {
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background: rgba(255,255,255,0.92) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    border-bottom: 0.5px solid rgba(0,0,0,0.12) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+  }
+
+  /* Hide the secondary nav links row entirely */
+  .nav-secondary,
+  .nav-links,
+  .nav-menu-desktop,
+  .navbar-nav:not(.navbar-icons) {
+    display: none !important;
+  }
+
+  /* Logo — compact for 48px navbar */
+  .navbar .logo-img,
+  .navbar .nav-logo img {
+    height: 28px !important;
+    width: auto !important;
+  }
+
+  /* Nav right icons — tight spacing */
+  .navbar-icons,
+  .nav-actions,
+  .nav-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-left: auto !important;
+  }
+
+  /* Hide phone number in navbar */
+  .nav-phone,
+  .navbar .phone-number,
+  .navbar .contact-number {
+    display: none !important;
+  }
+
+  /* Cart icon — hidden on mobile */
+  .cart-icon,
+  .nav-cart,
+  .nav-cart-btn,
+  .nav-icon-btn {
+    display: none !important;
+  }
+
+  /* Hamburger */
+  .hamburger,
+  .nav-toggle,
+  .mobile-menu-btn {
+    width: 36px !important;
+    height: 36px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Hide the announcement/promo bar on mobile */
+  .promo-bar,
+  .announcement-bar,
+  .top-bar {
+    display: none !important;
+  }
+
+  /* ============================================
+     3. NAV CATEGORY TABS — slim, refined
+     ============================================ */
+
+  .nav-categories {
+    height: 40px !important;
+    padding: 0 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    border-bottom: 0.5px solid rgba(0,0,0,0.1) !important;
+    background: #fff !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+
+  .nav-categories::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .nav-cat {
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 40px !important;
+    padding: 0 14px !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: #1d1d1f !important;
+    letter-spacing: -0.08px !important;
+    text-decoration: none !important;
+    border-bottom: 2px solid transparent !important;
+    white-space: nowrap !important;
+    transition: color 0.2s, border-color 0.2s !important;
+  }
+
+  .nav-cat.active,
+  .nav-cat:first-child {
+    color: #e00 !important;
+    font-weight: 500 !important;
+    border-bottom-color: #e00 !important;
+  }
+
+  /* ============================================
+     4. HERO SECTION — Apple-grade
+     ============================================ */
+
+  #hero,
+  .hero-section {
+    padding: 72px 20px 40px !important;
+    min-height: auto !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .hero-content {
+    text-align: center !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Eyebrow — Apple uses small refined labels */
+  .hero-eyebrow,
+  .hero .eyebrow {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.06em !important;
+    color: rgba(29,29,31,0.6) !important;
+    text-transform: uppercase !important;
+    margin-bottom: 12px !important;
+    display: block !important;
+  }
+
+  /* Hero headline — Apple uses 48-56px on mobile for hero */
+  .hero-headline,
+  #hero h1,
+  .hero-content h1 {
+    font-size: 40px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.5px !important;
+    color: #1d1d1f !important;
+    margin-bottom: 8px !important;
+    font-family: -apple-system, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  }
+
+  /* The red "Delivered Fast." line */
+  .hero-headline .text-red,
+  .hero-headline span[style*="color"],
+  #hero h1 .highlight {
+    font-size: 40px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Hero subtext */
+  .hero-subtext,
+  .hero-description,
+  #hero .hero-content p {
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    line-height: 1.47 !important;
+    color: rgba(29,29,31,0.7) !important;
+    margin-bottom: 24px !important;
+    letter-spacing: -0.022em !important;
+  }
+
+  /* CTA buttons — Apple style: pill, NOT full-width, inline */
+  .hero-ctas,
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-outline,
+  #hero .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 44px !important;
+    padding: 0 24px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    border-radius: 980px !important;
+    letter-spacing: -0.022em !important;
+    width: auto !important;
+    min-width: 160px !important;
+    max-width: 280px !important;
+    text-decoration: none !important;
+  }
+
+  .hero-ctas .btn-primary {
+    background: #e00 !important;
+    color: #fff !important;
+    border: none !important;
+  }
+
+  .hero-ctas .btn-outline {
+    background: transparent !important;
+    color: #e00 !important;
+    border: 1.5px solid #e00 !important;
+  }
+
+  /* Trust row — horizontal, compact */
+  .hero-trust,
+  .trust-row {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    flex-wrap: wrap !important;
+    margin-top: 20px !important;
+  }
+
+  .trust-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+    font-size: 12px !important;
+    color: rgba(29,29,31,0.6) !important;
+    font-weight: 400 !important;
+  }
+
+  .trust-item i,
+  .trust-item .icon {
+    font-size: 16px !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* Hero product cards — 2 col, compact */
+  .hero-product-showcase,
+  .hero-cards {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    margin-top: 28px !important;
+    padding: 0 !important;
+  }
+
+  .hero-product-card {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    background: #fff !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+    padding: 12px !important;
+  }
+
+  .hero-product-card img {
+    width: 100% !important;
+    height: 90px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .hero-product-card .product-name {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    color: #1d1d1f !important;
+    margin-bottom: 2px !important;
+  }
+
+  .hero-product-card .product-price {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: #e00 !important;
+  }
+
+  /* ============================================
+     5. SECTION HEADERS — Apple precision
+     ============================================ */
+
+  .section-header {
+    text-align: center !important;
+    padding: 0 20px !important;
+    margin-bottom: 32px !important;
+  }
+
+  .section-eyebrow,
+  .eyebrow {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #e00 !important;
+    display: block !important;
+    margin-bottom: 8px !important;
+  }
+
+  .section-header h2 {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    line-height: 1.14 !important;
+    letter-spacing: -0.3px !important;
+    color: #1d1d1f !important;
+    margin-bottom: 0 !important;
+    font-family: -apple-system, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  }
+
+  /* Hide section header description paragraph on mobile */
+  .section-header p,
+  .section-header .section-desc {
+    display: none !important;
+  }
+
+  /* ============================================
+     6. REVIEWS SECTION
+     ============================================ */
+
+  #reviews,
+  .reviews-section {
+    padding: 56px 0 !important;
+    background: #f5f5f7 !important;
+  }
+
+  .reviews-header {
+    padding: 0 20px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .reviews-header h2 {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.3px !important;
+    color: #1d1d1f !important;
+  }
+
+  .review-card {
+    background: #fff !important;
+    border-radius: 18px !important;
+    padding: 20px !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+    margin: 0 !important;
+  }
+
+  .review-stars i,
+  .review-stars .fa-star {
+    color: #F59E0B !important;
+    font-size: 13px !important;
+  }
+
+  .review-text {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    color: #1d1d1f !important;
+    font-style: normal !important;
+  }
+
+  .reviewer-name {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #1d1d1f !important;
+  }
+
+  .review-date {
+    font-size: 12px !important;
+    color: rgba(29,29,31,0.5) !important;
+  }
+
+  /* ============================================
+     7. ABOUT SECTION
+     ============================================ */
+
+  #about,
+  .about-section {
+    padding: 56px 20px !important;
+  }
+
+  .about-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+    margin: 24px 0 !important;
+  }
+
+  .stat-item {
+    text-align: center !important;
+    padding: 16px 8px !important;
+    background: #f5f5f7 !important;
+    border-radius: 12px !important;
+  }
+
+  .stat-number {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: #1d1d1f !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1 !important;
+    display: block !important;
+  }
+
+  .stat-label {
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    color: rgba(29,29,31,0.5) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    margin-top: 4px !important;
+    display: block !important;
+  }
+
+  .about-features {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    margin-top: 24px !important;
+  }
+
+  .about-feature {
+    background: #f5f5f7 !important;
+    border-radius: 14px !important;
+    padding: 16px !important;
+  }
+
+  .about-feature-icon {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 8px !important;
+    margin-bottom: 10px !important;
+    font-size: 16px !important;
+  }
+
+  .about-feature h3 {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    color: #1d1d1f !important;
+    margin-bottom: 4px !important;
+  }
+
+  .about-feature p {
+    font-size: 12px !important;
+    color: rgba(29,29,31,0.6) !important;
+    line-height: 1.4 !important;
+  }
+
+  /* ============================================
+     8. HOW IT WORKS
+     ============================================ */
+
+  #how-it-works,
+  .hiw-section {
+    padding: 56px 20px !important;
+    background: #f5f5f7 !important;
+  }
+
+  .hiw-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+    margin-top: 0 !important;
+  }
+
+  .hiw-step {
+    background: #fff !important;
+    border-radius: 14px !important;
+    padding: 16px !important;
+    position: relative !important;
+  }
+
+  .hiw-number {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #e00 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+  }
+
+  .hiw-icon {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 8px !important;
+    margin-bottom: 10px !important;
+    font-size: 16px !important;
+  }
+
+  .hiw-step h3 {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #1d1d1f !important;
+    margin-bottom: 4px !important;
+    line-height: 1.3 !important;
+  }
+
+  .hiw-step p {
+    font-size: 12px !important;
+    color: rgba(29,29,31,0.6) !important;
+    line-height: 1.4 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  /* ============================================
+     9. SERVICES SECTION
+     ============================================ */
+
+  #services,
+  .services-section {
+    padding: 56px 20px !important;
+  }
+
+  .services-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .service-card {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    background: #fff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06) !important;
+    border: none !important;
+  }
+
+  .service-img {
+    height: 100px !important;
+    overflow: hidden !important;
+  }
+
+  .service-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .service-body {
+    padding: 12px !important;
+  }
+
+  .service-body h3 {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #1d1d1f !important;
+    margin-bottom: 4px !important;
+    line-height: 1.3 !important;
+  }
+
+  .service-body .service-desc,
+  .service-body p {
+    display: none !important;
+  }
+
+  .service-price {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #e00 !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+  }
+
+  .service-body .btn,
+  .service-body a.btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 30px !important;
+    padding: 0 12px !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    border-radius: 980px !important;
+    background: #1d1d1f !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    border: none !important;
+    width: auto !important;
+  }
+
+  /* Show all services button */
+  .show-more-btn,
+  #show-all-services-btn {
+    display: block !important;
+    margin: 24px auto 0 !important;
+    height: 44px !important;
+    padding: 0 28px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    border-radius: 980px !important;
+    background: transparent !important;
+    color: #e00 !important;
+    border: 1.5px solid #e00 !important;
+    width: auto !important;
+    cursor: pointer !important;
+    letter-spacing: -0.022em !important;
+  }
+
+  /* ============================================
+     10. PORTFOLIO SECTION
+     ============================================ */
+
+  #portfolio,
+  .portfolio-section {
+    padding: 56px 20px !important;
+    background: #f5f5f7 !important;
+  }
+
+  .portfolio-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  .portfolio-item {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    aspect-ratio: 1 / 1 !important;
+    position: relative !important;
+  }
+
+  .portfolio-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .portfolio-overlay {
+    opacity: 0 !important;
+  }
+
+  /* ============================================
+     11. CLIENTS / LOGOS SECTION
+     ============================================ */
+
+  #clients,
+  .clients-section {
+    padding: 40px 20px !important;
+  }
+
+  .clients-text {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+    color: rgba(29,29,31,0.5) !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* ============================================
+     12. LOCATIONS SECTION
+     ============================================ */
+
+  #locations,
+  .locations-section {
+    padding: 56px 20px !important;
+  }
+
+  .locations-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .location-card {
+    background: #f5f5f7 !important;
+    border-radius: 14px !important;
+    padding: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .location-flag {
+    font-size: 28px !important;
+    line-height: 1 !important;
+    margin-right: 12px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .location-info {
+    flex: 1 !important;
+  }
+
+  .location-card h3 {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #1d1d1f !important;
+    margin: 0 0 2px !important;
+  }
+
+  .location-company {
+    font-size: 12px !important;
+    color: rgba(29,29,31,0.5) !important;
+    margin: 0 !important;
+  }
+
+  .location-details {
+    display: none !important;
+  }
+
+  .location-actions {
+    display: flex !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .location-actions .btn {
+    height: 32px !important;
+    padding: 0 12px !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    border-radius: 980px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+  }
+
+  .location-actions .btn-whatsapp {
+    background: #25D366 !important;
+    color: #fff !important;
+    border: none !important;
+  }
+
+  .location-actions .btn-directions {
+    background: transparent !important;
+    color: #1d1d1f !important;
+    border: 1px solid rgba(29,29,31,0.2) !important;
+  }
+
+  /* ============================================
+     13. FAQ SECTION
+     ============================================ */
+
+  #faq,
+  .faq-section {
+    padding: 56px 20px !important;
+    background: #f5f5f7 !important;
+  }
+
+  .faq-item {
+    background: #fff !important;
+    border-radius: 12px !important;
+    margin-bottom: 8px !important;
+    overflow: hidden !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .faq-question {
+    padding: 16px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: #1d1d1f !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    line-height: 1.4 !important;
+  }
+
+  .faq-answer {
+    padding: 0 16px 16px !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: rgba(29,29,31,0.7) !important;
+  }
+
+  /* ============================================
+     14. CONTACT SECTION
+     ============================================ */
+
+  #contact,
+  .contact-section {
+    padding: 56px 20px !important;
+  }
+
+  .contact-form-wrap {
+    background: #f5f5f7 !important;
+    border-radius: 18px !important;
+    padding: 24px 20px !important;
+    box-shadow: none !important;
+  }
+
+  .contact-section h2,
+  #contact .section-header h2 {
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.3px !important;
+    text-align: center !important;
+    margin-bottom: 24px !important;
+    color: #1d1d1f !important;
+  }
+
+  .form-group {
+    margin-bottom: 14px !important;
+  }
+
+  .form-group label {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: #1d1d1f !important;
+    margin-bottom: 6px !important;
+    display: block !important;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100% !important;
+    height: 44px !important;
+    padding: 0 14px !important;
+    font-size: 15px !important;
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color: #1d1d1f !important;
+    background: #fff !important;
+    border: 1px solid rgba(29,29,31,0.2) !important;
+    border-radius: 10px !important;
+    outline: none !important;
+    box-sizing: border-box !important;
+    -webkit-appearance: none !important;
+    transition: border-color 0.2s !important;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #e00 !important;
+    box-shadow: 0 0 0 3px rgba(220,0,0,0.1) !important;
+  }
+
+  .form-group textarea {
+    height: 100px !important;
+    padding: 12px 14px !important;
+    resize: none !important;
+  }
+
+  .form-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .contact-submit,
+  #contact .btn-submit,
+  #contact button[type="submit"] {
+    width: 100% !important;
+    height: 50px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    background: #e00 !important;
+    color: #fff !important;
+    border: none !important;
+    cursor: pointer !important;
+    letter-spacing: -0.022em !important;
+    margin-top: 8px !important;
+  }
+
+  /* ============================================
+     15. FOOTER
+     ============================================ */
+
+  footer,
+  .footer {
+    padding: 40px 20px 24px !important;
+    background: #1d1d1f !important;
+  }
+
+  .footer-brand {
+    margin-bottom: 32px !important;
+    text-align: center !important;
+  }
+
+  .footer-logo,
+  .footer-brand img {
+    height: 32px !important;
+    width: auto !important;
+    margin-bottom: 12px !important;
+  }
+
+  .footer-tagline {
+    font-size: 13px !important;
+    color: rgba(255,255,255,0.5) !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+
+  .footer-links {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px 16px !important;
+    margin-bottom: 32px !important;
+  }
+
+  .footer-col h4 {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    color: rgba(255,255,255,0.5) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .footer-col a,
+  .footer-col li a {
+    font-size: 14px !important;
+    color: rgba(255,255,255,0.8) !important;
+    text-decoration: none !important;
+    display: block !important;
+    margin-bottom: 10px !important;
+    line-height: 1.4 !important;
+  }
+
+  .footer-bottom {
+    border-top: 0.5px solid rgba(255,255,255,0.12) !important;
+    padding-top: 16px !important;
+    text-align: center !important;
+  }
+
+  .footer-bottom p,
+  .footer-copyright {
+    font-size: 12px !important;
+    color: rgba(255,255,255,0.4) !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+  }
+
+  /* ============================================
+     16. COOKIE BANNER — Apple-style slim bar
+     ============================================ */
+
+  .cookie-banner,
+  #cookie-banner,
+  .cookie-notice {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: rgba(29,29,31,0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    padding: 12px 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    z-index: 99999 !important;
+    border-top: 0.5px solid rgba(255,255,255,0.1) !important;
+  }
+
+  .cookie-banner p,
+  .cookie-text {
+    font-size: 12px !important;
+    color: rgba(255,255,255,0.7) !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+    flex: 1 !important;
+  }
+
+  .cookie-banner .btn,
+  .cookie-accept,
+  .cookie-decline {
+    height: 30px !important;
+    padding: 0 14px !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    border-radius: 980px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  .cookie-accept {
+    background: #fff !important;
+    color: #1d1d1f !important;
+    border: none !important;
+  }
+
+  .cookie-decline {
+    background: transparent !important;
+    color: rgba(255,255,255,0.6) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+  }
+
+  /* ============================================
+     17. FLOATING CHAT BUTTON
+     ============================================ */
+
+  #printbot-toggle,
+  .chat-float,
+  .whatsapp-float {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    bottom: 80px !important;
+    right: 16px !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2) !important;
+  }
+
+  /* ============================================
+     18. GENERAL SECTION SPACING
+     ============================================ */
+
+  section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .container,
+  .section-container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    max-width: 100% !important;
+  }
+
+  /* ============================================
+     19. TYPOGRAPHY SCALE — Apple system
+     ============================================ */
+
+  h1 { font-size: 34px !important; font-weight: 700 !important; letter-spacing: -0.5px !important; line-height: 1.12 !important; }
+  h2 { font-size: 28px !important; font-weight: 700 !important; letter-spacing: -0.3px !important; line-height: 1.14 !important; }
+  h3 { font-size: 20px !important; font-weight: 600 !important; letter-spacing: -0.2px !important; line-height: 1.2 !important; }
+  h4 { font-size: 17px !important; font-weight: 600 !important; letter-spacing: -0.1px !important; }
+  p  { font-size: 15px !important; line-height: 1.5 !important; color: rgba(29,29,31,0.7) !important; }
+
+  /* ============================================
+     20. SCROLLBAR HIDE — Apple never shows scrollbars
+     ============================================ */
+
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  * {
+    scrollbar-width: none !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH — Targeted fixes after visual audit
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* --- Navbar: hide trust bar and announcement bar --- */
+  .nav-trust-bar,
+  #nav-trust-bar,
+  .nav-trust-container {
+    display: none !important;
+  }
+
+  #announcement-bar {
+    display: none !important;
+  }
+
+  /* --- Navbar: exact 48px --- */
+  #navbar {
+    padding: 0 !important;
+  }
+
+  .nav-top {
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    padding: 0 !important; /* padding handled by nav-container */
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .nav-container {
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 0 !important; /* nav-top provides the 16px side padding */
+    max-width: 100% !important;
+  }
+  /* Logo: flush left, no extra margin */
+  .nav-container .nav-logo {
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  /* Nav-right: flush right, hamburger only */
+  .nav-container .nav-right {
+    margin-left: auto !important;
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* --- Hero: padding-top must clear fixed navbar (49px) + breathing room --- */
+  #hero {
+    padding-top: 72px !important;
+    padding-bottom: 32px !important;
+    min-height: auto !important;
+  }
+
+  .hero-inner {
+    padding: 72px 20px 0 !important; /* 72px top = 49px navbar + 23px breathing room */
+    gap: 24px !important;
+  }
+
+  .hero-content {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-headline {
+    font-size: 38px !important;
+    margin-bottom: 16px !important;
+    line-height: 1.08 !important;
+  }
+
+  .hero-sub,
+  .hero-subtext {
+    font-size: 15px !important;
+    margin-bottom: 20px !important;
+    color: rgba(29,29,31,0.65) !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  /* Hero CTA: pill buttons, not full-width */
+  .hero-ctas {
+    flex-direction: row !important;
+    gap: 10px !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-secondary,
+  .hero-ctas a.btn-primary,
+  .hero-ctas a.btn-secondary,
+  #hero .hero-ctas a {
+    width: auto !important;
+    min-width: 140px !important;
+    max-width: 180px !important;
+    height: 44px !important;
+    padding: 0 20px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    border-radius: 980px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Trust row: horizontal, 3 items */
+  .hero-trust-row {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hero-trust-row span {
+    font-size: 11px !important;
+    color: rgba(29,29,31,0.55) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  .hero-trust-row span i {
+    font-size: 11px !important;
+    color: rgba(29,29,31,0.4) !important;
+  }
+
+  /* Hero product cards: compact */
+  .hero-product-showcase {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    margin-top: 20px !important;
+  }
+
+  .hero-product-card {
+    padding: 10px !important;
+    border-radius: 12px !important;
+  }
+
+  .hero-product-img {
+    height: 80px !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .hero-product-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .hero-product-info span {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    color: #1d1d1f !important;
+    display: block !important;
+    margin-bottom: 2px !important;
+  }
+
+  .hero-product-info strong {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #e00 !important;
+  }
+
+  /* Hide cards 3 and 4 on mobile */
+  .hero-product-card:nth-child(3),
+  .hero-product-card:nth-child(4) {
+    display: none !important;
+  }
+
+  /* --- About section: hide long text, fix stats overflow --- */
+  #about .about-text,
+  #about .about-description,
+  #about > .container > p,
+  .about-section > .container > p,
+  .about-content > p {
+    display: none !important;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    overflow: hidden !important;
+  }
+
+  .stat-item {
+    padding: 12px 6px !important;
+    min-width: 0 !important;
+  }
+
+  .stat-number {
+    font-size: 20px !important;
+    letter-spacing: -0.3px !important;
+  }
+
+  .stat-label {
+    font-size: 9px !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  /* About CTA button — pill, not full-width */
+  #about .btn,
+  .about-section .btn-primary {
+    display: inline-flex !important;
+    width: auto !important;
+    min-width: 160px !important;
+    max-width: 240px !important;
+    height: 44px !important;
+    padding: 0 24px !important;
+    border-radius: 980px !important;
+    font-size: 14px !important;
+    margin: 0 auto !important;
+  }
+
+  /* About features: hide description text */
+  .about-feature p,
+  .about-feature .feature-desc {
+    display: none !important;
+  }
+
+  .about-feature {
+    padding: 14px !important;
+  }
+
+  .about-feature h3 {
+    font-size: 13px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* --- Footer: compact 2-column layout --- */
+  footer,
+  .footer,
+  #footer {
+    padding: 32px 20px 20px !important;
+  }
+
+  .footer-grid,
+  .footer-links,
+  .footer-columns {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px 16px !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Hide extra footer columns on mobile — keep only 2 */
+  .footer-col:nth-child(n+3) {
+    display: none !important;
+  }
+
+  .footer-col h4,
+  .footer-col .footer-heading {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    color: rgba(255,255,255,0.45) !important;
+    margin-bottom: 10px !important;
+  }
+
+  .footer-col a,
+  .footer-col li,
+  .footer-col li a {
+    font-size: 13px !important;
+    color: rgba(255,255,255,0.75) !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Footer brand */
+  .footer-brand {
+    margin-bottom: 24px !important;
+    text-align: left !important;
+  }
+
+  .footer-brand img,
+  .footer-logo {
+    height: 28px !important;
+    width: auto !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+  }
+
+  .footer-tagline,
+  .footer-brand p {
+    font-size: 12px !important;
+    color: rgba(255,255,255,0.45) !important;
+    line-height: 1.5 !important;
+    max-width: 260px !important;
+  }
+
+  /* Footer social icons */
+  .footer-social {
+    display: flex !important;
+    gap: 12px !important;
+    margin-top: 12px !important;
+  }
+
+  .footer-social a {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    background: rgba(255,255,255,0.1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    color: rgba(255,255,255,0.7) !important;
+  }
+
+  /* Footer bottom bar */
+  .footer-bottom,
+  .footer-copyright-bar {
+    border-top: 0.5px solid rgba(255,255,255,0.1) !important;
+    padding-top: 14px !important;
+    margin-top: 0 !important;
+  }
+
+  .footer-bottom p,
+  .footer-copyright {
+    font-size: 11px !important;
+    color: rgba(255,255,255,0.35) !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+
+  /* --- Sticky bottom bar (Call / WhatsApp / Quote) --- */
+  .sticky-cta-bar,
+  .mobile-cta-bar,
+  #sticky-cta {
+    height: 52px !important;
+    padding: 0 12px !important;
+    gap: 8px !important;
+  }
+
+  .sticky-cta-bar .btn,
+  .mobile-cta-bar .btn {
+    height: 38px !important;
+    font-size: 13px !important;
+    border-radius: 10px !important;
+    padding: 0 12px !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 2 — Precise targeted fixes
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* --- HERO: force column layout --- */
+  .hero-inner,
+  #hero .hero-inner,
+  #hero > .container > .hero-inner,
+  .hero .hero-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 20px !important;
+    padding: 0 20px !important;
+  }
+
+  /* Hero content: compact */
+  .hero-content,
+  #hero .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    order: 1 !important;
+  }
+
+  .hero-headline,
+  #hero .hero-headline {
+    font-size: 36px !important;
+    line-height: 1.08 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-sub,
+  .hero-subtext,
+  #hero .hero-sub,
+  #hero p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    color: rgba(29,29,31,0.6) !important;
+    margin-bottom: 18px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  /* Hero CTAs: side by side pills */
+  .hero-ctas,
+  #hero .hero-ctas {
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 16px !important;
+  }
+
+  .hero-ctas a,
+  #hero .hero-ctas a,
+  .hero-ctas .btn {
+    width: auto !important;
+    min-width: 130px !important;
+    max-width: 170px !important;
+    height: 44px !important;
+    line-height: 44px !important;
+    padding: 0 18px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    border-radius: 980px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: none !important;
+  }
+
+  /* Hero product showcase: 2 cards only, compact */
+  .hero-product-showcase,
+  #hero .hero-product-showcase {
+    width: 100% !important;
+    order: 2 !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    margin-top: 0 !important;
+  }
+
+  .hero-product-card:nth-child(3),
+  .hero-product-card:nth-child(4),
+  #hero .hero-product-card:nth-child(3),
+  #hero .hero-product-card:nth-child(4) {
+    display: none !important;
+  }
+
+  .hero-product-card,
+  #hero .hero-product-card {
+    padding: 10px !important;
+    border-radius: 12px !important;
+  }
+
+  .hero-product-img,
+  #hero .hero-product-img {
+    height: 80px !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* --- ABOUT: hide long paragraphs --- */
+  .about-content p,
+  #about .about-content p,
+  .about-content > p {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #about,
+  .about-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* About features: hide description text */
+  .about-feature > div > p,
+  .about-features .about-feature p {
+    display: none !important;
+  }
+
+  .about-feature {
+    padding: 12px !important;
+    gap: 10px !important;
+  }
+
+  .about-feature h4 {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .about-feature-icon {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+  }
+
+  /* About CTA: pill, centered */
+  .about-content .btn,
+  .about-content a.btn-primary,
+  #about .btn-primary {
+    display: inline-flex !important;
+    width: auto !important;
+    min-width: 160px !important;
+    max-width: 240px !important;
+    height: 44px !important;
+    padding: 0 24px !important;
+    border-radius: 980px !important;
+    font-size: 14px !important;
+    margin: 16px auto 0 !important;
+  }
+
+  /* --- FOOTER: compact 2-column, hide extra cols --- */
+  footer,
+  .site-footer {
+    padding: 28px 20px 16px !important;
+  }
+
+  .footer-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto !important;
+    gap: 20px 16px !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Footer brand: full width top row */
+  .footer-brand {
+    grid-column: 1 / -1 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Show only first 2 footer-col (Products + Company), hide Support + Contact */
+  .footer-col:nth-child(3),
+  .footer-col:nth-child(4) {
+    display: block !important;
+  }
+
+  .footer-col:nth-child(5),
+  .footer-col:nth-child(6),
+  .footer-col.footer-contact-col {
+    display: none !important;
+  }
+
+  .footer-col h4 {
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: rgba(255,255,255,0.4) !important;
+    margin-bottom: 10px !important;
+  }
+
+  .footer-col ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 7px !important;
+  }
+
+  .footer-col ul li a {
+    font-size: 13px !important;
+    color: rgba(255,255,255,0.7) !important;
+    text-decoration: none !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Footer brand logo */
+  .footer-logo-img {
+    height: 28px !important;
+    width: auto !important;
+    margin-bottom: 8px !important;
+  }
+
+  .footer-brand > p {
+    font-size: 12px !important;
+    color: rgba(255,255,255,0.4) !important;
+    line-height: 1.5 !important;
+    margin-bottom: 12px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  /* Footer social icons */
+  .footer-social {
+    display: flex !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .footer-social a {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    background: rgba(255,255,255,0.1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 13px !important;
+    color: rgba(255,255,255,0.65) !important;
+  }
+
+  /* Footer bottom bar */
+  .footer-bottom {
+    border-top: 0.5px solid rgba(255,255,255,0.1) !important;
+    padding-top: 14px !important;
+    margin-top: 0 !important;
+  }
+
+  .footer-bottom p {
+    font-size: 11px !important;
+    color: rgba(255,255,255,0.3) !important;
+    text-align: center !important;
+    margin: 0 0 4px !important;
+    line-height: 1.5 !important;
+  }
+
+  .footer-bottom a {
+    color: rgba(255,255,255,0.45) !important;
+    text-decoration: none !important;
+  }
+
+  /* Footer payment section: hide on mobile */
+  .footer-payment {
+    display: none !important;
+  }
+
+  /* --- SERVICES: reduce section padding --- */
+  #services {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .service-card {
+    border-radius: 12px !important;
+  }
+
+  .service-img {
+    height: 90px !important;
+  }
+
+  .service-body {
+    padding: 10px 12px 12px !important;
+  }
+
+  .service-title {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .service-price {
+    font-size: 12px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .service-cta {
+    height: 32px !important;
+    font-size: 12px !important;
+    border-radius: 8px !important;
+    padding: 0 10px !important;
+  }
+
+  /* --- HOW IT WORKS: reduce section padding --- */
+  #how-it-works {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* --- FAQ: reduce section padding --- */
+  #faq {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* --- CONTACT: reduce section padding --- */
+  #contact {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* --- REVIEWS: reduce section padding --- */
+  #reviews {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* --- CLIENTS: reduce section padding --- */
+  #clients {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  /* --- LOCATIONS: reduce section padding --- */
+  #locations {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* --- PORTFOLIO: reduce section padding --- */
+  #portfolio {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 3 — Footer precise fix
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* Footer grid: brand full-width, then 2 cols */
+  .footer-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Brand: full width */
+  .footer-brand {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Products col (child 2) and Company col (child 3): show */
+  .footer-grid > .footer-col:nth-child(2),
+  .footer-grid > .footer-col:nth-child(3) {
+    display: block !important;
+  }
+
+  /* Support col (child 4) and Contact col (child 5): hide */
+  .footer-grid > .footer-col:nth-child(4),
+  .footer-grid > .footer-col:nth-child(5),
+  .footer-grid > .footer-col.footer-contact-col {
+    display: none !important;
+  }
+
+  /* Reduce link height in footer columns */
+  .footer-col ul li {
+    margin-bottom: 6px !important;
+    line-height: 1 !important;
+  }
+
+  .footer-col ul li a {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    display: block !important;
+    padding: 0 !important;
+    color: rgba(255,255,255,0.65) !important;
+    text-decoration: none !important;
+  }
+
+  /* Limit Products list to 5 items max on mobile */
+  .footer-grid > .footer-col:nth-child(2) ul li:nth-child(n+6) {
+    display: none !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 4 — Hero CTA and trust row fixes
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* Hero CTAs: single row, compact pills */
+  .hero-ctas,
+  #hero .hero-ctas {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-bottom: 14px !important;
+    width: 100% !important;
+  }
+
+  .hero-ctas a,
+  #hero .hero-ctas a,
+  .hero-ctas .btn,
+  #hero .hero-ctas .btn {
+    flex: 1 !important;
+    max-width: 160px !important;
+    min-width: 0 !important;
+    height: 42px !important;
+    line-height: 42px !important;
+    padding: 0 12px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    border-radius: 980px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Trust row: single horizontal row, 3 items */
+  .hero-trust-row,
+  #hero .hero-trust-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 16px !important;
+    overflow: hidden !important;
+  }
+
+  .hero-trust-row span,
+  #hero .hero-trust-row span,
+  .hero-trust-row .trust-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 4px !important;
+    font-size: 10px !important;
+    white-space: nowrap !important;
+    color: rgba(29,29,31,0.55) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .hero-trust-row span i,
+  .hero-trust-row .trust-item i {
+    font-size: 10px !important;
+    color: rgba(29,29,31,0.4) !important;
+  }
+
+  /* Hero sub: 1 line only */
+  .hero-sub,
+  #hero .hero-sub,
+  .hero-subtext {
+    -webkit-line-clamp: 1 !important;
+    margin-bottom: 14px !important;
+    font-size: 14px !important;
+  }
+
+  /* Hero eyebrow: tighter */
+  .hero-eyebrow,
+  #hero .hero-eyebrow {
+    margin-bottom: 8px !important;
+    font-size: 10px !important;
+  }
+
+  /* Hero headline: tighter */
+  .hero-headline,
+  #hero .hero-headline {
+    margin-bottom: 10px !important;
+    font-size: 34px !important;
+    line-height: 1.06 !important;
+  }
+
+  /* Hero product cards: smaller */
+  .hero-product-img,
+  #hero .hero-product-img {
+    height: 70px !important;
+  }
+
+  .hero-product-card,
+  #hero .hero-product-card {
+    padding: 8px !important;
+  }
+
+  /* Hero section: must clear fixed navbar (49px) */
+  #hero {
+    padding-top: 72px !important;
+    padding-bottom: 24px !important;
+  }
+
+  /* Hero inner: less gap */
+  .hero-inner,
+  #hero .hero-inner {
+    gap: 16px !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 5 — Final section height reductions
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* --- CONTACT: hide phone field, reduce form height --- */
+  #contact .form-row:has(#phone),
+  .form-group:has(#phone),
+  .form-group:has([name="phone"]) {
+    display: none !important;
+  }
+
+  /* Fallback: target by label text using adjacent sibling */
+  #contact label[for="phone"],
+  #contact #phone,
+  #contact input[name="phone"],
+  #contact input[type="tel"] {
+    display: none !important;
+  }
+
+  /* Also hide the parent form-group if it contains phone */
+  #contact .form-row:nth-child(2) .form-group:last-child {
+    display: none !important;
+  }
+
+  /* Contact form: reduce padding */
+  .contact-form-wrap,
+  #contact .contact-form-wrap {
+    padding: 20px 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .contact-form-wrap form,
+  #contact-form {
+    gap: 12px !important;
+  }
+
+  .form-group {
+    margin-bottom: 0 !important;
+  }
+
+  .form-group label {
+    font-size: 12px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    height: 40px !important;
+    font-size: 14px !important;
+    padding: 0 12px !important;
+    border-radius: 8px !important;
+  }
+
+  .form-group textarea {
+    height: 80px !important;
+    padding: 10px 12px !important;
+    resize: none !important;
+  }
+
+  /* Contact form submit button: pill */
+  #contact-form .btn-primary,
+  .contact-form-wrap .btn-submit,
+  #contact .btn-primary[type="submit"] {
+    height: 44px !important;
+    border-radius: 980px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    width: 100% !important;
+    margin-top: 4px !important;
+  }
+
+  /* Contact section heading: hide info column, show heading above form */
+  .contact-info {
+    display: none !important;
+  }
+
+  #contact .section-header,
+  .contact-section-header {
+    display: block !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* --- SERVICES: reduce card height --- */
+  .service-img,
+  .services-grid .service-img {
+    height: 80px !important;
+  }
+
+  .service-body {
+    padding: 8px 10px 10px !important;
+  }
+
+  .service-title {
+    font-size: 12px !important;
+    margin-bottom: 2px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .service-price {
+    font-size: 11px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .service-cta,
+  .service-card .btn {
+    height: 28px !important;
+    font-size: 11px !important;
+    border-radius: 6px !important;
+    padding: 0 8px !important;
+    line-height: 28px !important;
+  }
+
+  /* --- REVIEWS: fix layout --- */
+  .reviews-header,
+  #reviews .reviews-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .google-badge,
+  .reviews-badge {
+    position: static !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* --- PORTFOLIO: reduce item height --- */
+  .portfolio-item,
+  .portfolio-grid .portfolio-item {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+  }
+
+  .portfolio-img,
+  .portfolio-item img {
+    height: 100px !important;
+    object-fit: cover !important;
+  }
+
+  /* --- FAQ: reduce padding between items --- */
+  .faq-item {
+    padding: 14px 16px !important;
+    margin-bottom: 6px !important;
+    border-radius: 10px !important;
+  }
+
+  .faq-question {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+
+  .faq-answer {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    padding-top: 8px !important;
+  }
+
+  /* --- REVIEWS: reduce card padding --- */
+  .review-card {
+    padding: 16px !important;
+    border-radius: 12px !important;
+  }
+
+  .review-text {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    -webkit-line-clamp: 3 !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  .reviewer-name {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+  }
+
+  .reviewer-meta {
+    font-size: 11px !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 6 — FAQ, portfolio, about final fixes
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* --- FAQ: reduce question padding and font size --- */
+  .faq-question {
+    padding: 14px 16px !important;
+    gap: 12px !important;
+  }
+
+  .faq-question h3 {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .faq-icon {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    font-size: 11px !important;
+  }
+
+  .faq-answer-inner {
+    padding: 0 16px 14px !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+  }
+
+  .faq-item {
+    margin-bottom: 6px !important;
+    border-radius: 10px !important;
+  }
+
+  /* Hide last 2 FAQ items on mobile */
+  .faq-list .faq-item:nth-child(5),
+  .faq-list .faq-item:nth-child(6),
+  #faq .faq-item:nth-child(5),
+  #faq .faq-item:nth-child(6) {
+    display: none !important;
+  }
+
+  /* --- PORTFOLIO: show only 6 items (3 rows of 2) --- */
+  .portfolio-grid .portfolio-item:nth-child(7),
+  .portfolio-grid .portfolio-item:nth-child(8),
+  .portfolio-grid .portfolio-item:nth-child(9),
+  #portfolio .portfolio-item:nth-child(7),
+  #portfolio .portfolio-item:nth-child(8),
+  #portfolio .portfolio-item:nth-child(9) {
+    display: none !important;
+  }
+
+  .portfolio-img,
+  .portfolio-item img,
+  .portfolio-item .portfolio-thumb {
+    height: 90px !important;
+    object-fit: cover !important;
+  }
+
+  .portfolio-item {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+  }
+
+  .portfolio-grid {
+    gap: 6px !important;
+  }
+
+  /* --- ABOUT: show only 2 features on mobile --- */
+  .about-features .about-feature:nth-child(3),
+  .about-features .about-feature:nth-child(4) {
+    display: none !important;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .about-feature {
+    padding: 10px !important;
+  }
+
+  /* About stats: tighter */
+  .about-stats {
+    gap: 12px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .stat-number {
+    font-size: 24px !important;
+    line-height: 1.1 !important;
+  }
+
+  .stat-label {
+    font-size: 11px !important;
+  }
+
+  /* About section heading: tighter */
+  #about .section-header {
+    margin-bottom: 16px !important;
+  }
+
+  /* --- SECTION HEADERS: reduce padding --- */
+  .section-header {
+    margin-bottom: 20px !important;
+  }
+
+  .section-eyebrow {
+    font-size: 10px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .section-header h2 {
+    font-size: 24px !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 0 !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 7 — Portfolio overlay and FAQ final fix
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* Portfolio: fix item height by hiding overlay and setting explicit height */
+  .portfolio-item {
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+    height: 90px !important;
+    display: block !important;
+  }
+
+  .portfolio-item img {
+    width: 100% !important;
+    height: 90px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .portfolio-overlay {
+    display: none !important;
+  }
+
+  .portfolio-zoom {
+    display: none !important;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px !important;
+  }
+
+  /* FAQ: clamp question to 1 line */
+  .faq-question h3 {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+  }
+
+  .faq-question {
+    padding: 12px 14px !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 8 — FAQ answer height leak fix + section padding
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* Fix FAQ answer height leak — force height to 0 when collapsed */
+  .faq-answer {
+    max-height: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height 480ms ease, height 480ms ease !important;
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 300px !important;
+    height: auto !important;
+  }
+
+  .faq-answer-inner {
+    padding: 0 14px 12px !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Reduce FAQ section padding */
+  #faq {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .faq-grid {
+    gap: 6px !important;
+    margin-top: 0 !important;
+  }
+
+  /* Reduce all section padding on mobile — #hero excluded (needs navbar clearance) */
+  section,
+  #reviews,
+  #about,
+  #how-it-works,
+  #services,
+  #portfolio,
+  #clients,
+  #locations,
+  #faq,
+  #contact {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+  /* Hero must clear fixed navbar (49px) */
+  #hero {
+    padding-top: 72px !important;
+    padding-bottom: 32px !important;
+  }
+
+  /* Reduce section header margin */
+  .section-header {
+    margin-bottom: 16px !important;
+  }
+
+  /* Reduce HIW section padding */
+  .hiw-grid {
+    gap: 12px !important;
+    margin-top: 0 !important;
+  }
+
+  /* Reduce reviews section */
+  .reviews-grid {
+    gap: 10px !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 9 — FAQ answer min-height fix
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* Force FAQ answer to truly collapse */
+  .faq-answer {
+    max-height: 0 !important;
+    min-height: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    display: block !important;
+    line-height: 0 !important;
+    font-size: 0 !important;
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 300px !important;
+    height: auto !important;
+    line-height: normal !important;
+    font-size: inherit !important;
+  }
+
+  /* FAQ question: reduce icon size to save space */
+  .faq-icon {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    font-size: 10px !important;
+  }
+
+  /* FAQ question total height target: 44px */
+  .faq-question {
+    padding: 10px 14px !important;
+    min-height: 44px !important;
+    align-items: center !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 10 — Final polish: service card, about CTA, trust row
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* Service card: reduce image height and body padding */
+  .service-img {
+    height: 120px !important;
+  }
+
+  .service-body {
+    padding: 12px 14px 14px !important;
+  }
+
+  .service-title {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .service-price {
+    font-size: 13px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .service-cta {
+    font-size: 12px !important;
+    padding: 6px 12px !important;
+  }
+
+  /* About CTA button: auto-width pill */
+  .about-cta {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .about-cta .btn-primary {
+    width: auto !important;
+    padding: 12px 28px !important;
+    font-size: 14px !important;
+  }
+
+  /* Trust row: ensure all 3 items fit on one row */
+  .hero-trust {
+    flex-wrap: nowrap !important;
+    overflow: hidden !important;
+    gap: 6px !important;
+  }
+
+  .trust-item {
+    font-size: 10px !important;
+    white-space: nowrap !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .trust-item span {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  /* Clients section: reduce padding */
+  #clients {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+
+  /* Reduce HIW step card padding */
+  .hiw-step {
+    padding: 16px 12px !important;
+  }
+
+  .hiw-step-desc {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 11 — Service footer aggressive compaction
+   Target: service-footer 112px → ~58px
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* Service footer: horizontal row layout, compact */
+  .service-footer {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 14px 12px !important;
+    margin-top: 8px !important;
+    gap: 4px !important;
+  }
+
+  /* Service price: compact pill */
+  .service-price {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    padding: 3px 8px !important;
+    margin-bottom: 0 !important;
+    border-radius: 100px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Service CTA: compact link */
+  .service-cta {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding: 5px 10px !important;
+    margin-top: 0 !important;
+    border-radius: 100px !important;
+    width: auto !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Service body: reduce margin-top on footer */
+  .service-body {
+    padding: 10px 0 0 0 !important;
+  }
+
+  /* Service title: single line, compact */
+  .service-body h3,
+  .service-title {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    margin: 0 14px 4px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.3 !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 12 — Fix service card nth-child conflict
+   v50-mobile.css hides cards 5+ with nth-child(n+5)
+   Override to let JS filter control visibility
+   ============================================ */
+
+@media (max-width: 767px) {
+
+   /* Override v50-mobile.css rule that hides cards 5+ */
+  /* JS filter system controls visibility via .card-hidden class */
+  .service-card:nth-child(n+5) {
+    display: block !important;
+  }
+  /* But still hide cards with card-hidden or hidden-default class */
+  .service-card.card-hidden,
+  .service-card.hidden-default {
+    display: none !important;
+  }
+  /* Ensure revealed hidden-default cards show */
+  .service-card.hidden-default.revealed {
+    display: block !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 13 — Services section overall height reduction
+   Target: 736px → ~600px
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* Reduce section padding */
+  #services {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+
+  /* Reduce grid margin-top */
+  .services-grid,
+  #services-grid {
+    margin-top: 16px !important;
+  }
+
+  /* Reduce section-header margin-bottom */
+  #services .section-header {
+    margin-bottom: 0 !important;
+  }
+
+  /* Reduce show-more button margin-top */
+  #services-show-more,
+  #show-all-services-btn {
+    margin-top: 16px !important;
+    padding: 10px 28px !important;
+    font-size: 13px !important;
+  }
+
+  /* Reduce category tabs margin */
+  #services .nav-cats,
+  #services .services-tabs {
+    margin-bottom: 12px !important;
+    margin-top: 12px !important;
+  }
+
+  /* Reduce service card image height slightly */
+  .service-img,
+  .services-grid .service-img {
+    height: 80px !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 14 — Service card body height reduction
+   Target: body 75px → 55px, card 155px → 135px
+   ============================================ */
+
+@media (max-width: 767px) {
+
+  /* Service body: reduce padding */
+  .service-body {
+    padding: 6px 0 0 0 !important;
+  }
+
+  /* Service title: reduce margin */
+  .service-body h3,
+  .service-title {
+    margin: 0 14px 2px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Service footer: reduce margin-top */
+  .service-footer {
+    margin-top: 4px !important;
+    padding: 0 14px 10px !important;
+    gap: 4px !important;
+  }
+
+  /* Service price: compact */
+  .service-price {
+    font-size: 11px !important;
+    padding: 2px 7px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Service CTA: compact */
+  .service-cta {
+    font-size: 11px !important;
+    padding: 4px 9px !important;
+    margin-top: 0 !important;
+  }
+
+}
+
+
+/* ============================================================
+   PATCH 15 — GOOGLE-STANDARD MOBILE AUDIT FIXES
+   Fixes: touch targets, font sizes, horizontal overflow,
+          form input heights, hero overflow, review overflow
+   ============================================================ */
+@media (max-width: 430px) {
+
+  /* ── 1. HORIZONTAL OVERFLOW FIX ──────────────────────────
+     hero-content is 356px wide starting at x=40 → right=396px
+     (viewport=390). The hero-inner has pl=20px pr=20px but
+     hero-content has no right constraint. Fix with overflow:hidden
+     on the section and max-width on content.
+  ─────────────────────────────────────────────────────────── */
+  #hero {
+    overflow-x: hidden !important;
+  }
+  .hero-inner {
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .hero-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+  .hero-headline,
+  .hero-sub,
+  .hero-eyebrow,
+  .hero-ctas,
+  .hero-trust-row {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  /* Review cards — prevent horizontal overflow */
+  .reviews-track,
+  .reviews-slider {
+    overflow-x: hidden !important;
+  }
+  .review-card {
+    max-width: calc(100vw - 40px) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Global overflow guard */
+  section,
+  .section,
+  .container {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  /* ── 2. TOUCH TARGET FIXES (min 44×44px) ─────────────────
+     Cart button, social icons, footer links, chatbot buttons
+  ─────────────────────────────────────────────────────────── */
+
+  /* Cart icon — hidden on mobile (removed per UX decision) */
+  .nav-cart-btn,
+  .nav-icon-btn {
+    display: none !important;
+  }
+
+  /* Hamburger toggle */
+  .nav-toggle {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* Social icons in footer — currently 30×30px */
+  .social-links a,
+  .footer-social a,
+  .social-icon {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Footer links — currently 127×18px (too short height) */
+  .footer-links a,
+  .footer-col a,
+  footer a:not(.footer-logo) {
+    display: block !important;
+    min-height: 44px !important;
+    line-height: 44px !important;
+    padding: 0 !important;
+  }
+
+  /* Review dots — currently 8×44px (too narrow) */
+  .reviews-dot {
+    min-width: 20px !important;
+    min-height: 44px !important;
+    padding: 0 6px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Chatbot buttons */
+  .printbot-header-btn {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+  .printbot-quick-btn {
+    min-height: 44px !important;
+    padding: 10px 14px !important;
+  }
+  .printbot-send-btn {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  /* Back to top button */
+  .back-to-top,
+  #back-to-top {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  /* ── 3. FONT SIZE FIXES (min 12px) ───────────────────────
+     hero-eyebrow, trust row badges, section labels,
+     stats labels — all currently 10–11px
+  ─────────────────────────────────────────────────────────── */
+
+  /* Hero eyebrow / trust badges */
+  .hero-eyebrow,
+  .hero-trust-row span,
+  .hero-trust-row .trust-item {
+    font-size: 12px !important;
+  }
+
+  /* Hero product card labels */
+  .hero-product-card .product-label,
+  .hero-product-card span,
+  .hero-product-card .product-name {
+    font-size: 12px !important;
+  }
+
+  /* Section eyebrow labels (WHAT OUR CUSTOMERS SAY, ABOUT PRINT PRO etc.) */
+  .section-eyebrow,
+  .section-label,
+  .eyebrow,
+  [class*="eyebrow"],
+  [class*="overline"] {
+    font-size: 12px !important;
+  }
+
+  /* Stats labels (YEARS EXPERIENCE, HAPPY CLIENTS) */
+  .stat-label,
+  .stats-label,
+  .about-stat span:last-child,
+  .stat-item .label {
+    font-size: 12px !important;
+  }
+
+  /* ── 4. FORM INPUT HEIGHT FIXES (min 44px) ───────────────
+     Contact form inputs currently below 44px
+  ─────────────────────────────────────────────────────────── */
+  #contact input,
+  #contact textarea,
+  #contact select,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select,
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form input[type="search"],
+  form select,
+  form textarea {
+    min-height: 44px !important;
+    height: auto !important;
+    padding: 10px 14px !important;
+    font-size: 16px !important; /* prevents iOS zoom on focus */
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+  form textarea {
+    min-height: 100px !important;
+  }
+
+  /* Submit button */
+  .contact-form button[type="submit"],
+  .contact-form .btn-submit,
+  form button[type="submit"] {
+    min-height: 48px !important;
+    font-size: 16px !important;
+  }
+
+  /* ── 5. PRIVACY POLICY LINK — proper touch target ────── */
+  .cookie-banner a,
+  #cookie-banner a {
+    display: inline-block !important;
+    min-height: 44px !important;
+    line-height: 44px !important;
+  }
+}
+/* END PATCH 15 */
+
+
+/* ============================================================
+   PATCH 16 — FONT SIZE MINIMUM 12px + CHATBOT INPUT FIX
+   Overrides earlier max-width:767px rules that set 10-11px
+   fonts. Google standard: no visible text below 12px.
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* Hero eyebrow — was set to 10px in an earlier patch */
+  .hero-eyebrow,
+  #hero .hero-eyebrow {
+    font-size: 12px !important;
+  }
+
+  /* Hero trust row badges */
+  .hero-trust-row span,
+  .hero-trust-row .trust-item span,
+  .hero-trust-row i + span,
+  .hero-trust-row > * {
+    font-size: 12px !important;
+  }
+
+  /* Section eyebrow labels */
+  .eyebrow,
+  .section-eyebrow,
+  .section-label,
+  [class*="eyebrow"] {
+    font-size: 12px !important;
+  }
+
+  /* Service price pill */
+  .service-price {
+    font-size: 12px !important;
+  }
+
+  /* Service CTA link */
+  .service-cta,
+  .service-card .btn,
+  .service-card a.btn {
+    font-size: 12px !important;
+  }
+
+  /* Stats labels */
+  .stat-label,
+  .stats-label,
+  .about-stat .label,
+  .about-stat span:not(.stat-number):not(.stat-value) {
+    font-size: 12px !important;
+  }
+
+  /* Chatbot textarea — was 34px height */
+  #printbot-input {
+    min-height: 44px !important;
+    height: 44px !important;
+    font-size: 16px !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box !important;
+  }
+}
+/* END PATCH 16 */
+
+
+/* ============================================================
+   PATCH 17 — FINAL FONT & INPUT FIXES
+   Targets: .eyebrow (section headers), footer H4 headings,
+   .hq-badge, chatbot status text, printbot-input height
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* Section eyebrow — higher specificity override */
+  .section-header .eyebrow,
+  .about-content .eyebrow,
+  span.eyebrow {
+    font-size: 12px !important;
+  }
+
+  /* Footer column headings */
+  footer h4,
+  .footer-col h4,
+  .footer h4 {
+    font-size: 12px !important;
+  }
+
+  /* HQ badge */
+  .hq-badge,
+  .location-card .hq-badge {
+    font-size: 12px !important;
+  }
+
+  /* Chatbot header status */
+  .printbot-header-status,
+  .printbot-footer-note {
+    font-size: 12px !important;
+  }
+
+  /* Chatbot input — force 44px height */
+  #printbot-input,
+  .printbot-input,
+  textarea#printbot-input {
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+    font-size: 16px !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box !important;
+    resize: none !important;
+    line-height: 24px !important;
+  }
+}
+/* END PATCH 17 */
+
+
+/* ============================================================
+   PATCH 18 — CHATBOT WIDGET + REVIEW DOT TOUCH TARGETS
+   Chatbot header/send buttons: 37px → 44px
+   Review dots: 20px wide → 44px wide touch area
+   Chatbot textarea: 37px → 44px
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* Chatbot header buttons (minimize/close) */
+  .printbot-header-btn {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Chatbot send button */
+  .printbot-send-btn {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Chatbot textarea — inline textarea used as input */
+  #printbot-input,
+  .printbot-input {
+    height: 44px !important;
+    min-height: 44px !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Review dots — give them adequate tap width */
+  .reviews-dot,
+  button.reviews-dot {
+    min-width: 24px !important;
+    width: 24px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  /* Back to top button — currently 40px wide */
+  #back-to-top,
+  .back-to-top {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+/* END PATCH 18 */
+
+/* ============================================
+   v53 PATCH 19 — Visual Balance & Navbar Cleanup
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* ── NAVBAR: logo flush left, hamburger flush right ── */
+  #navbar,
+  .nav-top {
+    padding: 0 !important;
+  }
+  .nav-top .nav-container,
+  .nav-container {
+    padding: 0 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+  /* Logo: no extra margin, flush to left edge */
+  .nav-logo,
+  .nav-container .nav-logo {
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+    order: 0 !important;
+  }
+  /* Hide ALL nav icons except hamburger */
+  .nav-cart-btn,
+  .nav-icon-btn,
+  .nav-cart,
+  .cart-icon,
+  .nav-phone,
+  .nav-wishlist {
+    display: none !important;
+  }
+  /* Hamburger: flush right */
+  .nav-toggle {
+    margin-left: auto !important;
+    order: 99 !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* ── HERO: left-aligned text for better visual weight ── */
+  .hero-content,
+  #hero .hero-content {
+    text-align: left !important;
+  }
+  .hero-headline,
+  #hero .hero-headline {
+    text-align: left !important;
+  }
+  .hero-sub,
+  .hero-subtext,
+  #hero .hero-sub {
+    text-align: left !important;
+  }
+  /* CTAs: left-aligned row */
+  .hero-ctas,
+  #hero .hero-ctas {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+  /* Trust row: left-aligned */
+  .hero-trust-row,
+  #hero .hero-trust-row {
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+
+  /* ── SECTION HEADERS: consistent left-aligned on mobile ── */
+  .section-header,
+  .section-title-block {
+    text-align: left !important;
+  }
+  .section-header h2,
+  .section-title-block h2,
+  .section-header .section-eyebrow,
+  .section-header p {
+    text-align: left !important;
+  }
+
+  /* ── CONSISTENT SIDE PADDING across all sections ── */
+  section > .container,
+  #hero > .container,
+  #reviews > .container,
+  #about > .container,
+  #services > .container,
+  #portfolio > .container,
+  #clients > .container,
+  #locations > .container,
+  #faq > .container,
+  #contact > .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* ── VISUAL WEIGHT: reduce heavy shadows and borders ── */
+  .service-card,
+  .review-card,
+  .portfolio-card,
+  .location-card {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+  }
+}
+
+/* ============================================
+   v53 PATCH 20 — Apple HIG Typography System
+   iOS 17 Type Scale applied across all elements
+   
+   Large Title:  34px / 800 / lh:41px
+   Title 1:      28px / 700 / lh:34px
+   Title 2:      22px / 700 / lh:28px
+   Title 3:      20px / 600 / lh:25px
+   Headline:     17px / 600 / lh:22px
+   Body:         17px / 400 / lh:22px
+   Callout:      16px / 400 / lh:21px
+   Subhead:      15px / 400 / lh:20px
+   Footnote:     13px / 400 / lh:18px
+   Caption 1:    12px / 400 / lh:16px
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* ── GLOBAL BASE ── */
+  body {
+    font-size: 17px !important;
+    line-height: 1.47 !important; /* 25px at 17px */
+    -webkit-text-size-adjust: 100% !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif !important;
+  }
+
+  /* ── HERO ── */
+  /* Large Title: 34px / 800 */
+  .hero-headline,
+  #hero .hero-headline {
+    font-size: 34px !important;
+    font-weight: 800 !important;
+    line-height: 1.06 !important; /* ~36px */
+    letter-spacing: -0.5px !important;
+  }
+  /* Body: 17px */
+  .hero-sub,
+  #hero .hero-sub,
+  .hero-subtext {
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    line-height: 1.47 !important;
+    letter-spacing: 0 !important;
+  }
+  /* CTA buttons — Headline: 17px / 600 */
+  .btn-primary,
+  .btn-secondary,
+  .hero-ctas .btn,
+  #hero .btn {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+    padding: 14px 24px !important;
+    min-height: 50px !important;
+    border-radius: 12px !important;
+  }
+  /* Trust strip — Caption 1: 12px */
+  .hero-trust-row,
+  .hero-trust-row span,
+  .trust-item {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 1.38 !important;
+  }
+
+  /* ── SECTION EYEBROWS — Caption 1: 12px / 600 / tracked ── */
+  .section-eyebrow,
+  .eyebrow,
+  span.eyebrow,
+  .section-header .eyebrow {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    line-height: 1.33 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+  }
+
+  /* ── SECTION HEADINGS ── */
+  /* Title 1: 28px / 700 */
+  .section-header h2,
+  section h2,
+  #reviews h2,
+  #about h2,
+  #services h2,
+  #portfolio h2,
+  #clients h2,
+  #locations h2,
+  #faq h2,
+  #contact h2 {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    line-height: 1.21 !important; /* ~34px */
+    letter-spacing: -0.3px !important;
+  }
+  /* Title 3: 20px / 600 */
+  .section-header h3,
+  section h3,
+  .card-title,
+  .service-title,
+  .review-name,
+  .location-name,
+  .faq-question,
+  div.faq-question {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    line-height: 1.29 !important; /* ~22px */
+    letter-spacing: -0.1px !important;
+  }
+  /* Title 3 for standalone headings */
+  .about-feature-title,
+  .step-title,
+  .hiw-step h3 {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    line-height: 1.29 !important;
+  }
+
+  /* ── BODY TEXT — 17px / 400 ── */
+  p,
+  .review-text,
+  .about-desc,
+  .faq-answer,
+  .contact-desc,
+  .section-header p,
+  .hero-sub {
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    line-height: 1.47 !important;
+  }
+
+  /* ── CALLOUT — 16px / 400 ── */
+  .review-text {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* ── SUBHEAD — 15px / 400 ── */
+  .review-author,
+  .review-company,
+  .location-country,
+  .about-stat-lbl {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 1.33 !important;
+  }
+
+  /* ── SERVICE CARDS ── */
+  .service-title,
+  h3.service-title {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1.33 !important;
+    letter-spacing: -0.1px !important;
+  }
+  .service-price,
+  span.service-price {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.29 !important;
+  }
+  .service-cta,
+  span.service-cta {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.29 !important;
+  }
+
+  /* ── STATS (About section) ── */
+  .about-stat-num {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    line-height: 1.07 !important;
+  }
+  .about-stat-lbl {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+  }
+
+  /* ── BUTTONS (general) ── */
+  button,
+  .btn,
+  a.btn,
+  input[type="submit"] {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    min-height: 44px !important;
+  }
+  /* Filter buttons — Subhead: 15px */
+  .filter-btn,
+  .nav-cat,
+  .category-tab {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 1.33 !important;
+  }
+
+  /* ── FORM ELEMENTS ── */
+  input,
+  textarea,
+  select,
+  .form-control {
+    font-size: 17px !important; /* prevents iOS zoom */
+    line-height: 1.47 !important;
+  }
+  label {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 1.33 !important;
+  }
+
+  /* ── FOOTER ── */
+  .footer-heading,
+  h4.footer-heading,
+  h3.footer-heading {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1.33 !important;
+    letter-spacing: 0.02em !important;
+  }
+  .footer-link,
+  .footer-links a,
+  footer a,
+  footer li {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+  }
+  footer p,
+  .footer-copy,
+  .footer-legal {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 1.38 !important;
+  }
+
+  /* ── MOBILE STICKY CTA BAR ── */
+  .mobile-cta-call,
+  .mobile-cta-wa,
+  .mobile-cta-quote,
+  .mobile-sticky-bar a,
+  .mobile-sticky-bar button {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+  }
+
+  /* ── PRODUCT CARDS (hero) ── */
+  .hero-product-card span,
+  .product-card-name {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+  }
+  .product-card-price,
+  .hero-product-card .price {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+  }
+
+  /* ── HQ BADGE / SMALL LABELS ── */
+  .hq-badge,
+  .location-badge,
+  .trust-badge {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+  }
+
+  /* ── CLIENTS HEADLINE ── */
+  .clients-headline,
+  #clients p {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1.33 !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  /* ── COOKIE BANNER ── */
+  .cookie-banner p,
+  .cookie-text {
+    font-size: 14px !important;
+    line-height: 1.43 !important;
+  }
+  .cookie-banner button,
+  .cookie-btn {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+  }
+
+  /* ── CHATBOT ── */
+  .printbot-quick-btn {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+  }
+
+  /* ── SHOW MORE BUTTON ── */
+  .show-more-btn,
+  button.show-more-btn,
+  #show-more-services {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+  }
+}
+
+/* ============================================
+   v53 PATCH 21 — Final Typography Override
+   High-specificity rules to beat all conflicts
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* ── HERO CTA BUTTONS (no .btn class, just .btn-primary) ── */
+  a.btn-primary,
+  a.btn-secondary,
+  #hero a.btn-primary,
+  #hero a.btn-secondary,
+  .hero-ctas a {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    padding: 15px 24px !important;
+    min-height: 50px !important;
+    border-radius: 14px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  /* ── HERO TRUST ROW ── */
+  .hero-trust-row span,
+  #hero .hero-trust-row span,
+  .hero-trust span {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 1.38 !important;
+    white-space: nowrap !important;
+    flex-direction: row !important;
+    text-align: left !important;
+  }
+  .hero-trust-row i,
+  .hero-trust i {
+    font-size: 14px !important;
+  }
+
+  /* ── ABOUT STATS ── */
+  .about-stat-num,
+  #about .about-stat-num {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    line-height: 1.07 !important;
+  }
+  .about-stat-lbl,
+  #about .about-stat-lbl {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+  }
+
+  /* ── MOBILE STICKY CTA BAR ── */
+  .mobile-cta-bar a,
+  .mobile-cta-call,
+  .mobile-cta-wa,
+  .mobile-cta-quote {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+  }
+
+  /* ── .BTN-SM OVERRIDE (13px → 15px) ── */
+  .btn.btn-sm,
+  a.btn.btn-sm,
+  button.btn.btn-sm {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+  }
+
+  /* ── GENERAL .BTN ── */
+  .btn,
+  a.btn,
+  button.btn {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    min-height: 44px !important;
+  }
+
+  /* ── FOOTER COLUMN HEADERS ── */
+  .footer-col h4,
+  footer h4 {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    color: rgba(255,255,255,0.6) !important;
+  }
+
+  /* ── SERVICE CTA ── */
+  .service-cta,
+  span.service-cta,
+  .service-card .service-cta {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+
+  /* ── SHOW ALL SERVICES BUTTON ── */
+  button[id*="show-more"],
+  button[id*="show_more"],
+  .show-more-btn {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+  }
+
+  /* ── EYEBROW LABELS ── */
+  .eyebrow,
+  span.eyebrow,
+  .section-eyebrow {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+  }
+
+  /* ── REVIEW COUNT ── */
+  .rrh-count,
+  span.rrh-count {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+  }
+
+  /* ── PRODUCT CARD NAMES (hero) ── */
+  .hero-product-card span:first-child,
+  .product-name {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+  }
+}
+
+/* ============================================
+   v53 PATCH 22 — Final Small Text Fixes
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* Trust strip — 13px (Apple Footnote) */
+  .hero-trust-row span,
+  #hero .hero-trust-row span,
+  .hero-trust span,
+  .trust-item span {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Form labels — 13px minimum */
+  label,
+  .form-label,
+  .input-label {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1.38 !important;
+  }
+
+  /* Show All Services button */
+  button[onclick*="show"],
+  .services-show-more,
+  #services button:not(.filter-btn) {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+  }
+
+  /* Footer copyright — 13px (Apple Footnote) */
+  .footer-copy,
+  footer .footer-bottom p,
+  footer > div > p,
+  .copyright {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 1.38 !important;
+  }
+
+  /* Review count — 13px */
+  .rrh-count,
+  span.rrh-count {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+  }
+}
+
+/* ============================================
+   v53 PATCH 23 — Slim Cookie Banner
+   Single compact bar at bottom, not a modal
+   ============================================ */
+@media (max-width: 767px) {
+  .cookie-banner,
+  #cookie-banner {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    background: rgba(20, 20, 20, 0.97) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    padding: 12px 16px !important;
+    border-top: 1px solid rgba(255,255,255,0.1) !important;
+    box-shadow: none !important;
+  }
+
+  .cookie-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    max-width: 100% !important;
+  }
+
+  .cookie-banner p,
+  #cookie-banner p {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    color: rgba(255,255,255,0.7) !important;
+    margin: 0 !important;
+    flex: 1 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .cookie-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .cookie-actions .btn,
+  .cookie-actions button {
+    font-size: 13px !important;
+    padding: 8px 16px !important;
+    min-height: 36px !important;
+    border-radius: 100px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Cookie icon — hide to save space */
+  .cookie-banner i.fa-cookie-bite,
+  #cookie-banner i.fa-cookie-bite {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   v53 PATCH 24 — Sub-pages mobile navbar fix
+   Hide search bar, category strip, trust bar,
+   phone, user icon, cart, Get a Quote button
+   Keep only: logo (left) + hamburger (right)
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* ── Navbar container: logo left, hamburger right ── */
+  #navbar .nav-top .nav-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 16px !important;
+    height: 49px !important;
+    gap: 0 !important;
+  }
+
+  /* ── Logo flush left ── */
+  #navbar .nav-logo {
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* ── Hide everything between logo and hamburger ── */
+  #navbar .nav-search,
+  #navbar .nav-phone,
+  #navbar .nav-icon-btn,
+  #navbar .nav-cart-btn,
+  #navbar .btn.btn-primary.btn-sm,
+  #navbar .nav-categories,
+  #navbar #nav-categories,
+  #navbar .nav-trust-bar,
+  #navbar .nav-cat-container {
+    display: none !important;
+  }
+
+  /* ── Hamburger flush right ── */
+  #navbar .nav-toggle,
+  #navbar #nav-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+  }
+
+  /* ── nav-right: only show hamburger ── */
+  #navbar .nav-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+    margin-left: auto !important;
+  }
+
+  /* ── Page hero: clear fixed navbar height ── */
+  .page-hero {
+    padding-top: 80px !important;
+  }
+
+  /* ── Chatbot bubble: hide on mobile (WhatsApp in sticky bar is enough) ── */
+  #printbot-widget,
+  #printbot-toggle,
+  .printbot-widget {
+    display: none !important;
+  }
+
+  /* ── Brand/clients marquee: increase logo visibility ── */
+  .clients-track img {
+    filter: grayscale(0.3) opacity(0.75) !important;
+    height: 36px !important;
+  }
+  .clients-track img:hover {
+    filter: grayscale(0) opacity(1) !important;
+  }
+
+  /* ── Marquee fade edges: lighter so logos are visible ── */
+  .clients-marquee::before {
+    background: linear-gradient(to right, var(--surface, #fff) 0%, transparent 100%) !important;
+    width: 40px !important;
+  }
+  .clients-marquee::after {
+    background: linear-gradient(to left, var(--surface, #fff) 0%, transparent 100%) !important;
+    width: 40px !important;
+  }
+}
+
+/* ============================================
+   v53 PATCH 25 — Location card layout fix
+   Stack: flag+name on top, buttons below
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* ── Location card: vertical stack ── */
+  .location-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  /* ── Top row: flag + name side by side ── */
+  .location-card .location-flag {
+    display: inline-block !important;
+    margin-right: 10px !important;
+    font-size: 24px !important;
+    vertical-align: middle !important;
+  }
+
+  .location-card h3 {
+    display: inline !important;
+    vertical-align: middle !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+  }
+
+  /* ── Company name below flag+name ── */
+  .location-company {
+    display: block !important;
+    font-size: 12px !important;
+    color: rgba(29,29,31,0.5) !important;
+    margin-top: 2px !important;
+  }
+
+  /* ── Buttons row: full width, compact ── */
+  .location-actions {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .location-actions .btn {
+    flex: 1 !important;
+    justify-content: center !important;
+    height: 36px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* ── HQ badge: position it properly ── */
+  .location-card.hq .hq-badge {
+    display: inline-block !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    background: #d62b2b !important;
+    color: #fff !important;
+    padding: 2px 8px !important;
+    border-radius: 980px !important;
+    margin-bottom: 6px !important;
+  }
+}
+
+/* ============================================================
+   PATCH 26 — Quality Fix: WhatsApp bubble, portfolio tabs,
+   service titles, hero text, review dots
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* 1. HIDE WhatsApp floating green bubble — redundant with sticky bar */
+  .whatsapp-float,
+  div.whatsapp-float {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* 2. PORTFOLIO FILTER TABS — horizontal scroll, no wrapping */
+  .portfolio-filters {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 8px !important;
+    padding-bottom: 4px !important;
+    justify-content: flex-start !important;
+    margin-bottom: 20px !important;
+  }
+  .portfolio-filters::-webkit-scrollbar {
+    display: none !important;
+  }
+  .filter-btn {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+  }
+
+  /* 3. SERVICE CARD TITLES — allow 2-line wrap, no truncation */
+  .service-title,
+  h3.service-title,
+  .service-card h3,
+  .service-body h3 {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    -webkit-line-clamp: unset !important;
+    display: block !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    max-height: none !important;
+  }
+
+  /* 4. HERO BODY TEXT — show full sentence, no ellipsis */
+  .hero-description,
+  .hero-subtitle,
+  #hero p,
+  .hero-content p {
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    white-space: normal !important;
+    max-height: none !important;
+  }
+
+  /* 5. REVIEW PAGINATION DOTS — small circles, not pill shapes */
+  .reviews-dot,
+  button.reviews-dot {
+    width: 8px !important;
+    height: 8px !important;
+    min-width: 8px !important;
+    min-height: 8px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    margin: 0 4px !important;
+    display: inline-block !important;
+    background: rgba(0,0,0,0.2) !important;
+    border: none !important;
+  }
+  .reviews-dot.active,
+  button.reviews-dot.active {
+    background: #d62b2b !important;
+    width: 20px !important;
+    border-radius: 4px !important;
+  }
+  .reviews-dots,
+  .slider-dots {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    padding: 12px 0 !important;
+    min-height: 44px !important;
+  }
+}
+
+/* ============================================================
+   PATCH 27 — Hero CTA button: fix text clipping & alignment
+   Root cause: multiple conflicting rules set overflow:hidden,
+   text-overflow:ellipsis, max-width:160px, align-items:flex-start
+   on .hero-ctas and its buttons, clipping "Get a Free Quote →"
+   ============================================================ */
+@media (max-width: 767px) {
+  /* Fix hero-ctas container: centered, column layout */
+  .hero-ctas,
+  #hero .hero-ctas,
+  .hero-buttons,
+  #hero .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* Fix CTA buttons: no clipping, proper sizing */
+  .hero-ctas a,
+  .hero-ctas .btn,
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-outline,
+  #hero .hero-ctas a,
+  #hero .hero-ctas .btn,
+  #hero .btn-primary {
+    overflow: visible !important;
+    text-overflow: unset !important;
+    white-space: nowrap !important;
+    min-width: 200px !important;
+    max-width: 280px !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 44px !important;
+    padding: 0 24px !important;
+    border-radius: 980px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+  }
+}
+
+/* ============================================================
+   PATCH 28 — Fix text truncation and footer link spacing
+   Issues:
+   1. Hero description clamped to 1 line (.hero-sub selector)
+   2. How It Works step descriptions clamped to 2 lines
+   3. Footer links have excessive vertical height (44px touch
+      target with no visual padding — looks like large gaps)
+   ============================================================ */
+@media (max-width: 767px) {
+  /* 1. Hero description: show full text (up to 3 lines max) */
+  .hero-sub,
+  .hero-subtext,
+  #hero .hero-sub,
+  #hero p,
+  .hero-content p,
+  .hero-description,
+  .hero-subtitle {
+    -webkit-line-clamp: unset !important;
+    -webkit-box-orient: unset !important;
+    display: block !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    max-height: none !important;
+  }
+
+  /* 2. How It Works step descriptions: show full text */
+  .hiw-step p,
+  .hiw-step .hiw-desc,
+  #how-it-works .hiw-step p {
+    -webkit-line-clamp: unset !important;
+    -webkit-box-orient: unset !important;
+    display: block !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    max-height: none !important;
+  }
+
+  /* 3. Footer links: reduce min-height so spacing looks intentional */
+  .footer-links a,
+  .footer-col a,
+  footer a:not(.footer-logo):not(.footer-social a) {
+    min-height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 4px 0 !important;
+  }
+}
+
+/* ============================================================
+   PATCH 28b — Fix footer brand description truncation
+   ============================================================ */
+@media (max-width: 767px) {
+  .footer-brand p,
+  footer .footer-brand p {
+    -webkit-line-clamp: unset !important;
+    -webkit-box-orient: unset !important;
+    display: block !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    max-height: none !important;
+  }
+}
+
+/* ============================================================
+   PATCH 28c — Fix contact form textarea/button spacing
+   ============================================================ */
+@media (max-width: 767px) {
+  #contact textarea,
+  .contact-form textarea {
+    margin-bottom: 12px !important;
+  }
+
+  #contact button[type=submit],
+  .contact-form button[type=submit] {
+    margin-top: 4px !important;
+  }
+}
+
+/* ============================================
+   v53 PATCH 29 — Full audit fixes
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* --- FIX 1: FAQ question text — allow wrapping, no truncation --- */
+  .faq-question h3,
+  .faq-question .faq-q,
+  .faq-question span {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    display: block !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  /* --- FIX 2: View Our Services button — center it --- */
+  .about-content {
+    text-align: center !important;
+  }
+  .about-content .btn,
+  .about-content a.btn {
+    display: inline-block !important;
+    margin: 0 auto !important;
+  }
+
+  /* --- FIX 3: Textarea — taller so placeholder text is fully visible --- */
+  #contact textarea,
+  .contact-form textarea,
+  form textarea {
+    min-height: 120px !important;
+    height: auto !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* --- FIX 4: Copyright footer line — allow wrapping --- */
+  .footer-bottom,
+  .footer-copyright,
+  .copyright {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    text-align: center !important;
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+    padding: 12px 16px !important;
+  }
+
+  /* --- FIX 5: Back-to-top button — ensure it doesn't block content --- */
+  .back-to-top,
+  #back-to-top,
+  .scroll-top {
+    bottom: 20px !important;
+    right: 16px !important;
+    z-index: 100 !important;
+    width: 40px !important;
+    height: 40px !important;
+    opacity: 0.85 !important;
+  }
+
+  /* --- FIX 6: Hero Explore Products button — ensure it doesn't overflow --- */
+  .hero-ctas a,
+  .hero-ctas .btn {
+    max-width: 260px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 30 — Back-to-top position fix
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* Fix back-to-top button — move to bottom-right corner */
+  #scroll-top {
+    bottom: 16px !important;
+    right: 16px !important;
+    width: 40px !important;
+    height: 40px !important;
+    z-index: 200 !important;
+  }
+
+  /* Footer link spacing — reduce margin-bottom for tighter look */
+  .footer-col a {
+    margin-bottom: 4px !important;
+    min-height: 36px !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 31 — Footer link spacing tightening
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* Tighten footer nav list items */
+  .footer-col ul li,
+  .footer-col li {
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Tighten footer nav links */
+  .footer-col a {
+    margin-bottom: 2px !important;
+    min-height: 32px !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    line-height: 1.4 !important;
+  }
+
+}
+
+/* ============================================
+   v53 PATCH 32 — Footer social icons visibility fix
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* Social icon circles — brighter background, full white icon, properly centered */
+  .footer-social a,
+  .social-links a,
+  .footer-brand .social a,
+  footer .footer-social a {
+    background-color: rgba(255, 255, 255, 0.18) !important;
+    color: rgba(255, 255, 255, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    transition: background-color 0.2s !important;
+  }
+
+  .footer-social a i,
+  .social-links a i,
+  .footer-brand .social a i,
+  footer .footer-social a i {
+    color: rgba(255, 255, 255, 1) !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+  }
+
+  .footer-social a:hover,
+  .social-links a:hover {
+    background-color: rgba(255, 255, 255, 0.28) !important;
+  }
+
+}
+
+/* ============================================================
+   PATCH 33 — Apple-standard typography and spacing upgrade
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* Hero H1: loosen line-height, reduce weight */
+  #hero h1, .hero-title {
+    font-size: 34px !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  /* Section H2: 28px to 30px */
+  .section-heading, .about-title, .services-title, .hiw-title,
+  .reviews-title, .clients-title, .locations-title, .faq-title,
+  .contact-title, section h2 {
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.3px !important;
+  }
+
+  /* Service card H3: 14px to 16px */
+  .service-card h3, .service-body h3, .service-title {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+  }
+
+  /* Service card body: 12px to 14px */
+  .service-card p, .service-body p, .service-desc {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* HIW step body: 12px to 14px */
+  .hiw-step p, .step-description {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* HIW step card padding: 12px to 16px */
+  .hiw-step, .process-step {
+    padding: 16px !important;
+  }
+
+  /* FAQ question: 13px to 16px */
+  .faq-question h3, .faq-question {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+  }
+
+  /* FAQ answer: 15px */
+  .faq-answer, .faq-body, .faq-answer p {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Footer links: 13px to 14px */
+  .footer-col a, .footer-links a {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Footer brand text: 12px to 14px */
+  .footer-brand p, .footer-desc {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+  }
+
+  /* Primary button: 15px to 16px */
+  .btn-primary, .hero-ctas a, .hero-ctas .btn, a.btn-primary {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  /* Section horizontal padding: 20px to 22px */
+  #about, #services, #how-it-works, #reviews, #clients,
+  #locations, #faq, #contact {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  /* Review card text: 15px */
+  .review-text, .testimonial-text, .review-body {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+}
+
+/* ============================================================
+   PATCH 34 — Fix specificity battles for hero H1 weight,
+   button font-size, and footer link font-size
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* Hero H1: use high-specificity selectors to beat #hero .hero-headline */
+  #hero .hero-headline,
+  #hero h1.hero-headline,
+  .hero-section .hero-headline,
+  #hero h1 {
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  /* Button: use #hero prefix to beat #hero .btn-primary */
+  #hero .btn-primary,
+  #hero .hero-ctas a,
+  #hero .hero-ctas .btn,
+  #hero a.btn-primary,
+  .hero-ctas a.btn-primary {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  /* Footer links: use footer element prefix for higher specificity */
+  footer .footer-col a,
+  footer .footer-links a,
+  .footer .footer-col a,
+  .footer-col li a,
+  .footer-col > a {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* ============================================================
+   PATCH 35 — Footer link font-size fix (specificity battle)
+   Line 1368 sets .footer-col li a { font-size: 13px !important }
+   Need higher specificity: footer .footer-col li a
+   ============================================================ */
+@media (max-width: 767px) {
+
+  footer .footer-col li a,
+  footer .footer-col a,
+  footer .footer-col li,
+  footer .footer-grid .footer-col a {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+}
+/* ================================================================
+   PATCH PREMIUM — World-class mobile design upgrade
+   Benchmarked against: Apple, Stripe, Linear, Vercel, Framer
+   Applied: April 2026
+   ================================================================ */
+
+@media (max-width: 767px) {
+
+  /* ── 1. NAVBAR: Glassmorphism (Apple/Stripe style) ─────────── */
+  nav,
+  .navbar,
+  #navbar,
+  header nav {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: none !important;
+  }
+
+  /* ── 2. HERO: More generous breathing room ─────────────────── */
+  #hero,
+  .hero-section {
+    padding-top: 80px !important;
+    padding-bottom: 56px !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  /* Hero H1: tighter letter-spacing for premium feel */
+  .hero-headline,
+  #hero h1 {
+    letter-spacing: -0.8px !important;
+    line-height: 1.12 !important;
+    font-weight: 700 !important;
+  }
+
+  /* Hero subtext: Apple's muted grey */
+  .hero-sub,
+  .hero-subtext,
+  #hero p {
+    color: rgba(29, 29, 31, 0.65) !important;
+    font-size: 17px !important;
+    line-height: 1.55 !important;
+    margin-top: 14px !important;
+  }
+
+  /* Hero CTA buttons: proper height + spacing */
+  .hero-ctas {
+    margin-top: 32px !important;
+    gap: 12px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  #hero .btn-primary,
+  .hero-ctas .btn-primary {
+    height: 50px !important;
+    min-width: 220px !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.2px !important;
+    border-radius: 100px !important;
+    padding: 0 28px !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    white-space: nowrap !important;
+    max-width: none !important;
+  }
+
+  #hero .btn-outline,
+  .hero-ctas .btn-outline,
+  .hero-ctas a:not(.btn-primary) {
+    height: 50px !important;
+    min-width: 180px !important;
+    font-size: 17px !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.2px !important;
+    border-radius: 100px !important;
+    padding: 0 28px !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    white-space: nowrap !important;
+    max-width: none !important;
+  }
+
+  /* ── 3. EYEBROW LABELS: Apple-style refined ────────────────── */
+  .eyebrow,
+  span.eyebrow {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+  }
+
+  /* ── 4. SECTION HEADINGS: Tighter letter-spacing ───────────── */
+  section h2,
+  .section-heading,
+  #services h2,
+  #how-it-works h2,
+  #about h2,
+  #reviews h2,
+  #portfolio h2,
+  #faq h2,
+  #contact h2,
+  #locations h2,
+  #clients h2 {
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.6px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* ── 5. SECTION PADDING: Premium breathing room ────────────── */
+  #about,
+  #services,
+  #how-it-works,
+  #reviews,
+  #portfolio,
+  #clients,
+  #locations,
+  #faq,
+  #contact {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  /* ── 6. SECTION BACKGROUNDS: Subtle alternation ────────────── */
+  #about {
+    background-color: #ffffff !important;
+  }
+  #how-it-works {
+    background-color: #f5f5f7 !important;
+  }
+  #services {
+    background-color: #ffffff !important;
+  }
+  #reviews {
+    background-color: #f5f5f7 !important;
+  }
+  #portfolio {
+    background-color: #ffffff !important;
+  }
+  #clients {
+    background-color: #f5f5f7 !important;
+  }
+  #locations {
+    background-color: #ffffff !important;
+  }
+  #faq {
+    background-color: #f5f5f7 !important;
+  }
+  #contact {
+    background-color: #ffffff !important;
+  }
+
+  /* ── 7. STAT NUMBERS: Larger, more impactful ───────────────── */
+  .about-stat-num {
+    font-size: 44px !important;
+    font-weight: 700 !important;
+    letter-spacing: -1.5px !important;
+    line-height: 1 !important;
+    color: #1d1d1f !important;
+  }
+
+  .about-stat-lbl {
+    font-size: 13px !important;
+    color: rgba(29, 29, 31, 0.6) !important;
+    font-weight: 400 !important;
+    margin-top: 4px !important;
+    letter-spacing: 0 !important;
+  }
+
+  .about-stats,
+  .stats-row {
+    gap: 0 !important;
+    margin-top: 32px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .about-stat {
+    padding: 20px 0 !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .about-stat:last-child {
+    border-right: none !important;
+  }
+
+  /* ── 8. SERVICE CARDS: Premium card treatment ──────────────── */
+  .service-card {
+    border-radius: 16px !important;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.04) !important;
+    overflow: hidden !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    background: #ffffff !important;
+  }
+
+  .service-card:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  .service-body {
+    padding: 14px 16px 18px !important;
+  }
+
+  .service-body h3 {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.2px !important;
+    color: #1d1d1f !important;
+    margin-bottom: 6px !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+  }
+
+  .service-body p {
+    font-size: 14px !important;
+    color: rgba(29, 29, 31, 0.6) !important;
+    line-height: 1.45 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    webkit-line-clamp: unset !important;
+  }
+
+  /* ── 9. HIW CARDS: Refined ─────────────────────────────────── */
+  .hiw-step {
+    border-radius: 16px !important;
+    padding: 20px !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.04) !important;
+    background: #ffffff !important;
+  }
+
+  .hiw-step h3 {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.3px !important;
+    color: #1d1d1f !important;
+    margin-bottom: 8px !important;
+  }
+
+  .hiw-step p {
+    font-size: 14px !important;
+    color: rgba(29, 29, 31, 0.6) !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    -webkit-line-clamp: unset !important;
+  }
+
+  /* ── 10. FAQ ITEMS: Apple-style accordion ──────────────────── */
+  .faq-item {
+    border-radius: 14px !important;
+    padding: 18px 20px !important;
+    margin-bottom: 10px !important;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
+    background: #ffffff !important;
+  }
+
+  .faq-question h3,
+  .faq-question {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.2px !important;
+    color: #1d1d1f !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    line-height: 1.35 !important;
+  }
+
+  .faq-answer,
+  .faq-body {
+    font-size: 15px !important;
+    color: rgba(29, 29, 31, 0.65) !important;
+    line-height: 1.55 !important;
+  }
+
+  /* ── 11. REVIEWS SECTION: Premium card ─────────────────────── */
+  .review-card,
+  .reviews-card {
+    border-radius: 16px !important;
+    padding: 20px !important;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.04) !important;
+    background: #ffffff !important;
+  }
+
+  /* ── 12. CONTACT FORM: Premium inputs ──────────────────────── */
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea,
+  #contact input,
+  #contact select,
+  #contact textarea {
+    border-radius: 12px !important;
+    border: 1.5px solid rgba(0, 0, 0, 0.12) !important;
+    padding: 14px 16px !important;
+    font-size: 16px !important;
+    background: #fafafa !important;
+    color: #1d1d1f !important;
+    transition: border-color 0.2s ease !important;
+    -webkit-appearance: none !important;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus,
+  #contact input:focus,
+  #contact textarea:focus {
+    border-color: #e8192c !important;
+    background: #ffffff !important;
+    outline: none !important;
+  }
+
+  .contact-form textarea,
+  #contact textarea {
+    min-height: 130px !important;
+    resize: none !important;
+  }
+
+  /* ── 13. LOCATION CARDS: Premium ───────────────────────────── */
+  .location-card {
+    border-radius: 16px !important;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.04) !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+  }
+
+  /* ── 14. FOOTER: Refined ───────────────────────────────────── */
+  footer {
+    padding-top: 48px !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  .footer-brand p {
+    font-size: 14px !important;
+    color: rgba(255, 255, 255, 0.65) !important;
+    line-height: 1.55 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    -webkit-line-clamp: unset !important;
+  }
+
+  .footer-col-title,
+  .footer-col h4,
+  .footer-col h3 {
+    font-size: 11px !important;
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    color: rgba(255, 255, 255, 0.45) !important;
+    margin-bottom: 14px !important;
+  }
+
+  footer .footer-col li a,
+  footer .footer-col a,
+  footer .footer-grid .footer-col a {
+    font-size: 15px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    line-height: 1.4 !important;
+  }
+
+  /* ── 15. PORTFOLIO FILTERS: Premium pill tabs ───────────────── */
+  .portfolio-filters {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 8px !important;
+    padding-bottom: 4px !important;
+  }
+
+  .portfolio-filters::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .filter-btn,
+  .portfolio-filter-btn {
+    border-radius: 100px !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* ── 16. SECTION INTRO TEXT: Muted color ───────────────────── */
+  .section-intro,
+  .section-subtitle,
+  .section-desc {
+    font-size: 16px !important;
+    color: rgba(29, 29, 31, 0.6) !important;
+    line-height: 1.5 !important;
+    margin-top: 10px !important;
+    margin-bottom: 32px !important;
+  }
+
+  /* ── 17. CLIENTS HEADLINE: Refined ─────────────────────────── */
+  .clients-headline {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: rgba(29, 29, 31, 0.75) !important;
+    line-height: 1.5 !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  /* ── 18. GENERAL BODY TEXT: Apple's refined grey ───────────── */
+  p, li {
+    color: rgba(29, 29, 31, 0.85) !important;
+  }
+
+  /* ── 19. TRUST BAR / HERO BADGES ───────────────────────────── */
+  .hero-badges,
+  .trust-bar,
+  .hero-trust {
+    margin-top: 20px !important;
+    gap: 16px !important;
+    font-size: 13px !important;
+    color: rgba(29, 29, 31, 0.55) !important;
+  }
+
+  /* ── 20. SECTION CONTAINER: Consistent horizontal padding ──── */
+  section .container,
+  section > .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+}
+/* ================================================================
+   PATCH PREMIUM-FIX — Override high-specificity rules
+   ================================================================ */
+
+@media (max-width: 767px) {
+
+  /* Stat numbers: use #about prefix to beat earlier rule */
+  #about .about-stat-num,
+  #about .about-stat span.about-stat-num {
+    font-size: 44px !important;
+    font-weight: 700 !important;
+    letter-spacing: -1.5px !important;
+    line-height: 1 !important;
+    color: #1d1d1f !important;
+  }
+
+  #about .about-stat-lbl {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: rgba(29, 29, 31, 0.6) !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    margin-top: 4px !important;
+  }
+
+  /* Hero H1 letter-spacing: use highest specificity */
+  #hero .hero-headline,
+  #hero h1.hero-headline,
+  .hero-section .hero-headline {
+    letter-spacing: -0.8px !important;
+    line-height: 1.12 !important;
+  }
+
+  /* Eyebrow labels: use higher specificity */
+  section .eyebrow,
+  #about .eyebrow,
+  #services .eyebrow,
+  #how-it-works .eyebrow,
+  #reviews .eyebrow,
+  #portfolio .eyebrow,
+  #faq .eyebrow,
+  #contact .eyebrow,
+  #locations .eyebrow,
+  #clients .eyebrow {
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+  }
+
+  /* Section H2: use section-specific selectors for higher specificity */
+  #about h2,
+  #services h2,
+  #how-it-works h2,
+  #reviews h2,
+  #portfolio h2,
+  #faq h2,
+  #contact h2,
+  #locations h2,
+  #clients h2 {
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.6px !important;
+    line-height: 1.15 !important;
+  }
+
+}

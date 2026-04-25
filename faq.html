@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Print Pro SG — Frequently Asked Questions</title>
+  <meta name="description" content="Answers to common questions about ordering, artwork files, delivery, payment, and design services at Print Pro SG." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="apple-premium.css">
+  <link rel="stylesheet" href="v50-mobile.css" />
+  <link rel="stylesheet" href="v53-mobile-apple.css" />
+</head>
+<body>
+<!-- ANNOUNCEMENT BANNER (rotating) -->
+<div id="announcement-bar">
+  <div id="announcement-slides">
+    <div class="ann-slide active"><i class="fas fa-tag"></i>&nbsp; <strong>Free Design</strong> with every order above $150. <a href="index.html#contact">Claim now &rarr;</a></div>
+    <div class="ann-slide"><i class="fas fa-bolt"></i>&nbsp; <strong>Same-Day Printing</strong> available for urgent orders. <a href="index.html#contact">Order now &rarr;</a></div>
+    <div class="ann-slide"><i class="fas fa-percent"></i>&nbsp; <strong>Name Cards from $30</strong> &mdash; 50 pcs, full colour, premium stock. </div>
+  </div>
+  <button id="close-announcement" aria-label="Close announcement"><i class="fas fa-times"></i></button>
+</div>
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-top">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img alt="Print Pro Singapore" class="logo-img" src="img/logo-transparent.png" style="height:40px;width:auto;"/>
+      </a>
+      <!-- Search Bar -->
+      <div class="nav-search">
+        <i class="fas fa-search nav-search-icon"></i>
+        <input type="search" id="nav-search-input" placeholder="Search products, categories..." autocomplete="off" />
+        <button class="nav-search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <div id="search-dropdown" class="search-dropdown"></div>
+      </div>
+      <div class="nav-right">
+        <a href="tel:+6598751606" class="nav-phone"><i class="fas fa-phone"></i> <span>+65 9875 1606</span></a>
+        <button class="nav-icon-btn" aria-label="Account"><i class="fas fa-user"></i></button>
+        <button class="nav-icon-btn nav-cart-btn" id="nav-hamburger" aria-label="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+        <a href="index.html#contact" class="btn btn-primary btn-sm">Order Now</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Category Mega Nav -->
+  <div class="nav-categories" id="nav-categories">
+    <div class="nav-cat-container">
+      <a href="index.html#products" class="nav-cat">Most Popular</a>
+      <a href="index.html#products" class="nav-cat">Name Cards</a>
+      <a href="index.html#products" class="nav-cat">Flyers &amp; Leaflets</a>
+      <a href="index.html#products" class="nav-cat">Stickers</a>
+      <a href="index.html#products" class="nav-cat">Booklets</a>
+      <a href="index.html#products" class="nav-cat">Stationery &amp; Cards</a>
+      <a href="index.html#products" class="nav-cat">Marketing &amp; Advertising</a>
+      <a href="index.html#products" class="nav-cat">Signages</a>
+      <a href="index.html#products" class="nav-cat">Promo &amp; Giveaways</a>
+      <a href="index.html#products" class="nav-cat">Displays &amp; Banners</a>
+    </div>
+  </div>
+  <!-- Trust Badges Bar -->
+  <div class="nav-trust-bar">
+    <div class="nav-trust-container">
+      <a href="about.html" class="nav-trust-item"><i class="fas fa-shield-alt"></i> Best Price Guarantee</a>
+      <a href="design-services.html" class="nav-trust-item"><i class="fas fa-pencil-ruler"></i> Design Services</a>
+      <a href="delivery.html" class="nav-trust-item"><i class="fas fa-truck"></i> Fast &amp; On-Time Delivery</a>
+      <a href="faq.html" class="nav-trust-item"><i class="fas fa-credit-card"></i> Credit Terms Available</a>
+      <div class="nav-rating">
+        <div class="nav-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <span>4.8/5 &nbsp;&middot;&nbsp; 200+ reviews</span>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile nav links -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#products">Products</a></li>
+    <li><a href="design-services.html">Design Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="delivery.html">Delivery</a></li>
+    <li><a href="artwork-guidelines.html">Artwork Guide</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+<section class="page-hero faq-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="page-breadcrumb"><a href="index.html">Home</a> <i class="fa fa-chevron-right"></i> FAQ</div>
+      <h1>Frequently Asked Questions</h1>
+      <p>Everything you need to know about ordering, artwork, delivery, and more.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ CONTENT -->
+<section class="faq-section section-pad">
+  <div class="container faq-layout">
+
+    <!-- Sidebar categories -->
+    <aside class="faq-sidebar">
+      <ul class="faq-cat-list">
+        <li><a href="#faq-ordering" class="faq-cat active">Ordering</a></li>
+        <li><a href="#faq-artwork" class="faq-cat">Artwork &amp; Files</a></li>
+        <li><a href="#faq-delivery" class="faq-cat">Delivery</a></li>
+        <li><a href="#faq-payment" class="faq-cat">Payment</a></li>
+        <li><a href="#faq-design" class="faq-cat">Design Services</a></li>
+        <li><a href="#faq-quality" class="faq-cat">Quality &amp; Returns</a></li>
+      </ul>
+    </aside>
+
+    <!-- FAQ Accordions -->
+    <div class="faq-content">
+
+      <div class="faq-group" id="faq-ordering">
+        <h2 class="faq-group-title"><i class="fa fa-shopping-cart"></i> Ordering</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">How do I place an order? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Simply browse our product catalogue, click "Get Quote" on any product, configure your options (size, paper, finish, quantity, delivery date), and proceed to checkout. You can also contact us via WhatsApp at +65 9875 1606 for assistance.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What is the minimum order quantity? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Minimum order quantities vary by product. Name Cards start from 50 pcs, Flyers from 100 pcs, Stickers from 50 pcs, and Roll-up Banners from 1 pc. Check the product configurator for exact minimums.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Can I order for multiple people (e.g. name cards with different names)? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Yes! For name cards with different names/details, please contact us via WhatsApp or email with all the individual details. We will provide a custom quote for gang-run printing of multiple designs.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Can I get a sample before ordering? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Yes, we offer paper and finish samples for most products. Contact us to request a sample pack. Note that samples are of standard designs and not your custom artwork.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Can I cancel or modify my order after placing it? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Orders can be cancelled or modified within 2 hours of placement, provided printing has not yet started. Once printing begins, cancellations are not possible. Contact us immediately at +65 9875 1606 if you need to make changes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-group" id="faq-artwork">
+        <h2 class="faq-group-title"><i class="fa fa-file-image"></i> Artwork &amp; Files</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">What file format should I submit? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>We accept <strong>PDF</strong> (preferred), AI, EPS, and high-resolution JPG/PNG. PDF with embedded fonts and CMYK colour mode is strongly recommended for best results. Please follow our <a href="artwork-guidelines.html">Artwork Guidelines</a> for full specifications.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What colour mode should I use? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>All files must be in <strong>CMYK colour mode</strong>. RGB files will be automatically converted to CMYK, which may cause colour shifts. For accurate colour reproduction, always design in CMYK from the start.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What resolution is required? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>A minimum of <strong>300 DPI</strong> at actual print size is required. For large format products (banners, foam board), 150 DPI at actual size is acceptable. Low-resolution files will result in blurry prints.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What is a bleed and why is it needed? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>A bleed is an extra 3mm of artwork that extends beyond the trim edge. It ensures that after cutting, there are no white borders on the edges. All background colours and images that touch the edge must extend into the bleed area. See our <a href="artwork-guidelines.html">Artwork Guidelines</a> for templates.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What is a safe zone? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>The safe zone is 3mm inside the trim edge. All important content (text, logos, key graphics) must be kept within the safe zone to avoid being cut off during trimming.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-group" id="faq-delivery">
+        <h2 class="faq-group-title"><i class="fa fa-truck"></i> Delivery</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">Do you offer free delivery? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Yes! Free island-wide delivery is available on all orders above SGD 50. Orders below SGD 50 incur a SGD 5 delivery fee.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What is the standard delivery time? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Standard delivery takes 3–5 business days from artwork approval. Express delivery (1–2 business days) and same-day delivery are available for select products at additional cost. See our <a href="delivery.html">Delivery Info</a> page for full details.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What is the same-day delivery cutoff time? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Same-day delivery orders must be placed and artwork approved by <strong>10:00 AM</strong>. Orders will be delivered before 6 PM on the same day. Same-day delivery is available for Name Cards, Flyers, and select other products.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Do you deliver to all areas in Singapore? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Yes, we deliver island-wide including Jurong Island and Sentosa. For restricted areas (military bases, Tuas), additional arrangements may be required. Contact us for details.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-group" id="faq-payment">
+        <h2 class="faq-group-title"><i class="fa fa-credit-card"></i> Payment</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">What payment methods do you accept? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>We accept Visa, Mastercard, PayNow, and bank transfer. All prices are in SGD and inclusive of GST (9%).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Are prices shown inclusive of GST? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Prices shown on the product configurator are exclusive of GST by default. Toggle the "Show price include GST?" switch to see GST-inclusive prices. All final invoices include 9% GST.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Do you offer credit terms for businesses? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Yes! We offer 30-day credit terms for registered businesses. To apply, contact us with your company UEN and we will process your application within 2 business days.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-group" id="faq-design">
+        <h2 class="faq-group-title"><i class="fa fa-paint-brush"></i> Design Services</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">What design services do you offer? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>We offer three tiers: <strong>Artwork Preparation</strong> (from SGD 5 — fixing/preparing your existing file), <strong>Standard Design</strong> (from SGD 45 — 1 custom design), and <strong>Premium Design</strong> (from SGD 120 — 2 concepts by senior designer). See our <a href="design-services.html">Design Services</a> page for full details.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">How long does design take? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Artwork Preparation: 1–3 days. Standard Design: 2–3 days. Premium Design: 3–7 days. Timelines begin after we receive your completed design brief.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">How many revisions are included? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Artwork Preparation includes up to 2 revisions. Standard Design includes up to 3 revisions. Premium Design includes up to 5 revisions. Additional revisions beyond the included amount are charged at SGD 15 per revision.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-group" id="faq-quality">
+        <h2 class="faq-group-title"><i class="fa fa-star"></i> Quality &amp; Returns</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">What is your quality guarantee? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>We guarantee that all products are printed to the specifications you ordered. If there is a printing defect or error on our part, we will reprint or refund at no charge. Please inspect your order within 3 days of receipt.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What if my order arrives damaged? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Contact us within 3 days of receipt with photos of the damaged items. We will arrange a reprint or refund promptly. Damage caused by customer artwork errors (low resolution, wrong colours) is not covered.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Do you offer a best price guarantee? <i class="fa fa-chevron-down"></i></button>
+          <div class="faq-a">
+            <p>Yes! Found a cheaper price elsewhere for the same product and specifications? Show us the quote and we'll match it and give you an additional discount. Contact us with the competitor's quote details.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STILL HAVE QUESTIONS -->
+<section class="faq-contact section-pad bg-light">
+  <div class="container text-center">
+    <h2>Still Have Questions?</h2>
+    <p>Our team is available Mon–Fri 9am–6pm and Sat 10am–3pm.</p>
+    <div class="faq-contact-btns">
+      <a href="https://wa.me/6598751606" target="_blank" class="btn btn-green"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+      <a href="tel:+6598751606" class="btn btn-outline-red"><i class="fa fa-phone"></i> Call +65 9875 1606</a>
+      <a href="index.html#contact" class="btn btn-red"><i class="fa fa-envelope"></i> Send a Message</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-newsletter">
+    <div class="container footer-newsletter-inner">
+      <div class="fn-text"><h3>Stay Updated</h3><p>Get exclusive deals and printing tips in your inbox.</p></div>
+      <form class="fn-form" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit" class="btn btn-red">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <img alt="Print Pro Singapore" class="footer-logo-img" src="img/logo-white.png" style="height:36px;width:auto;margin-bottom:12px;"/>
+        <p>Singapore's trusted online printing partner. Quality prints, fast delivery, best prices guaranteed.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="product.html?id=name-cards">Name Cards</a></li>
+          <li><a href="product.html?id=flyers">Flyers &amp; Leaflets</a></li>
+          <li><a href="product.html?id=stickers">Stickers &amp; Labels</a></li>
+          <li><a href="product.html?id=booklets">Booklets</a></li>
+          <li><a href="product.html?id=roll-up-banners">Roll-up Banners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="design-services.html">Design Services</a></li>
+          <li><a href="artwork-guidelines.html">Artwork Guidelines</a></li>
+          <li><a href="delivery.html">Delivery Info</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fa fa-phone"></i> +65 9875 1606</li>
+          <li><i class="fa fa-envelope"></i> hello@printprosg.com</li>
+          <li><i class="fa fa-map-marker-alt"></i> 123 Print Street, #05-01, Singapore 123456</li>
+          <li><i class="fa fa-clock"></i> Mon–Fri 9am–6pm, Sat 10am–3pm</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>&copy; <span id="footer-year-faq"></span> Print Pro SG. All rights reserved. GST Reg No: 202312345A</p>
+      <div class="footer-pay-icons">
+        <span class="pay-icon">VISA</span>
+        <span class="pay-icon">MC</span>
+        <span class="pay-icon">PayNow</span>
+        <span class="pay-icon">Bank</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('footer-year-faq').textContent = new Date().getFullYear();
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+// FAQ sidebar active
+document.querySelectorAll('.faq-cat').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelectorAll('.faq-cat').forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+</script>
+<script src="script.js?v=35"></script>
+
+
+<script src="chatbot.js"></script>
+</body>
+</html>

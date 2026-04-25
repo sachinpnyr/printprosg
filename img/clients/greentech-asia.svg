@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206 70" width="206" height="70">
+  <defs>
+    <style>
+      .logo-name { font-family: 'Arial', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 2px; fill: #1b5e20; }
+      .logo-tag { font-family: 'Arial', sans-serif; font-weight: 400; font-size: 10px; letter-spacing: 3px; fill: #8bc34a; }
+    </style>
+  </defs>
+  <!-- Background -->
+  <rect width="206" height="70" fill="white" rx="0"/>
+  <!-- Accent bar -->
+  <rect x="0" y="0" width="4" height="70" fill="#8bc34a" rx="2"/>
+  <!-- Icon circle -->
+  <circle cx="42" cy="35" r="20" fill="#1b5e20" opacity="0.08"/>
+  <!-- Icon -->
+  <g transform="translate(30, 23)" stroke="#1b5e20" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 8C8 10 5.9 16.17 3.82 19.5c2.33-1.5 4.5-2 6.68-1.17C11.33 17.5 12 16 12 16s.67 1.5 1.5 2.33c2.18-.83 4.35-.33 6.68 1.17C18.1 16.17 16 10 17 8z M12 16c0-4-2-8-5-10" transform="scale(1)"/>
+  </g>
+  <!-- Company name -->
+  <text x="70" y="32" class="logo-name">GREENTECH</text>
+  <!-- Tagline -->
+  <text x="71" y="48" class="logo-tag">ASIA</text>
+  <!-- Accent dot -->
+  <circle cx="188" cy="35" r="4" fill="#8bc34a" opacity="0.6"/>
+</svg>

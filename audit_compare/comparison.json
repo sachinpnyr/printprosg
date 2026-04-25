@@ -1,0 +1,198 @@
+{
+  "google": {
+    "navbar_height": 51,
+    "navbar_selector": "header",
+    "small_touch_targets": 14,
+    "small_touch_target_examples": [
+      {
+        "text": "\u0627\u0644\u0643\u0644",
+        "w": 31,
+        "h": 51
+      },
+      {
+        "text": "\u0635\u0648\u0631",
+        "w": 28,
+        "h": 51
+      },
+      {
+        "text": "\u062a\u0637\u0628\u064a\u0642\u0627\u062a Google",
+        "w": 40,
+        "h": 40
+      },
+      {
+        "text": "\u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644",
+        "w": 78,
+        "h": 40
+      },
+      {
+        "text": "See what's new at Google Cloud Next '26",
+        "w": 239,
+        "h": 15
+      }
+    ],
+    "small_font_count": 0,
+    "small_font_examples": [],
+    "horizontal_overflow_count": 4,
+    "horizontal_overflow_examples": [
+      {
+        "tag": "DIV",
+        "cls": "",
+        "right": 445,
+        "vw": 390
+      },
+      {
+        "tag": "DIV",
+        "cls": "fbar footer__homepage-mobile-settings-ro",
+        "right": 417,
+        "vw": 390
+      },
+      {
+        "tag": "DIV",
+        "cls": "fbar M6hT6 As6eLe Lt2Ned",
+        "right": 417,
+        "vw": 390
+      },
+      {
+        "tag": "DIV",
+        "cls": "",
+        "right": 417,
+        "vw": 390
+      }
+    ],
+    "viewport_meta": "width=device-width,initial-scale=1.0",
+    "images_missing_alt": 1,
+    "small_inputs": 0,
+    "small_input_examples": [],
+    "total_page_height": 902,
+    "body_text_style": null
+  },
+  "printpro": {
+    "navbar_height": 49,
+    "navbar_selector": "nav",
+    "small_touch_targets": 13,
+    "small_touch_target_examples": [
+      {
+        "text": "BUTTON",
+        "w": 24,
+        "h": 44
+      },
+      {
+        "text": "BUTTON",
+        "w": 24,
+        "h": 44
+      },
+      {
+        "text": "BUTTON",
+        "w": 24,
+        "h": 44
+      },
+      {
+        "text": "BUTTON",
+        "w": 24,
+        "h": 44
+      },
+      {
+        "text": "BUTTON",
+        "w": 24,
+        "h": 44
+      }
+    ],
+    "small_font_count": 3,
+    "small_font_examples": [
+      {
+        "text": "Same-day turnaround",
+        "size": 10,
+        "tag": "SPAN"
+      },
+      {
+        "text": "Free design consultation",
+        "size": 10,
+        "tag": "SPAN"
+      },
+      {
+        "text": "500+ happy clients",
+        "size": 10,
+        "tag": "SPAN"
+      }
+    ],
+    "horizontal_overflow_count": 10,
+    "horizontal_overflow_examples": [
+      {
+        "tag": "DIV",
+        "cls": "review-card",
+        "right": 700,
+        "vw": 390
+      },
+      {
+        "tag": "DIV",
+        "cls": "review-header",
+        "right": 683,
+        "vw": 390
+      },
+      {
+        "tag": "DIV",
+        "cls": "review-avatar",
+        "right": 427,
+        "vw": 390
+      },
+      {
+        "tag": "DIV",
+        "cls": "review-meta",
+        "right": 588,
+        "vw": 390
+      },
+      {
+        "tag": "DIV",
+        "cls": "review-name",
+        "right": 588,
+        "vw": 390
+      },
+      {
+        "tag": "DIV",
+        "cls": "review-time",
+        "right": 588,
+        "vw": 390
+      },
+      {
+        "tag": "DIV",
+        "cls": "review-stars",
+        "right": 683,
+        "vw": 390
+      },
+      {
+        "tag": "I",
+        "cls": "fas fa-star",
+        "right": 615,
+        "vw": 390
+      },
+      {
+        "tag": "I",
+        "cls": "fas fa-star",
+        "right": 632,
+        "vw": 390
+      },
+      {
+        "tag": "I",
+        "cls": "fas fa-star",
+        "right": 649,
+        "vw": 390
+      }
+    ],
+    "viewport_meta": "width=device-width, initial-scale=1.0",
+    "images_missing_alt": 1,
+    "small_inputs": 1,
+    "small_input_examples": [
+      {
+        "type": "textarea",
+        "h": 37
+      }
+    ],
+    "total_page_height": 5792,
+    "cta_above_fold": false,
+    "cta_height": 0,
+    "body_text_style": {
+      "fontSize": "17px",
+      "lineHeight": "24.99px"
+    }
+  }
+}
