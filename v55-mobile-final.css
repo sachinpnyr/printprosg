@@ -503,3 +503,45 @@ body.ann-hidden #navbar {
 /* Recalculate navbar top offset (now: 41px ann bar + 52px logo row + ~30px cat tabs = ~83px) */
 #navbar { top: 41px !important; }
 #hero { padding-top: 83px !important; }
+
+/* ════════════════════════════════════════════════════
+   FAQ — 2-column grid layout (desktop)
+   ════════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+  #faq .faq-grid {
+    max-width: 1080px !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    align-items: start !important;
+  }
+
+  #faq .faq-item {
+    margin: 0 !important;
+  }
+
+  /* Tighter question padding */
+  #faq .faq-question {
+    padding: 16px 20px !important;
+  }
+
+  #faq .faq-question h3 {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+
+  #faq .faq-answer-inner {
+    padding: 0 20px 16px !important;
+    font-size: 13.5px !important;
+    line-height: 1.65 !important;
+  }
+
+  /* Section header tighter */
+  #faq .section-header {
+    margin-bottom: 28px !important;
+  }
+
+  #faq {
+    padding: 60px 0 !important;
+  }
+}
