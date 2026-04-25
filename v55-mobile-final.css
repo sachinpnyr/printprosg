@@ -743,3 +743,310 @@
   #contact { padding: 36px 20px !important; }
   .contact-form-wrap, .contact-card { padding: 20px !important; }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   v55 PATCH 3 — Comprehensive Mobile Audit Fixes
+   Fixes all 17 issues identified in the full audit.
+   ════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 1 & 2: ANNOUNCEMENT BAR — Force show on mobile with
+   correct specificity (overrides v53's display:none !important)
+   The bar uses id="#announcement-bar" so we need higher specificity.
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  html body #announcement-bar {
+    display: flex !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10001 !important;
+    background: #1d1d1f !important;
+    color: #fff !important;
+    font-size: 11px !important;
+    padding: 7px 36px 7px 12px !important;
+    min-height: 32px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  html body #announcement-bar .ann-slide {
+    display: none !important;
+  }
+  html body #announcement-bar .ann-slide.active {
+    display: inline !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+  html body #announcement-bar a {
+    color: #fff !important;
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+  }
+  html body #close-announcement {
+    position: absolute !important;
+    right: 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: rgba(255,255,255,0.6) !important;
+    font-size: 14px !important;
+    padding: 4px !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 3: HERO TRUST ROW — Horizontal compact row (not stacked)
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .hero-trust-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 12px !important;
+    margin-bottom: 20px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding: 0 4px 2px !important;
+  }
+  .hero-trust-row::-webkit-scrollbar { display: none !important; }
+  .hero-trust-row span {
+    flex-shrink: 0 !important;
+    font-size: 11px !important;
+    color: rgba(29,29,31,0.55) !important;
+    white-space: nowrap !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 0 10px !important;
+    border-right: 1px solid rgba(0,0,0,0.12) !important;
+  }
+  .hero-trust-row span:last-child {
+    border-right: none !important;
+  }
+  .hero-trust-row span i {
+    font-size: 10px !important;
+    color: #e8192c !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 4 & 5: ABOUT SECTION — Reduce heading size and gaps
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  #about .section-header h2,
+  #about h2 {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 6px !important;
+  }
+  #about .about-stats {
+    margin-bottom: 16px !important;
+  }
+  #about .about-cta,
+  #about .btn-outline,
+  #about > .btn,
+  #about .section-cta {
+    margin-top: 12px !important;
+    margin-bottom: 12px !important;
+  }
+  #about .about-features,
+  #about .feature-cards,
+  #about .about-cards {
+    margin-top: 12px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 6 & 7: GLOBAL SECTION SPACING — Tighter padding throughout
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  /* All main sections: compact padding */
+  #hero, #about, #how-it-works, #services, #portfolio,
+  #clients, #locations, #faq, #contact, #reviews {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+  /* Section headers: tighter */
+  .section-header {
+    margin-bottom: 16px !important;
+  }
+  .section-header h2 {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 6px !important;
+  }
+  .eyebrow, .section-eyebrow {
+    font-size: 10px !important;
+    letter-spacing: 0.08em !important;
+    margin-bottom: 4px !important;
+  }
+  /* How It Works: compact */
+  #how-it-works {
+    padding: 32px 20px !important;
+  }
+  .process-grid, .how-it-works-grid {
+    gap: 8px !important;
+    margin-top: 12px !important;
+  }
+  /* Services: compact */
+  #services {
+    padding: 32px 20px !important;
+  }
+  /* Portfolio: compact */
+  #portfolio {
+    padding: 32px 20px !important;
+  }
+  /* Clients: compact */
+  #clients {
+    padding: 28px 0 !important;
+  }
+  /* Locations: compact */
+  #locations {
+    padding: 32px 20px !important;
+  }
+  /* FAQ: compact */
+  #faq {
+    padding: 32px 20px !important;
+  }
+  /* Contact: compact */
+  #contact {
+    padding: 32px 20px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 8: SERVICE CARD — Fix "Booklets & Catalogues" text overflow
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .service-title {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    margin-bottom: 3px !important;
+  }
+  .service-body {
+    padding: 8px 10px 10px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 10: CLIENT LOGOS — Fix partial overflow on right edge
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .clients-track,
+  .logos-track,
+  .client-logos-track {
+    padding-right: 20px !important;
+  }
+  #clients .container,
+  #clients .section-inner {
+    overflow: hidden !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 12: FAQ HEADING — Reduce size so it fits on 1-2 lines
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  #faq .section-header h2,
+  #faq h2 {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 6px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 14: CONTACT HEADING — Reduce size so it fits on 1-2 lines
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  #contact .section-header h2,
+  #contact h2,
+  .contact-heading {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 16: FOOTER LINKS — Reduce excessive line-height
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .footer-col a,
+  .footer-col li a,
+  footer .footer-col a {
+    margin-bottom: 6px !important;
+    line-height: 1.3 !important;
+    font-size: 13px !important;
+  }
+  .footer-col h4 {
+    margin-bottom: 8px !important;
+  }
+  .footer-links {
+    gap: 16px 16px !important;
+    margin-bottom: 20px !important;
+  }
+  footer,
+  .footer {
+    padding: 32px 20px 20px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 17: FOOTER BOTTOM BAR — Add padding-bottom so content
+   isn't hidden behind the fixed mobile CTA bar (~64px tall)
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  footer,
+  .footer {
+    padding-bottom: 80px !important;
+  }
+  .footer-bottom {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   HERO: Remove excessive bottom gap between trust row and cards
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .hero-content {
+    margin-bottom: 20px !important;
+  }
+  #hero .hero-inner,
+  .hero-inner {
+    padding-top: 24px !important;
+    padding-bottom: 28px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   REVIEWS SECTION — Ensure section has correct padding
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  #reviews {
+    padding: 32px 0 !important;
+  }
+  #reviews .section-header {
+    padding: 0 20px !important;
+    margin-bottom: 16px !important;
+  }
+  #reviews .section-header h2 {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+  }
+}
