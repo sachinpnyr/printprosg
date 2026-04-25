@@ -1472,3 +1472,139 @@
     line-height: 1.25 !important;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   v55 PATCH 6 — Final targeted fixes
+   1. Trust row last item "500+ happy clients" cut off on right
+      Root cause: hero-content overflow-x:hidden clips the row
+      Fix: use negative margin + padding trick on the trust row
+   2. Cookie banner "Decline" button cut off on right
+      Root cause: white-space:nowrap on p + flex layout
+   ════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 1: TRUST ROW — Last item cut off
+   The hero-content has overflow-x:hidden from v53 (line 2771).
+   Our patch5 tried overflow-x:visible on hero-content but v53
+   re-applies it with higher specificity via the long selector.
+   Solution: make the trust row extend beyond its container using
+   negative margins so it can scroll freely.
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  /* Force hero-content to allow overflow for trust row only */
+  #hero .hero-content,
+  html body #hero .hero-content,
+  html body .hero-content {
+    overflow: visible !important;
+    overflow-x: visible !important;
+  }
+  #hero .hero-inner,
+  html body #hero .hero-inner,
+  html body .hero-inner {
+    overflow: visible !important;
+    overflow-x: visible !important;
+  }
+  /* Constrain overflow only on the headline and subtext, not the trust row */
+  #hero .hero-headline,
+  #hero .hero-sub,
+  html body .hero-headline,
+  html body .hero-sub {
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+  /* Trust row: extend to full viewport width using negative margins */
+  html body #hero .hero-trust-row,
+  html body .hero-content .hero-trust-row,
+  html body .hero-trust-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    /* Extend beyond container padding */
+    margin-left: -20px !important;
+    margin-right: -20px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    width: calc(100% + 40px) !important;
+    box-sizing: border-box !important;
+    gap: 0 !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+  html body #hero .hero-trust-row::-webkit-scrollbar,
+  html body .hero-trust-row::-webkit-scrollbar {
+    display: none !important;
+  }
+  html body #hero .hero-trust-row span,
+  html body .hero-trust-row span {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    font-size: 11px !important;
+    padding: 0 12px !important;
+    border-right: 1px solid rgba(0,0,0,0.12) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    color: rgba(29,29,31,0.55) !important;
+    line-height: 1 !important;
+  }
+  html body #hero .hero-trust-row span:last-child,
+  html body .hero-trust-row span:last-child {
+    border-right: none !important;
+    padding-right: 20px !important;
+  }
+  html body #hero .hero-trust-row span i,
+  html body .hero-trust-row span i {
+    font-size: 10px !important;
+    color: #e8192c !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 2: COOKIE BANNER — "Decline" button cut off on right
+   Root cause: cookie-actions flex row with the banner having
+   overflow:hidden or the right edge being clipped.
+   Fix: ensure the banner has proper right padding and the
+   actions don't overflow.
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  html body .cookie-banner,
+  html body #cookie-banner {
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    padding: 10px 16px !important;
+  }
+  html body .cookie-banner .cookie-inner,
+  html body #cookie-banner .cookie-inner {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+  html body .cookie-banner .cookie-actions,
+  html body #cookie-banner .cookie-actions,
+  html body #cookie-banner > .cookie-inner > .cookie-actions {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 6px !important;
+    overflow: visible !important;
+  }
+  html body #cookie-accept,
+  html body #cookie-decline,
+  html body .cookie-banner #cookie-accept,
+  html body .cookie-banner #cookie-decline {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    min-width: fit-content !important;
+  }
+}
