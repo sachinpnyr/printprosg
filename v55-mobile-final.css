@@ -435,3 +435,22 @@
     font-size: 15px;
   }
 }
+
+/* ════════════════════════════════════════════════════
+   ANNOUNCEMENT BAR — Fix duplicate slides + positioning
+   ════════════════════════════════════════════════════ */
+
+/* Hide all slides by default, show only .active */
+#announcement-bar .ann-slide {
+  display: none !important;
+}
+#announcement-bar .ann-slide.active {
+  display: inline !important;
+}
+
+/* Keep bar above fixed navbar */
+#announcement-bar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 10000 !important;
+}

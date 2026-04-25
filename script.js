@@ -92,6 +92,19 @@ document.addEventListener('DOMContentLoaded', () => {
       document.documentElement.style.setProperty('--ann-h', '0px');
     });
   }
+  /* Rotate announcement slides every 4 seconds */
+  (function() {
+    var annSlides = document.querySelectorAll('#announcement-slides .ann-slide');
+    if (annSlides.length < 2) return;
+    var annCurrent = 0;
+    annSlides.forEach(function(s) { s.classList.remove('active'); });
+    annSlides[0].classList.add('active');
+    setInterval(function() {
+      annSlides[annCurrent].classList.remove('active');
+      annCurrent = (annCurrent + 1) % annSlides.length;
+      annSlides[annCurrent].classList.add('active');
+    }, 4000);
+  })();
 
   /* ---- HAMBURGER MENU ---- */
   const hamburger = document.getElementById('nav-toggle');
