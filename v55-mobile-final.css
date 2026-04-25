@@ -564,3 +564,181 @@ body.ann-hidden #navbar {
     height: 36px !important;
   }
 }
+
+/* v55 PATCH 2 - Full Mobile Audit Fixes */
+
+/* 1. ANNOUNCEMENT BAR - Show on mobile */
+@media (max-width: 767px) {
+  #announcement-bar {
+    display: flex !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10001 !important;
+    background: #1d1d1f !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    padding: 8px 40px 8px 16px !important;
+    min-height: 36px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  #navbar {
+    top: 36px !important;
+  }
+  #hero .hero-inner,
+  .hero-inner {
+    padding-top: 84px !important;
+  }
+  #announcement-bar.hidden ~ #navbar,
+  body.ann-hidden #navbar {
+    top: 0 !important;
+  }
+}
+
+/* 2. REVIEWS CAROUSEL - Fix blank space */
+@media (max-width: 767px) {
+  #reviews .reviews-carousel-wrap,
+  .reviews-carousel-wrap {
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    margin: 0 -20px !important;
+    padding: 0 20px 8px !important;
+  }
+  .reviews-carousel-wrap::-webkit-scrollbar { display: none !important; }
+  #reviews .reviews-track,
+  .reviews-track {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+    overflow: visible !important;
+    min-height: 180px !important;
+    width: max-content !important;
+  }
+  #reviews .review-card,
+  .review-card {
+    min-width: 280px !important;
+    max-width: 300px !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  #reviews { padding: 40px 0 32px !important; }
+  #reviews .section-header { padding: 0 20px !important; margin-bottom: 20px !important; }
+  .reviews-controls { margin-top: 16px !important; padding: 0 20px !important; }
+}
+
+/* 3. FAQ - 2-column grid on mobile */
+@media (max-width: 767px) {
+  #faq .faq-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    align-items: start !important;
+  }
+  #faq .faq-item { margin: 0 !important; }
+  #faq .faq-question { padding: 14px 16px !important; }
+  #faq .faq-question h3 { font-size: 13px !important; font-weight: 600 !important; line-height: 1.4 !important; }
+  #faq .faq-answer-inner { padding: 0 16px 14px !important; font-size: 13px !important; line-height: 1.6 !important; }
+  #faq { padding: 40px 20px !important; }
+  #faq .section-header { margin-bottom: 20px !important; }
+}
+
+/* 4. STATS - 3-column layout */
+@media (max-width: 767px) {
+  .about-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0 !important;
+    margin: 16px 0 !important;
+  }
+  .about-stat {
+    padding: 14px 8px !important;
+    text-align: center !important;
+    border-right: 1px solid rgba(0,0,0,0.08) !important;
+    border-radius: 0 !important;
+  }
+  .about-stat:last-child { border-right: none !important; }
+  .about-stat-num { font-size: 26px !important; font-weight: 800 !important; line-height: 1.1 !important; display: block !important; }
+  .about-stat-lbl { font-size: 11px !important; line-height: 1.3 !important; display: block !important; margin-top: 2px !important; }
+}
+
+/* 5. SECTION PADDING - Reduce excessive gaps */
+@media (max-width: 767px) {
+  #about, #how-it-works, #services, #portfolio, #clients, #locations, #faq, #contact {
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
+  }
+  .section-header { margin-bottom: 20px !important; }
+  .section-header h2 { font-size: 26px !important; line-height: 1.2 !important; margin-bottom: 8px !important; }
+  .eyebrow { font-size: 11px !important; margin-bottom: 6px !important; }
+  #about { padding: 36px 20px !important; }
+  #how-it-works { padding: 36px 20px !important; }
+  .process-grid, .how-it-works-grid { gap: 10px !important; margin-top: 16px !important; }
+}
+
+/* 6. PORTFOLIO FILTER TABS - Scrollable */
+@media (max-width: 767px) {
+  #portfolio .portfolio-filters, .portfolio-filters {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 8px !important;
+    padding: 0 0 8px 0 !important;
+    margin-bottom: 16px !important;
+    justify-content: flex-start !important;
+  }
+  #portfolio .portfolio-filters::-webkit-scrollbar, .portfolio-filters::-webkit-scrollbar { display: none !important; }
+  #portfolio .filter-btn, .filter-btn {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    border-radius: 100px !important;
+  }
+  .portfolio-grid { gap: 8px !important; }
+  #portfolio { padding: 36px 20px !important; }
+}
+
+/* 7. TRUST BAR - Compact horizontal row */
+@media (max-width: 767px) {
+  .hero-trust-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 16px !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    padding-bottom: 4px !important;
+  }
+  .hero-trust-row::-webkit-scrollbar { display: none !important; }
+  .hero-trust-row span { flex-shrink: 0 !important; font-size: 12px !important; white-space: nowrap !important; }
+}
+
+/* 8. CLIENTS SECTION - Tighter */
+@media (max-width: 767px) {
+  #clients { padding: 32px 0 !important; }
+  #clients .section-header { padding: 0 20px !important; margin-bottom: 16px !important; }
+}
+
+/* 9. LOCATIONS SECTION - Tighter cards */
+@media (max-width: 767px) {
+  #locations { padding: 36px 20px !important; }
+  .location-card { padding: 16px 20px !important; margin-bottom: 10px !important; }
+}
+
+/* 10. CONTACT SECTION - Tighter */
+@media (max-width: 767px) {
+  #contact { padding: 36px 20px !important; }
+  .contact-form-wrap, .contact-card { padding: 20px !important; }
+}
