@@ -1180,3 +1180,295 @@
     padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   v55 PATCH 5 — Comprehensive business-user audit fixes
+   Issues fixed:
+   1. Cookie banner stacks on top of sticky CTA bar (z-index + bottom offset)
+   2. Trust row text cut off — hero-content overflow-x:hidden clips it
+   3. "Explore Products" btn-secondary invisible on mobile (needs visible border)
+   4. Large gap between hero text and CTA button
+   5. "Our Printing Services" heading wraps to 2 lines
+   6. Portfolio filter "Print Materials" cut off — section padding clips overflow
+   7. Client logos bar — 3rd logo cut off
+   8. Process step cards uneven heights (equal height fix)
+   9. Contact heading wraps to 2 lines
+   ════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 1: COOKIE BANNER — Position above sticky CTA bar
+   The mobile CTA bar is ~60px tall. Cookie banner must sit above it.
+   Also make the banner more compact to save vertical space.
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  html body .cookie-banner,
+  html body #cookie-banner {
+    bottom: 60px !important;
+    bottom: calc(60px + env(safe-area-inset-bottom, 0px)) !important;
+    z-index: 9998 !important;
+    padding: 10px 16px !important;
+    border-radius: 14px 14px 0 0 !important;
+  }
+  /* Make cookie inner more compact — text + 2 buttons on one row */
+  html body .cookie-banner .cookie-inner,
+  html body #cookie-banner .cookie-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex-wrap: nowrap !important;
+  }
+  html body .cookie-banner p,
+  html body #cookie-banner p {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    flex: 1 !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+  }
+  html body .cookie-banner .cookie-actions,
+  html body #cookie-banner .cookie-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+  }
+  html body .cookie-banner .btn,
+  html body #cookie-banner .btn,
+  html body #cookie-accept,
+  html body #cookie-decline {
+    height: 28px !important;
+    padding: 0 12px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    border-radius: 980px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    min-width: 0 !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 2: TRUST ROW — hero-content has overflow-x:hidden (v53 line 2771)
+   which clips the horizontally-scrolling trust row.
+   Override hero-content to allow overflow-x:visible for the trust row.
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  /* Remove the overflow-x:hidden from hero-content and hero-inner
+     that was blocking the trust row horizontal scroll */
+  #hero .hero-content,
+  .hero-content {
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+  }
+  #hero .hero-inner,
+  .hero-inner {
+    overflow-x: visible !important;
+  }
+  /* Re-apply overflow constraint only to hero headline and sub text */
+  .hero-headline,
+  .hero-sub {
+    overflow-x: hidden !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+  /* Trust row: ensure it can scroll horizontally */
+  #hero .hero-trust-row,
+  .hero-content .hero-trust-row,
+  .hero-trust-row {
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 20px 4px !important;
+    margin-left: -20px !important;
+    margin-right: -20px !important;
+    box-sizing: content-box !important;
+  }
+  #hero .hero-trust-row::-webkit-scrollbar,
+  .hero-trust-row::-webkit-scrollbar { display: none !important; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 3: "EXPLORE PRODUCTS" BUTTON — Make btn-secondary visible
+   on mobile. The border and text color need to be explicit.
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .hero-ctas .btn-secondary,
+  #hero .btn-secondary,
+  a.btn-secondary {
+    background: transparent !important;
+    color: #e8192c !important;
+    border: 1.5px solid #e8192c !important;
+    border-radius: 980px !important;
+    padding: 0 24px !important;
+    height: 48px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 4: HERO SPACING — Reduce gap between hero text and CTA
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .hero-headline {
+    margin-bottom: 12px !important;
+  }
+  .hero-sub {
+    margin-bottom: 20px !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+  .hero-ctas {
+    margin-bottom: 16px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 5: SERVICES HEADING — Reduce font size so it fits 1 line
+   "Our Printing Services" at 390px width
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  #services h2,
+  #services .section-title,
+  #services > .container > h2,
+  #services > .container > .section-header > h2 {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 6: PORTFOLIO FILTER TABS — Section overflow clips scrollable tabs
+   The portfolio section padding creates a clipping context.
+   Add negative margin + padding trick to allow overflow-x scroll.
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  #portfolio {
+    overflow: visible !important;
+  }
+  .portfolio-filters {
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    padding: 0 20px 8px !important;
+    margin-left: -20px !important;
+    margin-right: -20px !important;
+    box-sizing: content-box !important;
+    width: calc(100% + 0px) !important;
+  }
+  .portfolio-filters::-webkit-scrollbar { display: none !important; }
+  .filter-btn,
+  .portfolio-filter-btn {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 7: CLIENT LOGOS BAR — Allow horizontal scroll so all logos visible
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  #clients,
+  .clients-section,
+  .clients-wrapper {
+    overflow: visible !important;
+  }
+  .clients-track,
+  .clients-logos,
+  .clients-row,
+  .logo-track {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 16px !important;
+    padding: 8px 20px !important;
+    margin-left: -20px !important;
+    margin-right: -20px !important;
+    align-items: center !important;
+  }
+  .clients-track::-webkit-scrollbar,
+  .clients-logos::-webkit-scrollbar,
+  .logo-track::-webkit-scrollbar { display: none !important; }
+  .client-logo,
+  .clients-track img,
+  .logo-track img {
+    flex-shrink: 0 !important;
+    max-height: 36px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    opacity: 0.6 !important;
+    filter: grayscale(100%) !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 8: PROCESS STEP CARDS — Equal height so 2x2 grid is uniform
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .process-grid,
+  .how-it-works-grid,
+  #process .steps-grid,
+  #how-it-works .steps-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: stretch !important;
+  }
+  .process-step,
+  .step-card,
+  .how-step,
+  #process .step,
+  #how-it-works .step {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .process-step p,
+  .step-card p,
+  .how-step p,
+  #process .step p,
+  #how-it-works .step p {
+    flex: 1 !important;
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FIX 9: CONTACT HEADING — Reduce font so it fits on fewer lines
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  #contact h2,
+  #contact .section-title,
+  #contact .contact-heading,
+  #contact > .container > h2,
+  #contact > .container > .section-header > h2 {
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+  }
+}
