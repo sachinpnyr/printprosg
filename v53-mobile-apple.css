@@ -5372,3 +5372,382 @@
     display: none !important;
   }
 }
+
+/* ============================================================
+   v54 PATCH 5 — COMPREHENSIVE MOBILE PREMIUM OVERHAUL
+   Goal: Match desktop premium quality on all mobile screens
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+  /* ══════════════════════════════════════════
+     1. HERO — Full-width background, clean layout
+     ══════════════════════════════════════════ */
+
+  /* Remove the half-width background image — looks broken on mobile */
+  #hero::after {
+    display: none !important;
+  }
+
+  /* Clean white hero with subtle gradient */
+  #hero {
+    background: linear-gradient(160deg, #fff 0%, #faf9f7 100%) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .hero-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 80px 24px 32px !important;
+    gap: 0 !important;
+    grid-template-columns: unset !important;
+  }
+
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    order: 1 !important;
+    padding: 0 !important;
+    margin-bottom: 28px !important;
+  }
+
+  /* Headline: large, tight, impactful */
+  .hero-headline,
+  #hero .hero-headline {
+    font-size: 40px !important;
+    line-height: 1.05 !important;
+    font-weight: 800 !important;
+    letter-spacing: -1px !important;
+    margin-bottom: 14px !important;
+    color: #1d1d1f !important;
+  }
+
+  /* Subtext: 2 lines max, readable */
+  .hero-sub,
+  .hero-subtext,
+  #hero .hero-content p {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    color: rgba(29, 29, 31, 0.6) !important;
+    margin-bottom: 24px !important;
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  /* CTA buttons: side by side, pill shaped */
+  .hero-ctas {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hero-ctas a,
+  #hero .hero-ctas a {
+    height: 48px !important;
+    padding: 0 24px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    border-radius: 980px !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+
+  /* Trust row: 3 items, clean and centered */
+  .hero-trust-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-bottom: 28px !important;
+    flex-wrap: nowrap !important;
+    overflow: visible !important;
+  }
+
+  .hero-trust-row span {
+    font-size: 12px !important;
+    color: rgba(29, 29, 31, 0.5) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-trust-row span i {
+    font-size: 11px !important;
+    color: rgba(29, 29, 31, 0.35) !important;
+  }
+
+  /* Product showcase: 2-column grid, full width */
+  .hero-product-showcase {
+    order: 2 !important;
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Show all 4 product cards on mobile */
+  .hero-product-card:nth-child(3),
+  .hero-product-card:nth-child(4) {
+    display: flex !important;
+  }
+
+  .hero-product-card {
+    background: #fff !important;
+    border: 1px solid rgba(0, 0, 0, 0.07) !important;
+    border-radius: 16px !important;
+    padding: 12px !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-decoration: none !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  }
+
+  .hero-product-img {
+    height: 90px !important;
+    overflow: hidden !important;
+    border-radius: 10px !important;
+    margin-bottom: 10px !important;
+    background: #f5f5f7 !important;
+  }
+
+  .hero-product-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .hero-product-info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+  }
+
+  .hero-product-info span {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: #1d1d1f !important;
+  }
+
+  .hero-product-info strong {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #e8192c !important;
+  }
+
+  /* ══════════════════════════════════════════
+     2. SECTION HEADERS — consistent spacing
+     ══════════════════════════════════════════ */
+
+  .section-header {
+    text-align: center !important;
+    margin-bottom: 32px !important;
+    padding: 0 4px !important;
+  }
+
+  .section-header h2 {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.15 !important;
+    color: #1d1d1f !important;
+  }
+
+  .eyebrow {
+    font-size: 11px !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* ══════════════════════════════════════════
+     3. REVIEWS — horizontal scroll, premium cards
+     ══════════════════════════════════════════ */
+
+  #reviews {
+    padding: 56px 0 !important;
+  }
+
+  #reviews .container {
+    padding: 0 24px !important;
+  }
+
+  .review-card {
+    border-radius: 16px !important;
+    padding: 20px !important;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07) !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  }
+
+  /* ══════════════════════════════════════════
+     4. SERVICES / PRODUCTS GRID
+     ══════════════════════════════════════════ */
+
+  #services {
+    padding: 56px 0 !important;
+  }
+
+  #services .container {
+    padding: 0 24px !important;
+  }
+
+  .services-grid,
+  .products-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .service-card,
+  .product-card {
+    border-radius: 16px !important;
+    padding: 16px !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid rgba(0, 0, 0, 0.07) !important;
+  }
+
+  /* ══════════════════════════════════════════
+     5. ABOUT / WHY US — clean layout
+     ══════════════════════════════════════════ */
+
+  #about,
+  #why-us {
+    padding: 56px 0 !important;
+  }
+
+  #about .container,
+  #why-us .container {
+    padding: 0 24px !important;
+  }
+
+  .about-stats,
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+
+  .stat-card,
+  .about-stat {
+    border-radius: 16px !important;
+    padding: 20px 16px !important;
+    text-align: center !important;
+  }
+
+  /* ══════════════════════════════════════════
+     6. CONTACT SECTION
+     ══════════════════════════════════════════ */
+
+  #contact {
+    padding: 56px 0 !important;
+  }
+
+  #contact .container {
+    padding: 0 24px !important;
+  }
+
+  .contact-form {
+    border-radius: 20px !important;
+    padding: 24px !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  /* ══════════════════════════════════════════
+     7. FOOTER — clean, readable
+     ══════════════════════════════════════════ */
+
+  footer,
+  .footer {
+    padding: 48px 24px 100px !important;
+  }
+
+  /* ══════════════════════════════════════════
+     8. GLOBAL SECTION SPACING
+     ══════════════════════════════════════════ */
+
+  section {
+    padding: 56px 0 !important;
+  }
+
+  .container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  /* ══════════════════════════════════════════
+     9. NAVBAR — premium frosted glass
+     ══════════════════════════════════════════ */
+
+  #navbar {
+    background: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: none !important;
+  }
+
+  /* ══════════════════════════════════════════
+     10. STICKY CTA BAR — premium pill buttons
+     ══════════════════════════════════════════ */
+
+  .mobile-cta-bar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+    padding: 10px 16px !important;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom)) !important;
+    gap: 8px !important;
+    box-shadow: none !important;
+  }
+
+  .mobile-cta-call,
+  .mobile-cta-wa,
+  .mobile-cta-quote {
+    height: 44px !important;
+    border-radius: 980px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    text-decoration: none !important;
+    transition: opacity 0.15s ease !important;
+  }
+
+  .mobile-cta-call {
+    background: transparent !important;
+    color: #1d1d1f !important;
+    border: 1.5px solid rgba(0, 0, 0, 0.18) !important;
+  }
+
+  .mobile-cta-wa {
+    background: #25D366 !important;
+    color: #fff !important;
+    border: none !important;
+  }
+
+  .mobile-cta-quote {
+    background: #e8192c !important;
+    color: #fff !important;
+    border: none !important;
+  }
+
+}
