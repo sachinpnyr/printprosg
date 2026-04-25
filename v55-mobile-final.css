@@ -473,3 +473,33 @@
 body.ann-hidden #navbar {
   top: 0 !important;
 }
+
+/* ════════════════════════════════════════════════════
+   NAVBAR — Thinner on desktop
+   ════════════════════════════════════════════════════ */
+
+/* Logo row — reduce from 72px to 52px */
+:root { --nav-h: 52px !important; }
+.nav-top { height: 52px !important; }
+
+/* Logo image — slightly smaller */
+.logo-img { height: 32px !important; }
+
+/* Category tabs row — tighter */
+.nav-categories .nav-cat-container,
+#nav-categories .nav-cat-container {
+  padding: 0 !important;
+}
+.nav-cat {
+  padding: 7px 12px !important;
+  font-size: 12px !important;
+}
+
+/* Trust bar — remove it on desktop to save space */
+@media (min-width: 768px) {
+  .nav-trust-bar { display: none !important; }
+}
+
+/* Recalculate navbar top offset (now: 41px ann bar + 52px logo row + ~30px cat tabs = ~83px) */
+#navbar { top: 41px !important; }
+#hero { padding-top: 83px !important; }
