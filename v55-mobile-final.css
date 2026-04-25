@@ -1848,3 +1848,59 @@
     pointer-events: none !important;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   v55 PATCH 12 — Announcement bar: close button moved to LEFT
+   HTML order changed: button is now BEFORE #announcement-slides.
+   Left side is safe from iOS Safari swipe-back edge gesture.
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  /* Bar: flex row, button on left, slides fill remaining space */
+  html body #announcement-bar,
+  html body div#announcement-bar {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 0 12px 0 4px !important;   /* tight left, normal right */
+    min-height: 44px !important;
+    overflow: hidden !important;
+  }
+
+  /* Close button: LEFT side, large tap target */
+  html body #close-announcement {
+    position: static !important;        /* in normal flow, not absolute */
+    order: -1 !important;               /* ensure it's first visually */
+    flex-shrink: 0 !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: rgba(255,255,255,0.9) !important;
+    font-size: 18px !important;
+    padding: 0 !important;
+    margin: 0 4px 0 0 !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    z-index: 10020 !important;
+    -webkit-tap-highlight-color: rgba(255,255,255,0.4) !important;
+    touch-action: manipulation !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+  }
+
+  /* Slides: take remaining width, centered text */
+  html body #announcement-slides {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    text-align: center !important;
+    overflow: hidden !important;
+  }
+}
