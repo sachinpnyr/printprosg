@@ -8,9 +8,9 @@
 
   // ── CONFIG ──────────────────────────────────────────────────────
   const CHAT_API = 'https://8001-irj92ex2x0b9r8yzz0s0h-f37a8bc9.sg1.manus.computer/chat';
-  const BOT_NAME = 'PrintBot';
+  const BOT_NAME = 'Print Boy';
   const BOT_AVATAR = '🤖';
-  const WELCOME_MSG = "Hi! I'm **PrintBot**, your Print Pro SG assistant. 👋\n\nI can help you with:\n• Product recommendations & pricing\n• Paper stocks, sizes & finishes\n• Delivery & turnaround times\n• Design service queries\n\nWhat can I help you with today?";
+  const WELCOME_MSG = "Hi! I'm **Print Boy**, your Print Pro SG assistant. 👋\n\nI can help you with:\n• Product recommendations & pricing\n• Paper stocks, sizes & finishes\n• Delivery & turnaround times\n• Design service queries\n\nWhat can I help you with today?";
 
   const QUICK_REPLIES = [
     { label: '💳 Name Card prices', msg: 'What are the prices for name cards?' },
@@ -32,7 +32,7 @@
     widget.id = 'printbot-widget';
     widget.innerHTML = `
       <!-- Toggle Button -->
-      <button id="printbot-toggle" aria-label="Open chat with PrintBot">
+      <button id="printbot-toggle" aria-label="Open chat with Print Boy">
         <span class="printbot-toggle-icon printbot-icon-chat">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -56,7 +56,7 @@
             <span class="printbot-online-dot"></span>
           </div>
           <div class="printbot-header-info">
-            <div class="printbot-header-name">PrintBot</div>
+            <div class="printbot-header-name">Print Boy</div>
             <div class="printbot-header-status">AI Assistant · Online</div>
           </div>
           <div class="printbot-header-actions">
