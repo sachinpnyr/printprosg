@@ -545,3 +545,22 @@ body.ann-hidden #navbar {
     padding: 60px 0 !important;
   }
 }
+
+/* ════════════════════════════════════════════════════
+   MOBILE — Show search bar in navbar
+   ════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  #navbar .nav-search {
+    display: flex !important;
+    flex: 1 !important;
+    max-width: none !important;
+    margin: 0 8px !important;
+  }
+
+  #navbar .nav-search input {
+    width: 100% !important;
+    font-size: 14px !important;
+    padding: 8px 12px 8px 36px !important;
+    height: 36px !important;
+  }
+}
