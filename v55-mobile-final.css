@@ -1917,3 +1917,18 @@
     -webkit-overflow-scrolling: auto !important;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   v55 PATCH 14 — Announcement bar: .hidden must override display:flex
+   The inline onclick adds class="hidden". This rule ensures display:none
+   wins over the display:flex !important set earlier in this file.
+   ════════════════════════════════════════════════════════════════ */
+html body #announcement-bar.hidden,
+html body div#announcement-bar.hidden {
+  display: none !important;
+  visibility: hidden !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
