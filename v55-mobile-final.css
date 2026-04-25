@@ -1728,3 +1728,72 @@
     pointer-events: auto !important;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   v55 PATCH 10 — Trust row redesign
+   Problems:
+   1. Trust row is only 16px tall (items squished, "500+" cut off)
+   2. Has a top border line that looks out of place
+   3. Items overflow horizontally instead of showing cleanly
+   4. Large gap between trust row and product cards
+   Fix: Stack items vertically in a clean pill row, remove border,
+   tighten gap to product showcase.
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  /* Remove the top separator line from trust row */
+  html body #hero .hero-trust-row,
+  html body .hero-content .hero-trust-row,
+  html body .hero-trust-row {
+    border-top: none !important;
+    border: none !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px 0 !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Each trust item: inline badge style */
+  html body #hero .hero-trust-row span,
+  html body .hero-trust-row span {
+    flex-shrink: 1 !important;
+    white-space: nowrap !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    color: rgba(29,29,31,0.55) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 0 10px !important;
+    border-right: 1px solid rgba(0,0,0,0.12) !important;
+    line-height: 18px !important;
+  }
+
+  html body #hero .hero-trust-row span:last-child,
+  html body .hero-trust-row span:last-child {
+    border-right: none !important;
+    padding-right: 0 !important;
+  }
+
+  html body #hero .hero-trust-row span i,
+  html body .hero-trust-row span i {
+    font-size: 10px !important;
+    color: #e8192c !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Reduce gap between hero-content and product showcase */
+  #hero .hero-content,
+  .hero-content {
+    margin-bottom: 20px !important;
+  }
+}
