@@ -1608,3 +1608,30 @@
     min-width: fit-content !important;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   v55 PATCH 7 — Cookie banner dismiss fix
+   Problem: On mobile, the banner is at bottom:60px. When dismissed,
+   transform:translateY(100%) slides it DOWN into the CTA bar area,
+   making it appear stuck/not dismissing to the user.
+   Fix: Override the transition to use opacity instead of transform
+   on mobile, so it fades out cleanly.
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  /* Override the base transform-based show/hide with opacity-based */
+  html body .cookie-banner,
+  html body #cookie-banner {
+    transform: none !important;
+    transition: opacity 300ms ease, visibility 300ms ease !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+  html body .cookie-banner.visible,
+  html body #cookie-banner.visible {
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
